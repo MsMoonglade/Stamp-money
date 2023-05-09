@@ -1,0 +1,1346 @@
+fileFormatVersion: 2
+guid: e356fa8b1b828bf4fa66505a6513a146
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5378803369273010451
+    second: ui-buttons_single_shine_0
+  - first:
+      213: -8586374706679877534
+    second: ui-buttons_horizontal_shine_0
+  - first:
+      213: 5711871637921534338
+    second: ui-buttons_horizontal_extended_shine_0
+  - first:
+      213: 9175601059474786927
+    second: ui-buttons_single_0
+  - first:
+      213: 250961778212871898
+    second: ui-buttons_horizontal_0
+  - first:
+      213: -5626356542796498925
+    second: ui-buttons_horizontal_extended_0
+  - first:
+      213: -7593541117468819377
+    second: ui-buttons_single_shine_1
+  - first:
+      213: 1466384128765536431
+    second: ui-buttons_horizontal_shine_1
+  - first:
+      213: 1751241291504238405
+    second: ui-buttons_horizontal_extended_shine_1
+  - first:
+      213: 7847255960615154411
+    second: ui-buttons_single_1
+  - first:
+      213: 3958038092063420905
+    second: ui-buttons_horizontal_1
+  - first:
+      213: -8486495295538884698
+    second: ui-buttons_horizontal_extended_1
+  - first:
+      213: 5999454267422161201
+    second: ui-buttons_single_shine_2
+  - first:
+      213: -3479463941912921300
+    second: ui-buttons_horizontal_shine_2
+  - first:
+      213: -2734245101992302436
+    second: ui-buttons_horizontal_extended_shine_2
+  - first:
+      213: 8746031041109699387
+    second: ui-buttons_single_2
+  - first:
+      213: 100882898574101728
+    second: ui-buttons_horizontal_2
+  - first:
+      213: -3095908964956641691
+    second: ui-buttons_horizontal_extended_2
+  - first:
+      213: 1650146676796529246
+    second: ui-buttons_single_shine_3
+  - first:
+      213: 6037619832621005220
+    second: ui-buttons_horizontal_shine_3
+  - first:
+      213: -5378230773567267212
+    second: ui-buttons_horizontal_extended_shine_3
+  - first:
+      213: -9187620785671692201
+    second: ui-buttons_single_3
+  - first:
+      213: 9043449833745133162
+    second: ui-buttons_horizontal_3
+  - first:
+      213: 4719002068621835297
+    second: ui-buttons_horizontal_extended_3
+  - first:
+      213: -8577184180718307964
+    second: ui-buttons_single_shine_4
+  - first:
+      213: -6807221121838528509
+    second: ui-buttons_horizontal_shine_4
+  - first:
+      213: 4626571995565222112
+    second: ui-buttons_horizontal_extended_shine_4
+  - first:
+      213: -4537245760708556829
+    second: ui-buttons_single_4
+  - first:
+      213: 605313473339524279
+    second: ui-buttons_horizontal_4
+  - first:
+      213: 5418644387422980983
+    second: ui-buttons_horizontal_extended_4
+  - first:
+      213: 6735143034239273064
+    second: ui-buttons_single_shine_5
+  - first:
+      213: 5068569376218627966
+    second: ui-buttons_horizontal_shine_5
+  - first:
+      213: 2502143919486823116
+    second: ui-buttons_horizontal_extended_shine_5
+  - first:
+      213: -297898522915484439
+    second: ui-buttons_single_5
+  - first:
+      213: 1245949456930185152
+    second: ui-buttons_horizontal_5
+  - first:
+      213: -2330749708763504953
+    second: ui-buttons_horizontal_extended_5
+  - first:
+      213: 7525792820479961748
+    second: ui-buttons_single_shine_6
+  - first:
+      213: -1463432605134803097
+    second: ui-buttons_horizontal_shine_6
+  - first:
+      213: 1876472519661417811
+    second: ui-buttons_horizontal_extended_shine_6
+  - first:
+      213: -1187428183175996465
+    second: ui-buttons_single_6
+  - first:
+      213: 3045748717336136262
+    second: ui-buttons_horizontal_6
+  - first:
+      213: 3605332897686641488
+    second: ui-buttons_horizontal_extended_6
+  - first:
+      213: -4572020134963045246
+    second: ui-buttons_single_shine_7
+  - first:
+      213: 7596845185031816008
+    second: ui-buttons_horizontal_shine_7
+  - first:
+      213: -355256496141838253
+    second: ui-buttons_horizontal_extended_shine_7
+  - first:
+      213: 7026875008153450044
+    second: ui-buttons_single_7
+  - first:
+      213: -668047232534700382
+    second: ui-buttons_horizontal_7
+  - first:
+      213: 7143070360029158570
+    second: ui-buttons_horizontal_extended_7
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ui-buttons_single_shine_0
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 1601
+        width: 161
+        height: 159
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 319213e8a2955aa40800000000000000
+      internalID: 5378803369273010451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-buttons_horizontal_shine_0
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 1600
+        width: 303
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26072f362b117d880800000000000000
+      internalID: -8586374706679877534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-buttons_horizontal_extended_shine_0
+      rect:
+        serializedVersion: 2
+        x: 611
+        y: 1600
+        width: 371
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28111fcedf4a44f40800000000000000
+      internalID: 5711871637921534338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-buttons_single_0
+      rect:
+        serializedVersion: 2
+        x: 1066
+        y: 1601
+        width: 160
+        height: 159
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6a41b69c88465f70800000000000000
+      internalID: 9175601059474786927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-buttons_horizontal_0
+      rect:
+        serializedVersion: 2
+        x: 1243
+        y: 1601
+        width: 303
+        height: 159
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ade149a58689b7300800000000000000
+      internalID: 250961778212871898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-buttons_horizontal_extended_0
+      rect:
+        serializedVersion: 2
+        x: 1563
+        y: 1601
+        width: 370
+        height: 159
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3187be6b88a2be1b0800000000000000
+      internalID: -5626356542796498925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-buttons_single_shine_1
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 1414
+        width: 160
+        height: 159
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f40c2f106925e9690800000000000000
+      internalID: -7593541117468819377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-buttons_horizontal_shine_1
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 1413
+        width: 303
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa8275b8894a95410800000000000000
+      internalID: 1466384128765536431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-buttons_horizontal_extended_shine_1
+      rect:
+        serializedVersion: 2
+        x: 611
+        y: 1412
+        width: 371
+        height: 161
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54f3b181da8ad4810800000000000000
+      internalID: 1751241291504238405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-buttons_single_1
+      rect:
+        serializedVersion: 2
+        x: 1066
+        y: 1412
+        width: 160
+        height: 161
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be2780a38bd07ec60800000000000000
+      internalID: 7847255960615154411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-buttons_horizontal_1
+      rect:
+        serializedVersion: 2
+        x: 1243
+        y: 1413
+        width: 303
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e1b7e49ca6cde630800000000000000
+      internalID: 3958038092063420905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-buttons_horizontal_extended_1
+      rect:
+        serializedVersion: 2
+        x: 1563
+        y: 1413
+        width: 370
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6af8169fd79e93a80800000000000000
+      internalID: -8486495295538884698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-buttons_single_shine_2
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 1226
+        width: 161
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13936e7aed7524350800000000000000
+      internalID: 5999454267422161201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-buttons_horizontal_shine_2
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 1219
+        width: 303
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2bff75daf576bfc0800000000000000
+      internalID: -3479463941912921300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-buttons_horizontal_extended_shine_2
+      rect:
+        serializedVersion: 2
+        x: 611
+        y: 1226
+        width: 371
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c98a5eef0920e0ad0800000000000000
+      internalID: -2734245101992302436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-buttons_single_2
+      rect:
+        serializedVersion: 2
+        x: 1066
+        y: 1226
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3b22e7b4e4206970800000000000000
+      internalID: 8746031041109699387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-buttons_horizontal_2
+      rect:
+        serializedVersion: 2
+        x: 1243
+        y: 1226
+        width: 303
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0eccb653678666100800000000000000
+      internalID: 100882898574101728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-buttons_horizontal_extended_2
+      rect:
+        serializedVersion: 2
+        x: 1563
+        y: 1226
+        width: 370
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 566efcef23f1905d0800000000000000
+      internalID: -3095908964956641691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-buttons_single_shine_3
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 1036
+        width: 160
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5a9fb1e8af76e610800000000000000
+      internalID: 1650146676796529246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-buttons_horizontal_shine_3
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 1038
+        width: 303
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a97a34cf3fe9c350800000000000000
+      internalID: 6037619832621005220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-buttons_horizontal_extended_shine_3
+      rect:
+        serializedVersion: 2
+        x: 611
+        y: 1038
+        width: 371
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47ed2754b9fac55b0800000000000000
+      internalID: -5378230773567267212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-buttons_single_3
+      rect:
+        serializedVersion: 2
+        x: 1066
+        y: 1038
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7502b03d2930f7080800000000000000
+      internalID: -9187620785671692201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-buttons_horizontal_3
+      rect:
+        serializedVersion: 2
+        x: 1243
+        y: 1038
+        width: 303
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6ea174a5b9c08d70800000000000000
+      internalID: 9043449833745133162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-buttons_horizontal_extended_3
+      rect:
+        serializedVersion: 2
+        x: 1563
+        y: 1038
+        width: 370
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12cb98a01634d7140800000000000000
+      internalID: 4719002068621835297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-buttons_single_shine_4
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 851
+        width: 160
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4857f277e68b7f880800000000000000
+      internalID: -8577184180718307964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-buttons_horizontal_shine_4
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 851
+        width: 303
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3084745b474e781a0800000000000000
+      internalID: -6807221121838528509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-buttons_horizontal_extended_shine_4
+      rect:
+        serializedVersion: 2
+        x: 611
+        y: 851
+        width: 371
+        height: 161
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e86f63a7b2e43040800000000000000
+      internalID: 4626571995565222112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-buttons_single_4
+      rect:
+        serializedVersion: 2
+        x: 1066
+        y: 851
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e7c15e15077801c0800000000000000
+      internalID: -4537245760708556829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-buttons_horizontal_4
+      rect:
+        serializedVersion: 2
+        x: 1243
+        y: 851
+        width: 303
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b4092c9561866800800000000000000
+      internalID: 605313473339524279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-buttons_horizontal_extended_4
+      rect:
+        serializedVersion: 2
+        x: 1565
+        y: 851
+        width: 370
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77bc2847c54e23b40800000000000000
+      internalID: 5418644387422980983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-buttons_single_shine_5
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 663
+        width: 161
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8684743c7e8087d50800000000000000
+      internalID: 6735143034239273064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-buttons_horizontal_shine_5
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 663
+        width: 303
+        height: 161
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7f3fe44efc275640800000000000000
+      internalID: 5068569376218627966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-buttons_horizontal_extended_shine_5
+      rect:
+        serializedVersion: 2
+        x: 611
+        y: 663
+        width: 371
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cca6ae943a669b220800000000000000
+      internalID: 2502143919486823116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-buttons_single_5
+      rect:
+        serializedVersion: 2
+        x: 1066
+        y: 663
+        width: 160
+        height: 161
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ec428a2fd6addbf0800000000000000
+      internalID: -297898522915484439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-buttons_horizontal_5
+      rect:
+        serializedVersion: 2
+        x: 1243
+        y: 663
+        width: 303
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cf1a640e608a4110800000000000000
+      internalID: 1245949456930185152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-buttons_horizontal_extended_5
+      rect:
+        serializedVersion: 2
+        x: 1563
+        y: 663
+        width: 370
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ce5ecc1d7387afd0800000000000000
+      internalID: -2330749708763504953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-buttons_single_shine_6
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 476
+        width: 161
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49aa4e562bcf07860800000000000000
+      internalID: 7525792820479961748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-buttons_horizontal_shine_6
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 476
+        width: 303
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76f273a9cc7d0bbe0800000000000000
+      internalID: -1463432605134803097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-buttons_horizontal_extended_shine_6
+      rect:
+        serializedVersion: 2
+        x: 611
+        y: 476
+        width: 371
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 355733d80d19a0a10800000000000000
+      internalID: 1876472519661417811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-buttons_single_6
+      rect:
+        serializedVersion: 2
+        x: 1063
+        y: 476
+        width: 160
+        height: 164
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcbd181db58658fe0800000000000000
+      internalID: -1187428183175996465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-buttons_horizontal_6
+      rect:
+        serializedVersion: 2
+        x: 1243
+        y: 476
+        width: 303
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64a0ce3425ca44a20800000000000000
+      internalID: 3045748717336136262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-buttons_horizontal_extended_6
+      rect:
+        serializedVersion: 2
+        x: 1563
+        y: 476
+        width: 370
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05b54a72b27b80230800000000000000
+      internalID: 3605332897686641488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-buttons_single_shine_7
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 288
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28c189d29ebec80c0800000000000000
+      internalID: -4572020134963045246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-buttons_horizontal_shine_7
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 288
+        width: 303
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 843457b227a6d6960800000000000000
+      internalID: 7596845185031816008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-buttons_horizontal_extended_shine_7
+      rect:
+        serializedVersion: 2
+        x: 611
+        y: 288
+        width: 371
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 358d0575910e11bf0800000000000000
+      internalID: -355256496141838253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-buttons_single_7
+      rect:
+        serializedVersion: 2
+        x: 1066
+        y: 288
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c367e060799748160800000000000000
+      internalID: 7026875008153450044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-buttons_horizontal_7
+      rect:
+        serializedVersion: 2
+        x: 1243
+        y: 288
+        width: 303
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ae169bd49e9ab6f0800000000000000
+      internalID: -668047232534700382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-buttons_horizontal_extended_7
+      rect:
+        serializedVersion: 2
+        x: 1563
+        y: 288
+        width: 370
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aacd82795a8412360800000000000000
+      internalID: 7143070360029158570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      ui-buttons_horizontal_shine_0: -8586374706679877534
+      ui-buttons_horizontal_extended_0: -5626356542796498925
+      ui-buttons_single_shine_5: 6735143034239273064
+      ui-buttons_horizontal_extended_5: -2330749708763504953
+      ui-buttons_horizontal_extended_shine_3: -5378230773567267212
+      ui-buttons_horizontal_4: 605313473339524279
+      ui-buttons_single_5: -297898522915484439
+      ui-buttons_horizontal_2: 100882898574101728
+      ui-buttons_single_shine_1: -7593541117468819377
+      ui-buttons_horizontal_extended_shine_6: 1876472519661417811
+      ui-buttons_single_shine_2: 5999454267422161201
+      ui-buttons_horizontal_shine_7: 7596845185031816008
+      ui-buttons_horizontal_shine_5: 5068569376218627966
+      ui-buttons_single_1: 7847255960615154411
+      ui-buttons_horizontal_extended_7: 7143070360029158570
+      ui-buttons_horizontal_shine_3: 6037619832621005220
+      ui-buttons_single_4: -4537245760708556829
+      ui-buttons_single_shine_6: 7525792820479961748
+      ui-buttons_single_2: 8746031041109699387
+      ui-buttons_horizontal_extended_6: 3605332897686641488
+      ui-buttons_horizontal_extended_3: 4719002068621835297
+      ui-buttons_horizontal_extended_shine_7: -355256496141838253
+      ui-buttons_horizontal_extended_shine_5: 2502143919486823116
+      ui-buttons_single_6: -1187428183175996465
+      ui-buttons_single_shine_4: -8577184180718307964
+      ui-buttons_horizontal_7: -668047232534700382
+      ui-buttons_single_7: 7026875008153450044
+      ui-buttons_horizontal_extended_shine_1: 1751241291504238405
+      ui-buttons_single_shine_3: 1650146676796529246
+      ui-buttons_horizontal_extended_4: 5418644387422980983
+      ui-buttons_horizontal_shine_4: -6807221121838528509
+      ui-buttons_horizontal_extended_1: -8486495295538884698
+      ui-buttons_horizontal_shine_6: -1463432605134803097
+      ui-buttons_horizontal_shine_2: -3479463941912921300
+      ui-buttons_horizontal_extended_shine_2: -2734245101992302436
+      ui-buttons_horizontal_5: 1245949456930185152
+      ui-buttons_single_shine_7: -4572020134963045246
+      ui-buttons_single_shine_0: 5378803369273010451
+      ui-buttons_horizontal_0: 250961778212871898
+      ui-buttons_horizontal_extended_2: -3095908964956641691
+      ui-buttons_single_0: 9175601059474786927
+      ui-buttons_single_3: -9187620785671692201
+      ui-buttons_horizontal_1: 3958038092063420905
+      ui-buttons_horizontal_extended_shine_0: 5711871637921534338
+      ui-buttons_horizontal_shine_1: 1466384128765536431
+      ui-buttons_horizontal_extended_shine_4: 4626571995565222112
+      ui-buttons_horizontal_3: 9043449833745133162
+      ui-buttons_horizontal_6: 3045748717336136262
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
