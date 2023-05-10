@@ -14,6 +14,9 @@ public class CharacterBehaviour : MonoBehaviour
     public float jumpHeight;
     public float jumpSpeed;
 
+    public float moneyDecalScaleX;
+    public float moneyDecalScaleY;
+
     private Coroutine jumpCoroutine;
 
     //***************** PLAYER MOVE ***********************
@@ -99,6 +102,32 @@ public class CharacterBehaviour : MonoBehaviour
         }
     }
 
+    private void PrintDecal()
+    {
+        int xQuantity =  (int)(printerObject.transform.localScale.x / moneyDecalScaleX);
+        int yQuantity = (int)(printerObject.transform.localScale.z / moneyDecalScaleY);
+
+        Vector3 startPoint = new Vector3(printerObject.transform.position.x - (printerObject.transform.localScale.x /2) + (moneyDecalScaleX /2) ,
+            0.01f ,
+            printerObject.transform.position.z - (printerObject.transform.localScale.z/2 ) + (moneyDecalScaleY / 2));
+
+        for(int i = 0; i < xQuantity; i++)
+        {
+            for (int j = 0; j < yQuantity; j++)
+            {
+                /*
+                GameObject decal = Instantiate(moneyDecal.gameObject, startPoint, moneyDecal.transform.rotation);
+                startPoint += new Vector3(0, 0, moneyDecalScaleY);
+                */
+
+                GameObject decal = PoolManager.instance.GetItem(GameManager.instance.moneyDecalObj , startPoint , GameManager.instance.moneyDecalParent);
+                startPoint += new Vector3(0, 0, moneyDecalScaleY);
+            }
+
+            startPoint += new Vector3(moneyDecalScaleX, 0, (-yQuantity * moneyDecalScaleY));
+        }
+    }
+
 
     private void OnTriggerEnter(Collider col)
     {
@@ -144,15 +173,14 @@ public class CharacterBehaviour : MonoBehaviour
     private IEnumerator JumpCoroutine()
     {
         while (GameManager.instance.IsInGameStatus())
-        {
-           
-
+        {         
             Sequence mySequence = DOTween.Sequence();
             mySequence.Append(model.transform.DOLocalMoveY(transform.localPosition.y + jumpHeight, jumpSpeed/2)               
                 .SetEase(Ease.InOutSine));
 
             mySequence.Append(model.transform.DOLocalMoveY(0, jumpSpeed / 2)                          
-                .SetEase(Ease.InOutSine));
+                .SetEase(Ease.InOutSine)
+                .OnComplete(PrintDecal));
 
             yield return new WaitForSeconds(jumpSpeed);
         }

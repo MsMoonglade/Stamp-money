@@ -9,6 +9,10 @@ public class GameManager : MonoBehaviour
 
     public ParticleSystem winParticle;
 
+    public GameObject moneyDecalObj;
+    public GameObject moneyDecalParent;
+    public int moneyDecalCount;
+
     [HideInInspector]
     public GameStatus gameStatus;
 
@@ -33,6 +37,11 @@ public class GameManager : MonoBehaviour
         instance = this;
 
         SetInMenu();
+
+        for(int i = 0; i < moneyDecalCount; i++)
+        {
+            PoolManager.instance.InstantiateInPool(moneyDecalObj, moneyDecalParent);
+        }
     }
 
     private void Start()
