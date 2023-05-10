@@ -166,7 +166,15 @@ public class CharacterBehaviour : MonoBehaviour
 
     private void ApplyPrinterScale()
     {
-        printerObject.transform.DOScale(new Vector3(printerObjectScale.x, printerObject.transform.localScale.y, printerObjectScale.y) , 0.5f);
+        if (printerObjectScale.x >= 1 && printerObjectScale.y >= 1)
+        {
+            printerObject.transform.DOScale(new Vector3(printerObjectScale.x, printerObject.transform.localScale.y, printerObjectScale.y), 0.5f);
+        }
+
+        else
+        {
+            EventManager.TriggerEvent(Events.die);
+        }
     }
 
 
