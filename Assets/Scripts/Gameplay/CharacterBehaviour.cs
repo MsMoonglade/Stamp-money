@@ -8,6 +8,7 @@ public class CharacterBehaviour : MonoBehaviour
     public static CharacterBehaviour instance;
 
     public GameObject model;
+    public GameObject handler;
     public GameObject printerObject;    
 
     public float moveSpeed;
@@ -57,7 +58,7 @@ public class CharacterBehaviour : MonoBehaviour
         if (GameManager.instance.IsInGameStatus())
         {
             transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
-            MovePlayer();
+           // MovePlayer();
         }
     }
 
@@ -91,8 +92,8 @@ public class CharacterBehaviour : MonoBehaviour
             {
                 var mousePos = ray.GetPoint(distance + 1f);
                 var move = mousePos - mouseStartPos;
-                var control = playerStartPos + move;             
-                   
+                var control = playerStartPos + move;   
+                                   
                 control.x = Mathf.Clamp(control.x, -5, 5);
 
                 transform.DOMoveX(control.x, (Time.deltaTime * moveSpeed) * 2);
@@ -102,14 +103,23 @@ public class CharacterBehaviour : MonoBehaviour
         }
     }
 
+    public void Move(Vector3 direction)
+    {
+        // transform.DOMoveX(transform.position.x + direction.x, Time.deltaTime * moveSpeed);
+
+        transform.Translate(direction * Time.deltaTime * moveSpeed) ;
+    }
+
+
     private void PrintDecal()
     {
         int xQuantity =  (int)(printerObject.transform.localScale.x / moneyDecalScaleX);
         int yQuantity = (int)(printerObject.transform.localScale.z / moneyDecalScaleY);
 
-        Vector3 startPoint = new Vector3(printerObject.transform.position.x - (printerObject.transform.localScale.x /2) + (moneyDecalScaleX /2) ,
+        Vector3 startPoint = new Vector3(
+            printerObject.transform.position.x - (printerObjectScale.x /2) + (moneyDecalScaleX /2) ,
             0.01f ,
-            printerObject.transform.position.z - (printerObject.transform.localScale.z/2 ) + (moneyDecalScaleY / 2));
+            printerObject.transform.position.z - (printerObjectScale.y/2 ) + (moneyDecalScaleY / 2));
 
         for(int i = 0; i < xQuantity; i++)
         {
@@ -126,6 +136,12 @@ public class CharacterBehaviour : MonoBehaviour
 
             startPoint += new Vector3(moneyDecalScaleX, 0, (-yQuantity * moneyDecalScaleY));
         }
+
+        Sequence mySequence = DOTween.Sequence();
+
+        mySequence.Append(handler.transform.DOScaleY(0.8f, jumpSpeed / 2));
+
+        mySequence.Append(handler.transform.DOScaleY(1, jumpSpeed / 2));
     }
 
 
@@ -168,7 +184,8 @@ public class CharacterBehaviour : MonoBehaviour
     {
         if (printerObjectScale.x >= 1 && printerObjectScale.y >= 1)
         {
-            printerObject.transform.DOScale(new Vector3(printerObjectScale.x, printerObject.transform.localScale.y, printerObjectScale.y), 0.5f);
+            printerObject.transform.DOScale(new Vector3(printerObjectScale.x, printerObject.transform.localScale.y, printerObjectScale.y), 0.1f)
+                .SetEase(Ease.OutBounce);
         }
 
         else
@@ -190,7 +207,7 @@ public class CharacterBehaviour : MonoBehaviour
                 .SetEase(Ease.InOutSine)
                 .OnComplete(PrintDecal));
 
-            yield return new WaitForSeconds(jumpSpeed);
+            yield return new WaitForSeconds(jumpSpeed + 0.05f);
         }
     }
 

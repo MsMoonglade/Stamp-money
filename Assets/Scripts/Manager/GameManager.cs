@@ -42,10 +42,16 @@ public class GameManager : MonoBehaviour
         {
             PoolManager.instance.InstantiateInPool(moneyDecalObj, moneyDecalParent);
         }
+
+        QualitySettings.vSyncCount = 0;
+        Application.targetFrameRate = 60;
     }
 
     private void Start()
     {
+        QualitySettings.vSyncCount = 0;
+        Application.targetFrameRate = 60;
+
         //currentLevel set
         if (PlayerPrefs.HasKey("CurrentLevel"))
             CurrentLevel = PlayerPrefs.GetInt("CurrentLevel");
