@@ -31,6 +31,8 @@ public class InputManager : MonoBehaviour
     {
         if (Input.touchCount > 0)
         {
+            CharacterBehaviour.instance.moving = true;
+
             Touch touch = Input.GetTouch(0);
 
             currentDirection = touch.deltaPosition * m_InputSensitivity;
@@ -41,6 +43,9 @@ public class InputManager : MonoBehaviour
 
         else
         {
+            if(CharacterBehaviour.instance.moving)
+            CharacterBehaviour.instance.moving = false;
+
             CharacterBehaviour.instance.Move(Vector3.zero);
         }
     }

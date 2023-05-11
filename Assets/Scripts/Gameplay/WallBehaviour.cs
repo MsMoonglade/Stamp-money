@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WallBehaviour : MonoBehaviour
 {
@@ -8,6 +9,12 @@ public class WallBehaviour : MonoBehaviour
     public Material negativeMat;
 
     public MeshRenderer renderer;
+
+    public GameObject H_Expand;
+    public GameObject H_Reduce;
+    public GameObject V_Expand;
+    public GameObject V_Reduce;
+
 
     [HideInInspector]
     public SizeModifier sizeModifier;
@@ -28,11 +35,22 @@ public class WallBehaviour : MonoBehaviour
         {
             positive = true;
             renderer.material = positiveMat;
+
+            if(sizeModifier == SizeModifier.Width)            
+                H_Expand.SetActive(true);
+            else
+                V_Expand.SetActive(true);
+            
         }
         else
         {
             positive = false;
             renderer.material = negativeMat;
+
+            if (sizeModifier == SizeModifier.Width)
+                H_Reduce.SetActive(true);
+            else
+                V_Reduce.SetActive(true);
         }
     }
 }

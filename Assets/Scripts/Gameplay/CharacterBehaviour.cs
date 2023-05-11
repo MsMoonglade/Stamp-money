@@ -9,8 +9,9 @@ public class CharacterBehaviour : MonoBehaviour
 
     public GameObject model;
     public GameObject handler;
-    public GameObject printerObject;    
+    public GameObject printerObject;
 
+    public float moveXLimit;
     public float moveSpeed;
     public float jumpHeight;
     public float jumpSpeed;
@@ -25,13 +26,26 @@ public class CharacterBehaviour : MonoBehaviour
     private Vector3 mouseStartPos, playerStartPos;
     private Camera camera;
 
+
+    //***************** LOCAL VARIABLE  ***********************
     private Vector2 printerObjectScale;
+    private Rigidbody rb;
+    private Collider col;
+
+    private Coroutine dieCoroutine;
+
+    [HideInInspector]
+    public bool moving;
+    private float notMovingJumpSpeed;
+    private float movingJumpSpeed;
 
     private void Awake()
     {
         instance = this;
 
+        dieCoroutine = null;
         jumpCoroutine = null;
+        moving = false;
 
         printerObjectScale = new Vector2(printerObject.transform.localScale.x , printerObject.transform.localScale.z);
     }
@@ -39,6 +53,12 @@ public class CharacterBehaviour : MonoBehaviour
     private void Start()
     {
         camera = Camera.main;
+
+        rb = GetComponent<Rigidbody>(); 
+        col = GetComponent<Collider>();
+
+        notMovingJumpSpeed = jumpSpeed / 2;
+        movingJumpSpeed = jumpSpeed;
     }
 
     private void OnEnable()
@@ -57,8 +77,17 @@ public class CharacterBehaviour : MonoBehaviour
     {
         if (GameManager.instance.IsInGameStatus())
         {
-            transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
-           // MovePlayer();
+            if (moving)            
+                transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
+
+            if (moving && jumpSpeed != movingJumpSpeed)
+                jumpSpeed = movingJumpSpeed;
+            else if (!moving && jumpSpeed != notMovingJumpSpeed)
+                jumpSpeed = notMovingJumpSpeed;
+
+            transform.position = new Vector3(Mathf.Clamp(CharacterBehaviour.instance.transform.position.x, -moveXLimit, moveXLimit), CharacterBehaviour.instance.transform.position.y, CharacterBehaviour.instance.transform.position.z);
+
+            // MovePlayer();
         }
     }
 
@@ -105,8 +134,6 @@ public class CharacterBehaviour : MonoBehaviour
 
     public void Move(Vector3 direction)
     {
-        // transform.DOMoveX(transform.position.x + direction.x, Time.deltaTime * moveSpeed);
-
         transform.Translate(direction * Time.deltaTime * moveSpeed) ;
     }
 
@@ -143,7 +170,6 @@ public class CharacterBehaviour : MonoBehaviour
 
         mySequence.Append(handler.transform.DOScaleY(1, jumpSpeed / 2));
     }
-
 
     private void OnTriggerEnter(Collider col)
     {
@@ -190,8 +216,26 @@ public class CharacterBehaviour : MonoBehaviour
 
         else
         {
-            EventManager.TriggerEvent(Events.die);
+            if (dieCoroutine == null)
+            {
+               dieCoroutine =  StartCoroutine(StartDieCoroutine());
+            }
         }
+    }
+
+    private IEnumerator StartDieCoroutine()
+    {
+        handler.transform.parent = null;
+        printerObject.transform.parent = null;
+
+        col.enabled = false;
+
+        EnablePhysics(handler.transform.GetComponent<Rigidbody>() , handler.transform.GetComponent<Collider>());
+        EnablePhysics(printerObject.transform.GetComponent<Rigidbody>(), printerObject.transform.GetComponent<Collider>());
+
+        yield return new WaitForSeconds(0.5f);
+
+        EventManager.TriggerEvent(Events.die);
     }
 
 
@@ -225,5 +269,17 @@ public class CharacterBehaviour : MonoBehaviour
             StopCoroutine(jumpCoroutine);
             jumpCoroutine = null;   
         }
+    }
+
+    private void EnablePhysics(Rigidbody rig , Collider colli)
+    {
+        rig.isKinematic = false;
+        rig.constraints = RigidbodyConstraints.None;
+        rig.useGravity = true;
+
+        colli.enabled = true;
+
+        rig.AddTorque(transform.forward * 10);
+        rig.AddForce(transform.forward * 300);
     }
 }
