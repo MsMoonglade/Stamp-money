@@ -184,7 +184,7 @@ public class CharacterBehaviour : MonoBehaviour
     {
         if (printerObjectScale.x >= 1 && printerObjectScale.y >= 1)
         {
-            printerObject.transform.DOScale(new Vector3(printerObjectScale.x, printerObject.transform.localScale.y, printerObjectScale.y), 0.1f)
+            printerObject.transform.DOScale(new Vector3(printerObjectScale.x, printerObject.transform.localScale.y, printerObjectScale.y), 0.5f)
                 .SetEase(Ease.OutBounce);
         }
 
