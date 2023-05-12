@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using Unity.VisualScripting.Antlr3.Runtime;
 
 public class CharacterBehaviour : MonoBehaviour
 {
@@ -26,7 +27,6 @@ public class CharacterBehaviour : MonoBehaviour
     private Vector3 mouseStartPos, playerStartPos;
     private Camera camera;
 
-
     //***************** LOCAL VARIABLE  ***********************
     private Vector2 printerObjectScale;
     private Rigidbody rb;
@@ -38,6 +38,8 @@ public class CharacterBehaviour : MonoBehaviour
     public bool moving;
     private float notMovingJumpSpeed;
     private float movingJumpSpeed;
+
+    private List<Vector3> decalPosList = new List<Vector3>();
 
     private void Awake()
     {
@@ -138,6 +140,22 @@ public class CharacterBehaviour : MonoBehaviour
     }
 
 
+    public void RemoveDecalPositionInList(Vector3 pos)
+    {
+        List<Vector3> elementToRemove = new List<Vector3>();
+
+        foreach(Vector3 p in decalPosList)
+        {
+            if (p == pos)
+                elementToRemove.Add(p);
+        }
+
+        for(int i = 0; i < elementToRemove.Count; i ++)
+        {
+            decalPosList.Remove(elementToRemove[i]);
+        }
+    }
+
     private void PrintDecal()
     {
         int xQuantity =  (int)(printerObject.transform.localScale.x / moneyDecalScaleX);
@@ -157,7 +175,12 @@ public class CharacterBehaviour : MonoBehaviour
                 startPoint += new Vector3(0, 0, moneyDecalScaleY);
                 */
 
-                GameObject decal = PoolManager.instance.GetItem(GameManager.instance.moneyDecalObj , startPoint , GameManager.instance.moneyDecalParent);
+                if (CanHaveDecalInThisPos(startPoint))
+                {
+                    GameObject decal = PoolManager.instance.GetItem(GameManager.instance.moneyDecalObj, startPoint, GameManager.instance.moneyDecalParent);
+                    decalPosList.Add(startPoint);
+                }                 
+
                 startPoint += new Vector3(0, 0, moneyDecalScaleY);
             }
 
@@ -221,6 +244,22 @@ public class CharacterBehaviour : MonoBehaviour
                dieCoroutine =  StartCoroutine(StartDieCoroutine());
             }
         }
+    }
+
+    private bool CanHaveDecalInThisPos(Vector3 pos)
+    {
+        bool canHaveDecal = true;
+
+        foreach(Vector3 p in decalPosList)
+        {
+            float distX = Mathf.Abs(p.x - pos.x);
+            float distY = Mathf.Abs(p.z - pos.z);
+
+            if (distX < (moneyDecalScaleX/2) && distY < (moneyDecalScaleY/2))            
+                canHaveDecal = false;
+        }
+
+        return canHaveDecal;
     }
 
     private IEnumerator StartDieCoroutine()
