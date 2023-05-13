@@ -12,6 +12,7 @@ public class MoneyPrinterBehaviour : MonoBehaviour
     public int takableMoney;
     public GameObject takableParent;
     public GameObject takenParent;
+    public ParticleSystem moneyParticle;
 
     public GameObject moneyPrefs;
     public float positionYOffset;
@@ -75,6 +76,8 @@ public class MoneyPrinterBehaviour : MonoBehaviour
     {
         destoryed = true;
 
+        moneyParticle.Play();
+
         mybutton.transform.DOScale(Vector3.zero, 0.6f)
             .SetEase(Ease.InElastic);
 
@@ -96,5 +99,15 @@ public class MoneyPrinterBehaviour : MonoBehaviour
             rib.AddTorque(transform.forward * 10);
             rib.AddForce(transform.up * 50);
         }
+
+        StartCoroutine(DestroyThisPrinter());
+
+    }
+
+    private IEnumerator DestroyThisPrinter()
+    {
+        yield return new WaitForSeconds(5);
+
+        this.gameObject.SetActive(false);
     }
 }
