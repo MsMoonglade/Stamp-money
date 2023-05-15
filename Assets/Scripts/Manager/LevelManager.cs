@@ -17,6 +17,8 @@ public class LevelManager : MonoBehaviour
 
     public GameObject[] possibleLevelElement;
 
+    public GameObject endElement;
+
     private void Awake()
     {
         instance = this;
@@ -42,5 +44,7 @@ public class LevelManager : MonoBehaviour
             float offset = Random.Range(levelElementDistance - levelElementDistanceOffset , levelElementDistance + levelElementDistanceOffset);
             elementPos += new Vector3(0, 0, offset);
         }
+
+        Instantiate(endElement, elementPos, endElement.transform.rotation, levelParent.transform);
     }
 }

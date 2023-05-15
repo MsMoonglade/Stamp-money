@@ -249,6 +249,11 @@ public class CharacterBehaviour : MonoBehaviour
             col.enabled = false;
             StartCoroutine(ReEnableCol());
         }
+
+        if (coll.transform.CompareTag("EndElement"))
+        {
+            EventManager.TriggerEvent(Events.endGame);
+        }
     }
 
     private void ApplyPrinterScale()
@@ -321,6 +326,7 @@ public class CharacterBehaviour : MonoBehaviour
         if (jumpCoroutine == null)
             jumpCoroutine = StartCoroutine(JumpCoroutine());
 
+        moving = true;
     }
 
     private void OnEndGame(object sender)
@@ -330,6 +336,8 @@ public class CharacterBehaviour : MonoBehaviour
             StopCoroutine(jumpCoroutine);
             jumpCoroutine = null;   
         }
+
+        moving = false;
     }
 
     private void EnablePhysics(Rigidbody rig , Collider colli)

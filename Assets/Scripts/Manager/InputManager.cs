@@ -24,6 +24,12 @@ public class InputManager : MonoBehaviour
             SwipeMovement();
         }
 
+        if (!GameManager.instance.IsInGameStatus())
+        {
+            if(Input.GetMouseButtonDown(0))
+                GameManager.instance.StartGame();   
+        }
+
         // CharacterBehaviour.instance.transform.position = new Vector3(Mathf.Clamp(CharacterBehaviour.instance.transform.position.x, minXPos, maxXPos), CharacterBehaviour.instance.transform.position.y, CharacterBehaviour.instance.transform.position.z);
     }
 
