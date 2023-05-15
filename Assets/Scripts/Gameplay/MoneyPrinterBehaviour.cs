@@ -9,7 +9,9 @@ public class MoneyPrinterBehaviour : MonoBehaviour
 {
     public TMP_Text currentText;
 
-    public int takableMoney;
+    public int minTakableMoney;
+    public int maxTakableMoney;
+
     public GameObject takableParent;
     public GameObject takenParent;
     public ParticleSystem moneyParticle;
@@ -23,11 +25,13 @@ public class MoneyPrinterBehaviour : MonoBehaviour
 
     private Rigidbody rb;
 
+    private int takableMoney;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
 
-        takableMoney = Random.Range(20, 71);
+        takableMoney = Random.Range(minTakableMoney, maxTakableMoney);
 
         currentText.text = takableMoney.ToString();
 

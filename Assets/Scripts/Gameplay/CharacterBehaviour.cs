@@ -210,11 +210,11 @@ public class CharacterBehaviour : MonoBehaviour
         mySequence.Append(handler.transform.DOScaleY(1, jumpSpeed / 2));
     }
 
-    private void OnTriggerEnter(Collider col)
+    private void OnTriggerEnter(Collider coll)
     {
-        if (col.transform.CompareTag("Wall"))
+        if (coll.transform.CompareTag("Wall"))
         {
-            WallBehaviour thisWall = col.transform.GetComponent<WallBehaviour>();
+            WallBehaviour thisWall = coll.transform.GetComponent<WallBehaviour>();
 
             switch (thisWall.sizeModifier)
             {
@@ -242,7 +242,13 @@ public class CharacterBehaviour : MonoBehaviour
             }
              
             thisWall.transform.GetComponent<Collider>().enabled = false;
-            }
+
+            //WallCol
+            coll.enabled = false;
+            
+            col.enabled = false;
+            StartCoroutine(ReEnableCol());
+        }
     }
 
     private void ApplyPrinterScale()
@@ -336,5 +342,11 @@ public class CharacterBehaviour : MonoBehaviour
 
         rig.AddTorque(transform.forward * 10);
         rig.AddForce(transform.forward * 300);
+    }
+
+    private IEnumerator ReEnableCol()
+    {
+        yield return new WaitForSeconds(0.5f);
+        col.enabled = true;
     }
 }
