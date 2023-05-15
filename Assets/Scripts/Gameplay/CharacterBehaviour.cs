@@ -177,19 +177,25 @@ public class CharacterBehaviour : MonoBehaviour
                 startPoint += new Vector3(0, 0, moneyDecalScaleY);
                 */
 
+                bool haveButton = false;
+
+                //print in money machine button
+                RaycastHit hit;
+                if (Physics.Raycast(startPoint + new Vector3(0, 1, 0), Vector3.down, out hit, 5, moneyMachineButtonLayer))
+                {
+                    hit.transform.GetComponent<MoneyPrinterButton>().Print();
+                
+                    haveButton = true;
+                }
+
                 //print normal decal in road
-                if (CanHaveDecalInThisPos(startPoint))
+                if (CanHaveDecalInThisPos(startPoint) && !haveButton)
                 {
                     GameObject decal = PoolManager.instance.GetItem(GameManager.instance.moneyDecalObj, startPoint, GameManager.instance.moneyDecalParent);
                     decalPosList.Add(startPoint);
                 }
 
-                //print in money machine button
-                RaycastHit hit;
-                if (Physics.Raycast(startPoint + new Vector3(0 , 1 , 0), Vector3.down, out hit, 5, moneyMachineButtonLayer))
-                {
-                    hit.transform.GetComponent<MoneyPrinterButton>().Print();
-                }
+              
 
                 startPoint += new Vector3(0, 0, moneyDecalScaleY);
             }

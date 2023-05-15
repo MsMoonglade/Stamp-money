@@ -1275,6 +1275,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisMachine: {fileID: 400641723}
+  button: {fileID: 1933076467}
+  animDuration: 0.5
 --- !u!65 &529471284
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6724,7 +6726,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 4c840e47cd5bf55458c080aae1506d65, type: 2}
+      objectReference: {fileID: 2100000, guid: a0181ee1bad0ef34cba27c2180470cb6, type: 2}
     - target: {fileID: 919132149155446097, guid: bb1b0527064bc6b4491985c27c657782,
         type: 3}
       propertyPath: m_Name
@@ -8074,6 +8076,12 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1933076467 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -6569274761176793627, guid: bb1b0527064bc6b4491985c27c657782,
+    type: 3}
+  m_PrefabInstance: {fileID: 1118077865}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1972005740
 GameObject:
   m_ObjectHideFlags: 0

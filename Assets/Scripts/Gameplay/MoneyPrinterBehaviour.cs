@@ -78,8 +78,8 @@ public class MoneyPrinterBehaviour : MonoBehaviour
 
         moneyParticle.Play();
 
-        mybutton.transform.DOScale(Vector3.zero, 0.6f)
-            .SetEase(Ease.InElastic);
+        mybutton.transform.DOScale(Vector3.zero, 0.6f);
+        mybutton.transform.GetComponent<Collider>().enabled = false;
 
         rb.isKinematic = false;
         rb.constraints = RigidbodyConstraints.None;
