@@ -15,6 +15,8 @@ public class WallBehaviour : MonoBehaviour
     public GameObject V_Expand;
     public GameObject V_Reduce;
 
+    public GameObject topBorder_Positive;
+    public GameObject topBorder_Negative;
 
     [HideInInspector]
     public SizeModifier sizeModifier;
@@ -26,7 +28,6 @@ public class WallBehaviour : MonoBehaviour
         RandomizeModifier();
     }
 
-
     private void RandomizeModifier()
     {
         sizeModifier = (SizeModifier)Random.Range(0, 2);
@@ -35,6 +36,8 @@ public class WallBehaviour : MonoBehaviour
         {
             positive = true;
             renderer.material = positiveMat;
+
+            topBorder_Negative.gameObject.SetActive(false);
 
             if(sizeModifier == SizeModifier.Width)            
                 H_Expand.SetActive(true);
@@ -46,6 +49,8 @@ public class WallBehaviour : MonoBehaviour
         {
             positive = false;
             renderer.material = negativeMat;
+
+            topBorder_Positive.gameObject.SetActive(false);
 
             if (sizeModifier == SizeModifier.Width)
                 H_Reduce.SetActive(true);

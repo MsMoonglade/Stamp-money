@@ -22,6 +22,8 @@ public class CharacterBehaviour : MonoBehaviour
     public float moneyDecalScaleX;
     public float moneyDecalScaleY;
 
+    public ParticleSystem particle;
+
     private Coroutine jumpCoroutine;
 
     //***************** PLAYER MOVE ***********************
@@ -160,6 +162,8 @@ public class CharacterBehaviour : MonoBehaviour
 
     private void PrintDecal()
     {
+        particle.Play();
+
         int xQuantity =  (int)(printerObject.transform.localScale.x / moneyDecalScaleX);
         int yQuantity = (int)(printerObject.transform.localScale.z / moneyDecalScaleY);
 
@@ -261,7 +265,7 @@ public class CharacterBehaviour : MonoBehaviour
         if (printerObjectScale.x >= 1 && printerObjectScale.y >= 1)
         {
             printerObject.transform.DOScale(new Vector3(printerObjectScale.x, printerObject.transform.localScale.y, printerObjectScale.y), 0.5f)
-                .SetEase(Ease.OutBounce);
+                .SetEase(Ease.OutSine);
         }
 
         else
