@@ -13,12 +13,28 @@ public class UiManager : MonoBehaviour
     public GameObject endGameUi;
     public GameObject retryUi;
 
+
+    public Slider energySlider;
+
     private void Awake()
     {
         instance = this;
 
         //     DisableAllUi();
         //     EnableMainMenuUi();
+    }
+
+    private void Start()
+    {
+        energySlider.value = CharacterBehaviour.instance.currentEnergy / CharacterBehaviour.instance.maxEnergy;
+    }
+
+    private void Update()
+    {
+        if (GameManager.instance.IsInGameStatus())
+        {
+            energySlider.value = CharacterBehaviour.instance.currentEnergy / CharacterBehaviour.instance.maxEnergy;
+        }
     }
 
     public void EnableMainMenuUi()

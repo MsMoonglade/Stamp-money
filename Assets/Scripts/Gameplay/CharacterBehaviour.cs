@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using Unity.VisualScripting.Antlr3.Runtime;
+using System.Globalization;
 
 public class CharacterBehaviour : MonoBehaviour
 {
@@ -45,13 +46,20 @@ public class CharacterBehaviour : MonoBehaviour
 
     private List<Vector3> decalPosList = new List<Vector3>();
 
+    [HideInInspector]
+    public float maxEnergy = 2.5f;
+    [HideInInspector]
+    public float currentEnergy;
+    private float energyConsumption = 1.25f;
+    private float energyIncreaseValue = 0.4f;
+
     private void Awake()
     {
         instance = this;
 
         dieCoroutine = null;
         jumpCoroutine = null;
-        moving = false;
+        moving = true;
 
         printerObjectScale = new Vector2(printerObject.transform.localScale.x , printerObject.transform.localScale.z);
     }
@@ -65,6 +73,8 @@ public class CharacterBehaviour : MonoBehaviour
 
         notMovingJumpSpeed = jumpSpeed / 2;
         movingJumpSpeed = jumpSpeed;
+
+        currentEnergy = maxEnergy / 2;
     }
 
     private void OnEnable()
@@ -94,6 +104,18 @@ public class CharacterBehaviour : MonoBehaviour
             transform.position = new Vector3(Mathf.Clamp(CharacterBehaviour.instance.transform.position.x, -moveXLimit, moveXLimit), CharacterBehaviour.instance.transform.position.y, CharacterBehaviour.instance.transform.position.z);
 
             // MovePlayer();
+
+
+            if (moving)
+            {
+                currentEnergy += energyIncreaseValue * Time.deltaTime; // Cap at some max value too
+            }            
+            if (!moving)
+            {
+                currentEnergy -= energyConsumption * Time.deltaTime; // Cap at some min value too
+            }
+            
+            currentEnergy = Mathf.Clamp(currentEnergy, 0, maxEnergy);
         }
     }
 
