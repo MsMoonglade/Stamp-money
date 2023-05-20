@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using MoreMountains.Tools;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -59,7 +60,9 @@ public class GameManager : MonoBehaviour
         {
             CurrentLevel = 1;
             PlayerPrefs.SetInt("CurrentLevel", CurrentLevel);
-        }           
+        }    
+        
+        UiManager.instance.levelText.text = "LEVEL " + CurrentLevel.ToString();
     }
 
     private void OnEnable()
@@ -102,7 +105,9 @@ public class GameManager : MonoBehaviour
 
         SetInMenu();
 
+        UiManager.instance.endLevelText.text = "Level " +  CurrentLevel.ToString() + " clear!";
         UiManager.instance.EnableEndGameUi();
+
         //EventManager.TriggerEvent(Events.endGame);
     }
 
@@ -113,8 +118,8 @@ public class GameManager : MonoBehaviour
     }
 
     public void RestartGame()
-    {
-        SceneManager.LoadScene(0);
+    {        
+        SceneManager.LoadScene(1);
     }
 
     public void SetInGame()

@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d2add3ee8cad43148946a61137ad0ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_InputSensitivity: 0.06
 --- !u!1 &1364413968825275713
 GameObject:
   m_ObjectHideFlags: 0
@@ -53,6 +54,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 85037149542749224}
+  - component: {fileID: 353571748}
   m_Layer: 0
   m_Name: PoolManager
   m_TagString: Untagged
@@ -75,6 +77,19 @@ Transform:
   m_Father: {fileID: 3628990615736116011}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &353571748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1364413968825275713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 098b150d4d42e441d870e57456abea75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  decalInPool: []
 --- !u!1 &3628990615436577064
 GameObject:
   m_ObjectHideFlags: 0
@@ -120,6 +135,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   winParticle: {fileID: 0}
+  moneyDecalObj: {fileID: 3205116958908302363, guid: 6f92ff68848dbfb479e3214fde82cd8c,
+    type: 3}
+  moneyDecalParent: {fileID: 0}
+  moneyDecalCount: 1000
   gameStatus: 0
 --- !u!1 &3628990615736116010
 GameObject:
@@ -249,3 +268,6 @@ MonoBehaviour:
   gameUi: {fileID: 0}
   endGameUi: {fileID: 0}
   retryUi: {fileID: 0}
+  energySlider: {fileID: 0}
+  enableRetryFeedback: {fileID: 0}
+  disableRetryFeedback: {fileID: 0}

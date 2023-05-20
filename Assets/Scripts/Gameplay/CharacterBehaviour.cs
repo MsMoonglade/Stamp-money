@@ -162,7 +162,8 @@ public class CharacterBehaviour : MonoBehaviour
 
     public void Move(Vector3 direction)
     {
-        transform.Translate(direction * Time.deltaTime * moveSpeed) ;
+        if(GameManager.instance.IsInGameStatus())       
+            transform.Translate(direction * Time.deltaTime * moveSpeed) ;
     }
 
 

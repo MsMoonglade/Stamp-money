@@ -24,7 +24,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5223369783688191933}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -44,3 +44,48 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 788df97b4a2944371a23e74a6d3e63a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelParent: {fileID: 0}
+  levelLenght:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 1
+      value: 12
+      inSlope: 0.7755102
+      outSlope: 0.7755102
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 50
+      value: 50
+      inSlope: 0.7755102
+      outSlope: 0.7755102
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  levelElementDistance: 30
+  levelElementDistanceOffset: 5
+  startOffset: 15
+  possibleLevelElement:
+  - {fileID: 5901422440734780579, guid: 967101c30182c234a90f6e4c08fe6105, type: 3}
+  - {fileID: 5058222371483000781, guid: d25685dd6f4175142b67af7b12f8f21e, type: 3}
+  - {fileID: 138017351362844630, guid: 099a9055919244348bfe39297a9c0e95, type: 3}
+  - {fileID: 7205222571285266809, guid: 208de894597db3e44b11dca7080dae61, type: 3}
+  - {fileID: 9115678777685474457, guid: ecf52f545bf62ab4cb211c4ae1f26006, type: 3}
+  - {fileID: 7772822028559123884, guid: b58aa8c3805e1fe40ab61760b88a062d, type: 3}
+  - {fileID: 5901422440734780579, guid: 967101c30182c234a90f6e4c08fe6105, type: 3}
+  - {fileID: 5058222371483000781, guid: d25685dd6f4175142b67af7b12f8f21e, type: 3}
+  - {fileID: 138017351362844630, guid: 099a9055919244348bfe39297a9c0e95, type: 3}
+  - {fileID: 7205222571285266809, guid: 208de894597db3e44b11dca7080dae61, type: 3}
+  - {fileID: 7205222571285266809, guid: c96b51837ec91144e87813f888a2bcad, type: 3}
+  - {fileID: 7205222571285266809, guid: 62a5e0fb25560ee4fa3c426aa5a688e7, type: 3}
+  - {fileID: 7205222571285266809, guid: c96b51837ec91144e87813f888a2bcad, type: 3}
+  - {fileID: 7205222571285266809, guid: 62a5e0fb25560ee4fa3c426aa5a688e7, type: 3}
+  endElement: {fileID: 1889674862277451409, guid: 744d45585067f754e9d85de4414539e6,
+    type: 3}

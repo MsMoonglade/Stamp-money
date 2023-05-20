@@ -17,6 +17,8 @@ public class InputManager : MonoBehaviour
     private bool ignoreFirstPressUp = true;
     private float ignoreTime = 1;
 
+    bool started = false;
+
     void Update()
     {
         if (CharacterBehaviour.instance == null)
@@ -44,7 +46,7 @@ public class InputManager : MonoBehaviour
 
         if (!GameManager.instance.IsInGameStatus())
         {
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0) && !started)
             {
                 StartCoroutine(IgnoreFirstUpDelay());
 
@@ -52,6 +54,8 @@ public class InputManager : MonoBehaviour
 
                 movePlayer = true;
                 CharacterBehaviour.instance.moving = true;
+
+                started = true; 
             }
         }
 
