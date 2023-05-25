@@ -1,0 +1,9 @@
+{
+  "name": "Stage1",
+  "packageNameSuffix": "_Stage1",
+  "sdkStage": 1,
+  "defineSymbols": [
+    "SW_STAGE_STAGE1",
+    "SW_STAGE_STAGE1_OR_ABOVE"
+  ]
+}

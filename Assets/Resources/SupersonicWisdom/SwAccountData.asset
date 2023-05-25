@@ -1,0 +1,136 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bde5b51eef6a4560b2a2442b047a9a7, type: 3}
+  m_Name: SwAccountData
+  m_EditorClassIdentifier: 
+  titlesList:
+  - games: []
+    id: 
+    name: --- select ---
+  - games:
+    - adMobId: 
+      bundleId: 
+      facebookAppId: 
+      gameAnalyticsKey: 
+      gameAnalyticsSecret: 
+      id: c0eff6eb-4b10-41f5-b452-b7562256a3e0
+      isAppKey: 
+      os: android
+      platform: google_play
+      storeId: 
+    id: 2d35da34-00c9-48bb-b7b9-d77487fc83d3
+    name: Bounce The Balls
+  - games:
+    - adMobId: 
+      bundleId: com.Tapp.DigFever
+      facebookAppId: 183114534628842
+      gameAnalyticsKey: 2005591c5278cb9833e09e9ea5a57fc5
+      gameAnalyticsSecret: 389d5e3bbb1798e8d60aa22e021ee47f6bda2b1b
+      id: d025c88e-0896-4585-8441-409b85b86af4
+      isAppKey: 
+      os: android
+      platform: google_play
+      storeId: com.Tapp.DigFever
+    id: b7b0fe64-8a80-4a42-ab89-7bbf36c16459
+    name: Dig Fever
+  - games:
+    - adMobId: 
+      bundleId: com.Tapp.MergeAndShoot
+      facebookAppId: 2048747838663703
+      gameAnalyticsKey: 8610577030fc7effa1a0a7c48792410c
+      gameAnalyticsSecret: c927b6015fa505fc472dcf811b066e13fcac303e
+      id: 423b55a2-8fee-430f-866d-63cebdb3d3b7
+      isAppKey: 
+      os: android
+      platform: google_play
+      storeId: com.Tapp.MergeAndShoot
+    id: 02c0b911-3f77-4f5b-b15b-2e78ec10aaff
+    name: Merge and Shoot!
+  - games:
+    - adMobId: 
+      bundleId: com.Tapp.MergeAndPush
+      facebookAppId: 1402537120557655
+      gameAnalyticsKey: 0dd6f0b82961bbd714378430c8028801
+      gameAnalyticsSecret: 9b3644f52e0be2838d2a171a8d065cb1ec5a7a3d
+      id: 48ef45cc-edc6-42f4-a164-3a97acc066d0
+      isAppKey: 
+      os: android
+      platform: google_play
+      storeId: com.Tapp.MergeAndPush
+    id: 2cd25b81-8ee6-4ddd-ba62-b3a0dbedb8af
+    name: Merge and Shoot!
+  - games:
+    - adMobId: 
+      bundleId: com.Tapp.PlantTheTree
+      facebookAppId: 138215782540902
+      gameAnalyticsKey: 0f153cca85b95293aa7aaa0e32eba37f
+      gameAnalyticsSecret: 25ac1f7895644f8a2e09e2cd83c6afea795f5c37
+      id: a80bb9fe-75cd-4fe1-bb3c-018ac29fb7b6
+      isAppKey: 
+      os: android
+      platform: google_play
+      storeId: com.Tapp.PlantTheTree
+    id: c87d880b-0d7e-4fd5-8c03-c93a82c84446
+    name: Plant The Tree
+  - games:
+    - adMobId: 
+      bundleId: 
+      facebookAppId: 
+      gameAnalyticsKey: 
+      gameAnalyticsSecret: 
+      id: 2df40e02-9178-4500-8b2c-5035dfb643db
+      isAppKey: 
+      os: android
+      platform: google_play
+      storeId: 
+    id: 2f7cd237-33be-4940-9514-40c3d98528d9
+    name: Road Surfer!
+  - games:
+    - adMobId: 
+      bundleId: com.Tapp.RockPaperScissorRun
+      facebookAppId: 1133297967369016
+      gameAnalyticsKey: c2a2f0832ca3694a3381c2d7a6d1fadb
+      gameAnalyticsSecret: 01f8752e60ed6a4c20beffba9c2ef1a21de115bd
+      id: 1394519f-7093-4e9a-bc7a-20abd9f192fe
+      isAppKey: 
+      os: android
+      platform: google_play
+      storeId: com.Tapp.RockPaperScissorRun
+    id: bd0f3897-0cea-48b3-83b3-d05aaa973b69
+    name: Rock Paper Scissor Run
+  - games:
+    - adMobId: 
+      bundleId: com.Tapp.ShooterMultiplyer
+      facebookAppId: 1379130055825552
+      gameAnalyticsKey: 2234587ba615d9e2a06e653c979aec4e
+      gameAnalyticsSecret: 7accd3f4891c3f211475f745812bd1c3ec0eda54
+      id: 61221d8d-9f39-4e0b-879a-7881fb4a352e
+      isAppKey: 
+      os: android
+      platform: google_play
+      storeId: com.Tapp.ShooterMultiplyer
+    id: 9d3339e3-303f-4543-b0f4-d08b9a88ebb0
+    name: Shooting Multiplyer
+  - games:
+    - adMobId: 
+      bundleId: com.Tapp.StampMoney
+      facebookAppId: 244136784966762
+      gameAnalyticsKey: 22edbdfcef1739c86703739b7d7b2c86
+      gameAnalyticsSecret: 3e408afcc7c64ac754d4ef94e7b86883a4b10e60
+      id: 7e2c692e-603e-426b-89be-0ec445c7eec7
+      isAppKey: 
+      os: android
+      platform: google_play
+      storeId: 
+    id: 08107261-656b-472c-b188-4d91ffd73437
+    name: Stamp Money
+  integrationGuideUrl: 

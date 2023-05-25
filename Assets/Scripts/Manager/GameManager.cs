@@ -1,4 +1,5 @@
 ﻿using MoreMountains.Tools;
+using SupersonicWisdomSDK;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -93,19 +94,25 @@ public class GameManager : MonoBehaviour
         UiManager.instance.EnableGameUi();
         EventManager.TriggerEvent(Events.playGame);
 
+        SupersonicWisdom.Api.NotifyLevelStarted(CurrentLevel, null);
+
         //LevelManager.instance.GenerateLevel(CurrentLevel);
     }
 
     public void EndGame(object sender)
     {
-        if(winParticle != null)
+        SupersonicWisdom.Api.NotifyLevelCompleted(CurrentLevel, null);
+
+
+        if (winParticle != null)
             winParticle.Play();
+        
+        UiManager.instance.endLevelText.text = "Level " + CurrentLevel.ToString() + " clear!";
 
         CurrentLevel++;
 
         SetInMenu();
 
-        UiManager.instance.endLevelText.text = "Level " +  CurrentLevel.ToString() + " clear!";
         UiManager.instance.EnableEndGameUi();
 
         //EventManager.TriggerEvent(Events.endGame);
@@ -113,6 +120,8 @@ public class GameManager : MonoBehaviour
 
     public void OnCharacterDie(object sender)
     {
+        SupersonicWisdom.Api.NotifyLevelFailed(CurrentLevel, null);
+
         gameStatus = GameStatus.InRestart;
         UiManager.instance.EnableRetryUi();
     }

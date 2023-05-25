@@ -1,0 +1,16 @@
+{
+  "name": "SupersonicWisdom",
+  "references": [
+    "AppsFlyer",
+    "GameAnalytics-CSharp"
+  ],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
+}
