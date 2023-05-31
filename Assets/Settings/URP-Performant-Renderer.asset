@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Active: 1
   m_Settings:
-    technique: 0
-    maxDrawDistance: 50
+    technique: 2
+    maxDrawDistance: 500
     dBufferSettings:
       surfaceData: 2
     screenSpaceSettings:

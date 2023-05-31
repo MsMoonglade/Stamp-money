@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class DisableDecal : MonoBehaviour
 {
+    public float moveSpeed;
     public float disableDelay;
 
     private void OnEnable()
     {
         StartCoroutine(DisableThisGameobject());
+        StartCoroutine(MoveForward());
     }
 
     private IEnumerator DisableThisGameobject()
@@ -23,5 +25,16 @@ public class DisableDecal : MonoBehaviour
 
         CharacterBehaviour.instance.RemoveDecalPositionInList(transform.position);
         this.gameObject.SetActive(false);
+    }
+
+    private IEnumerator MoveForward()
+    {
+        yield return new WaitForSeconds(0.1f);
+
+        while (this.gameObject.activeInHierarchy)
+        {
+            transform.Translate(-transform.forward * moveSpeed * Time.deltaTime);
+            yield return null;
+        }
     }
 }
