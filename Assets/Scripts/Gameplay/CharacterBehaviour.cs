@@ -44,8 +44,6 @@ public class CharacterBehaviour : MonoBehaviour
     private float notMovingJumpSpeed;
     private float movingJumpSpeed;
 
-    private List<Vector3> decalPosList = new List<Vector3>();
-
     [HideInInspector]
     public float maxEnergy = 2.5f;
     [HideInInspector]
@@ -167,22 +165,6 @@ public class CharacterBehaviour : MonoBehaviour
     }
 
 
-    public void RemoveDecalPositionInList(Vector3 pos)
-    {
-        List<Vector3> elementToRemove = new List<Vector3>();
-
-        foreach(Vector3 p in decalPosList)
-        {
-            if (p == pos)
-                elementToRemove.Add(p);
-        }
-
-        for(int i = 0; i < elementToRemove.Count; i ++)
-        {
-            decalPosList.Remove(elementToRemove[i]);
-        }
-    }
-
     private void PrintDecal()
     {
         particle.Play();
@@ -198,12 +180,7 @@ public class CharacterBehaviour : MonoBehaviour
         for(int i = 0; i < xQuantity; i++)
         {
             for (int j = 0; j < yQuantity; j++)
-            {
-                /*
-                GameObject decal = Instantiate(moneyDecal.gameObject, startPoint, moneyDecal.transform.rotation);
-                startPoint += new Vector3(0, 0, moneyDecalScaleY);
-                */
-
+            {               
                 bool haveButton = false;
 
                 //print in money machine button
@@ -216,13 +193,10 @@ public class CharacterBehaviour : MonoBehaviour
                 }
 
                 //print normal decal in road
-                if (CanHaveDecalInThisPos(startPoint) && !haveButton)
+                if (!haveButton)
                 {
                     GameObject decal = PoolManager.instance.GetItem(GameManager.instance.moneyDecalObj, startPoint, GameManager.instance.moneyDecalParent);
-                    decalPosList.Add(startPoint);
-                }
-
-              
+                }              
 
                 startPoint += new Vector3(0, 0, moneyDecalScaleY);
             }
@@ -239,6 +213,7 @@ public class CharacterBehaviour : MonoBehaviour
 
     private void OnTriggerEnter(Collider coll)
     {
+        /*
         if (coll.transform.CompareTag("Wall"))
         {
             WallBehaviour thisWall = coll.transform.GetComponent<WallBehaviour>();
@@ -276,6 +251,7 @@ public class CharacterBehaviour : MonoBehaviour
             col.enabled = false;
             StartCoroutine(ReEnableCol());
         }
+        */
 
         if (coll.transform.CompareTag("EndElement"))
         {
@@ -300,22 +276,6 @@ public class CharacterBehaviour : MonoBehaviour
         }
     }
 
-    private bool CanHaveDecalInThisPos(Vector3 pos)
-    {
-        bool canHaveDecal = true;
-
-        foreach(Vector3 p in decalPosList)
-        {
-            float distX = Mathf.Abs(p.x - pos.x);
-            float distY = Mathf.Abs(p.z - pos.z);
-
-            if (distX < (moneyDecalScaleX/2) && distY < (moneyDecalScaleY/2))            
-                canHaveDecal = false;
-        }
-
-        return canHaveDecal;
-    }
-
     private IEnumerator StartDieCoroutine()
     {
         handler.transform.parent = null;
@@ -330,7 +290,6 @@ public class CharacterBehaviour : MonoBehaviour
 
         EventManager.TriggerEvent(Events.die);
     }
-
 
     private IEnumerator JumpCoroutine()
     {

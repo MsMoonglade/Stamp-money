@@ -15,21 +15,14 @@ public class DisableDecal : MonoBehaviour
 
     private IEnumerator DisableThisGameobject()
     {
-        yield return new WaitForSeconds(disableDelay);
+        yield return new WaitForSeconds(disableDelay);       
 
-        while(Vector3.Distance(transform.position , CharacterBehaviour.instance.transform.position) <= 10)
-        {
-            yield return new WaitForSeconds(1);
-            yield return null;
-        }
-
-        CharacterBehaviour.instance.RemoveDecalPositionInList(transform.position);
         this.gameObject.SetActive(false);
     }
 
     private IEnumerator MoveForward()
     {
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.075f);
 
         while (this.gameObject.activeInHierarchy)
         {
