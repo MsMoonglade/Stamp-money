@@ -1,16 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
-public class DisableDecal : MonoBehaviour
+public class MoneyBulletBehaviour : MonoBehaviour
 {
     public float moveSpeed;
     public float disableDelay;
+
+    private DecalProjector decal;
+    private int value;
 
     private void OnEnable()
     {
         StartCoroutine(DisableThisGameobject());
         StartCoroutine(MoveForward());
+    }
+
+    public void SetValue(int newValue)
+    {
+        value = newValue;
+
+        decal = transform.GetComponent<DecalProjector>();
+        decal.material = ColorUtilities.instance.GetIndexMaterial(value);
     }
 
     private IEnumerator DisableThisGameobject()

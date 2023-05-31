@@ -4,6 +4,8 @@ using UnityEngine;
 using DG.Tweening;
 using Unity.VisualScripting.Antlr3.Runtime;
 using System.Globalization;
+using System;
+using System.Linq;
 
 public class CharacterBehaviour : MonoBehaviour
 {
@@ -51,6 +53,8 @@ public class CharacterBehaviour : MonoBehaviour
     private float energyConsumption = 1.25f;
     private float energyIncreaseValue = 0.4f;
 
+    private int[,] localMoneyValue;
+
     private void Awake()
     {
         instance = this;
@@ -59,7 +63,68 @@ public class CharacterBehaviour : MonoBehaviour
         jumpCoroutine = null;
         moving = true;
 
-        printerObjectScale = new Vector2(printerObject.transform.localScale.x , printerObject.transform.localScale.z);
+        Vector3 startScale = new Vector3(0, 1, 0);
+
+        if (PlayerPrefs.HasKey("Xsize"))
+            startScale.x = PlayerPrefs.GetFloat("Xsize");
+        else
+        {
+            startScale.x = 3;
+            PlayerPrefs.SetFloat("Xsize", startScale.x);
+        }
+
+        if (PlayerPrefs.HasKey("Zsize"))
+            startScale.z = PlayerPrefs.GetFloat("Zsize");
+        else
+        {
+            startScale.z = 1.5f;
+            PlayerPrefs.SetFloat("Zsize", startScale.z);
+        }
+
+        printerObject.transform.localScale = startScale;
+        printerObjectScale = new Vector2(printerObject.transform.localScale.x, printerObject.transform.localScale.z);
+
+        int xQuantity = (int)(printerObject.transform.localScale.x / moneyDecalScaleX);
+        int yQuantity = (int)(printerObject.transform.localScale.z / moneyDecalScaleY);
+        
+        localMoneyValue = new int[xQuantity, yQuantity];
+
+        if (PlayerPrefs.HasKey("LocalMoneyValueX") && PlayerPrefs.HasKey("LocalMoneyValueZ"))
+        {
+            //Return X Value
+            string[] localXValue = PlayerPrefs.GetString("LocalMoneyValueX").Split(new[] { "###" }, StringSplitOptions.None);
+            for (int i = 0; i < localXValue.Length; i++)
+            {
+                localMoneyValue[i , 0] = int.Parse(localXValue[i]);
+            }
+
+            //Return Z Value
+            string[] localZValue = PlayerPrefs.GetString("LocalMoneyValueZ").Split(new[] { "###" }, StringSplitOptions.None);
+            for (int i = 0; i < localZValue.Length; i++)
+            {
+                localMoneyValue[0, i] = int.Parse(localZValue[i]);
+            }
+        }
+        else
+        {
+            //Setup startXValue
+            int[] startX = new int[xQuantity];
+            for(int i = 0; i < startX.Length; i++)
+            {
+                startX[i] = 1;
+                localMoneyValue[i, 0] = 1;
+            }
+            PlayerPrefs.SetString("LocalMoneyValueX", string.Join("###", startX));
+
+            //Setup startZValue
+            int[] startZ = new int[yQuantity];
+            for (int i = 0; i < startZ.Length; i++)
+            {
+                startZ[i] = 1;
+                localMoneyValue[0, i] = 1;
+            }
+            PlayerPrefs.SetString("LocalMoneyValueZ", string.Join("###", startZ));
+        }
     }
 
     private void Start()
@@ -72,7 +137,7 @@ public class CharacterBehaviour : MonoBehaviour
         notMovingJumpSpeed = jumpSpeed / 2;
         movingJumpSpeed = jumpSpeed;
 
-        currentEnergy = maxEnergy / 2;
+        currentEnergy = maxEnergy / 2;       
     }
 
     private void OnEnable()
@@ -117,53 +182,16 @@ public class CharacterBehaviour : MonoBehaviour
         }
     }
 
-    void MovePlayer()
-    {
-        if (Input.GetMouseButtonDown(0) && GameManager.instance.IsInGameStatus())
-        {
-            moveByTouch = true;
-
-            var plane = new Plane(Vector3.up, 0);
-            var ray = camera.ScreenPointToRay(Input.mousePosition);
-
-            if (plane.Raycast(ray, out var distance))
-            {
-                mouseStartPos = ray.GetPoint(distance + 1f);
-                playerStartPos = transform.position;
-            }
-        }
-
-        if (Input.GetMouseButtonUp(0))
-        {
-            moveByTouch = false;
-        }
-
-        if (moveByTouch)
-        {
-            var plane = new Plane(Vector3.up, 0);
-            var ray = camera.ScreenPointToRay(Input.mousePosition);
-
-            if (plane.Raycast(ray, out var distance))
-            {
-                var mousePos = ray.GetPoint(distance + 1f);
-                var move = mousePos - mouseStartPos;
-                var control = playerStartPos + move;   
-                                   
-                control.x = Mathf.Clamp(control.x, -5, 5);
-
-                transform.DOMoveX(control.x, (Time.deltaTime * moveSpeed) * 2);
-
-               // transform.position = new Vector3(Mathf.Lerp(transform.position.x, control.x, Time.deltaTime * moveSpeed), transform.position.y, transform.position.z);
-            }
-        }
-    }
-
     public void Move(Vector3 direction)
     {
         if(GameManager.instance.IsInGameStatus())       
             transform.Translate(direction * Time.deltaTime * moveSpeed) ;
     }
 
+    public void ConfirmEdit()
+    {
+        
+    }
 
     private void PrintDecal()
     {
@@ -196,6 +224,8 @@ public class CharacterBehaviour : MonoBehaviour
                 if (!haveButton)
                 {
                     GameObject decal = PoolManager.instance.GetItem(GameManager.instance.moneyDecalObj, startPoint, GameManager.instance.moneyDecalParent);
+                 
+                    decal.GetComponent<MoneyBulletBehaviour>().SetValue(localMoneyValue[i,j]);
                 }              
 
                 startPoint += new Vector3(0, 0, moneyDecalScaleY);
