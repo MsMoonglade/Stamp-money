@@ -7,6 +7,8 @@ public class ColorUtilities : MonoBehaviour
     public static ColorUtilities instance;
 
     public Material[] colors;
+    public Material[] editObjectMat;
+
     public Material basicColor;
 
     private void Awake()
@@ -51,6 +53,48 @@ public class ColorUtilities : MonoBehaviour
             case 10:
                 return colors[9];
                 break;            
+        }
+
+        return null;
+    }
+
+    public Material GetEditObjectMaterial(int value)
+    {
+        switch (value)
+        {
+            case 0:
+                return basicColor;
+                break;
+            case 1:
+                return editObjectMat[0];
+                break;
+            case 2:
+                return editObjectMat[1];
+                break;
+            case 3:
+                return editObjectMat[2];
+                break;
+            case 4:
+                return editObjectMat[3];
+                break;
+            case 5:
+                return editObjectMat[4];
+                break;
+            case 6:
+                return editObjectMat[5];
+                break;
+            case 7:
+                return editObjectMat[6];
+                break;
+            case 8:
+                return editObjectMat[7];
+                break;
+            case 9:
+                return editObjectMat[8];
+                break;
+            case 10:
+                return editObjectMat[9];
+                break;
         }
 
         return null;

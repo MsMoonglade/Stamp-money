@@ -7,6 +7,7 @@ using System.Globalization;
 using System;
 using System.Linq;
 using Unity.Mathematics;
+using System.Runtime.CompilerServices;
 
 public class CharacterBehaviour : MonoBehaviour
 {
@@ -15,6 +16,9 @@ public class CharacterBehaviour : MonoBehaviour
     public GameObject model;
     public GameObject handler;
     public GameObject printerObject;
+    public GameObject editObject;
+
+    public GameObject editObjectParent;
 
     public LayerMask moneyMachineButtonLayer;
 
@@ -61,7 +65,9 @@ public class CharacterBehaviour : MonoBehaviour
     private float energyConsumption = 1.25f;
     private float energyIncreaseValue = 0.4f;
 
-    private int[,] localMoneyValue;
+    private EditObject[,] editObjectGrid;
+
+    private CharacterEditGrid characterGrid;
 
     private void Awake()
     {
@@ -98,7 +104,7 @@ public class CharacterBehaviour : MonoBehaviour
         int xQuantity = (int)(printerObject.transform.localScale.x / moneyDecalScaleX);
         int yQuantity = (int)(printerObject.transform.localScale.z / moneyDecalScaleY);
         
-        localMoneyValue = new int[xQuantity, yQuantity];
+        editObjectGrid = new EditObject[xQuantity, yQuantity];
 
         if (PlayerPrefs.HasKey("LocalMoneyValueX") && PlayerPrefs.HasKey("LocalMoneyValueZ"))
         {
@@ -106,16 +112,17 @@ public class CharacterBehaviour : MonoBehaviour
             string[] localXValue = PlayerPrefs.GetString("LocalMoneyValueX").Split(new[] { "###" }, StringSplitOptions.None);
             for (int i = 0; i < localXValue.Length; i++)
             {
-                localMoneyValue[i , 0] = int.Parse(localXValue[i]);
+                editObjectGrid[i, 0] = new EditObject(int.Parse(localXValue[i]), Vector3.zero);                    
             }
 
             //Return Z Value
             string[] localZValue = PlayerPrefs.GetString("LocalMoneyValueZ").Split(new[] { "###" }, StringSplitOptions.None);
             for (int i = 0; i < localZValue.Length; i++)
             {
-                localMoneyValue[0, i] = int.Parse(localZValue[i]);
+                editObjectGrid[0, i] = new EditObject(int.Parse(localZValue[i]), Vector3.zero);
             }
         }
+
         else
         {
             //Setup startXValue
@@ -123,7 +130,7 @@ public class CharacterBehaviour : MonoBehaviour
             for(int i = 0; i < startX.Length; i++)
             {
                 startX[i] = 1;
-                localMoneyValue[i, 0] = 1;
+                editObjectGrid[i, 0] = new EditObject(1, Vector3.zero);
             }
             PlayerPrefs.SetString("LocalMoneyValueX", string.Join("###", startX));
 
@@ -132,23 +139,41 @@ public class CharacterBehaviour : MonoBehaviour
             for (int i = 0; i < startZ.Length; i++)
             {
                 startZ[i] = 1;
-                localMoneyValue[0, i] = 1;
+                editObjectGrid[0, i] = new EditObject(1, Vector3.zero);
             }
             PlayerPrefs.SetString("LocalMoneyValueZ", string.Join("###", startZ));
         }
+
+        characterGrid = transform.GetComponentInChildren<CharacterEditGrid>();
     }
 
     private void Start()
     {
         camera = Camera.main;
 
-        rb = GetComponent<Rigidbody>(); 
+        rb = GetComponent<Rigidbody>();
         col = GetComponent<Collider>();
 
         notMovingJumpSpeed = jumpSpeed / 2;
         movingJumpSpeed = jumpSpeed;
 
-        currentEnergy = maxEnergy / 2;       
+        currentEnergy = maxEnergy / 2;
+
+        foreach(EditObject e in editObjectGrid)
+        {
+            Debug.Log(e.Value());
+        }
+
+        /*
+        foreach(GameObject o in characterGrid.currentGridElement)
+        {
+            localMoneyValue;
+
+            int myValue = ;
+            GameObject edit = Instantiate(editObject, o.transform.position, o.transform.rotation, editObjectParent.transform);
+            edit.GetComponent<EditObjectBehaviour>().Setup(myValue);
+        }
+        */
     }
 
     private void OnEnable()
@@ -390,5 +415,23 @@ public class CharacterBehaviour : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
         col.enabled = true;
+    }
+}
+
+[System.Serializable]
+struct EditObject
+{
+    private int value;
+    private Vector3 pos;
+
+    public EditObject(int v , Vector3 p)
+    {
+        this.value = v;
+        this.pos = p;
+    }
+
+    public int Value()
+    {
+        return value;
     }
 }

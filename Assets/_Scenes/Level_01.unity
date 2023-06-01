@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.18716785, g: 0.41298336, b: 0.7258214, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -300,12 +300,6 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: c6a0d607b64327243aa9af3adb066288, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 73ef0b63ffe19f94ab35e4475b345d70, type: 3}
---- !u!1 &132997671 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4301651345677475173, guid: 11742eea6e859f84580c75a674e700e0,
-    type: 3}
-  m_PrefabInstance: {fileID: 3995784453415932138}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &147594302 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 09062dc0008857b46aaacdb7206f1453,
@@ -1899,53 +1893,6 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: c6a0d607b64327243aa9af3adb066288, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 73ef0b63ffe19f94ab35e4475b345d70, type: 3}
---- !u!1 &1379087650
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1379087651}
-  - component: {fileID: 1379087652}
-  m_Layer: 7
-  m_Name: EditGrid
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1379087651
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1379087650}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2034039803}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1379087652
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1379087650}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b82f9453682374a438c5128df334cf34, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  editSlotPrefs: {fileID: 7730198628225008682, guid: 0bb167e79730b8e468372380fd3b0b5a,
-    type: 3}
-  printerBaseSize: {fileID: 132997671}
 --- !u!1 &1422371840
 GameObject:
   m_ObjectHideFlags: 0
@@ -7852,10 +7799,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3995784453835090706, guid: 11742eea6e859f84580c75a674e700e0,
+        type: 3}
+      propertyPath: editObject
+      value: 
+      objectReference: {fileID: 3205116958908302363, guid: d9d50e486daf6144594ff3eb813b9ea9,
+        type: 3}
     - target: {fileID: 3995784453835090717, guid: 11742eea6e859f84580c75a674e700e0,
         type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7213082239739962977, guid: 11742eea6e859f84580c75a674e700e0,
+        type: 3}
+      propertyPath: m_Name
+      value: EditObjectParent
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 11742eea6e859f84580c75a674e700e0, type: 3}
