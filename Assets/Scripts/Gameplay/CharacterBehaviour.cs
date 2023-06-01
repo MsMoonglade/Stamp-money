@@ -6,6 +6,7 @@ using Unity.VisualScripting.Antlr3.Runtime;
 using System.Globalization;
 using System;
 using System.Linq;
+using Unity.Mathematics;
 
 public class CharacterBehaviour : MonoBehaviour
 {
@@ -24,6 +25,13 @@ public class CharacterBehaviour : MonoBehaviour
 
     public float moneyDecalScaleX;
     public float moneyDecalScaleY;
+
+    public Vector3 editPositionOffset;
+    public Vector3 editRotationOffset;
+    public float editAnimSpeed;
+
+    private Vector3 startPos;
+    private quaternion startRot;
 
     public ParticleSystem particle;
 
@@ -62,6 +70,9 @@ public class CharacterBehaviour : MonoBehaviour
         dieCoroutine = null;
         jumpCoroutine = null;
         moving = true;
+
+        startPos = transform.position;
+        startRot = transform.rotation;
 
         Vector3 startScale = new Vector3(0, 1, 0);
 
@@ -188,9 +199,16 @@ public class CharacterBehaviour : MonoBehaviour
             transform.Translate(direction * Time.deltaTime * moveSpeed) ;
     }
 
+    public void StartEdit()
+    {
+        transform.DOMove(editPositionOffset, editAnimSpeed);
+        transform.DORotate(editRotationOffset , editAnimSpeed);
+    }
     public void ConfirmEdit()
     {
-        
+        transform.DOMove(startPos, editAnimSpeed);
+        transform.DORotateQuaternion(startRot, editAnimSpeed)
+            .OnComplete(()=> GameManager.instance.inEdit = false);
     }
 
     private void PrintDecal()

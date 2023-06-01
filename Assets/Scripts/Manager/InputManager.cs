@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class InputManager : MonoBehaviour
 {
+    public static InputManager instance;
+
     float minXPos = -10f;
     float maxXPos = 10f;
 
@@ -18,6 +20,11 @@ public class InputManager : MonoBehaviour
     private float ignoreTime = 1;
 
     bool started = false;
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     void Update()
     {
@@ -44,22 +51,20 @@ public class InputManager : MonoBehaviour
             }
         }
 
-        if (!GameManager.instance.IsInGameStatus())
-        {
-            if (Input.GetMouseButtonDown(0) && !started)
-            {
-                StartCoroutine(IgnoreFirstUpDelay());
-
-                GameManager.instance.StartGame();
-
-                movePlayer = true;
-                CharacterBehaviour.instance.moving = true;
-
-                started = true; 
-            }
-        }
-
         // CharacterBehaviour.instance.transform.position = new Vector3(Mathf.Clamp(CharacterBehaviour.instance.transform.position.x, minXPos, maxXPos), CharacterBehaviour.instance.transform.position.y, CharacterBehaviour.instance.transform.position.z);
+    }
+
+    public void FirstInput()
+    {
+        if (!started)
+        {
+            StartCoroutine(IgnoreFirstUpDelay());
+
+            movePlayer = true;
+            CharacterBehaviour.instance.moving = true;
+
+            started = true;
+        }
     }
 
     private void SwipeMovement()

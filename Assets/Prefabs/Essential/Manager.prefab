@@ -1,5 +1,61 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &676820970
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 676820971}
+  - component: {fileID: 676820972}
+  m_Layer: 0
+  m_Name: ColorManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &676820971
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 676820970}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3628990615736116011}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &676820972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 676820970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 813b61eca6dacc9448725855f84f0529, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colors:
+  - {fileID: 2100000, guid: 6cab50aae5763ef4990319eee118acef, type: 2}
+  - {fileID: 2100000, guid: 862bf4a6415c79b40af7b4608656a899, type: 2}
+  - {fileID: 2100000, guid: a9e1e4a22cbee864ea6b82830a0ee550, type: 2}
+  - {fileID: 2100000, guid: 952d34ea552d70345998b9c8e3582cc2, type: 2}
+  - {fileID: 2100000, guid: 8d56f65338054884b96da1705a21e558, type: 2}
+  - {fileID: 2100000, guid: 2dfefc1587484da4fa68c2bfce65ab0e, type: 2}
+  - {fileID: 2100000, guid: 8c2368aca99afea458e3df74e814243e, type: 2}
+  - {fileID: 2100000, guid: e4dea8a5c8c62d94f83b74600d41032f, type: 2}
+  - {fileID: 2100000, guid: 61d38546c843ef44596e4c884880eb79, type: 2}
+  - {fileID: 2100000, guid: 4753c186c8bd1c94eb401fbaeeec3bac, type: 2}
+  basicColor: {fileID: 2100000, guid: 6cab50aae5763ef4990319eee118acef, type: 2}
 --- !u!1 &888599489
 GameObject:
   m_ObjectHideFlags: 0
@@ -140,6 +196,7 @@ MonoBehaviour:
   moneyDecalParent: {fileID: 0}
   moneyDecalCount: 1000
   gameStatus: 0
+  inEdit: 0
 --- !u!1 &3628990615736116010
 GameObject:
   m_ObjectHideFlags: 0
@@ -173,6 +230,7 @@ Transform:
   - {fileID: 3628990616236484224}
   - {fileID: 888599490}
   - {fileID: 85037149542749224}
+  - {fileID: 676820971}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -269,5 +327,9 @@ MonoBehaviour:
   endGameUi: {fileID: 0}
   retryUi: {fileID: 0}
   energySlider: {fileID: 0}
+  levelText: {fileID: 0}
+  endLevelText: {fileID: 0}
   enableRetryFeedback: {fileID: 0}
   disableRetryFeedback: {fileID: 0}
+  enableEndGameFeedback: {fileID: 0}
+  disableEndGameFeedback: {fileID: 0}

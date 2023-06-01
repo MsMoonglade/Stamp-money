@@ -20,6 +20,9 @@ public class GameManager : MonoBehaviour
 
     private int currentLevel;
 
+    [HideInInspector]
+    public bool inEdit;
+
     public int CurrentLevel
     {
         get
@@ -37,6 +40,8 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         instance = this;
+
+        inEdit = false;
 
         SetInMenu();
 
@@ -152,6 +157,25 @@ public class GameManager : MonoBehaviour
 
     public void OnApplicationQuit()
     {
+    }
+
+    public void EnterEditView()
+    {
+        inEdit = true;
+        CharacterBehaviour.instance.StartEdit();
+        CinemachineVirtualCameraSwitcher.instance.SwitchToEditCamera();
+    }
+
+    public void ExitEditview()
+    {        
+        CharacterBehaviour.instance.ConfirmEdit();
+        CinemachineVirtualCameraSwitcher.instance.SwitchToPlayerCamera();
+    }
+
+    public void DetectStartGameButton()
+    {
+        StartGame();
+        InputManager.instance.FirstInput();
     }
 }
 

@@ -44,19 +44,6 @@ MonoBehaviour:
     name: Dig Fever
   - games:
     - adMobId: 
-      bundleId: com.Tapp.MergeAndPush
-      facebookAppId: 1402537120557655
-      gameAnalyticsKey: 0dd6f0b82961bbd714378430c8028801
-      gameAnalyticsSecret: 9b3644f52e0be2838d2a171a8d065cb1ec5a7a3d
-      id: 48ef45cc-edc6-42f4-a164-3a97acc066d0
-      isAppKey: 
-      os: android
-      platform: google_play
-      storeId: com.Tapp.MergeAndPush
-    id: 2cd25b81-8ee6-4ddd-ba62-b3a0dbedb8af
-    name: Merge and Shoot!
-  - games:
-    - adMobId: 
       bundleId: com.Tapp.MergeAndShoot
       facebookAppId: 2048747838663703
       gameAnalyticsKey: 8610577030fc7effa1a0a7c48792410c
@@ -67,6 +54,19 @@ MonoBehaviour:
       platform: google_play
       storeId: com.Tapp.MergeAndShoot
     id: 02c0b911-3f77-4f5b-b15b-2e78ec10aaff
+    name: Merge and Shoot!
+  - games:
+    - adMobId: 
+      bundleId: com.Tapp.MergeAndPush
+      facebookAppId: 1402537120557655
+      gameAnalyticsKey: 0dd6f0b82961bbd714378430c8028801
+      gameAnalyticsSecret: 9b3644f52e0be2838d2a171a8d065cb1ec5a7a3d
+      id: 48ef45cc-edc6-42f4-a164-3a97acc066d0
+      isAppKey: 
+      os: android
+      platform: google_play
+      storeId: com.Tapp.MergeAndPush
+    id: 2cd25b81-8ee6-4ddd-ba62-b3a0dbedb8af
     name: Merge and Shoot!
   - games:
     - adMobId: 
