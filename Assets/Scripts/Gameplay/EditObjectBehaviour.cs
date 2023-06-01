@@ -7,13 +7,12 @@ public class EditObjectBehaviour : MonoBehaviour
 {
     public MeshRenderer renderer;
 
-    [HideInInspector]
     public int value;
 
     public void Setup(int val)
     {
         value = val;
-        SetMaterial(value);
+       // SetMaterial(value);
     }
 
     public void IncreaseValue()

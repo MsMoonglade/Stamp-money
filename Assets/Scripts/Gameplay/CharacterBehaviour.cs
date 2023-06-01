@@ -7,6 +7,7 @@ using System.Globalization;
 using System;
 using System.Linq;
 using Unity.Mathematics;
+using System.Text;
 using System.Runtime.CompilerServices;
 
 public class CharacterBehaviour : MonoBehaviour
@@ -15,10 +16,7 @@ public class CharacterBehaviour : MonoBehaviour
 
     public GameObject model;
     public GameObject handler;
-    public GameObject printerObject;
-    public GameObject editObject;
-
-    public GameObject editObjectParent;
+    public GameObject printerObject;   
 
     public LayerMask moneyMachineButtonLayer;
 
@@ -65,9 +63,12 @@ public class CharacterBehaviour : MonoBehaviour
     private float energyConsumption = 1.25f;
     private float energyIncreaseValue = 0.4f;
 
-    private EditObject[,] editObjectGrid;
-
-    private CharacterEditGrid characterGrid;
+    //***************** EDIT  ***********************
+    public GameObject editObject;
+    public GameObject editObjectParent;
+    public CharacterEditGrid characterGrid;
+    public List<int> gridElementValue = new List<int>();
+    public List<Vector3> gridElementPos = new List<Vector3>();
 
     private void Awake()
     {
@@ -101,51 +102,9 @@ public class CharacterBehaviour : MonoBehaviour
         printerObject.transform.localScale = startScale;
         printerObjectScale = new Vector2(printerObject.transform.localScale.x, printerObject.transform.localScale.z);
 
-        int xQuantity = (int)(printerObject.transform.localScale.x / moneyDecalScaleX);
-        int yQuantity = (int)(printerObject.transform.localScale.z / moneyDecalScaleY);
-        
-        editObjectGrid = new EditObject[xQuantity, yQuantity];
-
-        if (PlayerPrefs.HasKey("LocalMoneyValueX") && PlayerPrefs.HasKey("LocalMoneyValueZ"))
-        {
-            //Return X Value
-            string[] localXValue = PlayerPrefs.GetString("LocalMoneyValueX").Split(new[] { "###" }, StringSplitOptions.None);
-            for (int i = 0; i < localXValue.Length; i++)
-            {
-                editObjectGrid[i, 0] = new EditObject(int.Parse(localXValue[i]), Vector3.zero);                    
-            }
-
-            //Return Z Value
-            string[] localZValue = PlayerPrefs.GetString("LocalMoneyValueZ").Split(new[] { "###" }, StringSplitOptions.None);
-            for (int i = 0; i < localZValue.Length; i++)
-            {
-                editObjectGrid[0, i] = new EditObject(int.Parse(localZValue[i]), Vector3.zero);
-            }
-        }
-
-        else
-        {
-            //Setup startXValue
-            int[] startX = new int[xQuantity];
-            for(int i = 0; i < startX.Length; i++)
-            {
-                startX[i] = 1;
-                editObjectGrid[i, 0] = new EditObject(1, Vector3.zero);
-            }
-            PlayerPrefs.SetString("LocalMoneyValueX", string.Join("###", startX));
-
-            //Setup startZValue
-            int[] startZ = new int[yQuantity];
-            for (int i = 0; i < startZ.Length; i++)
-            {
-                startZ[i] = 1;
-                editObjectGrid[0, i] = new EditObject(1, Vector3.zero);
-            }
-            PlayerPrefs.SetString("LocalMoneyValueZ", string.Join("###", startZ));
-        }
-
-        characterGrid = transform.GetComponentInChildren<CharacterEditGrid>();
+        LoadPlayerValue();
     }
+
 
     private void Start()
     {
@@ -159,21 +118,23 @@ public class CharacterBehaviour : MonoBehaviour
 
         currentEnergy = maxEnergy / 2;
 
-        foreach(EditObject e in editObjectGrid)
-        {
-            Debug.Log(e.Value());
-        }
-
-        /*
+        
         foreach(GameObject o in characterGrid.currentGridElement)
         {
-            localMoneyValue;
+            int myValue = 0;
+            
+            for (int i = 0; i < gridElementPos.Count; i++)
+            {
+                if(o.transform.localPosition == gridElementPos[i])
+                {
+                    myValue = gridElementValue[i];
+                    break;
+                }
+            }
 
-            int myValue = ;
             GameObject edit = Instantiate(editObject, o.transform.position, o.transform.rotation, editObjectParent.transform);
             edit.GetComponent<EditObjectBehaviour>().Setup(myValue);
-        }
-        */
+        }       
     }
 
     private void OnEnable()
@@ -268,7 +229,7 @@ public class CharacterBehaviour : MonoBehaviour
                 {
                     GameObject decal = PoolManager.instance.GetItem(GameManager.instance.moneyDecalObj, startPoint, GameManager.instance.moneyDecalParent);
                  
-                    decal.GetComponent<MoneyBulletBehaviour>().SetValue(localMoneyValue[i,j]);
+                    decal.GetComponent<MoneyBulletBehaviour>().SetValue(1);
                 }              
 
                 startPoint += new Vector3(0, 0, moneyDecalScaleY);
@@ -416,22 +377,103 @@ public class CharacterBehaviour : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         col.enabled = true;
     }
-}
 
-[System.Serializable]
-struct EditObject
-{
-    private int value;
-    private Vector3 pos;
 
-    public EditObject(int v , Vector3 p)
+    public void SavePlayerValue()
     {
-        this.value = v;
-        this.pos = p;
+
     }
 
-    public int Value()
+    public void LoadPlayerValue()
     {
-        return value;
+        int xQuantity = (int)(printerObject.transform.localScale.x / moneyDecalScaleX);
+        int yQuantity = (int)(printerObject.transform.localScale.z / moneyDecalScaleY);
+
+        if (PlayerPrefs.HasKey("SavedValue") && PlayerPrefs.HasKey("SavedPos"))
+        {
+            //LoadValue
+            string[] tempValue = PlayerPrefs.GetString("SavedValue").Split(new[] { "###" }, StringSplitOptions.None);
+            for (int i = 0; i < tempValue.Length; i++)
+            {
+                gridElementValue.Add(int.Parse(tempValue[i]));
+            }
+
+            //LoadPos
+            string posStringNotSplitted = PlayerPrefs.GetString("SavedPos");
+            Vector3[] allPosSplitted = DeserializeVector3Array(posStringNotSplitted);
+
+            for(int i = 0; i < allPosSplitted.Length; i++)
+            {
+                gridElementPos.Add(allPosSplitted[i]);
+            }
+        }
+
+        else
+        {
+            Vector3 startPoint = new Vector3(          
+                printerObject.transform.position.x - (printerObjectScale.x / 2) + (moneyDecalScaleX / 2),          
+                0,          
+                printerObject.transform.position.z - (printerObjectScale.y / 2) + (moneyDecalScaleY / 2));
+
+            List<int> tempValue = new List<int>();
+            List<float> tempX = new List<float>();
+            List<float> tempZ = new List<float>();
+
+            for (int i = 0; i < xQuantity; i++)
+            {
+                for (int j = 0; j < yQuantity; j++)
+                {
+                    tempValue.Add(1);
+                    tempX.Add(startPoint.x);
+                    tempZ.Add(startPoint.z);
+
+                    startPoint += new Vector3(0, 0, moneyDecalScaleY);
+                }
+
+                startPoint += new Vector3(moneyDecalScaleX, 0, (-yQuantity * moneyDecalScaleY));
+            }
+
+            int[] valueToSave = new int[tempValue.Count];
+            Vector3[] posToSave = new Vector3[tempX.Count];
+
+            for (int i = 0; i < valueToSave.Length; i++)
+            {
+                valueToSave[i] = tempValue[i];
+                gridElementValue.Add(tempValue[i]);
+
+                posToSave[i] = new Vector3(tempX[i], -0.2f, tempZ[i]);
+                gridElementPos.Add(posToSave[i]);
+            }
+
+            string posToSaveString = SerializeVector3Array(posToSave);          
+
+            PlayerPrefs.SetString("SavedValue", string.Join("###", valueToSave));
+            PlayerPrefs.SetString("SavedPos", posToSaveString);
+        }
+    }
+
+    public static string SerializeVector3Array(Vector3[] aVectors)
+    {
+        StringBuilder sb = new StringBuilder();
+        foreach (Vector3 v in aVectors)
+        {
+            sb.Append(v.x).Append(" ").Append(v.y).Append(" ").Append(v.z).Append("|");
+        }
+        if (sb.Length > 0) // remove last "|"
+            sb.Remove(sb.Length - 1, 1);
+        return sb.ToString();
+    }
+    public static Vector3[] DeserializeVector3Array(string aData)
+    {
+        string[] vectors = aData.Split('|');
+        Vector3[] result = new Vector3[vectors.Length];
+        for (int i = 0; i < vectors.Length; i++)
+        {
+            string[] values = vectors[i].Split(' ');
+            if (values.Length != 3)
+                throw new System.FormatException("component count mismatch. Expected 3 components but got " + values.Length);
+            result[i] = new Vector3(float.Parse(values[0]), float.Parse(values[1]), float.Parse(values[2]));
+        }
+        return result;
     }
 }

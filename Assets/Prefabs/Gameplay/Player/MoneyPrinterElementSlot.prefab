@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7730198628225008687}
   - component: {fileID: 7730198628225008680}
   m_Layer: 11
-  m_Name: EditSlot
+  m_Name: MoneyPrinterElementSlot
   m_TagString: Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
