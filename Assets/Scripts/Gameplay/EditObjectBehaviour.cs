@@ -10,14 +10,12 @@ public class EditObjectBehaviour : MonoBehaviour
     public int value;
 
     public void Setup(int val)
-    {
-        /*
+    {        
         if(val == 0)
         {
             CharacterBehaviour.instance.editObjectList.Remove(this);
             Destroy(this.gameObject);
-        }
-        */
+        }       
 
         value = val;
         SetMaterial(value);

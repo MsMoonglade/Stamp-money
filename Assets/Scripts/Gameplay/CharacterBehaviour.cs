@@ -206,7 +206,7 @@ public class CharacterBehaviour : MonoBehaviour
     }
 
     private void PrintDecal()
-    {    
+    {
         for (int i = 0; i < editObjectList.Count; i++)
         {
             editObjectList[i].Print();

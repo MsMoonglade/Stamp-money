@@ -25,9 +25,9 @@ public class MoneyBulletBehaviour : MonoBehaviour
         decal = transform.GetComponent<DecalProjector>();
         decal.material = ColorUtilities.instance.GetIndexMaterial(value);
 
-        Color c = particle.GetComponent<ParticleSystemRenderer>().material.GetColor("_Color");
+        Color c = particle.GetComponent<ParticleSystemRenderer>().material.GetColor("_BaseColor");
         c = ColorUtilities.instance.GetIndexColor(value); ;
-        GetComponent<ParticleSystemRenderer>().material.SetColor("_Color", c);
+        particle.GetComponent<ParticleSystemRenderer>().material.SetColor("_BaseColor", c);
     }
 
     private IEnumerator DisableThisGameobject()
