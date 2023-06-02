@@ -29,6 +29,7 @@ public class EditObjectBehaviour : MonoBehaviour
 
     public void SetMaterial(int val)
     {
-        renderer.material = ColorUtilities.instance.GetEditObjectMaterial(val);
+        renderer.materials[0] = ColorUtilities.instance.GetEditObjectMaterialSide(val);
+        renderer.materials[1] = ColorUtilities.instance.GetEditObjectMaterial(val);
     }
 }
