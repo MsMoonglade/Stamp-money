@@ -38,9 +38,9 @@ public class DragManager : MonoBehaviour
 
                 if (Physics.Raycast(rayPos, out hitPos, Mathf.Infinity, possiblePositionMask))
                 {
-                    if (hitPos.transform != null && hitPos.transform.CompareTag("Slot"))
+                    if (hitPos.collider.transform != null && hitPos.collider.transform.CompareTag("Slot"))
                     {
-                        targetPos = hitPos.transform;
+                        targetPos = hitPos.collider.transform;
                     }
 
                     else
@@ -83,7 +83,7 @@ public class DragManager : MonoBehaviour
                     if (hitInfo.collider.transform.CompareTag("Draggable"))
                     {
                         objectDrag = hitInfo.collider.transform;
-                      //  objectDrag.GetComponent<Collider>().enabled = false;
+                        objectDrag.GetComponent<Collider>().enabled = false;
                         startPos = objectDrag.position;
                         dragging = true;
                     }
@@ -107,45 +107,54 @@ public class DragManager : MonoBehaviour
                 rayPos = Camera.main.ScreenPointToRay(Input.mousePosition);
 
                 //END INPUT IN GRID SLOT
-                if (haveTarget && targetPos != null)
+                if (haveTarget && targetPos != null && GridSlotFree()  && !CheckCanMerge())
                 {
-                    objectDrag.position = targetPos.position;
-                    //objectDrag.GetComponent<Collider>().enabled = true;
+                    objectDrag.localPosition = targetPos.localPosition;
+                    objectDrag.GetComponent<Collider>().enabled = true;
 
                     dragging = false;                   
                 }
-
-                /*
-                //merge
+                
+                //END INPUT CHECK FOR MERGE
                 else if (haveTarget && targetPos != null
                     && objectDrag.GetComponent<EditObjectBehaviour>() != null
                     && CheckCanMerge())
                 {
-                    GameObject standingElement = ReturnCanMerge();
+                    GameObject mergedObj = ReturnMergedObject();
 
                     //increase old element value
-                    standingElement.transform.GetComponent<MultiplyBehaviour>().Merge();
+                    mergedObj.transform.GetComponent<EditObjectBehaviour>().IncreaseValue();
 
                     //destroy moving one
+                    CharacterBehaviour.instance.editObjectList.Remove(objectDrag.GetComponent<EditObjectBehaviour>());
                     Destroy(objectDrag.gameObject);
                     dragging = false;
-
-                    CharacterShooterBehaviour.instance.CheckShootingRow();
-                }
-                */
-
+                }                
+                
                 //END INPUT AND RETURN
                 else
                 {
                     objectDrag.position = startPos;
                     objectDrag.GetComponent<Collider>().enabled = true;
                     dragging = false;
-                }
+                }                
             }
         }
     }
 
-    /*
+    private bool GridSlotFree()
+    {
+        RaycastHit hitInfo;
+        bool hit = Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo, Mathf.Infinity, draggableMask);
+        if (hit)
+        {
+            return false;
+        }
+
+        return true;
+    }
+    
+    
     private bool CheckCanMerge()
     {
         bool canMerge = false;
@@ -155,17 +164,16 @@ public class DragManager : MonoBehaviour
 
         bool hit = Physics.Raycast(Camera.main.ScreenPointToRay(pos), out hitInfo, Mathf.Infinity, draggableMask);
 
-        if (hit && hitInfo.transform.GetComponent<MergerBehaviour>() != null
-            && hitInfo.transform.GetComponent<MultiplyBehaviour>().value == objectDrag.transform.GetComponent<MultiplyBehaviour>().value)
+        if (hit && hitInfo.collider.transform.GetComponent<EditObjectBehaviour>() != null
+            && hitInfo.collider.transform.GetComponent<EditObjectBehaviour>().value == objectDrag.transform.GetComponent<EditObjectBehaviour>().value)
         {
             canMerge = true;
         }
 
-
         return canMerge;
     }
 
-    private GameObject ReturnCanMerge()
+    private GameObject ReturnMergedObject()
     {
         GameObject obj = null;
 
@@ -174,13 +182,12 @@ public class DragManager : MonoBehaviour
 
         bool hit = Physics.Raycast(Camera.main.ScreenPointToRay(pos), out hitInfo, Mathf.Infinity, draggableMask);
 
-        if (hit && hitInfo.transform.GetComponent<MergerBehaviour>() != null
-            && hitInfo.transform.GetComponent<MultiplyBehaviour>().value == objectDrag.transform.GetComponent<MultiplyBehaviour>().value)
+        if (hit && hitInfo.collider.transform.GetComponent<EditObjectBehaviour>() != null
+            && hitInfo.collider.transform.GetComponent<EditObjectBehaviour>().value == objectDrag.transform.GetComponent<EditObjectBehaviour>().value)
         {
-            obj = hitInfo.transform.gameObject;
+            obj = hitInfo.collider.transform.gameObject;
         }
 
         return obj;
-    }
-    */
+    }   
 }

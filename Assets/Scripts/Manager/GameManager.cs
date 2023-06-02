@@ -51,14 +51,11 @@ public class GameManager : MonoBehaviour
         }
 
         QualitySettings.vSyncCount = 0;
-        Application.targetFrameRate = 60;
+        Application.targetFrameRate = 120;
     }
 
     private void Start()
     {
-        QualitySettings.vSyncCount = 0;
-        Application.targetFrameRate = 60;
-
         //currentLevel set
         if (PlayerPrefs.HasKey("CurrentLevel"))
             CurrentLevel = PlayerPrefs.GetInt("CurrentLevel");
@@ -161,15 +158,15 @@ public class GameManager : MonoBehaviour
 
     public void EnterEditView()
     {
+        CinemachineVirtualCameraSwitcher.instance.SwitchToEditCamera();
         inEdit = true;
         CharacterBehaviour.instance.StartEdit();
-        CinemachineVirtualCameraSwitcher.instance.SwitchToEditCamera();
     }
 
     public void ExitEditview()
-    {        
-        CharacterBehaviour.instance.ConfirmEdit();
+    {
         CinemachineVirtualCameraSwitcher.instance.SwitchToPlayerCamera();
+        CharacterBehaviour.instance.ConfirmEdit();
     }
 
     public void DetectStartGameButton()

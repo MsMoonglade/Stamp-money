@@ -9,6 +9,7 @@ using System.Linq;
 using Unity.Mathematics;
 using System.Text;
 using System.Runtime.CompilerServices;
+using UnityEditor;
 
 public class CharacterBehaviour : MonoBehaviour
 {
@@ -35,7 +36,7 @@ public class CharacterBehaviour : MonoBehaviour
     private Vector3 startPos;
     private quaternion startRot;
 
-    public ParticleSystem particle;
+    public ParticleSystem jumpParticle;
 
     private Coroutine jumpCoroutine;
 
@@ -64,11 +65,14 @@ public class CharacterBehaviour : MonoBehaviour
     private float energyIncreaseValue = 0.4f;
 
     //***************** EDIT  ***********************
+    public GameObject editBG;
     public GameObject editObject;
     public GameObject editObjectParent;
+    public GameObject editBGParent;
     public CharacterEditGrid characterGrid;
     public List<int> gridElementValue = new List<int>();
     public List<Vector3> gridElementPos = new List<Vector3>();
+    public List<EditObjectBehaviour> editObjectList = new List<EditObjectBehaviour> ();
 
     private void Awake()
     {
@@ -87,7 +91,7 @@ public class CharacterBehaviour : MonoBehaviour
             startScale.x = PlayerPrefs.GetFloat("Xsize");
         else
         {
-            startScale.x = 3;
+            startScale.x = 3f;
             PlayerPrefs.SetFloat("Xsize", startScale.x);
         }
 
@@ -95,7 +99,7 @@ public class CharacterBehaviour : MonoBehaviour
             startScale.z = PlayerPrefs.GetFloat("Zsize");
         else
         {
-            startScale.z = 1.5f;
+            startScale.z = 0.75f;
             PlayerPrefs.SetFloat("Zsize", startScale.z);
         }
 
@@ -121,8 +125,8 @@ public class CharacterBehaviour : MonoBehaviour
         
         foreach(GameObject o in characterGrid.currentGridElement)
         {
-            int myValue = 0;
-            
+            int myValue = 0;           
+
             for (int i = 0; i < gridElementPos.Count; i++)
             {
                 if(o.transform.localPosition == gridElementPos[i])
@@ -134,6 +138,10 @@ public class CharacterBehaviour : MonoBehaviour
 
             GameObject edit = Instantiate(editObject, o.transform.position, o.transform.rotation, editObjectParent.transform);
             edit.GetComponent<EditObjectBehaviour>().Setup(myValue);
+            editObjectList.Add(edit.GetComponent<EditObjectBehaviour>());
+
+            //BG
+            GameObject bg = Instantiate(editBG, o.transform.position + new Vector3(0 , 0.05f , 0), o.transform.rotation, editBGParent.transform);
         }       
     }
 
@@ -198,9 +206,15 @@ public class CharacterBehaviour : MonoBehaviour
     }
 
     private void PrintDecal()
-    {
-        particle.Play();
+    {    
+        for (int i = 0; i < editObjectList.Count; i++)
+        {
+            editObjectList[i].Print();
+        }           
+        
+        //jumpParticle.Play();
 
+        /*
         int xQuantity =  (int)(printerObject.transform.localScale.x / moneyDecalScaleX);
         int yQuantity = (int)(printerObject.transform.localScale.z / moneyDecalScaleY);
 
@@ -237,12 +251,13 @@ public class CharacterBehaviour : MonoBehaviour
 
             startPoint += new Vector3(moneyDecalScaleX, 0, (-yQuantity * moneyDecalScaleY));
         }
+        */
 
         Sequence mySequence = DOTween.Sequence();
 
         mySequence.Append(handler.transform.DOScaleY(0.8f, jumpSpeed / 2));
 
-        mySequence.Append(handler.transform.DOScaleY(1, jumpSpeed / 2));
+        mySequence.Append(handler.transform.DOScaleY(1, jumpSpeed / 2));        
     }
 
     private void OnTriggerEnter(Collider coll)
@@ -380,8 +395,22 @@ public class CharacterBehaviour : MonoBehaviour
 
 
     public void SavePlayerValue()
-    {
+    {       
+        int[] valueToSave = new int[editObjectParent.transform.childCount];
+        Vector3[] posToSave = new Vector3[editObjectParent.transform.childCount];
 
+        for(int i = 0; i < editObjectParent.transform.childCount; i++)
+        {
+            valueToSave[i] = editObjectParent.transform.GetChild(i).GetComponent<EditObjectBehaviour>().value;
+            posToSave[i] = editObjectParent.transform.GetChild(i).transform.localPosition;
+        }
+
+        PlayerPrefs.DeleteKey("SavedValue");
+        PlayerPrefs.SetString("SavedValue", string.Join("###", valueToSave));
+
+        string posToSaveString = SerializeVector3Array(posToSave);
+        PlayerPrefs.DeleteKey("SavedPos");
+        PlayerPrefs.SetString("SavedPos", posToSaveString);
     }
 
     public void LoadPlayerValue()
@@ -393,6 +422,7 @@ public class CharacterBehaviour : MonoBehaviour
         {
             //LoadValue
             string[] tempValue = PlayerPrefs.GetString("SavedValue").Split(new[] { "###" }, StringSplitOptions.None);
+            if(tempValue.Length >= 1)
             for (int i = 0; i < tempValue.Length; i++)
             {
                 gridElementValue.Add(int.Parse(tempValue[i]));
@@ -401,7 +431,7 @@ public class CharacterBehaviour : MonoBehaviour
             //LoadPos
             string posStringNotSplitted = PlayerPrefs.GetString("SavedPos");
             Vector3[] allPosSplitted = DeserializeVector3Array(posStringNotSplitted);
-
+            if(allPosSplitted.Length >= 1)
             for(int i = 0; i < allPosSplitted.Length; i++)
             {
                 gridElementPos.Add(allPosSplitted[i]);
@@ -441,7 +471,7 @@ public class CharacterBehaviour : MonoBehaviour
                 valueToSave[i] = tempValue[i];
                 gridElementValue.Add(tempValue[i]);
 
-                posToSave[i] = new Vector3(tempX[i], -0.2f, tempZ[i]);
+                posToSave[i] = new Vector3(tempX[i], -0.1f, tempZ[i]);
                 gridElementPos.Add(posToSave[i]);
             }
 

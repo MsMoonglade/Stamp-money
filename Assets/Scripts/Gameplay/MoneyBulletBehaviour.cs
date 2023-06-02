@@ -7,6 +7,7 @@ public class MoneyBulletBehaviour : MonoBehaviour
 {
     public float moveSpeed;
     public float disableDelay;
+    public ParticleSystem particle;
 
     private DecalProjector decal;
     private int value;
@@ -23,6 +24,10 @@ public class MoneyBulletBehaviour : MonoBehaviour
 
         decal = transform.GetComponent<DecalProjector>();
         decal.material = ColorUtilities.instance.GetIndexMaterial(value);
+
+        Color c = particle.GetComponent<ParticleSystemRenderer>().material.GetColor("_Color");
+        c = ColorUtilities.instance.GetIndexColor(value); ;
+        GetComponent<ParticleSystemRenderer>().material.SetColor("_Color", c);
     }
 
     private IEnumerator DisableThisGameobject()

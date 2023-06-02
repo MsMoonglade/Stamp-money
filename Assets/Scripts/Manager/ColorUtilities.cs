@@ -6,7 +6,8 @@ public class ColorUtilities : MonoBehaviour
 {
     public static ColorUtilities instance;
 
-    public Material[] colors;
+    public Color[] decalColor;
+    public Material[] decalMaterial;
     public Material[] editObjectMat;
     public Material[] editObjectMat_Side;
 
@@ -25,38 +26,79 @@ public class ColorUtilities : MonoBehaviour
                 return basicColor;
                 break;
             case 1:
-                return colors[0];
+                return decalMaterial[0];
                 break;
             case 2:
-                return colors[1];
+                return decalMaterial[1];
                 break;
             case 3:
-                return colors[2];
+                return decalMaterial[2];
                 break;
             case 4:
-                return colors[3];
+                return decalMaterial[3];
                 break;
             case 5:
-                return colors[4];
+                return decalMaterial[4];
                 break;
             case 6:
-                return colors[5];
+                return decalMaterial[5];
                 break;
             case 7:
-                return colors[6];
+                return decalMaterial[6];
                 break;
             case 8:
-                return colors[7];
+                return decalMaterial[7];
                 break;
             case 9:
-                return colors[8];
+                return decalMaterial[8];
                 break;
             case 10:
-                return colors[9];
+                return decalMaterial[9];
                 break;            
         }
 
         return null;
+    }
+    public Color GetIndexColor(int value)
+    {
+        switch (value)
+        {
+            case 0:
+                return Color.green;
+                break;
+            case 1:
+                return decalColor[0];
+                break;
+            case 2:
+                return decalColor[1];
+                break;
+            case 3:
+                return decalColor[2];
+                break;
+            case 4:
+                return decalColor[3];
+                break;
+            case 5:
+                return decalColor[4];
+                break;
+            case 6:
+                return decalColor[5];
+                break;
+            case 7:
+                return decalColor[6];
+                break;
+            case 8:
+                return decalColor[7];
+                break;
+            case 9:
+                return decalColor[8];
+                break;
+            case 10:
+                return decalColor[9];
+                break;
+        }
+
+        return Color.green;
     }
 
     public Material GetEditObjectMaterial(int value)

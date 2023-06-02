@@ -11,8 +11,23 @@ public class EditObjectBehaviour : MonoBehaviour
 
     public void Setup(int val)
     {
+        /*
+        if(val == 0)
+        {
+            CharacterBehaviour.instance.editObjectList.Remove(this);
+            Destroy(this.gameObject);
+        }
+        */
+
         value = val;
-       // SetMaterial(value);
+        SetMaterial(value);
+    }
+    public void Print()
+    {
+        Vector3 pos = new Vector3(transform.position.x, 0.01f, transform.position.z);
+        GameObject decal = PoolManager.instance.GetItem(GameManager.instance.moneyDecalObj, pos, GameManager.instance.moneyDecalParent);
+
+        decal.GetComponent<MoneyBulletBehaviour>().SetValue(value);
     }
 
     public void IncreaseValue()
@@ -29,7 +44,11 @@ public class EditObjectBehaviour : MonoBehaviour
 
     public void SetMaterial(int val)
     {
-        renderer.materials[0] = ColorUtilities.instance.GetEditObjectMaterialSide(val);
-        renderer.materials[1] = ColorUtilities.instance.GetEditObjectMaterial(val);
+        Material[] mats = new Material[2];
+
+        mats[0] = ColorUtilities.instance.GetEditObjectMaterialSide(val);
+        mats[1] = ColorUtilities.instance.GetEditObjectMaterial(val);
+
+        renderer.materials = mats;
     }
 }

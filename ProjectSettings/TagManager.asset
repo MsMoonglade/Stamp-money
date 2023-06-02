@@ -8,6 +8,7 @@ TagManager:
   - EndElement
   - Slot
   - Draggable
+  - Ender
   layers:
   - Default
   - TransparentFX
@@ -23,7 +24,7 @@ TagManager:
   - GridSlot
   - DetectInput
   - Draggable
-  - 
+  - Bullet
   - 
   - 
   - 
