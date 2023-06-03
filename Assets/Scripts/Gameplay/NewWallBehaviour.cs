@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using TMPro;
 
 public class NewWallBehaviour : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class NewWallBehaviour : MonoBehaviour
 
     public bool fireDistanceWall;
     public int fireDistanceRate;
+
+    public TMP_Text dynamicText;
 
     public MeshRenderer[] sideElementMeshRenderer;
     public Material positive_Side_Mat;
@@ -143,7 +146,37 @@ public class NewWallBehaviour : MonoBehaviour
 
     private void UpdateUi()
     {
+        if (giveMoneyWall)
+        {
+            TweenTextScale();
 
+            if(moneyToGive > -1)            
+                dynamicText.text ="+" + moneyToGive.ToString();
+            else
+                dynamicText.text =  moneyToGive.ToString();
+
+        }
+
+        if (fireRateWall)
+        {
+            TweenTextScale();
+
+            if(increaseFireRate > -1)           
+                dynamicText.text = "+" + increaseFireRate.ToString();
+            else
+                dynamicText.text =  increaseFireRate.ToString();
+
+        }
+
+        if (fireDistanceWall)
+        {
+            TweenTextScale();
+
+            if(fireDistanceRate > -1)           
+                dynamicText.text ="+" + fireDistanceRate.ToString();
+            else
+                dynamicText.text =  fireDistanceRate.ToString();
+        }
     }
 
     private float ConvertFireRateValue()
@@ -158,5 +191,12 @@ public class NewWallBehaviour : MonoBehaviour
         float value = 0;
 
         return value;
+    }
+
+    private void TweenTextScale()
+    {
+        Sequence mySequence = DOTween.Sequence();
+        mySequence.Append(dynamicText.transform.DOScale(1.3f, 0.16f));
+        mySequence.Append(dynamicText.transform.DOScale(1, 0.16f));
     }
 }
