@@ -6,16 +6,20 @@ using UnityEngine.Rendering.Universal;
 public class MoneyBulletBehaviour : MonoBehaviour
 {
     public float moveSpeed;
-    public float disableDelay;
     public ParticleSystem particle;
 
     private DecalProjector decal;
-    private int value;
+
+    [HideInInspector]
+    public int value;
 
     private void OnEnable()
     {
-        StartCoroutine(DisableThisGameobject());
-        StartCoroutine(MoveForward());
+        if (GameManager.instance.IsInGameStatus())
+        {
+            StartCoroutine(DisableThisGameobject());
+            StartCoroutine(MoveForward());
+        }
     }
 
     public void SetValue(int newValue)
@@ -32,14 +36,14 @@ public class MoneyBulletBehaviour : MonoBehaviour
 
     private IEnumerator DisableThisGameobject()
     {
-        yield return new WaitForSeconds(disableDelay);       
+        yield return new WaitForSeconds(CharacterBehaviour.instance.bulletActiveTime);       
 
         this.gameObject.SetActive(false);
     }
 
     private IEnumerator MoveForward()
     {
-        yield return new WaitForSeconds(0.075f);
+        yield return new WaitForSeconds(0.035f);
 
         while (this.gameObject.activeInHierarchy)
         {

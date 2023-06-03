@@ -9,6 +9,7 @@ TagManager:
   - Slot
   - Draggable
   - Ender
+  - Bullet
   layers:
   - Default
   - TransparentFX

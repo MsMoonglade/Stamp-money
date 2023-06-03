@@ -26,6 +26,8 @@ public class CharacterBehaviour : MonoBehaviour
     public float jumpHeight;
     public float jumpSpeed;
 
+    public float bulletActiveTime;
+
     public float moneyDecalScaleX;
     public float moneyDecalScaleY;
 
@@ -35,8 +37,6 @@ public class CharacterBehaviour : MonoBehaviour
 
     private Vector3 startPos;
     private quaternion startRot;
-
-    public ParticleSystem jumpParticle;
 
     private Coroutine jumpCoroutine;
 
@@ -137,8 +137,8 @@ public class CharacterBehaviour : MonoBehaviour
             }
 
             GameObject edit = Instantiate(editObject, o.transform.position, o.transform.rotation, editObjectParent.transform);
-            edit.GetComponent<EditObjectBehaviour>().Setup(myValue);
             editObjectList.Add(edit.GetComponent<EditObjectBehaviour>());
+            edit.GetComponent<EditObjectBehaviour>().Setup(myValue);
 
             //BG
             GameObject bg = Instantiate(editBG, o.transform.position + new Vector3(0 , 0.05f , 0), o.transform.rotation, editBGParent.transform);
@@ -170,9 +170,6 @@ public class CharacterBehaviour : MonoBehaviour
                 jumpSpeed = notMovingJumpSpeed;
 
             transform.position = new Vector3(Mathf.Clamp(CharacterBehaviour.instance.transform.position.x, -moveXLimit, moveXLimit), CharacterBehaviour.instance.transform.position.y, CharacterBehaviour.instance.transform.position.z);
-
-            // MovePlayer();
-
 
             if (moving)
             {
@@ -210,52 +207,11 @@ public class CharacterBehaviour : MonoBehaviour
         for (int i = 0; i < editObjectList.Count; i++)
         {
             editObjectList[i].Print();
-        }           
-        
-        //jumpParticle.Play();
-
-        /*
-        int xQuantity =  (int)(printerObject.transform.localScale.x / moneyDecalScaleX);
-        int yQuantity = (int)(printerObject.transform.localScale.z / moneyDecalScaleY);
-
-        Vector3 startPoint = new Vector3(
-            printerObject.transform.position.x - (printerObjectScale.x /2) + (moneyDecalScaleX /2) ,
-            0.01f ,
-            printerObject.transform.position.z - (printerObjectScale.y/2 ) + (moneyDecalScaleY / 2));
-
-        for(int i = 0; i < xQuantity; i++)
-        {
-            for (int j = 0; j < yQuantity; j++)
-            {               
-                bool haveButton = false;
-
-                //print in money machine button
-                RaycastHit hit;
-                if (Physics.Raycast(startPoint + new Vector3(0, 1, 0), Vector3.down, out hit, 5, moneyMachineButtonLayer))
-                {
-                    hit.transform.GetComponent<MoneyPrinterButton>().Print();
-                
-                    haveButton = true;
-                }
-
-                //print normal decal in road
-                if (!haveButton)
-                {
-                    GameObject decal = PoolManager.instance.GetItem(GameManager.instance.moneyDecalObj, startPoint, GameManager.instance.moneyDecalParent);
-                 
-                    decal.GetComponent<MoneyBulletBehaviour>().SetValue(1);
-                }              
-
-                startPoint += new Vector3(0, 0, moneyDecalScaleY);
-            }
-
-            startPoint += new Vector3(moneyDecalScaleX, 0, (-yQuantity * moneyDecalScaleY));
-        }
-        */
+        }  
 
         Sequence mySequence = DOTween.Sequence();
 
-        mySequence.Append(handler.transform.DOScaleY(0.8f, jumpSpeed / 2));
+        mySequence.Append(handler.transform.DOScaleY(0.7f, jumpSpeed / 2));
 
         mySequence.Append(handler.transform.DOScaleY(1, jumpSpeed / 2));        
     }

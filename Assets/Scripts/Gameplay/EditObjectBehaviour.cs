@@ -13,7 +13,7 @@ public class EditObjectBehaviour : MonoBehaviour
     {        
         if(val == 0)
         {
-            CharacterBehaviour.instance.editObjectList.Remove(this);
+            CharacterBehaviour.instance.editObjectList.Remove(this.GetComponent<EditObjectBehaviour>());
             Destroy(this.gameObject);
         }       
 
