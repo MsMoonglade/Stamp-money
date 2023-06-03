@@ -435,6 +435,12 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!1 &146185925 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 146185925, guid: 58ae3eee8b69dfe489d4c57ebec70a8e,
+    type: 3}
+  m_PrefabInstance: {fileID: 3780146937960434988}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &147594302 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 09062dc0008857b46aaacdb7206f1453,
@@ -720,7 +726,7 @@ MonoBehaviour:
   m_BlendUpdateMethod: 1
   m_DefaultBlend:
     m_Style: 1
-    m_Time: 0.6
+    m_Time: 0.8
     m_CustomCurve:
       serializedVersion: 2
       m_Curve: []
@@ -741,371 +747,19 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 676820972, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
-      propertyPath: decalColor.Array.size
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 676820972, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
-      propertyPath: decalMaterial.Array.size
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 676820972, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
-      propertyPath: editObjectMat.Array.size
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 676820972, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
-      propertyPath: decalColor.Array.data[0].a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 676820972, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
-      propertyPath: decalColor.Array.data[0].b
-      value: 0.20392157
-      objectReference: {fileID: 0}
-    - target: {fileID: 676820972, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
-      propertyPath: decalColor.Array.data[0].g
-      value: 0.8901961
-      objectReference: {fileID: 0}
-    - target: {fileID: 676820972, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
-      propertyPath: decalColor.Array.data[0].r
-      value: 0.0627451
-      objectReference: {fileID: 0}
-    - target: {fileID: 676820972, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
-      propertyPath: decalColor.Array.data[1].a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 676820972, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
-      propertyPath: decalColor.Array.data[1].b
-      value: 0.019607844
-      objectReference: {fileID: 0}
-    - target: {fileID: 676820972, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
-      propertyPath: decalColor.Array.data[1].g
-      value: 0.6666667
-      objectReference: {fileID: 0}
-    - target: {fileID: 676820972, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
-      propertyPath: decalColor.Array.data[1].r
-      value: 0.8901961
-      objectReference: {fileID: 0}
-    - target: {fileID: 676820972, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
-      propertyPath: decalColor.Array.data[2].a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 676820972, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
-      propertyPath: decalColor.Array.data[2].b
-      value: 0.20392157
-      objectReference: {fileID: 0}
-    - target: {fileID: 676820972, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
-      propertyPath: decalColor.Array.data[2].g
-      value: 0.0627451
-      objectReference: {fileID: 0}
-    - target: {fileID: 676820972, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
-      propertyPath: decalColor.Array.data[2].r
-      value: 0.8901961
-      objectReference: {fileID: 0}
-    - target: {fileID: 676820972, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
-      propertyPath: decalColor.Array.data[3].a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 676820972, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
-      propertyPath: decalColor.Array.data[3].b
-      value: 0.8901961
-      objectReference: {fileID: 0}
-    - target: {fileID: 676820972, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
-      propertyPath: decalColor.Array.data[3].g
-      value: 0.17254902
-      objectReference: {fileID: 0}
-    - target: {fileID: 676820972, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
-      propertyPath: decalColor.Array.data[3].r
-      value: 0.019607844
-      objectReference: {fileID: 0}
-    - target: {fileID: 676820972, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
-      propertyPath: decalColor.Array.data[4].a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 676820972, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
-      propertyPath: decalColor.Array.data[4].b
-      value: 0.105882354
-      objectReference: {fileID: 0}
-    - target: {fileID: 676820972, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
-      propertyPath: decalColor.Array.data[4].g
-      value: 0.29411766
-      objectReference: {fileID: 0}
-    - target: {fileID: 676820972, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
-      propertyPath: decalColor.Array.data[4].r
-      value: 0.8901961
-      objectReference: {fileID: 0}
-    - target: {fileID: 676820972, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
-      propertyPath: decalColor.Array.data[5].a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 676820972, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
-      propertyPath: decalColor.Array.data[5].b
-      value: 0.19607843
-      objectReference: {fileID: 0}
-    - target: {fileID: 676820972, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
-      propertyPath: decalColor.Array.data[5].g
-      value: 0.8901961
-      objectReference: {fileID: 0}
-    - target: {fileID: 676820972, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
-      propertyPath: decalColor.Array.data[5].r
-      value: 0.53333336
-      objectReference: {fileID: 0}
-    - target: {fileID: 676820972, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
-      propertyPath: decalColor.Array.data[6].a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 676820972, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
-      propertyPath: decalColor.Array.data[6].b
-      value: 0.8901961
-      objectReference: {fileID: 0}
-    - target: {fileID: 676820972, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
-      propertyPath: decalColor.Array.data[6].g
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 676820972, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
-      propertyPath: decalColor.Array.data[6].r
-      value: 0.28627452
-      objectReference: {fileID: 0}
-    - target: {fileID: 676820972, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
-      propertyPath: decalColor.Array.data[7].a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 676820972, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
-      propertyPath: decalColor.Array.data[7].b
-      value: 0.37254903
-      objectReference: {fileID: 0}
-    - target: {fileID: 676820972, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
-      propertyPath: decalColor.Array.data[7].g
-      value: 0.49803922
-      objectReference: {fileID: 0}
-    - target: {fileID: 676820972, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
-      propertyPath: decalColor.Array.data[7].r
-      value: 0.8901961
-      objectReference: {fileID: 0}
-    - target: {fileID: 676820972, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
-      propertyPath: decalColor.Array.data[8].a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 676820972, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
-      propertyPath: decalColor.Array.data[8].b
-      value: 0.8901961
-      objectReference: {fileID: 0}
-    - target: {fileID: 676820972, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
-      propertyPath: decalColor.Array.data[8].g
-      value: 0.60784316
-      objectReference: {fileID: 0}
-    - target: {fileID: 676820972, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
-      propertyPath: decalColor.Array.data[8].r
-      value: 0.5529412
-      objectReference: {fileID: 0}
-    - target: {fileID: 676820972, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
-      propertyPath: decalColor.Array.data[9].a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 676820972, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
-      propertyPath: decalColor.Array.data[9].b
-      value: 0.6901961
-      objectReference: {fileID: 0}
-    - target: {fileID: 676820972, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
-      propertyPath: decalColor.Array.data[9].g
-      value: 0.35686275
-      objectReference: {fileID: 0}
-    - target: {fileID: 676820972, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
-      propertyPath: decalColor.Array.data[9].r
-      value: 0.48235294
-      objectReference: {fileID: 0}
-    - target: {fileID: 676820972, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
-      propertyPath: decalMaterial.Array.data[0]
+    - target: {fileID: 353571750, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
+      propertyPath: mainMenuHand
       value: 
-      objectReference: {fileID: 2100000, guid: 6cab50aae5763ef4990319eee118acef, type: 2}
-    - target: {fileID: 676820972, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
-      propertyPath: decalMaterial.Array.data[1]
-      value: 
-      objectReference: {fileID: 2100000, guid: 862bf4a6415c79b40af7b4608656a899, type: 2}
-    - target: {fileID: 676820972, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
-      propertyPath: decalMaterial.Array.data[2]
-      value: 
-      objectReference: {fileID: 2100000, guid: a9e1e4a22cbee864ea6b82830a0ee550, type: 2}
-    - target: {fileID: 676820972, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
-      propertyPath: decalMaterial.Array.data[3]
-      value: 
-      objectReference: {fileID: 2100000, guid: 952d34ea552d70345998b9c8e3582cc2, type: 2}
-    - target: {fileID: 676820972, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
-      propertyPath: decalMaterial.Array.data[4]
-      value: 
-      objectReference: {fileID: 2100000, guid: 8d56f65338054884b96da1705a21e558, type: 2}
-    - target: {fileID: 676820972, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
-      propertyPath: decalMaterial.Array.data[5]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2dfefc1587484da4fa68c2bfce65ab0e, type: 2}
-    - target: {fileID: 676820972, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
-      propertyPath: decalMaterial.Array.data[6]
-      value: 
-      objectReference: {fileID: 2100000, guid: 8c2368aca99afea458e3df74e814243e, type: 2}
-    - target: {fileID: 676820972, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
-      propertyPath: decalMaterial.Array.data[7]
-      value: 
-      objectReference: {fileID: 2100000, guid: e4dea8a5c8c62d94f83b74600d41032f, type: 2}
-    - target: {fileID: 676820972, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
-      propertyPath: decalMaterial.Array.data[8]
-      value: 
-      objectReference: {fileID: 2100000, guid: 61d38546c843ef44596e4c884880eb79, type: 2}
-    - target: {fileID: 676820972, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
-      propertyPath: decalMaterial.Array.data[9]
-      value: 
-      objectReference: {fileID: 2100000, guid: 4753c186c8bd1c94eb401fbaeeec3bac, type: 2}
-    - target: {fileID: 676820972, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
-      propertyPath: editObjectMat.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: e3351baf23c53a94485e80a0fe0518d9, type: 2}
-    - target: {fileID: 676820972, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
-      propertyPath: editObjectMat.Array.data[1]
-      value: 
-      objectReference: {fileID: 2100000, guid: 5cad314f3f389a54dbe6c5947ba60ad7, type: 2}
-    - target: {fileID: 676820972, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
-      propertyPath: editObjectMat.Array.data[2]
-      value: 
-      objectReference: {fileID: 2100000, guid: 491c18890f65e5c4ba41c908b0ef31fc, type: 2}
-    - target: {fileID: 676820972, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
-      propertyPath: editObjectMat.Array.data[3]
-      value: 
-      objectReference: {fileID: 2100000, guid: b5b07b0d62230d047adc5e9d56100093, type: 2}
-    - target: {fileID: 676820972, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
-      propertyPath: editObjectMat.Array.data[4]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2cd078f5eb4e4bb4da8f2890bde7c5a7, type: 2}
-    - target: {fileID: 676820972, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
-      propertyPath: editObjectMat.Array.data[5]
-      value: 
-      objectReference: {fileID: 2100000, guid: df6f9648ae3d495448433e18bee063e3, type: 2}
-    - target: {fileID: 676820972, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
-      propertyPath: editObjectMat.Array.data[6]
-      value: 
-      objectReference: {fileID: 2100000, guid: 22f2d94f0891f0e4f95187a3531099b9, type: 2}
-    - target: {fileID: 676820972, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
-      propertyPath: editObjectMat.Array.data[7]
-      value: 
-      objectReference: {fileID: 2100000, guid: 6d5ad6dd65a55944ca8dd5a4cf22fda5, type: 2}
-    - target: {fileID: 676820972, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
-      propertyPath: editObjectMat.Array.data[8]
-      value: 
-      objectReference: {fileID: 2100000, guid: 43f68ad61314a2e428c8c9dc69fd740e, type: 2}
-    - target: {fileID: 676820972, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
-      propertyPath: editObjectMat.Array.data[9]
-      value: 
-      objectReference: {fileID: 2100000, guid: afcc4aa3f1f76ff49b48a6ad812ebb0a, type: 2}
-    - target: {fileID: 676820972, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
-      propertyPath: moneyParticleMat.Array.size
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 676820972, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
-      propertyPath: editObjectMat_Side.Array.size
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 676820972, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
-      propertyPath: moneyParticleMat.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: d060e2e7dca62f04d93d838030c8284f, type: 2}
-    - target: {fileID: 676820972, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
-      propertyPath: moneyParticleMat.Array.data[1]
-      value: 
-      objectReference: {fileID: 2100000, guid: 39766dad57ae2a944ae04eb3675b3a7b, type: 2}
-    - target: {fileID: 676820972, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
-      propertyPath: moneyParticleMat.Array.data[2]
-      value: 
-      objectReference: {fileID: 2100000, guid: 1acb6c127472dcf4c9804bc0ca81e6bf, type: 2}
-    - target: {fileID: 676820972, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
-      propertyPath: moneyParticleMat.Array.data[3]
-      value: 
-      objectReference: {fileID: 2100000, guid: 3db1f31574d8e2a41890608f62927a01, type: 2}
-    - target: {fileID: 676820972, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
-      propertyPath: moneyParticleMat.Array.data[4]
-      value: 
-      objectReference: {fileID: 2100000, guid: bf20679e29261ef4bb9438195844793a, type: 2}
-    - target: {fileID: 676820972, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
-      propertyPath: moneyParticleMat.Array.data[5]
-      value: 
-      objectReference: {fileID: 2100000, guid: 4b345332d3e081d4e8575451f4e3878d, type: 2}
-    - target: {fileID: 676820972, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
-      propertyPath: moneyParticleMat.Array.data[6]
-      value: 
-      objectReference: {fileID: 2100000, guid: 1c3b766a1f538014baa180364c64f4b8, type: 2}
-    - target: {fileID: 676820972, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
-      propertyPath: moneyParticleMat.Array.data[7]
-      value: 
-      objectReference: {fileID: 2100000, guid: ba8f48e0783905a43ab86c6c4f2dca33, type: 2}
-    - target: {fileID: 676820972, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
-      propertyPath: moneyParticleMat.Array.data[8]
-      value: 
-      objectReference: {fileID: 2100000, guid: 5362663bf6c5e2e4ca1d1b4bd1169362, type: 2}
-    - target: {fileID: 676820972, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
-      propertyPath: moneyParticleMat.Array.data[9]
-      value: 
-      objectReference: {fileID: 2100000, guid: bf86a56291d79aa4ca10215e4f3e3387, type: 2}
-    - target: {fileID: 676820972, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
-      propertyPath: editObjectMat_Side.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: d04396c7655b4cd499cd00a6561fa886, type: 2}
-    - target: {fileID: 676820972, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
-      propertyPath: editObjectMat_Side.Array.data[1]
-      value: 
-      objectReference: {fileID: 2100000, guid: aff8ceeeb5b0dc344aafc6248c93eb89, type: 2}
-    - target: {fileID: 676820972, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
-      propertyPath: editObjectMat_Side.Array.data[2]
-      value: 
-      objectReference: {fileID: 2100000, guid: 97b8667260073b547b3444d18ed8dcc1, type: 2}
-    - target: {fileID: 676820972, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
-      propertyPath: editObjectMat_Side.Array.data[3]
-      value: 
-      objectReference: {fileID: 2100000, guid: e961c0d55b77e564e9b9da66a05059b7, type: 2}
-    - target: {fileID: 676820972, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
-      propertyPath: editObjectMat_Side.Array.data[4]
-      value: 
-      objectReference: {fileID: 2100000, guid: 182b082ab8758b84c9269e6f18c5549f, type: 2}
-    - target: {fileID: 676820972, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
-      propertyPath: editObjectMat_Side.Array.data[5]
-      value: 
-      objectReference: {fileID: 2100000, guid: 4b0fdc5986d21974fbd8efcf24fbf317, type: 2}
-    - target: {fileID: 676820972, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
-      propertyPath: editObjectMat_Side.Array.data[6]
-      value: 
-      objectReference: {fileID: 2100000, guid: 6555f533cd0a95349a29a972b5b935d5, type: 2}
-    - target: {fileID: 676820972, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
-      propertyPath: editObjectMat_Side.Array.data[7]
-      value: 
-      objectReference: {fileID: 2100000, guid: d062a8964fb9a0e44ad435f86850820b, type: 2}
-    - target: {fileID: 676820972, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
-      propertyPath: editObjectMat_Side.Array.data[8]
-      value: 
-      objectReference: {fileID: 2100000, guid: 45a6101d3a705d548a8d12f54213369d, type: 2}
-    - target: {fileID: 676820972, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
-      propertyPath: editObjectMat_Side.Array.data[9]
-      value: 
-      objectReference: {fileID: 2100000, guid: b5d486e0d4e9d594ea755fc64d00448b, type: 2}
-    - target: {fileID: 888599491, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
-      propertyPath: m_InputSensitivity
-      value: 0.08
-      objectReference: {fileID: 0}
-    - target: {fileID: 3628990615436577062, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85,
-        type: 3}
-      propertyPath: particleObj
-      value: 
-      objectReference: {fileID: 8131848169426275706, guid: 07c093c5a5f67fb429695b6988ee33d1,
-        type: 3}
-    - target: {fileID: 3628990615436577062, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85,
-        type: 3}
-      propertyPath: particleCount
-      value: 600
+      objectReference: {fileID: 146185925}
+    - target: {fileID: 353571750, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
+      propertyPath: hideHandSpeed
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 3628990615436577062, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85,
         type: 3}
       propertyPath: particleParent
       value: 
       objectReference: {fileID: 1153817325}
-    - target: {fileID: 3628990615436577062, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85,
-        type: 3}
-      propertyPath: moneyDecalCount
-      value: 500
-      objectReference: {fileID: 0}
     - target: {fileID: 3628990615436577062, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85,
         type: 3}
       propertyPath: moneyDecalParent
@@ -1228,33 +882,18 @@ PrefabInstance:
       objectReference: {fileID: 2609825522067802248}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
---- !u!1 &353571747 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 888599489, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85,
+--- !u!114 &353571750 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 353571750, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85,
     type: 3}
   m_PrefabInstance: {fileID: 353571746}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &353571748
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 353571747}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba37bea3ad572f944aec919e2b2dcf93, type: 3}
+  m_Script: {fileID: 11500000, guid: 04fcda65051968a45808b38e47dc4f14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  draggableMask:
-    serializedVersion: 2
-    m_Bits: 8192
-  possiblePositionMask:
-    serializedVersion: 2
-    m_Bits: 2048
-  inputDetectMask:
-    serializedVersion: 2
-    m_Bits: 4096
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -8448,7 +8087,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 3, z: 1}
+  m_Size: {x: 0.75, y: 3, z: 0.75}
   m_Center: {x: 0, y: 1, z: 0}
 --- !u!54 &2034039805
 Rigidbody:
@@ -8567,21 +8206,7 @@ Transform:
   m_Father: {fileID: 69889518}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &2114072301
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2114072299}
-  m_Material: {fileID: 13400000, guid: 11e20ac292cc04a47a833597070f08f7, type: 2}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  m_Radius: 0.38
-  m_Height: 2.49
-  m_Direction: 1
-  m_Center: {x: 0, y: 1.26, z: 0}
---- !u!54 &2114072302
+--- !u!54 &2114072301
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8589,7 +8214,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2114072299}
   serializedVersion: 2
-  m_Mass: 0.5
+  m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 0
@@ -8597,6 +8222,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!136 &2114072302
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2114072299}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  m_Radius: 0.41
+  m_Height: 2.8
+  m_Direction: 1
+  m_Center: {x: 0, y: 1.25, z: 0}
 --- !u!4 &1836369877073271747
 Transform:
   m_ObjectHideFlags: 0
@@ -8691,42 +8330,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1082020233, guid: e42377d287519da4590f1d332ed3e99e, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 37
-      objectReference: {fileID: 0}
-    - target: {fileID: 1082020234, guid: e42377d287519da4590f1d332ed3e99e, type: 3}
-      propertyPath: m_text
-      value: 1000$
-      objectReference: {fileID: 0}
-    - target: {fileID: 1082020234, guid: e42377d287519da4590f1d332ed3e99e, type: 3}
-      propertyPath: m_fontSize
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 1082020234, guid: e42377d287519da4590f1d332ed3e99e, type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: ced9e2665177eac44b3f411f251ecd4e,
-        type: 2}
-    - target: {fileID: 1082020234, guid: e42377d287519da4590f1d332ed3e99e, type: 3}
-      propertyPath: m_fontColor.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1082020234, guid: e42377d287519da4590f1d332ed3e99e, type: 3}
-      propertyPath: m_fontColor.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1082020234, guid: e42377d287519da4590f1d332ed3e99e, type: 3}
-      propertyPath: m_fontColor.r
-      value: 0.16735196
-      objectReference: {fileID: 0}
-    - target: {fileID: 1082020234, guid: e42377d287519da4590f1d332ed3e99e, type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: 2180264, guid: ced9e2665177eac44b3f411f251ecd4e, type: 2}
-    - target: {fileID: 1082020234, guid: e42377d287519da4590f1d332ed3e99e, type: 3}
-      propertyPath: m_fontColor32.rgba
-      value: 4278255403
+    - target: {fileID: 583190173853735543, guid: e42377d287519da4590f1d332ed3e99e,
+        type: 3}
+      propertyPath: value
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 1796853275972107604, guid: e42377d287519da4590f1d332ed3e99e,
         type: 3}
@@ -8746,7 +8353,7 @@ PrefabInstance:
     - target: {fileID: 1796853275972107604, guid: e42377d287519da4590f1d332ed3e99e,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 22
+      value: 26.05
       objectReference: {fileID: 0}
     - target: {fileID: 1796853275972107604, guid: e42377d287519da4590f1d332ed3e99e,
         type: 3}
@@ -8917,17 +8524,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: CANVAS
       objectReference: {fileID: 0}
-    - target: {fileID: 3780146937503932358, guid: 58ae3eee8b69dfe489d4c57ebec70a8e,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 4625d608de1ab864bb1dbe525ba7e943,
-        type: 3}
-    - target: {fileID: 3780146937503932358, guid: 58ae3eee8b69dfe489d4c57ebec70a8e,
-        type: 3}
-      propertyPath: m_Color.a
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3780146937580382944, guid: 58ae3eee8b69dfe489d4c57ebec70a8e,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -8938,6 +8534,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_Target
       value: 
       objectReference: {fileID: 2034039800}
+    - target: {fileID: 3780146937580382944, guid: 58ae3eee8b69dfe489d4c57ebec70a8e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[5].m_Target
+      value: 
+      objectReference: {fileID: 353571750}
     - target: {fileID: 3780146937765482978, guid: 58ae3eee8b69dfe489d4c57ebec70a8e,
         type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -8948,6 +8549,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1836870510}
+    - target: {fileID: 3780146939224477284, guid: 58ae3eee8b69dfe489d4c57ebec70a8e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_Target
+      value: 
+      objectReference: {fileID: 353571750}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58ae3eee8b69dfe489d4c57ebec70a8e, type: 3}
 --- !u!1 &3995784454253684168

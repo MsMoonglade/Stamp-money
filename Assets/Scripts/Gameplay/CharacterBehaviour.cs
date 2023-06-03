@@ -264,6 +264,14 @@ public class CharacterBehaviour : MonoBehaviour
         }
     }
 
+    public void Die()
+    {
+        if (dieCoroutine == null)
+        {
+            dieCoroutine = StartCoroutine(StartDieCoroutine());
+        }
+    }
+
     private void ApplyPrinterScale()
     {
         if (printerObjectScale.x >= 1 && printerObjectScale.y >= 1)
