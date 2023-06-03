@@ -9,11 +9,13 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
-    public ParticleSystem winParticle;
-
     public GameObject moneyDecalObj;
     public GameObject moneyDecalParent;
     public int moneyDecalCount;
+
+    public GameObject particleObj;
+    public GameObject particleParent;
+    public int particleCount;
 
     [HideInInspector]
     public GameStatus gameStatus;
@@ -48,6 +50,11 @@ public class GameManager : MonoBehaviour
         for(int i = 0; i < moneyDecalCount; i++)
         {
             PoolManager.instance.InstantiateInPool(moneyDecalObj, moneyDecalParent);
+        }
+
+        for (int i = 0; i < particleCount; i++)
+        {
+            PoolManager.instance.InstantiateParticleInPool(particleObj, particleParent);
         }
 
         QualitySettings.vSyncCount = 0;
@@ -104,10 +111,6 @@ public class GameManager : MonoBehaviour
     public void EndGame(object sender)
     {
         SupersonicWisdom.Api.NotifyLevelCompleted(CurrentLevel, null);
-
-
-        if (winParticle != null)
-            winParticle.Play();
         
         UiManager.instance.endLevelText.text = "Level " + CurrentLevel.ToString() + " clear!";
 

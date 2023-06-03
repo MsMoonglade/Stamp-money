@@ -34,6 +34,15 @@ public class MoneyBulletBehaviour : MonoBehaviour
         particle.GetComponent<ParticleSystemRenderer>().material.SetColor("_BaseColor", c);
     }
 
+    public void DisableByCollision()
+    {
+        GameObject p = PoolManager.instance.GetParticle(GameManager.instance.particleObj , transform.position);     
+        p.GetComponent<ParticleSystemRenderer>().material = ColorUtilities.instance.GetIndexParticleMat(value);
+        p.SetActive(true);
+        
+        this.gameObject.SetActive(false);
+    }
+
     private IEnumerator DisableThisGameobject()
     {
         yield return new WaitForSeconds(CharacterBehaviour.instance.bulletActiveTime);       

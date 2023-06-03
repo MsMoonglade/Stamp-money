@@ -418,8 +418,10 @@ MonoBehaviour:
   moneyToGive: -10
   fireRateWall: 0
   increaseFireRate: 0
+  multiplyFireRateRate: 0.01
   fireDistanceWall: 0
   fireDistanceRate: 0
+  multiplyDistanceRate: 0.01
   dynamicText: {fileID: 6624878131420926745}
   sideElementMeshRenderer:
   - {fileID: 7670978631806613048}
@@ -429,6 +431,10 @@ MonoBehaviour:
   centerWallMeshRenderer: {fileID: 6815578929518197529}
   positive_Center_Mat: {fileID: 2100000, guid: 4612cbb341e38994aadecaa7dc1843bc, type: 2}
   negative_Center_Mat: {fileID: 2100000, guid: 24593baef9eaeb344848904b97720e83, type: 2}
+  nearWallCheck_Range: 4
+  nearWallCheck_Mask:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1 &4871183378152380645
 GameObject:
   m_ObjectHideFlags: 0

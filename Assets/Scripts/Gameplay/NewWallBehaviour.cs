@@ -12,9 +12,11 @@ public class NewWallBehaviour : MonoBehaviour
 
     public bool fireRateWall;
     public int increaseFireRate;
+    public float multiplyFireRateRate;
 
     public bool fireDistanceWall;
     public int fireDistanceRate;
+    public float multiplyDistanceRate;
 
     public TMP_Text dynamicText;
 
@@ -26,15 +28,83 @@ public class NewWallBehaviour : MonoBehaviour
     public Material positive_Center_Mat;
     public Material negative_Center_Mat;
 
+    public float nearWallCheck_Range;
+    public LayerMask nearWallCheck_Mask;
+
     private bool isNegative;
+
+    private List<Collider> nearWall = new List<Collider>();
 
     private void Awake()
     {
         UpdateUi();
 
+        CheckIfNegative();
+        CheckNearWall();
+    }
+
+    private void OnTriggerEnter(Collider col)
+    {
+        if (col.transform.CompareTag("Bullet"))
+        {
+            int val = col.transform.GetComponent<MoneyBulletBehaviour>().value;
+
+            if (giveMoneyWall)
+                moneyToGive += val;
+
+            if (fireRateWall)
+                increaseFireRate += val;
+
+            if (fireDistanceWall)
+                fireDistanceRate += val;
+
+            col.transform.GetComponent<MoneyBulletBehaviour>().DisableByCollision();
+
+            CheckForPositive();
+            UpdateUi();
+        }
+
+        if (col.transform.CompareTag("Player"))
+        {
+            foreach (var c in nearWall)
+            {
+                c.enabled = false;
+            }
+
+            if (giveMoneyWall)
+            {
+                Debug.Log("sooooldi");
+            }
+
+            if (fireRateWall)
+            {
+                float convertedValue = ConvertFireRateValue();
+                CharacterBehaviour.instance.jumpSpeed -= convertedValue;
+            }
+
+            if (fireDistanceWall)
+            {
+                float convertedValue = ConvertFireDistanceValue();
+                CharacterBehaviour.instance.bulletActiveTime -= convertedValue;
+            }
+        }
+    }
+
+    private void CheckNearWall()
+    {
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, nearWallCheck_Range , nearWallCheck_Mask);
+       
+        foreach (var hitCollider in hitColliders)
+        {
+            nearWall.Add(hitCollider);
+        }
+    }
+
+    private void CheckIfNegative()
+    {
         if (giveMoneyWall)
         {
-            if(moneyToGive < 0)
+            if (moneyToGive < 0)
             {
                 isNegative = true;
             }
@@ -53,49 +123,6 @@ public class NewWallBehaviour : MonoBehaviour
             if (fireDistanceRate < 0)
             {
                 isNegative = true;
-            }
-        }
-    }
-
-    private void OnTriggerEnter(Collider col)
-    {
-        if (col.transform.CompareTag("Bullet"))
-        {
-            int val = col.transform.GetComponent<MoneyBulletBehaviour>().value;
-
-            if (giveMoneyWall)
-                moneyToGive += val;
-
-            if (fireRateWall)
-                increaseFireRate += val;
-
-            if (fireDistanceWall)
-                fireDistanceRate += val;
-
-
-            col.transform.gameObject.SetActive(false);
-
-            CheckForPositive();
-            UpdateUi();
-        }
-
-        if (col.transform.CompareTag("Player"))
-        {
-            if (giveMoneyWall)
-            {
-                Debug.Log("sooooldi");
-            }
-
-            if (fireRateWall)
-            {
-                float convertedValue = ConvertFireRateValue();
-                CharacterBehaviour.instance.jumpSpeed -= convertedValue;
-            }
-
-            if (fireDistanceWall)
-            {
-                float convertedValue = ConvertFireDistanceValue();
-                CharacterBehaviour.instance.bulletActiveTime -= convertedValue;
             }
         }
     }
@@ -183,12 +210,16 @@ public class NewWallBehaviour : MonoBehaviour
     {
         float value = 0;
 
+        value = increaseFireRate * multiplyFireRateRate;
+
         return value;
     }
 
     private float ConvertFireDistanceValue()
     {
         float value = 0;
+
+        value = fireDistanceRate * multiplyDistanceRate;
 
         return value;
     }

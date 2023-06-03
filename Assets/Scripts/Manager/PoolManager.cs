@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class PoolManager : MonoBehaviour
 {
-
     public static PoolManager instance;
 
     [HideInInspector]
     public List<GameObject> decalInPool = new List<GameObject>();
+    [HideInInspector]
+    public List<GameObject> particleInPool = new List<GameObject>();
 
     private void Awake()
     {
@@ -33,12 +34,37 @@ public class PoolManager : MonoBehaviour
         }
 
         return null;
-    }    
+    }
+
+    public GameObject GetParticle(GameObject obj, Vector3 pos)
+    {
+        bool spawned = false;
+
+        for (int i = 0; i < particleInPool.Count; i++)
+        {
+            if (particleInPool[i].gameObject.name.Contains(obj.name) && !particleInPool[i].activeInHierarchy)
+            {
+                particleInPool[i].transform.position = pos;
+                spawned = true;
+
+                return particleInPool[i];
+            }
+        }
+
+        return null;
+    }
 
     public void InstantiateInPool(GameObject obj, GameObject parent)
     {
         GameObject inst = Instantiate(obj, parent.transform.position, obj.transform.rotation, parent.transform);
         decalInPool.Add(inst);
+        inst.SetActive(false);
+    }
+
+    public void InstantiateParticleInPool(GameObject obj, GameObject parent)
+    {
+        GameObject inst = Instantiate(obj, parent.transform.position, obj.transform.rotation, parent.transform);
+        particleInPool.Add(inst);
         inst.SetActive(false);
     }
 
