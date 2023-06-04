@@ -68,7 +68,7 @@ public class UiManager : MonoBehaviour
         mainMenuUi.SetActive(false);
         gameUi.SetActive(true);
 
-        AnimateUiElement.instance.HideHand();
+        AnimateUiElement.instance.HideElements();
     }
 
     public void EnableEndGameUi()
