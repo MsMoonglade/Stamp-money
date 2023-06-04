@@ -11,13 +11,14 @@ public class InventoryManager : MonoBehaviour
     public static InventoryManager Instance;
 
     public GameObject inventoryParent;
+    public GameObject inventoryBgParent;
     public GameObject playerParent;
     public LayerMask moneyLayerMask;
 
     public InventoryEditGrid grid;
 
-    private List<int> gridElementValue = new List<int>();
-    private List<Vector3> gridElementPos = new List<Vector3>();
+    public List<int> gridElementValue = new List<int>();
+    public List<Vector3> gridElementPos = new List<Vector3>();
 
     private void Awake()
     {
@@ -43,6 +44,11 @@ public class InventoryManager : MonoBehaviour
             GameObject edit = Instantiate(CharacterBehaviour.instance.editObject, o.transform.position, o.transform.rotation, inventoryParent.transform);
             edit.transform.localPosition = o.transform.localPosition;
             edit.GetComponent<EditObjectBehaviour>().Setup(myValue);
+
+            //BG
+            GameObject bg = Instantiate(CharacterBehaviour.instance.editBG, o.transform.localPosition, Quaternion.identity, inventoryBgParent.transform);
+            bg.transform.localPosition = o.transform.localPosition + new Vector3(0, -0.03f, 0);
+            bg.transform.rotation = new Quaternion(0, 0, 0, 0);
         }
     }
 
@@ -59,7 +65,7 @@ public class InventoryManager : MonoBehaviour
 
     public bool HaveFreeSlot()
     {
-        if (inventoryParent.transform.childCount < 3)
+        if (inventoryParent.transform.childCount < 4)
             return true;
         else 
             return false;
@@ -85,10 +91,18 @@ public class InventoryManager : MonoBehaviour
     {
         if (HaveFreeSlot())
         {
-            Vector3 pos = ReturnFirstFreePos().transform.position;
+            Vector3 pos = ReturnFirstFreePos().transform.localPosition;
 
-          
+            int myValue = 1;
 
+            gridElementPos.Add(pos);
+            gridElementValue.Add(myValue);
+
+            GameObject edit = Instantiate(CharacterBehaviour.instance.editObject, pos, new Quaternion(0,0,0,0) , inventoryParent.transform);
+            edit.transform.localPosition = pos;
+            edit.GetComponent<EditObjectBehaviour>().Setup(myValue);
+        
+            SaveInvValue();
         }
     }
 
@@ -120,20 +134,24 @@ public class InventoryManager : MonoBehaviour
         {
             //LoadValue
             string[] tempValue = PlayerPrefs.GetString("SavedInvValue").Split(new[] { "###" }, StringSplitOptions.None);
-            if (tempValue.Length >= 1)
-                for (int i = 0; i < tempValue.Length; i++)
-                {
-                    gridElementValue.Add(int.Parse(tempValue[i]));
-                }
 
-            //LoadPos
-            string posStringNotSplitted = PlayerPrefs.GetString("SavedInvPos");
-            Vector3[] allPosSplitted = DeserializeVector3Array(posStringNotSplitted);
-            if (allPosSplitted.Length >= 1)
-                for (int i = 0; i < allPosSplitted.Length; i++)
-                {
-                    gridElementPos.Add(allPosSplitted[i]);
-                }
+            if (tempValue[0] != "")
+            {
+                if (tempValue.Length >= 1)
+                    for (int i = 0; i < tempValue.Length; i++)
+                    {
+                        gridElementValue.Add(int.Parse(tempValue[i]));
+                    }
+
+                //LoadPos
+                string posStringNotSplitted = PlayerPrefs.GetString("SavedInvPos");
+                Vector3[] allPosSplitted = DeserializeVector3Array(posStringNotSplitted);
+                if (allPosSplitted.Length >= 1)
+                    for (int i = 0; i < allPosSplitted.Length; i++)
+                    {
+                        gridElementPos.Add(allPosSplitted[i]);
+                    }
+            }
         }
     }
 

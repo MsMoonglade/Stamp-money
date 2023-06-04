@@ -109,13 +109,23 @@ public class DragManager : MonoBehaviour
                 //END INPUT IN GRID SLOT
                 if (haveTarget && targetPos != null && GridSlotFree()  && !CheckCanMerge())
                 {
-                    objectDrag.transform.parent = InventoryManager.Instance.ReturnTransformParent(targetPos.gameObject);
-
-                    if(objectDrag.transform.parent == InventoryManager.Instance.inventoryParent.transform)                 
-                        CharacterBehaviour.instance.editObjectList.Remove(objectDrag.GetComponent<EditObjectBehaviour>());
+                    objectDrag.transform.parent = InventoryManager.Instance.ReturnTransformParent(targetPos.gameObject);                
 
                     objectDrag.localPosition = targetPos.localPosition;
+                    objectDrag.transform.rotation = new Quaternion(0, 0, 0, 0);
                     objectDrag.GetComponent<Collider>().enabled = true;
+
+                    if (objectDrag.transform.parent == InventoryManager.Instance.inventoryParent.transform)
+                    {
+                        CharacterBehaviour.instance.editObjectList.Remove(objectDrag.GetComponent<EditObjectBehaviour>());
+
+                    }
+
+                    else
+                    {
+                        CharacterBehaviour.instance.editObjectList.Add(objectDrag.GetComponent<EditObjectBehaviour>());
+                        CharacterBehaviour.instance.SavePlayerValue();
+                    }
 
                     dragging = false;                   
                 }

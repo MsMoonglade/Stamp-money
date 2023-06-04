@@ -103,6 +103,25 @@ public class AnimateUiElement : MonoBehaviour
 
         ShowEdit();
     }
+    public void HideAll()
+    {
+        //HAND
+        mainMenuHand.GetComponent<Image>().DOFade(0, hideHandSpeed);
+
+        //BUTTONS
+        for (int i = 0; i < buttonsTween.Length; i++)
+        {
+            buttonsTween[i].Pause();
+        }
+
+        foreach (GameObject o in mainMenuButtons)
+        {
+            o.transform.DOScale(0, buttonsHideSpeed);
+        }
+
+        //EDIT    
+        editButton.transform.DOScale(0, editbuttonsHideSpeed);
+    }
 
     public void ShowElements()
     {

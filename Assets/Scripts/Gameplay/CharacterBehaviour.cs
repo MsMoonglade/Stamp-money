@@ -2,14 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
-using Unity.VisualScripting.Antlr3.Runtime;
-using System.Globalization;
 using System;
 using System.Linq;
 using Unity.Mathematics;
 using System.Text;
-using System.Runtime.CompilerServices;
 using UnityEditor;
+using System.Runtime.CompilerServices;
 
 public class CharacterBehaviour : MonoBehaviour
 {
@@ -142,7 +140,7 @@ public class CharacterBehaviour : MonoBehaviour
 
             //BG
             GameObject bg = Instantiate(editBG, o.transform.position + new Vector3(0 , 0.05f , 0), o.transform.rotation, editBGParent.transform);
-        }       
+        }
     }
 
     private void OnEnable()
@@ -232,20 +230,61 @@ public class CharacterBehaviour : MonoBehaviour
         }
     }
 
-    private void ApplyPrinterScale()
+    public void ApplyPrinterScale(Vector3 newScale, bool right)
     {
-        if (printerObjectScale.x >= 1 && printerObjectScale.y >= 1)
+        printerObject.transform.DOScale(newScale, 0.5f)
+            .SetEase(Ease.OutSine);
+
+        PlayerPrefs.SetFloat("Xsize", newScale.x);
+        PlayerPrefs.SetFloat("Zsize", newScale.z);
+
+        printerObjectScale = new Vector2(newScale.x, newScale.z);
+
+        for (int i = 0; i < gridElementPos.Count; i++)
         {
-            printerObject.transform.DOScale(new Vector3(printerObjectScale.x, printerObject.transform.localScale.y, printerObjectScale.y), 0.5f)
-                .SetEase(Ease.OutSine);
+            Vector3 fixedPos = gridElementPos[i];
+
+            if (right)
+                fixedPos += new Vector3(-0.75f, 0, 0);
+
+            else
+                fixedPos += new Vector3(0, 0, 0.75f/2);
+
+            gridElementPos[i] = fixedPos;
         }
 
-        else
+        foreach(EditObjectBehaviour o in editObjectList)
         {
-            if (dieCoroutine == null)
-            {
-               dieCoroutine =  StartCoroutine(StartDieCoroutine());
-            }
+            Vector3 fixedPos = o.transform.localPosition;
+
+            if (right)
+                fixedPos += new Vector3(-0.75f, 0, 0);
+
+            else
+                fixedPos += new Vector3(0, 0, 0.75f / 2);
+
+            o.transform.DOLocalMove(fixedPos, 0.5f);
+        }
+
+        foreach (Transform o in editBGParent.transform)
+        {
+            o.transform.DOScale(Vector3.zero, 0.2f);
+        }
+
+        Invoke("RegenerateGridSlotAfterSizeChange", 0.55f);
+
+        SavePlayerValue();
+    }
+
+    private void RegenerateGridSlotAfterSizeChange()
+    {
+        characterGrid.RemakeSlot();
+        foreach (GameObject o in characterGrid.currentGridElement)
+        {
+            GameObject bg = Instantiate(editBG, o.transform.position + new Vector3(0, 0.05f, 0), o.transform.rotation, editBGParent.transform);
+            bg.transform.localPosition = o.transform.localPosition;
+            bg.transform.localScale = Vector3.zero;
+            bg.transform.DOScale(Vector3.one, 0.2f);
         }
     }
 
@@ -335,6 +374,8 @@ public class CharacterBehaviour : MonoBehaviour
         string posToSaveString = SerializeVector3Array(posToSave);
         PlayerPrefs.DeleteKey("SavedPos");
         PlayerPrefs.SetString("SavedPos", posToSaveString);
+
+        LoadPlayerValue();
     }
 
     public void LoadPlayerValue()
@@ -342,23 +383,30 @@ public class CharacterBehaviour : MonoBehaviour
         int xQuantity = (int)(printerObject.transform.localScale.x / moneyDecalScaleX);
         int yQuantity = (int)(printerObject.transform.localScale.z / moneyDecalScaleY);
 
+        gridElementPos.Clear();
+        gridElementValue.Clear();
+
         if (PlayerPrefs.HasKey("SavedValue") && PlayerPrefs.HasKey("SavedPos"))
         {
             //LoadValue
             string[] tempValue = PlayerPrefs.GetString("SavedValue").Split(new[] { "###" }, StringSplitOptions.None);
-            if(tempValue.Length >= 1)
-            for (int i = 0; i < tempValue.Length; i++)
-            {
-                gridElementValue.Add(int.Parse(tempValue[i]));
-            }
 
-            //LoadPos
-            string posStringNotSplitted = PlayerPrefs.GetString("SavedPos");
-            Vector3[] allPosSplitted = DeserializeVector3Array(posStringNotSplitted);
-            if(allPosSplitted.Length >= 1)
-            for(int i = 0; i < allPosSplitted.Length; i++)
+            if (tempValue[0] != "")
             {
-                gridElementPos.Add(allPosSplitted[i]);
+                if (tempValue.Length >= 1)
+                    for (int i = 0; i < tempValue.Length; i++)
+                    {
+                        gridElementValue.Add(int.Parse(tempValue[i]));
+                    }
+
+                //LoadPos
+                string posStringNotSplitted = PlayerPrefs.GetString("SavedPos");
+                Vector3[] allPosSplitted = DeserializeVector3Array(posStringNotSplitted);
+                if (allPosSplitted.Length >= 1)
+                    for (int i = 0; i < allPosSplitted.Length; i++)
+                    {
+                        gridElementPos.Add(allPosSplitted[i]);
+                    }
             }
         }
 
