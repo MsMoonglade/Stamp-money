@@ -36,7 +36,11 @@ public class AnimateUiElement : MonoBehaviour
     public GameObject[] editMenuButtons;
     public float editAnimSpeed;
     public float editHideSpeed;
-    private Tween[] editButtonsTween;
+    private Tween[] editPanelButtonsTween;
+
+    [Header("3D Object Inventort")]
+    public GameObject inventoryObj;
+    public float inventoryHideSpeed;
 
     private void Awake()
     {
@@ -125,7 +129,6 @@ public class AnimateUiElement : MonoBehaviour
     private void ShowEdit()
     {
         //CONFIRM EDIT BUTTONS
-
         confirmSequence = DOTween.Sequence();
         confirmSequence.Append(confirmeditButton.transform.DOScale(1f, confirmEditbuttonsHideSpeed));
         confirmSequence.Append(confirmeditButton.transform.DOScale(1.05f, confirmEditbuttonsAnimSpeed)
@@ -134,14 +137,18 @@ public class AnimateUiElement : MonoBehaviour
 
 
         //EDIT PANEL BUTTONS
+        editPanelButtonsTween = new Tween[editMenuButtons.Length];
+
         for (int i = 0; i < editMenuButtons.Length; i++)
         {
             Sequence seq = DOTween.Sequence();
             seq.Append(editMenuButtons[i].transform.DOScale(1f, editHideSpeed));
-            seq.Append(editMenuButtons[i].transform.DOScale(1.025f, editAnimSpeed)
+            editPanelButtonsTween[i] = seq.Append(editMenuButtons[i].transform.DOScale(1.025f, editAnimSpeed)
                      .SetEase(Ease.InOutSine)
                      .SetLoops(-1, LoopType.Yoyo));
         }
+
+        inventoryObj.transform.DOScale(1, inventoryHideSpeed);
     }
 
     private void HideEdit()
@@ -150,13 +157,23 @@ public class AnimateUiElement : MonoBehaviour
         confirmeditButton.transform.DOScale(0, confirmEditbuttonsHideSpeed);
 
         for (int i = 0; i < editMenuButtons.Length; i++)
+        {           
+            editPanelButtonsTween[i].Kill();
+        }
+
+        for (int i = 0; i < editMenuButtons.Length; i++)
         {
             editMenuButtons[i].transform.DOScale(0, editbuttonsHideSpeed);
         }
+
+        inventoryObj.transform.DOScale(0, inventoryHideSpeed);
+
     }
 
     private void StartDisableEdit()
     {
+        inventoryObj.transform.localScale = Vector3.zero;
+
         confirmeditButton.transform.localScale = Vector3.zero;
 
         for(int i = 0; i < editMenuButtons.Length; i ++)

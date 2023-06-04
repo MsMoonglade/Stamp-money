@@ -203,11 +203,11 @@ public class CharacterBehaviour : MonoBehaviour
     }
 
     private void PrintDecal()
-    {
+    {     
         for (int i = 0; i < editObjectList.Count; i++)
         {
             editObjectList[i].Print();
-        }  
+        }         
 
         Sequence mySequence = DOTween.Sequence();
 
@@ -217,47 +217,7 @@ public class CharacterBehaviour : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider coll)
-    {
-        /*
-        if (coll.transform.CompareTag("Wall"))
-        {
-            WallBehaviour thisWall = coll.transform.GetComponent<WallBehaviour>();
-
-            switch (thisWall.sizeModifier)
-            {
-                case SizeModifier.Width:
-
-                    if (thisWall.positive)
-                        printerObjectScale += new Vector2(1, 0);
-                    else
-                        printerObjectScale -= new Vector2(1, 0);
-
-                    ApplyPrinterScale();
-
-                    break;
-
-                case SizeModifier.lenght:
-
-                    if (thisWall.positive)
-                        printerObjectScale += new Vector2(0, 1);
-                    else
-                        printerObjectScale -= new Vector2(0, 1);
-
-                    ApplyPrinterScale();
-
-                    break;
-            }
-             
-            thisWall.transform.GetComponent<Collider>().enabled = false;
-
-            //WallCol
-            coll.enabled = false;
-            
-            col.enabled = false;
-            StartCoroutine(ReEnableCol());
-        }
-        */
-
+    {       
         if (coll.transform.CompareTag("EndElement"))
         {
             EventManager.TriggerEvent(Events.endGame);

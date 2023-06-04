@@ -109,6 +109,11 @@ public class DragManager : MonoBehaviour
                 //END INPUT IN GRID SLOT
                 if (haveTarget && targetPos != null && GridSlotFree()  && !CheckCanMerge())
                 {
+                    objectDrag.transform.parent = InventoryManager.Instance.ReturnTransformParent(targetPos.gameObject);
+
+                    if(objectDrag.transform.parent == InventoryManager.Instance.inventoryParent.transform)                 
+                        CharacterBehaviour.instance.editObjectList.Remove(objectDrag.GetComponent<EditObjectBehaviour>());
+
                     objectDrag.localPosition = targetPos.localPosition;
                     objectDrag.GetComponent<Collider>().enabled = true;
 

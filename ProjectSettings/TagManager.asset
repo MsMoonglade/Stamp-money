@@ -10,6 +10,7 @@ TagManager:
   - Draggable
   - Ender
   - Bullet
+  - FxTemporaire
   layers:
   - Default
   - TransparentFX
@@ -27,7 +28,7 @@ TagManager:
   - Draggable
   - Bullet
   - Tower
-  - 
+  - Inv
   - 
   - 
   - 
