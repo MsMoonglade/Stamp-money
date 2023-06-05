@@ -5,21 +5,43 @@ using UnityEngine;
 
 public class PassiveIncome : MonoBehaviour
 {
+    public static PassiveIncome instance;
+
+    public int[] goldPerHour;
+
     DateTime currentDate;
     DateTime oldDate;
 
-    // Use this for initialization
-    void Awake()
+    public int passiveIncomeIndex;
+
+    private void Awake()
     {
-        if(PlayerPrefs.GetString("OldHour") != null)    
-            CheckOfflinetime();
+        instance = this; 
+    }
+
+    private void Start()
+    {
+        if (PlayerPrefs.HasKey("PassiveIncomeIndex"))
+            passiveIncomeIndex = PlayerPrefs.GetInt("PassiveIncomeIndex");
+        else
+        {
+            passiveIncomeIndex = 0;
+            PlayerPrefs.SetInt("PassiveIncomeIndex", passiveIncomeIndex);
+        }
+        
+        if (PlayerPrefs.HasKey("OldHour"))
+        {
+            int passedHour = CheckOfflinetime();
+
+            int amount = (goldPerHour[passiveIncomeIndex] * passedHour);
+            ShopManager.instance.IncreaseGold(amount);
+        }
     }
 
     public int CheckOfflinetime()
     {
         string savedTime = PlayerPrefs.GetString("OldHour");
-        //Debug.Log(savedTime);        
-        
+                
         oldDate = System.DateTime.Parse(savedTime);
         currentDate = System.DateTime.Now;
 
@@ -28,9 +50,17 @@ public class PassiveIncome : MonoBehaviour
         return (int)difference.TotalHours;        
     }
 
+    public void IncreaseGoldPerHour()
+    {
+        if(passiveIncomeIndex < goldPerHour.Length -1)
+        {
+            passiveIncomeIndex ++;
+            PlayerPrefs.SetInt("PassiveIncomeIndex", passiveIncomeIndex);
+        }
+    }
+
     void OnApplicationQuit()
     {
         PlayerPrefs.SetString("OldHour", System.DateTime.Now.ToString());
-        print("saving this date to player prefs" + System.DateTime.Now);
     }
 }

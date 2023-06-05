@@ -73,7 +73,7 @@ public class NewWallBehaviour : MonoBehaviour
 
             if (giveMoneyWall)
             {
-                Debug.Log("sooooldi");
+                ShopManager.instance.IncreaseGold(moneyToGive);
             }
 
             if (fireRateWall)

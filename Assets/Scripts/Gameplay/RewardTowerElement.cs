@@ -8,7 +8,14 @@ public class RewardTowerElement : MonoBehaviour
     [Header("EDIT")]
     public int value;
 
+    public bool rewardIsEnergy;
+    public bool rewardIsDiamond;
+    public bool rewardIsCoin;
+
+    public float rewardAmount;
+
     [Header("NOT EDIT")]
+    public float rewardModelOffset;
     public int valuePerElement;
 
     public float elementRotOffset;
@@ -33,6 +40,14 @@ public class RewardTowerElement : MonoBehaviour
         col = GetComponent<Collider>();
 
         GenerateElement();
+        transform.DOLocalRotate(new Vector3(0, 360, 0), 0.2f, RotateMode.FastBeyond360).SetRelative(true).SetEase(Ease.Linear);
+
+
+        //ANIMATE Reward
+        rewardParent.transform.DOLocalRotate(new Vector3(0, 360, 0), 5f, RotateMode.FastBeyond360)
+            .SetRelative(true)
+            .SetEase(Ease.Linear)
+            .SetLoops(-1, LoopType.Restart);
     }
 
     private void OnTriggerEnter(Collider col)
@@ -67,8 +82,19 @@ public class RewardTowerElement : MonoBehaviour
         {
             completeParticle.Play();
             value = 0;
-            col.enabled = false;          
+            col.enabled = false;
+
+            rewardParent.transform.DOScale(0, 0.6f)
+                .SetEase(Ease.InBounce)                
+                .OnComplete(Complete);
         }
+    }
+
+    private void Complete()
+    {
+        ShopManager.instance.IncreaseDiamond((int)rewardAmount);
+
+        this.gameObject.SetActive(false);
     }
 
     private void GenerateElement()
@@ -87,7 +113,9 @@ public class RewardTowerElement : MonoBehaviour
         }
 
         pos += new Vector3(0, rewardYOffset, 0);
+        pos += new Vector3(0, rewardModelOffset, 0);
         movedOffset += rewardYOffset;
+
 
         rewardParent.transform.GetChild(0).transform.localPosition = pos;
     }
@@ -96,5 +124,9 @@ public class RewardTowerElement : MonoBehaviour
         Sequence mySequence = DOTween.Sequence();
         mySequence.Append(towerParent.transform.DOScale(1.055f, 0.03f));
         mySequence.Append(towerParent.transform.DOScale(1, 0.03f));
+
+
+       // rewardParent.transform.DOLocalMoveY(0.1f, 0.15f).SetLoops(2 , LoopType.Yoyo);
+        rewardParent.transform.DOScale(1.1f, 0.15f).SetLoops(2, LoopType.Yoyo);
     }
 }

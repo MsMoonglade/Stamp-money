@@ -16,15 +16,21 @@ public class UiManager : MonoBehaviour
     public GameObject endGameUi;
     public GameObject retryUi;
 
-    public Slider energySlider;
+    public Image energySlider;
 
     public TMP_Text levelText;
     public TMP_Text endLevelText;
 
-    public MMF_Player enableRetryFeedback;
-    public MMF_Player disableRetryFeedback;
-    public MMF_Player enableEndGameFeedback;
-    public MMF_Player disableEndGameFeedback;
+    [Header("InstantiateElement")]
+    public GameObject ui_Coin_Prefs;
+    public GameObject ui_Coin_Destination;
+    public float ui_Coin_AnimSpeed;
+
+    public GameObject ui_Diamond_Prefs;
+    public GameObject ui_Diamond_Destination;
+    public float ui_Diamond_AnimSpeed;
+
+    public GameObject uiTempParent;
 
     private void Awake()
     {
@@ -32,21 +38,18 @@ public class UiManager : MonoBehaviour
 
         //     DisableAllUi();
         //     EnableMainMenuUi();
-
-        disableRetryFeedback.PlayFeedbacks();
-        disableEndGameFeedback.PlayFeedbacks(); 
     }
 
     private void Start()
     {
-        energySlider.value = CharacterBehaviour.instance.currentEnergy / CharacterBehaviour.instance.maxEnergy;
+        energySlider.fillAmount = CharacterBehaviour.instance.currentEnergy / CharacterBehaviour.instance.maxEnergy;
     }
 
     private void Update()
     {
         if (GameManager.instance.IsInGameStatus())
         {
-            energySlider.value = CharacterBehaviour.instance.currentEnergy / CharacterBehaviour.instance.maxEnergy;
+            energySlider.fillAmount = CharacterBehaviour.instance.currentEnergy / CharacterBehaviour.instance.maxEnergy;
         }
     }
 
@@ -76,7 +79,6 @@ public class UiManager : MonoBehaviour
         mainMenuUi.SetActive(false);
         gameUi.SetActive(false);
         endGameUi.SetActive(true);
-        enableEndGameFeedback.PlayFeedbacks();
     }
 
     public void EnableRetryUi()
@@ -85,7 +87,6 @@ public class UiManager : MonoBehaviour
         gameUi.SetActive(false);
         endGameUi.SetActive(false);
         retryUi.SetActive(true);
-        enableRetryFeedback.PlayFeedbacks();
     }
 
     public void DisableAllUi()
@@ -98,5 +99,49 @@ public class UiManager : MonoBehaviour
     public void UpdateEndLevelUi()
     {
 
+    }
+
+    public void InstantiateCoin(int amount)
+    {
+        for(int i = 0; i < amount; i++)
+        {
+            Vector3 posToRef = CharacterBehaviour.instance.transform.position;
+            posToRef += new Vector3(Random.Range(-5.0f, 5.0f),0, Random.Range(-5.0f, 10.0f));
+
+            Vector3 pos =  Camera.main.WorldToScreenPoint(posToRef);
+
+            GameObject coin = Instantiate(ui_Coin_Prefs, pos, Quaternion.identity, uiTempParent.transform);
+            coin.transform.localScale = Vector3.zero;
+
+            coin.transform.DOScale(Vector3.one, 0.2f)
+                .SetEase(Ease.OutBack);
+
+            float animSpeed = Random.Range(ui_Coin_AnimSpeed - 0.1f, ui_Coin_AnimSpeed + 0.1f);
+            coin.transform.DOMove(ui_Coin_Destination.transform.position, animSpeed)
+                .SetEase(Ease.InBack)             
+                .OnComplete(() => Destroy(coin));       
+        }
+    }
+
+    public void InstantiateDiamond(int amount)
+    {
+        for (int i = 0; i < amount; i++)
+        {
+            Vector3 posToRef = CharacterBehaviour.instance.transform.position;
+            posToRef += new Vector3(Random.Range(-5.0f, 5.0f), 0, Random.Range(-5.0f, 10.0f));
+
+            Vector3 pos = Camera.main.WorldToScreenPoint(posToRef);
+
+            GameObject coin = Instantiate(ui_Diamond_Prefs, pos, Quaternion.identity, uiTempParent.transform);
+            coin.transform.localScale = Vector3.zero;
+
+            coin.transform.DOScale(Vector3.one, 0.2f)
+                .SetEase(Ease.OutBack);
+
+            float animSpeed = Random.Range(ui_Diamond_AnimSpeed - 0.1f, ui_Diamond_AnimSpeed + 0.1f);
+            coin.transform.DOMove(ui_Diamond_Destination.transform.position, animSpeed)
+                .SetEase(Ease.InBack)
+                .OnComplete(() => Destroy(coin));
+        }
     }
 }

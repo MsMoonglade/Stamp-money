@@ -8,7 +8,7 @@ public class Events
     public const string endGame = "EndGame";
     public const string resetGame = "Reset";
     public const string die = "Die";
-
+    public const string saveValue = "SaveValue";
 
     //interface
     public const string updateInterface = "UpdateInterface";

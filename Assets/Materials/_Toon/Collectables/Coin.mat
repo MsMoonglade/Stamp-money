@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Inv
+  m_Name: Coin
   m_Shader: {fileID: 4800000, guid: 313fcf3aebc04cf4ab4f8c5f2850be7f, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -32,19 +32,19 @@ Material:
     - _RimPower: 2.2
     - _RimStep: 0
     - _RimStepSmooth: 0
-    - _ShadowStep: 0.599
-    - _ShadowStepSmooth: 0.48
-    - _SpecularStep: 0
-    - _SpecularStepSmooth: 0
+    - _ShadowStep: 0.734
+    - _ShadowStepSmooth: 0.192
+    - _SpecularStep: 0.741
+    - _SpecularStepSmooth: 0.441
     - _Step: 0.432
     - _Step1: 0.537
     - _Step2: 0.018
     - _Step3: 0.97
     - _Step4: 0.025
     m_Colors:
-    - _BaseColor: {r: 0.9490196, g: 0.62352943, b: 0.019607844, a: 1}
+    - _BaseColor: {r: 1, g: 0.6492458, b: 0.25098038, a: 1}
     - _HighColor: {r: 1, g: 1, b: 1, a: 1}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
-    - _RimColor: {r: 0, g: 1, b: 0.13757372, a: 1}
-    - _SpecularColor: {r: 0.8962264, g: 0.6089916, b: 0, a: 1}
+    - _RimColor: {r: 0.9622641, g: 0.8449212, b: 0.16794229, a: 1}
+    - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []

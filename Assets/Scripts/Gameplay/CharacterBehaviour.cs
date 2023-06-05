@@ -113,6 +113,8 @@ public class CharacterBehaviour : MonoBehaviour
         printerObjectScale = new Vector2(printerObject.transform.localScale.x, printerObject.transform.localScale.z);
 
         LoadPlayerValue();
+
+        currentEnergy = maxEnergy / 2;
     }
 
 
@@ -126,7 +128,7 @@ public class CharacterBehaviour : MonoBehaviour
         notMovingJumpSpeed = jumpSpeed / 2;
         movingJumpSpeed = jumpSpeed;
 
-        currentEnergy = maxEnergy / 2;
+        
 
         
         foreach(GameObject o in characterGrid.currentGridElement)

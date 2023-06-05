@@ -114,11 +114,14 @@ public class GameManager : MonoBehaviour
         
         UiManager.instance.endLevelText.text = "Level " + CurrentLevel.ToString() + " clear!";
 
+        EventManager.TriggerEvent(Events.saveValue);
+
         CurrentLevel++;
 
         SetInMenu();
 
         UiManager.instance.EnableEndGameUi();
+
 
         //EventManager.TriggerEvent(Events.endGame);
     }
@@ -131,9 +134,9 @@ public class GameManager : MonoBehaviour
         UiManager.instance.EnableRetryUi();
     }
 
-    public void RestartGame()
+    public void ReloadLevel()
     {        
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void SetInGame()

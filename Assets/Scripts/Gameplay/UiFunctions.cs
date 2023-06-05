@@ -75,4 +75,9 @@ public class UiFunctions : MonoBehaviour
             PlayerPrefs.SetInt("JumpSpeedIndex", jumpSpeedIndex);
         }
     }
+    
+    public void IncreaseGoldPerHour()
+    {
+        PassiveIncome.instance.IncreaseGoldPerHour();
+    }
 }
