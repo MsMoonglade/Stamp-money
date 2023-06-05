@@ -359,6 +359,7 @@ GameObject:
   - component: {fileID: 3628990616269221449}
   - component: {fileID: 3628990616269221446}
   - component: {fileID: 353571750}
+  - component: {fileID: 1855258817}
   m_Layer: 0
   m_Name: UiManager
   m_TagString: Untagged
@@ -418,3 +419,40 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainMenuHand: {fileID: 0}
   handMoveSpeed: 1
+  hideHandSpeed: 0.2
+  mainMenuButtons:
+  - {fileID: 0}
+  - {fileID: 0}
+  buttonsAnimSpeed: 0.4
+  buttonsHideSpeed: 0.2
+  editButton: {fileID: 0}
+  editButtonBg: {fileID: 0}
+  editbuttonsAnimSpeed: 0.5
+  editbuttonsHideSpeed: 0.2
+  confirmeditButton: {fileID: 0}
+  confirmEditbuttonsAnimSpeed: 0.4
+  confirmEditbuttonsHideSpeed: 0.2
+  editMenuButtons:
+  - {fileID: 0}
+  - {fileID: 0}
+  editAnimSpeed: 0.6
+  editHideSpeed: 0.2
+  inventoryObj: {fileID: 0}
+  inventoryHideSpeed: 0.2
+--- !u!114 &1855258817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3628990616269221448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9cf051a0361397419b163ecc4d67119, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpSpeedAddPerLevel:
+  - 1
+  - 2
+  - 3
+  - 4

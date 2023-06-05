@@ -101,6 +101,14 @@ public class CharacterBehaviour : MonoBehaviour
             PlayerPrefs.SetFloat("Zsize", startScale.z);
         }
 
+        //JumpSped
+        if (PlayerPrefs.HasKey("JumpSpeed"))
+            jumpSpeed = PlayerPrefs.GetFloat("JumpSpeed");
+        else
+        {            
+            PlayerPrefs.SetFloat("JumpSpeed", jumpSpeed);
+        }
+
         printerObject.transform.localScale = startScale;
         printerObjectScale = new Vector2(printerObject.transform.localScale.x, printerObject.transform.localScale.z);
 
@@ -356,6 +364,14 @@ public class CharacterBehaviour : MonoBehaviour
         col.enabled = true;
     }
 
+    public void IncreaseJumpSpeed(float increaseAmount)
+    {
+        jumpSpeed -= increaseAmount;
+        PlayerPrefs.SetFloat("JumpSpeed", jumpSpeed);
+
+        notMovingJumpSpeed = jumpSpeed / 2;
+        movingJumpSpeed = jumpSpeed;
+    }
 
     public void SavePlayerValue()
     {       

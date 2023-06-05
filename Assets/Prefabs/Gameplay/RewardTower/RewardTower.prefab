@@ -510,7 +510,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 703f71e4a1f92dd4ea8db6ebc99950cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  value: 2
+  value: 50
   valuePerElement: 10
   elementRotOffset: -6
   elementYOffset: 0.3

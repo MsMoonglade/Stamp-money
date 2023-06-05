@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,6 +16,8 @@ public class MoneyBulletBehaviour : MonoBehaviour
 
     private void OnEnable()
     {
+        transform.localScale = Vector3.one;
+
         if (GameManager.instance.IsInGameStatus())
         {
             StartCoroutine(DisableThisGameobject());
@@ -45,8 +48,15 @@ public class MoneyBulletBehaviour : MonoBehaviour
 
     private IEnumerator DisableThisGameobject()
     {
-        yield return new WaitForSeconds(CharacterBehaviour.instance.bulletActiveTime);       
+        yield return new WaitForSeconds(CharacterBehaviour.instance.bulletActiveTime);
 
+        transform.DOScaleY(0, 0.2f);         
+        transform.DOScaleX(0, 0.2f)
+            .OnComplete(() => ThisDisable());
+    }
+
+    private void ThisDisable()
+    {
         this.gameObject.SetActive(false);
     }
 

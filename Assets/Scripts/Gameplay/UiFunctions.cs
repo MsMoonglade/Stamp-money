@@ -4,8 +4,14 @@ using UnityEngine;
 
 public class UiFunctions : MonoBehaviour
 {
+    //PRITER SCALE
     private Vector3 printerScale;
     private int printerScaleIndex;
+
+    //JUMP SPEED
+    public float[] jumpSpeedAddPerLevel;
+    private int jumpSpeedIndex;
+
     private void Awake()
     {
         if (PlayerPrefs.HasKey("PrinterScaleIndex"))
@@ -15,13 +21,19 @@ public class UiFunctions : MonoBehaviour
             printerScaleIndex = 1;
             PlayerPrefs.SetInt("PrinterScaleIndex", printerScaleIndex);
         }
+
+        if (PlayerPrefs.HasKey("JumpSpeedIndex"))
+            jumpSpeedIndex = PlayerPrefs.GetInt("JumpSpeedIndex");
+        else
+        {
+            jumpSpeedIndex = 0;
+            PlayerPrefs.SetInt("JumpSpeedIndex", jumpSpeedIndex);
+        }
     }
 
     private void Start()
     {
-        printerScale = CharacterBehaviour.instance.printerObject.transform.localScale;
-
-  
+        printerScale = CharacterBehaviour.instance.printerObject.transform.localScale;  
     }
 
     public void BuyMoney()
@@ -49,6 +61,18 @@ public class UiFunctions : MonoBehaviour
 
             printerScaleIndex++;
             PlayerPrefs.SetInt("PrinterScaleIndex", printerScaleIndex);
+        }
+    }
+
+    public void IncreaseFireRate()
+    {
+        if (jumpSpeedIndex < jumpSpeedAddPerLevel.Length)
+        {
+            float amount = jumpSpeedAddPerLevel[jumpSpeedIndex];
+            CharacterBehaviour.instance.IncreaseJumpSpeed(amount);
+
+            jumpSpeedIndex++;
+            PlayerPrefs.SetInt("JumpSpeedIndex", jumpSpeedIndex);
         }
     }
 }
