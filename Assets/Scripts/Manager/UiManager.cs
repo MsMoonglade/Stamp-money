@@ -106,7 +106,7 @@ public class UiManager : MonoBehaviour
         for(int i = 0; i < amount; i++)
         {
             Vector3 posToRef = CharacterBehaviour.instance.transform.position;
-            posToRef += new Vector3(Random.Range(-5.0f, 5.0f),0, Random.Range(-5.0f, 10.0f));
+            posToRef += new Vector3(Random.Range(-4.0f, 4.0f),0, Random.Range(-4.0f, 8.0f));
 
             Vector3 pos =  Camera.main.WorldToScreenPoint(posToRef);
 
@@ -122,13 +122,26 @@ public class UiManager : MonoBehaviour
                 .OnComplete(() => Destroy(coin));       
         }
     }
+    public void LostCoin(int amount)
+    {
+        for (int i = 0; i < amount; i++)
+        {            
+            GameObject coin = Instantiate(ui_Coin_Prefs, ui_Coin_Destination.transform.position, Quaternion.identity, uiTempParent.transform);
+
+            float animSpeed = Random.Range(ui_Coin_AnimSpeed - 0.1f, ui_Coin_AnimSpeed + 0.1f);
+            Vector3 destination = new Vector3(coin.transform.position.x - Random.Range(-50, 20), coin.transform.position.y - 3000, 0);
+
+            coin.transform.DOMove(destination, animSpeed)                
+                .OnComplete(() => Destroy(coin));
+        }
+    }
 
     public void InstantiateDiamond(int amount)
     {
         for (int i = 0; i < amount; i++)
         {
             Vector3 posToRef = CharacterBehaviour.instance.transform.position;
-            posToRef += new Vector3(Random.Range(-5.0f, 5.0f), 0, Random.Range(-5.0f, 10.0f));
+            posToRef += new Vector3(Random.Range(-4.0f, 4.0f), 0, Random.Range(-4.0f, 8.0f));
 
             Vector3 pos = Camera.main.WorldToScreenPoint(posToRef);
 

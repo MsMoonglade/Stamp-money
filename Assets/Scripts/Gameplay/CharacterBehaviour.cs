@@ -127,9 +127,6 @@ public class CharacterBehaviour : MonoBehaviour
 
         notMovingJumpSpeed = jumpSpeed / 2;
         movingJumpSpeed = jumpSpeed;
-
-        
-
         
         foreach(GameObject o in characterGrid.currentGridElement)
         {
@@ -364,6 +361,14 @@ public class CharacterBehaviour : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
         col.enabled = true;
+    }
+
+    public void EditFireRateInLocalGame(float amount)
+    {
+        jumpSpeed -= amount;
+
+        notMovingJumpSpeed = jumpSpeed / 2;
+        movingJumpSpeed = jumpSpeed;
     }
 
     public void IncreaseJumpSpeed(float increaseAmount)

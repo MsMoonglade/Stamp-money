@@ -79,13 +79,13 @@ public class NewWallBehaviour : MonoBehaviour
             if (fireRateWall)
             {
                 float convertedValue = ConvertFireRateValue();
-                CharacterBehaviour.instance.jumpSpeed -= convertedValue;
+                CharacterBehaviour.instance.EditFireRateInLocalGame(convertedValue);
             }
 
             if (fireDistanceWall)
             {
                 float convertedValue = ConvertFireDistanceValue();
-                CharacterBehaviour.instance.bulletActiveTime -= convertedValue;
+                CharacterBehaviour.instance.bulletActiveTime += convertedValue;
             }
         }
     }

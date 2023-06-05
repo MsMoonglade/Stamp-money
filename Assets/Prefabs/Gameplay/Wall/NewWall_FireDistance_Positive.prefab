@@ -286,7 +286,7 @@ MonoBehaviour:
   multiplyFireRateRate: 0.01
   fireDistanceWall: 1
   fireDistanceRate: 10
-  multiplyDistanceRate: 0.01
+  multiplyDistanceRate: 0.005
   dynamicText: {fileID: 6677429317552580100}
   sideElementMeshRenderer:
   - {fileID: 7670978631806613048}

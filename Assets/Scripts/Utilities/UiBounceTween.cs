@@ -6,9 +6,12 @@ using DG.Tweening;
 
 public class UiBounceTween : MonoBehaviour
 {
+    public Vector3 scale;
+    public float duration;
+
     private void Awake()
     {
-        transform.DOScale(new Vector3(1.25f , 1.25f , 1.25f) , 2)
+        transform.DOScale(scale , duration)
             .SetLoops(-1 , LoopType.Yoyo);
     }
 }

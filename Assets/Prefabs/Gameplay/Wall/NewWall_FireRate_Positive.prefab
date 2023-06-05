@@ -553,7 +553,7 @@ MonoBehaviour:
   moneyToGive: 0
   fireRateWall: 1
   increaseFireRate: 10
-  multiplyFireRateRate: 0.01
+  multiplyFireRateRate: 0.005
   fireDistanceWall: 0
   fireDistanceRate: 0
   multiplyDistanceRate: 0.01
