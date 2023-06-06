@@ -225,7 +225,7 @@ public class CharacterBehaviour : MonoBehaviour
     {       
         if (coll.transform.CompareTag("EndElement"))
         {
-            EventManager.TriggerEvent(Events.endGame);
+            EndGameBehaviour.instance.StartEndGame();
         }
     }
 

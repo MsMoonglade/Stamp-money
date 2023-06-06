@@ -112,16 +112,10 @@ public class GameManager : MonoBehaviour
     {
         SupersonicWisdom.Api.NotifyLevelCompleted(CurrentLevel, null);
         
-        UiManager.instance.endLevelText.text = "Level " + CurrentLevel.ToString() + " clear!";
-
         EventManager.TriggerEvent(Events.saveValue);
-
         CurrentLevel++;
-
         SetInMenu();
-
         UiManager.instance.EnableEndGameUi();
-
 
         //EventManager.TriggerEvent(Events.endGame);
     }

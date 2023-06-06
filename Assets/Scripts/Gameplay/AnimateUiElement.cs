@@ -53,7 +53,6 @@ public class AnimateUiElement : MonoBehaviour
             .SetEase(Ease.InOutSine)
             .SetLoops(-1, LoopType.Yoyo);
 
-
         //ANIMATE BUTTONS
         buttonsTween = new Tween[mainMenuButtons.Length];
         for (int i = 0; i < mainMenuButtons.Length; i++)
