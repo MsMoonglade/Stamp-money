@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6960253137605181361}
   - component: {fileID: 1848132199218707108}
   - component: {fileID: 9080646252549701131}
+  - component: {fileID: 7603677587124385398}
   m_Layer: 17
   m_Name: EndGame_Diamonds
   m_TagString: Untagged
@@ -63,7 +64,19 @@ MeshCollider:
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
-  m_Mesh: {fileID: 2401994324257950250, guid: 788032d37c9b0c748914aaf6dd2d4958, type: 3}
+  m_Mesh: {fileID: 2401994324257950250, guid: 68ed590a3723ddb488ab5458687d6a91, type: 3}
+--- !u!114 &7603677587124385398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6960253137605181366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec3d0102dfc31d346ab077de73f4eda6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6960253139017545893
 PrefabInstance:
   m_ObjectHideFlags: 0

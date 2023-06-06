@@ -66,10 +66,8 @@ public class EndGameBehaviour : MonoBehaviour
             ShopManager.instance.DecreaseDiamond(1);
             ShopManager.instance.TweenDiamondUi();
 
-            GameObject diamond = Instantiate(endGameDiamondPrefs, endGameDiamondSpawner.transform.position, quaternion.identity, endGameDiamondParent.transform);
-            diamond.transform.localScale = Vector3.zero;
-
-            diamond.transform.DOScale(Vector3.one, 0.25f);
+            GameObject diamond = Instantiate(endGameDiamondPrefs, endGameDiamondSpawner.transform.localPosition, quaternion.identity, endGameDiamondParent.transform);
+            diamond.transform.localPosition = endGameDiamondSpawner.transform.localPosition;           
 
             yield return new WaitForSeconds(0.15f);
         }

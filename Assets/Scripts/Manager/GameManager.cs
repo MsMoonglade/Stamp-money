@@ -1,4 +1,5 @@
-﻿using MoreMountains.Tools;
+﻿using DG.Tweening;
+using MoreMountains.Tools;
 using SupersonicWisdomSDK;
 using System.Collections;
 using System.Collections.Generic;
@@ -59,6 +60,8 @@ public class GameManager : MonoBehaviour
 
         QualitySettings.vSyncCount = 0;
         Application.targetFrameRate = 120;
+
+        DOTween.SetTweensCapacity(500, 100);           
     }
 
     private void Start()
@@ -173,6 +176,12 @@ public class GameManager : MonoBehaviour
     {
         StartGame();
         InputManager.instance.FirstInput();
+    }
+
+    public void ClearPlayerPrefs()
+    {
+        PlayerPrefs.DeleteAll();
+        ReloadLevel();
     }
 }
 

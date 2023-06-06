@@ -23,8 +23,8 @@ MonoBehaviour:
   ironSourceIosChinaAppKey: 
   iosGameAnalyticsGameKey: 
   iosGameAnalyticsSecretKey: 
-  androidGameAnalyticsGameKey: 
-  androidGameAnalyticsSecretKey: 
+  androidGameAnalyticsGameKey: 22edbdfcef1739c86703739b7d7b2c86
+  androidGameAnalyticsSecretKey: 3e408afcc7c64ac754d4ef94e7b86883a4b10e60
   adMobIosAppId: 
   adMobIosChinaAppId: 
   adMobAndroidAppId: 
@@ -56,6 +56,6 @@ MonoBehaviour:
   enableIosIap: 0
   validateBeforeBuild: 1
   accountEmail: marco.andreotti95@gmail.com
-  selectedGameIndex: 0
+  selectedGameIndex: 9
   isTitleSelectedAutomatically: 1
   wasLoggedIn: 1

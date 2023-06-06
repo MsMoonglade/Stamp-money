@@ -89,7 +89,7 @@ public class ShopManager : MonoBehaviour
             UiManager.instance.LostCoin(value);
         }
     }
-
+    
     public void IncreaseDiamond(int amount)
     {
         currentDiamond += amount;
