@@ -1,8 +1,10 @@
 using Cinemachine;
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ShopManager : MonoBehaviour
 {
@@ -13,6 +15,8 @@ public class ShopManager : MonoBehaviour
 
     public TMP_Text currentGoldText;
     public TMP_Text currentDiamondText;
+    public Image goldImage;
+    public Image diamondImage;
 
     public CinemachineVirtualCamera virtualCamera;
     private float shakeTime;
@@ -55,7 +59,6 @@ public class ShopManager : MonoBehaviour
         EventManager.StopListening(Events.saveValue, OnSaveValue);
     }
 
-
     public void IncreaseGold(int amount)
     {
         if (amount > 0)
@@ -96,6 +99,35 @@ public class ShopManager : MonoBehaviour
         UiManager.instance.InstantiateDiamond(amount);
     }
 
+    public void DecreaseDiamond(int amount)
+    {
+        currentDiamond -= amount;
+
+        currentDiamondText.text = currentDiamond.ToString();
+    }
+
+    public void TweenDiamondUi()
+    {
+        currentDiamondText.transform.DOScale(1.15f, 0.07f)
+            .SetEase(Ease.Linear)
+            .SetLoops(2, LoopType.Yoyo);
+
+        diamondImage.transform.DOScale(1.15f, 0.07f)
+            .SetEase(Ease.Linear)
+            .SetLoops(2, LoopType.Yoyo);
+    }
+
+    public void TweenGoldUi()
+    {
+        currentGoldText.transform.DOScale(1.15f, 0.07f)     
+            .SetEase(Ease.Linear)     
+            .SetLoops(2, LoopType.Yoyo);
+
+        goldImage.transform.DOScale(1.15f, 0.07f)
+            .SetEase(Ease.Linear)
+            .SetLoops(2, LoopType.Yoyo);
+    }
+
     private void StartShake()
     {
         virtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = 2;
@@ -107,6 +139,4 @@ public class ShopManager : MonoBehaviour
     {
         PlayerPrefs.SetInt("GoldCurrency", currentGold);
     }
-
-
 }

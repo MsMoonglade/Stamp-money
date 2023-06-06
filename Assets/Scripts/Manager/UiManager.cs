@@ -74,6 +74,11 @@ public class UiManager : MonoBehaviour
         AnimateUiElement.instance.HideAll();
     }
 
+    public void DisableGameUI()
+    {
+        gameUi.SetActive(false);
+    }
+
     public void EnableEndGameUi()
     {
         mainMenuUi.SetActive(false);
@@ -94,11 +99,6 @@ public class UiManager : MonoBehaviour
         mainMenuUi.SetActive(false);
         endGameUi.SetActive(false);
         gameUi.SetActive(false);
-    }
-
-    public void UpdateEndLevelUi()
-    {
-
     }
 
     public void InstantiateCoin(int amount)
