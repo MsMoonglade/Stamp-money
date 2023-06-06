@@ -22,16 +22,16 @@ TagManager:
   - Player
   - Floor
   - Button
-  - EndElement
+  - EndGameTrigger
   - GridSlot
   - DetectInput
   - Draggable
   - Bullet
   - Tower
   - Inv
-  - 
-  - 
-  - 
+  - End_Diamond
+  - End_Obstacles
+  - End_Multiply
   - 
   - 
   - 

@@ -1,3 +1,4 @@
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -12,6 +13,9 @@ public class ShopManager : MonoBehaviour
 
     public TMP_Text currentGoldText;
     public TMP_Text currentDiamondText;
+
+    public CinemachineVirtualCamera virtualCamera;
+    private float shakeTime;
 
     private void Awake()
     {
@@ -29,14 +33,26 @@ public class ShopManager : MonoBehaviour
         currentDiamondText.text = currentDiamond.ToString();
     }
 
+    private void Update()
+    {
+        if (shakeTime > 0)
+        {
+            shakeTime -= Time.deltaTime;
+
+            if(shakeTime <= 0)
+            {
+                virtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = 0;
+            }
+        }
+    }
     private void OnEnable()
     {
-        EventManager.StartListening(Events.endGame, OnSaveValue);
+        EventManager.StartListening(Events.saveValue, OnSaveValue);
     }
 
     private void OnDisable()
     {
-        EventManager.StopListening(Events.endGame, OnSaveValue);
+        EventManager.StopListening(Events.saveValue, OnSaveValue);
     }
 
 
@@ -60,6 +76,7 @@ public class ShopManager : MonoBehaviour
                 value = Mathf.Abs(amount);
 
             currentGold -= value;
+            StartShake();
 
             if (currentGold <= 0)
                 currentGold = 0;
@@ -79,9 +96,17 @@ public class ShopManager : MonoBehaviour
         UiManager.instance.InstantiateDiamond(amount);
     }
 
+    private void StartShake()
+    {
+        virtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = 2;
+        shakeTime = 0.5f;
+    }
+
     //must be called in gamemanager
     private void OnSaveValue(object sender)
     {
         PlayerPrefs.SetInt("GoldCurrency", currentGold);
     }
+
+
 }

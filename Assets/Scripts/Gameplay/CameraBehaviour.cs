@@ -7,8 +7,6 @@ public class CameraBehaviour : MonoBehaviour
 {
     public static CameraBehaviour instance;
 
-    public GameObject target;
-
     /// <summary>
     /// Amount of Shake
     /// </summary>
@@ -48,23 +46,6 @@ public class CameraBehaviour : MonoBehaviour
     private void Awake()
     {
         instance = this;
-    }
-
-    private void Start()
-    {
-       // target = CharacterBehaviour.instance.gameObject;
-
-        offset = transform.position - target.transform.position ;
-    }
-
-    private void Update()
-    {
-        //  transform.position = target.transform.position + offset;
-
-        if (GameManager.instance.IsInGameStatus())
-        {
-            transform.position = target.transform.position + offset;
-        }
     }
 
     private void LateUpdate()
@@ -110,7 +91,7 @@ public class CameraBehaviour : MonoBehaviour
     /// <summary>
     /// Do the shake
     /// </summary>
-    public static void ShakeOnce(float duration = 1f, float speed = 10f, Vector3? amount = null, Camera camera = null, bool deltaMovement = true, AnimationCurve curve = null)
+    public void ShakeOnce(float duration = 1f, float speed = 10f, Vector3? amount = null, Camera camera = null, bool deltaMovement = true, AnimationCurve curve = null)
     {
         //set data
         var instance = ((camera != null) ? camera : Camera.main).gameObject.AddComponent<CameraBehaviour>();
