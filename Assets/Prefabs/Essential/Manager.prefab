@@ -145,7 +145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d2add3ee8cad43148946a61137ad0ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_InputSensitivity: 0.1
+  m_InputSensitivity: 0.085
 --- !u!114 &353571748
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -261,6 +261,9 @@ MonoBehaviour:
   currentDiamond: 0
   currentGoldText: {fileID: 0}
   currentDiamondText: {fileID: 0}
+  goldImage: {fileID: 0}
+  diamondImage: {fileID: 0}
+  virtualCamera: {fileID: 0}
 --- !u!1 &3628990615436577064
 GameObject:
   m_ObjectHideFlags: 0
@@ -470,11 +473,11 @@ MonoBehaviour:
   ui_Coin_Prefs: {fileID: 1939456014905201686, guid: e16b6a15dff01c640acf8847b2164c07,
     type: 3}
   ui_Coin_Destination: {fileID: 0}
-  ui_Coin_AnimSpeed: 1.5
+  ui_Coin_AnimSpeed: 1
   ui_Diamond_Prefs: {fileID: 1939456014905201686, guid: d1f121ab1fbb1f7488afeb8650ba389b,
     type: 3}
   ui_Diamond_Destination: {fileID: 0}
-  ui_Diamond_AnimSpeed: 1.5
+  ui_Diamond_AnimSpeed: 1
   uiTempParent: {fileID: 0}
 --- !u!114 &353571750
 MonoBehaviour:

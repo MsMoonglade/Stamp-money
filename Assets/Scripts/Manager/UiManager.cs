@@ -30,6 +30,11 @@ public class UiManager : MonoBehaviour
     public GameObject ui_Diamond_Destination;
     public float ui_Diamond_AnimSpeed;
 
+    public GameObject ui_Energy_Prefs;
+    public GameObject ui_Energy_Destination;
+    public float ui_Energy_AnimSpeed;
+
+
     public GameObject uiTempParent;
 
     private void Awake()
@@ -122,6 +127,29 @@ public class UiManager : MonoBehaviour
                 .OnComplete(() => Destroy(coin));       
         }
     }
+
+    public void InstantiateEnergy(int amount)
+    {
+        for (int i = 0; i < amount; i++)
+        {
+            Vector3 posToRef = CharacterBehaviour.instance.transform.position;
+            posToRef += new Vector3(Random.Range(-4.0f, 4.0f), 0, Random.Range(-4.0f, 8.0f));
+
+            Vector3 pos = Camera.main.WorldToScreenPoint(posToRef);
+
+            GameObject energy = Instantiate(ui_Energy_Prefs, pos, Quaternion.identity, uiTempParent.transform);
+            energy.transform.localScale = Vector3.zero;
+
+            energy.transform.DOScale(Vector3.one, 0.2f)
+                .SetEase(Ease.OutBack);
+
+            float animSpeed = Random.Range(ui_Energy_AnimSpeed - 0.2f, ui_Energy_AnimSpeed + 0.2f);
+            energy.transform.DOMove(ui_Energy_Destination.transform.position, animSpeed)
+                .SetEase(Ease.InBack)
+                .OnComplete(() => Destroy(energy));
+        }
+    }
+
     public void LostCoin(int amount)
     {
         for (int i = 0; i < amount; i++)

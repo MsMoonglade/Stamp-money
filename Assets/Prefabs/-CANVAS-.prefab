@@ -13874,7 +13874,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2728312339006346640}
   m_Layer: 5
-  m_Name: PassiveEarning
+  m_Name: Ui
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

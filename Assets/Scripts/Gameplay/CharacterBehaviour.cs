@@ -55,7 +55,6 @@ public class CharacterBehaviour : MonoBehaviour
     private float notMovingJumpSpeed;
     private float movingJumpSpeed;
 
-    [HideInInspector]
     public float maxEnergy = 2.5f;
     [HideInInspector]
     public float currentEnergy;

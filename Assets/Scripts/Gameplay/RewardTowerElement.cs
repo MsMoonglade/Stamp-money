@@ -92,7 +92,15 @@ public class RewardTowerElement : MonoBehaviour
 
     private void Complete()
     {
-        ShopManager.instance.IncreaseDiamond((int)rewardAmount);
+        if(rewardIsDiamond)        
+            ShopManager.instance.IncreaseDiamond((int)rewardAmount);
+
+        if(rewardIsCoin)
+            ShopManager.instance.IncreaseGold((int)rewardAmount , CharacterBehaviour.instance.gameObject);
+
+        if (rewardIsEnergy)
+            ShopManager.instance.IncreaseEnergy(rewardAmount);
+
 
         this.gameObject.SetActive(false);
     }

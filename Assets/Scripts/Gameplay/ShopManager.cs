@@ -99,6 +99,15 @@ public class ShopManager : MonoBehaviour
         UiManager.instance.InstantiateDiamond(amount);
     }
 
+    public void IncreaseEnergy(float amount)
+    {
+        CharacterBehaviour.instance.currentEnergy += amount;
+
+        int uitoInstantiate = (int)(amount / 0.25f);
+
+        UiManager.instance.InstantiateDiamond(uitoInstantiate);
+    }
+
     public void DecreaseDiamond(int amount)
     {
         currentDiamond -= amount;
