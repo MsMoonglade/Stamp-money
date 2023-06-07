@@ -8,6 +8,5 @@ public class UiTween : MonoBehaviour
 
     private void Awake()
     {
-        DOTween.Init();
     }
 }

@@ -71,7 +71,7 @@ public class EndGameBehaviour : MonoBehaviour
 
     private void ClickCallback()
     {
-       GameManager.instance.ReloadLevel();
+       GameManager.instance.LoadLevel();
     }
 
     private IEnumerator EndGameBehaviourCoroutine()

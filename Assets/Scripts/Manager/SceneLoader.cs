@@ -6,18 +6,30 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
-    private int actualLevel;
-
-    void Awake()
+    private void Awake()
     {
-        // Subscribe
-        SupersonicWisdom.Api.AddOnReadyListener(OnSupersonicWisdomReady);
-        // Then initialize
-        SupersonicWisdom.Api.Initialize();
+        int savedLevel = 0;
+        //currentLevel set
+        if (PlayerPrefs.HasKey("CurrentLevel"))
+            savedLevel = PlayerPrefs.GetInt("CurrentLevel") + 1;
+
+        int sceneToLoad = savedLevel ;
+
+        if (savedLevel > SceneCountConverted())
+        {
+            sceneToLoad = SceneManager.sceneCountInBuildSettings - 1;
+        }
+        if (sceneToLoad <= 0)
+            sceneToLoad = 2;
+        
+        SceneManager.LoadScene(sceneToLoad);
+
+        //Debug.Log("  saved " + savedLevel + "   scene count  " + SceneCountConverted() + " load "+ sceneToLoad);
     }
 
-    void OnSupersonicWisdomReady()
-    {      
-        SceneManager.LoadScene(1); 
+    private int SceneCountConverted()
+    {
+        int totalScene = SceneManager.sceneCountInBuildSettings;
+        return totalScene - 2;
     }
 }
