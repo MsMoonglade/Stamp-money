@@ -59,7 +59,7 @@ public class ShopManager : MonoBehaviour
         EventManager.StopListening(Events.saveValue, OnSaveValue);
     }
 
-    public void IncreaseGold(int amount)
+    public void IncreaseGold(int amount , GameObject localPosToRef)
     {
         if (amount > 0)
         {
@@ -67,7 +67,7 @@ public class ShopManager : MonoBehaviour
 
             currentGoldText.text = currentGold.ToString();
 
-            UiManager.instance.InstantiateCoin(amount);
+            UiManager.instance.InstantiateCoin(amount , localPosToRef);
         }
         else
         {

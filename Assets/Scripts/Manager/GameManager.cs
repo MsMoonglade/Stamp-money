@@ -118,7 +118,8 @@ public class GameManager : MonoBehaviour
         EventManager.TriggerEvent(Events.saveValue);
         CurrentLevel++;
         SetInMenu();
-        UiManager.instance.EnableEndGameUi();
+        
+        //UiManager.instance.EnableEndGameUi();
 
         //EventManager.TriggerEvent(Events.endGame);
     }

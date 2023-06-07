@@ -75,7 +75,7 @@ public class PassiveIncome : MonoBehaviour
     }
     public void GetPassiveIncome()
     {
-        ShopManager.instance.IncreaseGold(passiveAmmount);
+        ShopManager.instance.IncreaseGold(passiveAmmount , CharacterBehaviour.instance.gameObject);
         EventManager.TriggerEvent(Events.saveValue);
     }
 }

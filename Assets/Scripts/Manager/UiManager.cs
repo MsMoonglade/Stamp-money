@@ -101,11 +101,11 @@ public class UiManager : MonoBehaviour
         gameUi.SetActive(false);
     }
 
-    public void InstantiateCoin(int amount)
+    public void InstantiateCoin(int amount , GameObject localPosToRef)
     {
         for(int i = 0; i < amount; i++)
         {
-            Vector3 posToRef = CharacterBehaviour.instance.transform.position;
+            Vector3 posToRef = localPosToRef.transform.position;
             posToRef += new Vector3(Random.Range(-4.0f, 4.0f),0, Random.Range(-4.0f, 8.0f));
 
             Vector3 pos =  Camera.main.WorldToScreenPoint(posToRef);
@@ -116,7 +116,7 @@ public class UiManager : MonoBehaviour
             coin.transform.DOScale(Vector3.one, 0.2f)
                 .SetEase(Ease.OutBack);
 
-            float animSpeed = Random.Range(ui_Coin_AnimSpeed - 0.1f, ui_Coin_AnimSpeed + 0.1f);
+            float animSpeed = Random.Range(ui_Coin_AnimSpeed - 0.2f, ui_Coin_AnimSpeed + 0.2f);
             coin.transform.DOMove(ui_Coin_Destination.transform.position, animSpeed)
                 .SetEase(Ease.InBack)             
                 .OnComplete(() => Destroy(coin));       

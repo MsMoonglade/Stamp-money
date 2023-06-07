@@ -73,7 +73,7 @@ public class NewWallBehaviour : MonoBehaviour
 
             if (giveMoneyWall)
             {
-                ShopManager.instance.IncreaseGold(moneyToGive);
+                ShopManager.instance.IncreaseGold(moneyToGive , CharacterBehaviour.instance.gameObject);
             }
 
             if (fireRateWall)
