@@ -44,11 +44,11 @@ MonoBehaviour:
   enableManagedInterstitialAds: 0
   enableManagedBannerAds: 0
   enableManagedRateUsPopup: 1
-  enableDebug: 0
+  enableDebug: 1
   debugIronSource: 0
   testBlockingApiInvocation: 0
   enableTestAds: 0
-  enableDevtools: 0
+  enableDevtools: 1
   logViaNetwork: 0
   iapProductsAndroid: []
   iapProductsIos: []

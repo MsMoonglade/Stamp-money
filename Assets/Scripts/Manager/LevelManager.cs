@@ -42,8 +42,9 @@ public class LevelManager : MonoBehaviour
         int levelPieces = (int)(levelLenght / mediumElementDistance);
 
         elementPosition = Vector3.zero;
+        elementPosition += new Vector3(0, 0, startGameDistanceOffset);
 
-        for(int i = 0; i < levelLenght; i++)
+        for (int i = 0; i < levelPieces; i++)
         {
             float randomizer = Random.Range(0.0f, 1.0f);
 
