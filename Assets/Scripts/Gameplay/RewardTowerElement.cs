@@ -2,6 +2,7 @@ using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class RewardTowerElement : MonoBehaviour
 {
@@ -26,6 +27,8 @@ public class RewardTowerElement : MonoBehaviour
     public GameObject rewardParent;
     public GameObject towerElementPrefs;
 
+    public TMP_Text valueText;
+
     public ParticleSystem completeParticle;
 
     private float movedOffset;
@@ -42,12 +45,13 @@ public class RewardTowerElement : MonoBehaviour
         GenerateElement();
         transform.DOLocalRotate(new Vector3(0, 360, 0), 0.2f, RotateMode.FastBeyond360).SetRelative(true).SetEase(Ease.Linear);
 
-
         //ANIMATE Reward
         rewardParent.transform.DOLocalRotate(new Vector3(0, 360, 0), 5f, RotateMode.FastBeyond360)
             .SetRelative(true)
             .SetEase(Ease.Linear)
             .SetLoops(-1, LoopType.Restart);
+
+        valueText.text = value.ToString() + "$";
     }
 
     private void OnTriggerEnter(Collider col)
@@ -57,6 +61,7 @@ public class RewardTowerElement : MonoBehaviour
             int val = col.transform.GetComponent<MoneyBulletBehaviour>().value;
 
             value -= val;
+            valueText.text = value.ToString() + "$";
 
             TweenTowerScale();
             CheckHp();
@@ -83,6 +88,9 @@ public class RewardTowerElement : MonoBehaviour
             completeParticle.Play();
             value = 0;
             col.enabled = false;
+
+            valueText.text = value.ToString() + "$";
+
 
             rewardParent.transform.DOScale(0, 0.6f)
                 .SetEase(Ease.InBounce)                

@@ -4,16 +4,20 @@ using UnityEngine;
 
 public class UiFunctions : MonoBehaviour
 {
+    public static UiFunctions instance;
+       
     //PRITER SCALE
     private Vector3 printerScale;
-    private int printerScaleIndex;
+    public int printerScaleIndex;
 
     //JUMP SPEED
     public float[] jumpSpeedAddPerLevel;
-    private int jumpSpeedIndex;
+    public int jumpSpeedIndex;
 
     private void Awake()
     {
+        instance = this;
+
         if (PlayerPrefs.HasKey("PrinterScaleIndex"))
             printerScaleIndex = PlayerPrefs.GetInt("PrinterScaleIndex");
         else

@@ -223,6 +223,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5687130366611245134}
   - component: {fileID: 3406971285800949110}
+  - component: {fileID: 250182746}
   m_Layer: 0
   m_Name: ShopManager
   m_TagString: Untagged
@@ -264,6 +265,22 @@ MonoBehaviour:
   goldImage: {fileID: 0}
   diamondImage: {fileID: 0}
   virtualCamera: {fileID: 0}
+--- !u!114 &250182746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1647922758518598560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd46bb165d450db4d948e6275ffe4c7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpSpeedCost: 64000000c800000090010000e8030000
+  incomePerHourCost: 64000000c800000090010000e8030000
+  moneyShopCost: c8000000
+  sizeIncreaseCost: e803000088130000
 --- !u!1 &3628990615436577064
 GameObject:
   m_ObjectHideFlags: 0
@@ -478,6 +495,9 @@ MonoBehaviour:
     type: 3}
   ui_Diamond_Destination: {fileID: 0}
   ui_Diamond_AnimSpeed: 1
+  ui_Energy_Prefs: {fileID: 0}
+  ui_Energy_Destination: {fileID: 0}
+  ui_Energy_AnimSpeed: 0
   uiTempParent: {fileID: 0}
 --- !u!114 &353571750
 MonoBehaviour:
@@ -525,8 +545,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9cf051a0361397419b163ecc4d67119, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  printerScaleIndex: 0
   jumpSpeedAddPerLevel:
   - 0.05
   - 0.05
   - 0.1
   - 0.1
+  jumpSpeedIndex: 0

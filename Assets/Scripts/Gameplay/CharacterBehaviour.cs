@@ -366,6 +366,10 @@ public class CharacterBehaviour : MonoBehaviour
     {
         jumpSpeed -= amount;
 
+        if (jumpSpeed <= 0.15f)
+            jumpSpeed = 0.15f;
+
+
         notMovingJumpSpeed = jumpSpeed / 2;
         movingJumpSpeed = jumpSpeed;
     }
@@ -373,6 +377,10 @@ public class CharacterBehaviour : MonoBehaviour
     public void IncreaseJumpSpeed(float increaseAmount)
     {
         jumpSpeed -= increaseAmount;
+        
+        if (jumpSpeed <= 0.15f)
+            jumpSpeed = 0.15f;
+
         PlayerPrefs.SetFloat("JumpSpeed", jumpSpeed);
 
         notMovingJumpSpeed = jumpSpeed / 2;

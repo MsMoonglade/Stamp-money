@@ -1644,6 +1644,7 @@ GameObject:
   - component: {fileID: 427580575}
   - component: {fileID: 427580574}
   - component: {fileID: 427580577}
+  - component: {fileID: 427580578}
   m_Layer: 5
   m_Name: FireRate
   m_TagString: Untagged
@@ -1771,6 +1772,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 427580578}
+        m_TargetAssemblyTypeName: UiButtonCostRefresh, Assembly-CSharp
+        m_MethodName: CheckValue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &427580577
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1786,6 +1799,23 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
   m_EffectDistance: {x: 7.5, y: -7.5}
   m_UseGraphicAlpha: 1
+--- !u!114 &427580578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 427580572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c04f6df53fce9134aa33a10a53f31db0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  costText: {fileID: 1966325838}
+  valueText: {fileID: 1338695357}
+  type: 0
+  greenColor: {r: 0.21960784, g: 0.99607843, b: 0.14117648, a: 1}
+  redColor: {r: 1, g: 0.18431373, b: 0.09019608, a: 1}
 --- !u!1 &450898325
 GameObject:
   m_ObjectHideFlags: 0
@@ -2456,6 +2486,7 @@ GameObject:
   - component: {fileID: 751438645}
   - component: {fileID: 751438644}
   - component: {fileID: 751438643}
+  - component: {fileID: 5693923213329898245}
   m_Layer: 5
   m_Name: Earnings
   m_TagString: Untagged
@@ -2598,6 +2629,23 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
   m_EffectDistance: {x: 7.5, y: -7.5}
   m_UseGraphicAlpha: 1
+--- !u!114 &5693923213329898245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 751438641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c04f6df53fce9134aa33a10a53f31db0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  costText: {fileID: 1510404621}
+  valueText: {fileID: 1213339882}
+  type: 1
+  greenColor: {r: 0.21960784, g: 0.99607843, b: 0.14117648, a: 1}
+  redColor: {r: 1, g: 0.18431373, b: 0.09019608, a: 1}
 --- !u!1 &755022195
 GameObject:
   m_ObjectHideFlags: 0
@@ -5257,6 +5305,7 @@ GameObject:
   - component: {fileID: 1800712591}
   - component: {fileID: 1800712590}
   - component: {fileID: 1800712589}
+  - component: {fileID: 6842301338570919195}
   m_Layer: 5
   m_Name: Buy
   m_TagString: Untagged
@@ -5398,6 +5447,23 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
   m_EffectDistance: {x: 7.5, y: -7.5}
   m_UseGraphicAlpha: 1
+--- !u!114 &6842301338570919195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1800712587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c04f6df53fce9134aa33a10a53f31db0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  costText: {fileID: 409160308}
+  valueText: {fileID: 0}
+  type: 3
+  greenColor: {r: 0.21960784, g: 0.99607843, b: 0.14117648, a: 1}
+  redColor: {r: 1, g: 0.18431373, b: 0.09019608, a: 1}
 --- !u!1 &1832542164
 GameObject:
   m_ObjectHideFlags: 0
@@ -6077,6 +6143,7 @@ GameObject:
   - component: {fileID: 8620103564649155040}
   - component: {fileID: 7888377659112149493}
   - component: {fileID: 3514100368068438683}
+  - component: {fileID: 6005560565500807646}
   m_Layer: 5
   m_Name: Size
   m_TagString: Untagged
@@ -6218,6 +6285,23 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
   m_EffectDistance: {x: 7.5, y: -7.5}
   m_UseGraphicAlpha: 1
+--- !u!114 &6005560565500807646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1942350995613919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c04f6df53fce9134aa33a10a53f31db0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  costText: {fileID: 359908139935144319}
+  valueText: {fileID: 0}
+  type: 2
+  greenColor: {r: 0.21960784, g: 0.99607843, b: 0.14117648, a: 1}
+  redColor: {r: 1, g: 0.18431373, b: 0.09019608, a: 1}
 --- !u!1 &7333617303925700
 GameObject:
   m_ObjectHideFlags: 0

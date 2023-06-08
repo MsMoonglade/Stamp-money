@@ -40,7 +40,14 @@ public class PassiveIncome : MonoBehaviour
         {
             int passedHour = CheckOfflineTime();
 
-            passiveAmmount = (goldPerHour[passiveIncomeIndex] * passedHour);    
+            int index = passiveIncomeIndex;
+            
+            if (index >= 4)
+            {
+                index = 3;
+            }
+
+            passiveAmmount = (goldPerHour[index] * passedHour);    
             passiveIncomeText.text = passiveAmmount.ToString();
         }
 
@@ -62,7 +69,7 @@ public class PassiveIncome : MonoBehaviour
 
     public void IncreaseGoldPerHour()
     {
-        if(passiveIncomeIndex < goldPerHour.Length -1)
+        if(passiveIncomeIndex < goldPerHour.Length)
         {
             passiveIncomeIndex ++;
             PlayerPrefs.SetInt("PassiveIncomeIndex", passiveIncomeIndex);

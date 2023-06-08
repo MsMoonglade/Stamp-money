@@ -441,6 +441,7 @@ MonoBehaviour:
   rewardParent: {fileID: 538985683625139169}
   towerElementPrefs: {fileID: 5152895986295800298, guid: bc219dbce9ba8cf46ae9f4c6aa2701d4,
     type: 3}
+  valueText: {fileID: 1082020234}
   completeParticle: {fileID: 3334270950541968950}
 --- !u!54 &361784995080591113
 Rigidbody:
