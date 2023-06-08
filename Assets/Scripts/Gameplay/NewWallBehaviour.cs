@@ -35,12 +35,16 @@ public class NewWallBehaviour : MonoBehaviour
 
     private List<Collider> nearWall = new List<Collider>();
 
+    private bool colDelay;
+
     private void Awake()
     {
         UpdateUi();
 
         CheckIfNegative();
         CheckNearWall();
+
+        colDelay = true;
     }
 
     private void OnTriggerEnter(Collider col)
@@ -52,11 +56,19 @@ public class NewWallBehaviour : MonoBehaviour
             if (giveMoneyWall)
                 moneyToGive += val;
 
-            if (fireRateWall)
-                increaseFireRate += val;
+            if (fireRateWall && colDelay)
+            {
+                increaseFireRate++;
+                colDelay = false;
+                StartCoroutine(ResetColDelay());
+            }
 
-            if (fireDistanceWall)
-                fireDistanceRate += val;
+            if (fireDistanceWall && colDelay)
+            {
+                fireDistanceRate++;
+                colDelay = false;
+                StartCoroutine(ResetColDelay());
+            }
 
             col.transform.GetComponent<MoneyBulletBehaviour>().DisableByCollision();
 
@@ -88,6 +100,12 @@ public class NewWallBehaviour : MonoBehaviour
                 CharacterBehaviour.instance.bulletActiveTime += convertedValue;
             }
         }
+    }
+
+    private IEnumerator ResetColDelay()
+    {
+        yield return new WaitForSeconds(0.2f);
+        colDelay = true;
     }
 
     private void CheckNearWall()
