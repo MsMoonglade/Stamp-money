@@ -81,6 +81,8 @@ public class NewWallBehaviour : MonoBehaviour
             foreach (var c in nearWall)
             {
                 c.enabled = false;
+
+                c.transform.gameObject.GetComponent<NewWallBehaviour>().DisableAnimation();
             }
 
             if (giveMoneyWall)
@@ -98,8 +100,23 @@ public class NewWallBehaviour : MonoBehaviour
             {
                 float convertedValue = ConvertFireDistanceValue();
                 CharacterBehaviour.instance.bulletActiveTime += convertedValue;
+
+                if(convertedValue > 0)               
+                    CharacterBehaviour.instance.powerUpParticle.Play();
+                else
+                    CharacterBehaviour.instance.powerDownParticle.Play();
             }
         }
+    }
+
+    public void DisableAnimation()
+    {
+        transform.DOLocalRotate(new Vector3(0, 360, 0), 0.2f, RotateMode.FastBeyond360)
+            .SetRelative(true)
+            .SetEase(Ease.Linear);
+
+        transform.DOScale(new Vector3(0, 0, 0), 0.2f)
+            .SetEase(Ease.InBack);
     }
 
     private IEnumerator ResetColDelay()

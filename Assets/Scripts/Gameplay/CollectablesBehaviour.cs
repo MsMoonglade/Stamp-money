@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -23,8 +24,10 @@ public class CollectablesBehaviour : MonoBehaviour
             ShopManager.instance.IncreaseDiamond((int)rewardAmount);
 
         if (isMoney)
-            ShopManager.instance.IncreaseGold((int)rewardAmount, CharacterBehaviour.instance.gameObject);
+            ShopManager.instance.IncreaseGold((int)rewardAmount, transform.gameObject);
 
-        this.gameObject.SetActive(false);
+        transform.DOScale(Vector3.zero, 0.25f)
+            .SetEase(Ease.InBack)
+            .OnComplete(() => this.gameObject.SetActive(false));
     }
 }

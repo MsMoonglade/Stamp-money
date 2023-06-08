@@ -46,7 +46,7 @@ public class RewardTowerElement : MonoBehaviour
         transform.DOLocalRotate(new Vector3(0, 360, 0), 0.2f, RotateMode.FastBeyond360).SetRelative(true).SetEase(Ease.Linear);
 
         //ANIMATE Reward
-        rewardParent.transform.DOLocalRotate(new Vector3(0, 360, 0), 5f, RotateMode.FastBeyond360)
+        rewardParent.transform.GetChild(0).transform.DOLocalRotate(new Vector3(0, 360, 0), 5f, RotateMode.FastBeyond360)
             .SetRelative(true)
             .SetEase(Ease.Linear)
             .SetLoops(-1, LoopType.Restart);
@@ -128,12 +128,14 @@ public class RewardTowerElement : MonoBehaviour
             movedOffset += elementYOffset;
         }
 
+        rewardParent.transform.localRotation *= Quaternion.Euler(0, (elementRotOffset * necesaryElement ), 0);
+
         pos += new Vector3(0, rewardYOffset, 0);
         pos += new Vector3(0, rewardModelOffset, 0);
         movedOffset += rewardYOffset;
 
-
-        rewardParent.transform.GetChild(0).transform.localPosition = pos;
+        rewardParent.transform.GetChild(0).transform.localPosition = pos + new Vector3(0, 0.5f, 0);
+        rewardParent.transform.GetChild(1).transform.localPosition = pos + new Vector3(0,-1, 0);
     }
     private void TweenTowerScale()
     {

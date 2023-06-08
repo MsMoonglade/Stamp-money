@@ -33,8 +33,12 @@ public class CharacterBehaviour : MonoBehaviour
     public Vector3 editRotationOffset;
     public float editAnimSpeed;
 
+    public ParticleSystem powerUpParticle;
+    public ParticleSystem powerDownParticle;
+
     private Vector3 startPos;
     private quaternion startRot;
+
 
     private Coroutine jumpCoroutine;
 
@@ -369,6 +373,10 @@ public class CharacterBehaviour : MonoBehaviour
         if (jumpSpeed <= 0.15f)
             jumpSpeed = 0.15f;
 
+        if(amount > 0)      
+            powerUpParticle.Play();
+       else
+            powerDownParticle.Play();
 
         notMovingJumpSpeed = jumpSpeed / 2;
         movingJumpSpeed = jumpSpeed;

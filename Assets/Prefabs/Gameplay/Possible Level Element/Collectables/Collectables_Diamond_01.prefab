@@ -60,13 +60,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6960253137605181361, guid: 32f9b4dbd0774f6458cdaabc52d32020,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6960253137605181361, guid: 32f9b4dbd0774f6458cdaabc52d32020,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6960253137605181361, guid: 32f9b4dbd0774f6458cdaabc52d32020,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6960253137605181361, guid: 32f9b4dbd0774f6458cdaabc52d32020,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.5
       objectReference: {fileID: 0}
     - target: {fileID: 6960253137605181361, guid: 32f9b4dbd0774f6458cdaabc52d32020,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6960253137605181361, guid: 32f9b4dbd0774f6458cdaabc52d32020,
         type: 3}
@@ -113,6 +128,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Collectables_Diamond (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 6960253137605181366, guid: 32f9b4dbd0774f6458cdaabc52d32020,
+        type: 3}
+      propertyPath: m_Layer
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7806603526141707764, guid: 32f9b4dbd0774f6458cdaabc52d32020,
+        type: 3}
+      propertyPath: m_Layer
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32f9b4dbd0774f6458cdaabc52d32020, type: 3}
 --- !u!4 &7387200986326251481 stripped
@@ -127,6 +152,35 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 437787538907007080}
   m_PrefabAsset: {fileID: 0}
+--- !u!54 &4333285882857379416
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7387200986326251486}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
+--- !u!65 &6370779387907676867
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7387200986326251486}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 5, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &3635389762194122296
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141,6 +195,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   up: 1
   rotationTime: 1.25
+--- !u!114 &5982384343859409993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7387200986326251486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31bee3f4c7f014244b4fc91e6a4a285b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isMoney: 0
+  isDiamond: 1
+  rewardAmount: 1
 --- !u!114 &7755260614279673597
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -153,7 +222,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fa194e6eb0d4ef49969138dd57d812e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  endPos: {x: 0, y: 4, z: 0}
+  endPos: {x: 0, y: 2, z: 0}
   duration: 1.25
 --- !u!1001 &476461980702355712
 PrefabInstance:
@@ -169,13 +238,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6960253137605181361, guid: 32f9b4dbd0774f6458cdaabc52d32020,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6960253137605181361, guid: 32f9b4dbd0774f6458cdaabc52d32020,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6960253137605181361, guid: 32f9b4dbd0774f6458cdaabc52d32020,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6960253137605181361, guid: 32f9b4dbd0774f6458cdaabc52d32020,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.5
       objectReference: {fileID: 0}
     - target: {fileID: 6960253137605181361, guid: 32f9b4dbd0774f6458cdaabc52d32020,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6960253137605181361, guid: 32f9b4dbd0774f6458cdaabc52d32020,
         type: 3}
@@ -222,6 +306,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Collectables_Diamond (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6960253137605181366, guid: 32f9b4dbd0774f6458cdaabc52d32020,
+        type: 3}
+      propertyPath: m_Layer
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7806603526141707764, guid: 32f9b4dbd0774f6458cdaabc52d32020,
+        type: 3}
+      propertyPath: m_Layer
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32f9b4dbd0774f6458cdaabc52d32020, type: 3}
 --- !u!4 &7353097258864152241 stripped
@@ -236,6 +330,35 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 476461980702355712}
   m_PrefabAsset: {fileID: 0}
+--- !u!54 &7257102605430293268
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7353097258864152246}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
+--- !u!65 &2298489317965213239
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7353097258864152246}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 5, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1095585770195667606
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -248,8 +371,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fa194e6eb0d4ef49969138dd57d812e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  endPos: {x: 0, y: 4, z: 0}
+  endPos: {x: 0, y: 2, z: 0}
   duration: 1.25
+--- !u!114 &3173925222001768242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7353097258864152246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31bee3f4c7f014244b4fc91e6a4a285b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isMoney: 0
+  isDiamond: 1
+  rewardAmount: 1
 --- !u!114 &6854360682278062822
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -278,13 +416,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6960253137605181361, guid: 32f9b4dbd0774f6458cdaabc52d32020,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6960253137605181361, guid: 32f9b4dbd0774f6458cdaabc52d32020,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6960253137605181361, guid: 32f9b4dbd0774f6458cdaabc52d32020,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6960253137605181361, guid: 32f9b4dbd0774f6458cdaabc52d32020,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.5
       objectReference: {fileID: 0}
     - target: {fileID: 6960253137605181361, guid: 32f9b4dbd0774f6458cdaabc52d32020,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6960253137605181361, guid: 32f9b4dbd0774f6458cdaabc52d32020,
         type: 3}
@@ -331,6 +484,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Collectables_Diamond (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 6960253137605181366, guid: 32f9b4dbd0774f6458cdaabc52d32020,
+        type: 3}
+      propertyPath: m_Layer
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7806603526141707764, guid: 32f9b4dbd0774f6458cdaabc52d32020,
+        type: 3}
+      propertyPath: m_Layer
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32f9b4dbd0774f6458cdaabc52d32020, type: 3}
 --- !u!4 &8800795759081287296 stripped
@@ -345,6 +508,35 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1924581061313745201}
   m_PrefabAsset: {fileID: 0}
+--- !u!54 &5338412272938748321
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8800795759081287303}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
+--- !u!65 &5678758528223892435
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8800795759081287303}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 5, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &3118915644619744246
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -359,6 +551,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   up: 1
   rotationTime: 1.25
+--- !u!114 &7468447703707028060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8800795759081287303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31bee3f4c7f014244b4fc91e6a4a285b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isMoney: 0
+  isDiamond: 1
+  rewardAmount: 1
 --- !u!114 &8534294988489799805
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -371,7 +578,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fa194e6eb0d4ef49969138dd57d812e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  endPos: {x: 0, y: 4, z: 0}
+  endPos: {x: 0, y: 2, z: 0}
   duration: 1.25
 --- !u!1001 &3883671995977850838
 PrefabInstance:
@@ -387,13 +594,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6960253137605181361, guid: 32f9b4dbd0774f6458cdaabc52d32020,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6960253137605181361, guid: 32f9b4dbd0774f6458cdaabc52d32020,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6960253137605181361, guid: 32f9b4dbd0774f6458cdaabc52d32020,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6960253137605181361, guid: 32f9b4dbd0774f6458cdaabc52d32020,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.25
       objectReference: {fileID: 0}
     - target: {fileID: 6960253137605181361, guid: 32f9b4dbd0774f6458cdaabc52d32020,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6960253137605181361, guid: 32f9b4dbd0774f6458cdaabc52d32020,
         type: 3}
@@ -440,6 +662,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Collectables_Diamond (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 6960253137605181366, guid: 32f9b4dbd0774f6458cdaabc52d32020,
+        type: 3}
+      propertyPath: m_Layer
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7806603526141707764, guid: 32f9b4dbd0774f6458cdaabc52d32020,
+        type: 3}
+      propertyPath: m_Layer
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32f9b4dbd0774f6458cdaabc52d32020, type: 3}
 --- !u!1 &6157082874003939424 stripped
@@ -448,6 +680,35 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 3883671995977850838}
   m_PrefabAsset: {fileID: 0}
+--- !u!54 &1294971625919597997
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6157082874003939424}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
+--- !u!65 &5020215064404758651
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6157082874003939424}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 5, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &350631735061135869
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -460,8 +721,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fa194e6eb0d4ef49969138dd57d812e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  endPos: {x: 0, y: 4, z: 0}
+  endPos: {x: 0, y: 2, z: 0}
   duration: 1.25
+--- !u!114 &844499753376016630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6157082874003939424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31bee3f4c7f014244b4fc91e6a4a285b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isMoney: 0
+  isDiamond: 1
+  rewardAmount: 1
 --- !u!114 &2970641855962046117
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -496,13 +772,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6960253137605181361, guid: 32f9b4dbd0774f6458cdaabc52d32020,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6960253137605181361, guid: 32f9b4dbd0774f6458cdaabc52d32020,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6960253137605181361, guid: 32f9b4dbd0774f6458cdaabc52d32020,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6960253137605181361, guid: 32f9b4dbd0774f6458cdaabc52d32020,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.25
       objectReference: {fileID: 0}
     - target: {fileID: 6960253137605181361, guid: 32f9b4dbd0774f6458cdaabc52d32020,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6960253137605181361, guid: 32f9b4dbd0774f6458cdaabc52d32020,
         type: 3}
@@ -549,6 +840,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Collectables_Diamond (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 6960253137605181366, guid: 32f9b4dbd0774f6458cdaabc52d32020,
+        type: 3}
+      propertyPath: m_Layer
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7806603526141707764, guid: 32f9b4dbd0774f6458cdaabc52d32020,
+        type: 3}
+      propertyPath: m_Layer
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32f9b4dbd0774f6458cdaabc52d32020, type: 3}
 --- !u!4 &6842978327549980307 stripped
@@ -563,6 +864,50 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 4494853916572324130}
   m_PrefabAsset: {fileID: 0}
+--- !u!54 &9007584609440372635
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6842978327549980308}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
+--- !u!65 &2943007580957594844
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6842978327549980308}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 5, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1699334713376279347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6842978327549980308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31bee3f4c7f014244b4fc91e6a4a285b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isMoney: 0
+  isDiamond: 1
+  rewardAmount: 1
 --- !u!114 &5217875242045026391
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -575,7 +920,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fa194e6eb0d4ef49969138dd57d812e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  endPos: {x: 0, y: 4, z: 0}
+  endPos: {x: 0, y: 2, z: 0}
   duration: 1.25
 --- !u!114 &7376836910543518729
 MonoBehaviour:
@@ -605,13 +950,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6960253137605181361, guid: 32f9b4dbd0774f6458cdaabc52d32020,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6960253137605181361, guid: 32f9b4dbd0774f6458cdaabc52d32020,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6960253137605181361, guid: 32f9b4dbd0774f6458cdaabc52d32020,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6960253137605181361, guid: 32f9b4dbd0774f6458cdaabc52d32020,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.25
       objectReference: {fileID: 0}
     - target: {fileID: 6960253137605181361, guid: 32f9b4dbd0774f6458cdaabc52d32020,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6960253137605181361, guid: 32f9b4dbd0774f6458cdaabc52d32020,
         type: 3}
@@ -658,6 +1018,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Collectables_Diamond (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 6960253137605181366, guid: 32f9b4dbd0774f6458cdaabc52d32020,
+        type: 3}
+      propertyPath: m_Layer
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7806603526141707764, guid: 32f9b4dbd0774f6458cdaabc52d32020,
+        type: 3}
+      propertyPath: m_Layer
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32f9b4dbd0774f6458cdaabc52d32020, type: 3}
 --- !u!1 &6881752549214728632 stripped
@@ -666,6 +1036,35 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 4546150871344614926}
   m_PrefabAsset: {fileID: 0}
+--- !u!54 &5446068904329451344
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6881752549214728632}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
+--- !u!65 &3027787153977544091
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6881752549214728632}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 5, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &719035192235956732
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -680,6 +1079,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   up: 1
   rotationTime: 1.25
+--- !u!114 &6951064275304342359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6881752549214728632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31bee3f4c7f014244b4fc91e6a4a285b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isMoney: 0
+  isDiamond: 1
+  rewardAmount: 1
 --- !u!114 &7687595102311230008
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -692,7 +1106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fa194e6eb0d4ef49969138dd57d812e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  endPos: {x: 0, y: 4, z: 0}
+  endPos: {x: 0, y: 2, z: 0}
   duration: 1.25
 --- !u!4 &6881752549214728639 stripped
 Transform:
@@ -714,13 +1128,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6960253137605181361, guid: 32f9b4dbd0774f6458cdaabc52d32020,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6960253137605181361, guid: 32f9b4dbd0774f6458cdaabc52d32020,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6960253137605181361, guid: 32f9b4dbd0774f6458cdaabc52d32020,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6960253137605181361, guid: 32f9b4dbd0774f6458cdaabc52d32020,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6960253137605181361, guid: 32f9b4dbd0774f6458cdaabc52d32020,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6960253137605181361, guid: 32f9b4dbd0774f6458cdaabc52d32020,
         type: 3}
@@ -767,6 +1196,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Collectables_Diamond (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 6960253137605181366, guid: 32f9b4dbd0774f6458cdaabc52d32020,
+        type: 3}
+      propertyPath: m_Layer
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7806603526141707764, guid: 32f9b4dbd0774f6458cdaabc52d32020,
+        type: 3}
+      propertyPath: m_Layer
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32f9b4dbd0774f6458cdaabc52d32020, type: 3}
 --- !u!4 &2358807548647314000 stripped
@@ -781,6 +1220,35 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 4624039778007068129}
   m_PrefabAsset: {fileID: 0}
+--- !u!54 &8097161750580870519
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2358807548647314007}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
+--- !u!65 &2198241665509847469
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2358807548647314007}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 5, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &2616759761454294595
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -795,6 +1263,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   up: 1
   rotationTime: 1.25
+--- !u!114 &3367535705083161131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2358807548647314007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31bee3f4c7f014244b4fc91e6a4a285b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isMoney: 0
+  isDiamond: 1
+  rewardAmount: 1
 --- !u!114 &4790667725074292518
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -807,7 +1290,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fa194e6eb0d4ef49969138dd57d812e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  endPos: {x: 0, y: 4, z: 0}
+  endPos: {x: 0, y: 2, z: 0}
   duration: 1.25
 --- !u!1001 &4658414733749488194
 PrefabInstance:
@@ -823,13 +1306,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6960253137605181361, guid: 32f9b4dbd0774f6458cdaabc52d32020,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6960253137605181361, guid: 32f9b4dbd0774f6458cdaabc52d32020,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6960253137605181361, guid: 32f9b4dbd0774f6458cdaabc52d32020,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6960253137605181361, guid: 32f9b4dbd0774f6458cdaabc52d32020,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.5
       objectReference: {fileID: 0}
     - target: {fileID: 6960253137605181361, guid: 32f9b4dbd0774f6458cdaabc52d32020,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6960253137605181361, guid: 32f9b4dbd0774f6458cdaabc52d32020,
         type: 3}
@@ -876,6 +1374,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Collectables_Diamond (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 6960253137605181366, guid: 32f9b4dbd0774f6458cdaabc52d32020,
+        type: 3}
+      propertyPath: m_Layer
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7806603526141707764, guid: 32f9b4dbd0774f6458cdaabc52d32020,
+        type: 3}
+      propertyPath: m_Layer
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32f9b4dbd0774f6458cdaabc52d32020, type: 3}
 --- !u!4 &2319858341533496819 stripped
@@ -890,6 +1398,35 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 4658414733749488194}
   m_PrefabAsset: {fileID: 0}
+--- !u!54 &6706162327870763826
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2319858341533496820}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
+--- !u!65 &2661198500995915265
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2319858341533496820}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 5, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &4346462091443861888
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -902,7 +1439,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fa194e6eb0d4ef49969138dd57d812e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  endPos: {x: 0, y: 4, z: 0}
+  endPos: {x: 0, y: 2, z: 0}
   duration: 1.25
 --- !u!114 &5036444505367316909
 MonoBehaviour:
@@ -918,6 +1455,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   up: 1
   rotationTime: 1.25
+--- !u!114 &5736255838941957866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2319858341533496820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31bee3f4c7f014244b4fc91e6a4a285b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isMoney: 0
+  isDiamond: 1
+  rewardAmount: 1
 --- !u!1001 &4694652609790801143
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -932,13 +1484,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6960253137605181361, guid: 32f9b4dbd0774f6458cdaabc52d32020,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6960253137605181361, guid: 32f9b4dbd0774f6458cdaabc52d32020,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6960253137605181361, guid: 32f9b4dbd0774f6458cdaabc52d32020,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6960253137605181361, guid: 32f9b4dbd0774f6458cdaabc52d32020,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.5
       objectReference: {fileID: 0}
     - target: {fileID: 6960253137605181361, guid: 32f9b4dbd0774f6458cdaabc52d32020,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6960253137605181361, guid: 32f9b4dbd0774f6458cdaabc52d32020,
         type: 3}
@@ -985,6 +1552,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Collectables_Diamond (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 6960253137605181366, guid: 32f9b4dbd0774f6458cdaabc52d32020,
+        type: 3}
+      propertyPath: m_Layer
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7806603526141707764, guid: 32f9b4dbd0774f6458cdaabc52d32020,
+        type: 3}
+      propertyPath: m_Layer
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32f9b4dbd0774f6458cdaabc52d32020, type: 3}
 --- !u!1 &2427731530470247233 stripped
@@ -993,6 +1570,35 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 4694652609790801143}
   m_PrefabAsset: {fileID: 0}
+--- !u!54 &8638667844081954519
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2427731530470247233}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
+--- !u!65 &6101664286975425837
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2427731530470247233}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 5, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &2507259378097566436
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1007,6 +1613,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   up: 1
   rotationTime: 1.25
+--- !u!114 &4837768586160274921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2427731530470247233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31bee3f4c7f014244b4fc91e6a4a285b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isMoney: 0
+  isDiamond: 1
+  rewardAmount: 1
 --- !u!114 &8789099157119236609
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1019,7 +1640,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fa194e6eb0d4ef49969138dd57d812e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  endPos: {x: 0, y: 4, z: 0}
+  endPos: {x: 0, y: 2, z: 0}
   duration: 1.25
 --- !u!4 &2427731530470247238 stripped
 Transform:
@@ -1041,13 +1662,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6960253137605181361, guid: 32f9b4dbd0774f6458cdaabc52d32020,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6960253137605181361, guid: 32f9b4dbd0774f6458cdaabc52d32020,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6960253137605181361, guid: 32f9b4dbd0774f6458cdaabc52d32020,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6960253137605181361, guid: 32f9b4dbd0774f6458cdaabc52d32020,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.25
       objectReference: {fileID: 0}
     - target: {fileID: 6960253137605181361, guid: 32f9b4dbd0774f6458cdaabc52d32020,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6960253137605181361, guid: 32f9b4dbd0774f6458cdaabc52d32020,
         type: 3}
@@ -1094,6 +1730,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Collectables_Diamond (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 6960253137605181366, guid: 32f9b4dbd0774f6458cdaabc52d32020,
+        type: 3}
+      propertyPath: m_Layer
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7806603526141707764, guid: 32f9b4dbd0774f6458cdaabc52d32020,
+        type: 3}
+      propertyPath: m_Layer
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32f9b4dbd0774f6458cdaabc52d32020, type: 3}
 --- !u!1 &2584055216931097194 stripped
@@ -1102,6 +1748,35 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 4849147395980490204}
   m_PrefabAsset: {fileID: 0}
+--- !u!54 &3117915922065838154
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2584055216931097194}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
+--- !u!65 &2584725549587077714
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2584055216931097194}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 5, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &134356349000876029
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1116,6 +1791,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   up: 1
   rotationTime: 1.25
+--- !u!114 &6734587940775504148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2584055216931097194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31bee3f4c7f014244b4fc91e6a4a285b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isMoney: 0
+  isDiamond: 1
+  rewardAmount: 1
 --- !u!114 &7870467734671609406
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1128,7 +1818,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fa194e6eb0d4ef49969138dd57d812e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  endPos: {x: 0, y: 4, z: 0}
+  endPos: {x: 0, y: 2, z: 0}
   duration: 1.25
 --- !u!4 &2584055216931097197 stripped
 Transform:
@@ -1150,13 +1840,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6960253137605181361, guid: 32f9b4dbd0774f6458cdaabc52d32020,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6960253137605181361, guid: 32f9b4dbd0774f6458cdaabc52d32020,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6960253137605181361, guid: 32f9b4dbd0774f6458cdaabc52d32020,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6960253137605181361, guid: 32f9b4dbd0774f6458cdaabc52d32020,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6960253137605181361, guid: 32f9b4dbd0774f6458cdaabc52d32020,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6960253137605181361, guid: 32f9b4dbd0774f6458cdaabc52d32020,
         type: 3}
@@ -1203,6 +1908,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Collectables_Diamond (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 6960253137605181366, guid: 32f9b4dbd0774f6458cdaabc52d32020,
+        type: 3}
+      propertyPath: m_Layer
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7806603526141707764, guid: 32f9b4dbd0774f6458cdaabc52d32020,
+        type: 3}
+      propertyPath: m_Layer
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32f9b4dbd0774f6458cdaabc52d32020, type: 3}
 --- !u!1 &2658925827958828456 stripped
@@ -1211,6 +1926,35 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 4931916211464819230}
   m_PrefabAsset: {fileID: 0}
+--- !u!54 &7653097068533031794
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2658925827958828456}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
+--- !u!65 &9116431850416357140
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2658925827958828456}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 5, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1010348284401122938
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1237,8 +1981,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fa194e6eb0d4ef49969138dd57d812e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  endPos: {x: 0, y: 4, z: 0}
+  endPos: {x: 0, y: 2, z: 0}
   duration: 1.25
+--- !u!114 &7905222898883304783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2658925827958828456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31bee3f4c7f014244b4fc91e6a4a285b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isMoney: 0
+  isDiamond: 1
+  rewardAmount: 1
 --- !u!4 &2658925827958828463 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6960253137605181361, guid: 32f9b4dbd0774f6458cdaabc52d32020,
@@ -1259,13 +2018,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6960253137605181361, guid: 32f9b4dbd0774f6458cdaabc52d32020,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6960253137605181361, guid: 32f9b4dbd0774f6458cdaabc52d32020,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6960253137605181361, guid: 32f9b4dbd0774f6458cdaabc52d32020,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6960253137605181361, guid: 32f9b4dbd0774f6458cdaabc52d32020,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.25
       objectReference: {fileID: 0}
     - target: {fileID: 6960253137605181361, guid: 32f9b4dbd0774f6458cdaabc52d32020,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6960253137605181361, guid: 32f9b4dbd0774f6458cdaabc52d32020,
         type: 3}
@@ -1312,6 +2086,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Collectables_Diamond (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6960253137605181366, guid: 32f9b4dbd0774f6458cdaabc52d32020,
+        type: 3}
+      propertyPath: m_Layer
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7806603526141707764, guid: 32f9b4dbd0774f6458cdaabc52d32020,
+        type: 3}
+      propertyPath: m_Layer
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32f9b4dbd0774f6458cdaabc52d32020, type: 3}
 --- !u!4 &3295819467314494384 stripped
@@ -1326,6 +2110,50 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 5560488746838246401}
   m_PrefabAsset: {fileID: 0}
+--- !u!54 &3047196058848487626
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3295819467314494391}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
+--- !u!65 &288119980285157444
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3295819467314494391}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 5, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &929631818185399300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3295819467314494391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31bee3f4c7f014244b4fc91e6a4a285b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isMoney: 0
+  isDiamond: 1
+  rewardAmount: 1
 --- !u!114 &4851674318710151366
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1338,7 +2166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fa194e6eb0d4ef49969138dd57d812e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  endPos: {x: 0, y: 4, z: 0}
+  endPos: {x: 0, y: 2, z: 0}
   duration: 1.25
 --- !u!114 &7999364347121539496
 MonoBehaviour:
@@ -1368,13 +2196,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6960253137605181361, guid: 32f9b4dbd0774f6458cdaabc52d32020,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6960253137605181361, guid: 32f9b4dbd0774f6458cdaabc52d32020,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6960253137605181361, guid: 32f9b4dbd0774f6458cdaabc52d32020,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6960253137605181361, guid: 32f9b4dbd0774f6458cdaabc52d32020,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6960253137605181361, guid: 32f9b4dbd0774f6458cdaabc52d32020,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6960253137605181361, guid: 32f9b4dbd0774f6458cdaabc52d32020,
         type: 3}
@@ -1421,6 +2264,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Collectables_Diamond
       objectReference: {fileID: 0}
+    - target: {fileID: 6960253137605181366, guid: 32f9b4dbd0774f6458cdaabc52d32020,
+        type: 3}
+      propertyPath: m_Layer
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7806603526141707764, guid: 32f9b4dbd0774f6458cdaabc52d32020,
+        type: 3}
+      propertyPath: m_Layer
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32f9b4dbd0774f6458cdaabc52d32020, type: 3}
 --- !u!1 &3626478741558314330 stripped
@@ -1429,6 +2282,50 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 5963925245513956076}
   m_PrefabAsset: {fileID: 0}
+--- !u!54 &5616594976356366074
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3626478741558314330}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
+--- !u!65 &476678445156220165
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3626478741558314330}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 5, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5134011016905776777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3626478741558314330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31bee3f4c7f014244b4fc91e6a4a285b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isMoney: 0
+  isDiamond: 1
+  rewardAmount: 1
 --- !u!114 &5474965916726836882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1455,7 +2352,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fa194e6eb0d4ef49969138dd57d812e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  endPos: {x: 0, y: 4, z: 0}
+  endPos: {x: 0, y: 2, z: 0}
   duration: 1.25
 --- !u!4 &3626478741558314333 stripped
 Transform:
@@ -1477,13 +2374,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6960253137605181361, guid: 32f9b4dbd0774f6458cdaabc52d32020,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6960253137605181361, guid: 32f9b4dbd0774f6458cdaabc52d32020,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6960253137605181361, guid: 32f9b4dbd0774f6458cdaabc52d32020,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6960253137605181361, guid: 32f9b4dbd0774f6458cdaabc52d32020,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.5
       objectReference: {fileID: 0}
     - target: {fileID: 6960253137605181361, guid: 32f9b4dbd0774f6458cdaabc52d32020,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6960253137605181361, guid: 32f9b4dbd0774f6458cdaabc52d32020,
         type: 3}
@@ -1530,6 +2442,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Collectables_Diamond (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 6960253137605181366, guid: 32f9b4dbd0774f6458cdaabc52d32020,
+        type: 3}
+      propertyPath: m_Layer
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7806603526141707764, guid: 32f9b4dbd0774f6458cdaabc52d32020,
+        type: 3}
+      propertyPath: m_Layer
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32f9b4dbd0774f6458cdaabc52d32020, type: 3}
 --- !u!1 &459655065298594011 stripped
@@ -1538,6 +2460,50 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 7419342297870227309}
   m_PrefabAsset: {fileID: 0}
+--- !u!54 &4033245655443138245
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 459655065298594011}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
+--- !u!65 &6483085929316726867
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 459655065298594011}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 5, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &21791885902685254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 459655065298594011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31bee3f4c7f014244b4fc91e6a4a285b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isMoney: 0
+  isDiamond: 1
+  rewardAmount: 1
 --- !u!114 &4441513360213344310
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1564,7 +2530,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fa194e6eb0d4ef49969138dd57d812e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  endPos: {x: 0, y: 4, z: 0}
+  endPos: {x: 0, y: 2, z: 0}
   duration: 1.25
 --- !u!4 &459655065298594012 stripped
 Transform:
@@ -1586,13 +2552,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6960253137605181361, guid: 32f9b4dbd0774f6458cdaabc52d32020,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6960253137605181361, guid: 32f9b4dbd0774f6458cdaabc52d32020,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6960253137605181361, guid: 32f9b4dbd0774f6458cdaabc52d32020,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6960253137605181361, guid: 32f9b4dbd0774f6458cdaabc52d32020,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.25
       objectReference: {fileID: 0}
     - target: {fileID: 6960253137605181361, guid: 32f9b4dbd0774f6458cdaabc52d32020,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6960253137605181361, guid: 32f9b4dbd0774f6458cdaabc52d32020,
         type: 3}
@@ -1639,6 +2620,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Collectables_Diamond (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 6960253137605181366, guid: 32f9b4dbd0774f6458cdaabc52d32020,
+        type: 3}
+      propertyPath: m_Layer
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7806603526141707764, guid: 32f9b4dbd0774f6458cdaabc52d32020,
+        type: 3}
+      propertyPath: m_Layer
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32f9b4dbd0774f6458cdaabc52d32020, type: 3}
 --- !u!4 &2030106821631185722 stripped
@@ -1653,6 +2644,35 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 8987964672979086475}
   m_PrefabAsset: {fileID: 0}
+--- !u!54 &7934470041489727713
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2030106821631185725}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
+--- !u!65 &6705018579535874326
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2030106821631185725}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 5, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1252167431033486965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1679,5 +2699,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fa194e6eb0d4ef49969138dd57d812e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  endPos: {x: 0, y: 4, z: 0}
+  endPos: {x: 0, y: 2, z: 0}
   duration: 1.25
+--- !u!114 &5610950434028130858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2030106821631185725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31bee3f4c7f014244b4fc91e6a4a285b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isMoney: 0
+  isDiamond: 1
+  rewardAmount: 1
