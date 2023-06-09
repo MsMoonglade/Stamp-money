@@ -35,7 +35,7 @@ public class RewardTowerElement : MonoBehaviour
     private int startValue;
     private Collider col;
 
-    private void Awake()
+    private void Start()
     {
         movedOffset = 0;
         startValue = value;
@@ -115,6 +115,29 @@ public class RewardTowerElement : MonoBehaviour
 
     private void GenerateElement()
     {
+
+        int valuePerElementMultiplyer = 1;
+
+        int count = value / 200;
+
+        int originalValue = valuePerElement;
+
+
+        if (count > 0)
+        {
+            for(int i = 0; i < count; i++)
+            {
+                valuePerElementMultiplyer++;
+                valuePerElement = 0;
+            }
+        }
+
+        for(int i = 0; i < valuePerElementMultiplyer; i++)
+        {
+            valuePerElement += originalValue;
+        }
+
+
         int necesaryElement = value / valuePerElement;
         Vector3 pos = Vector3.zero;
 

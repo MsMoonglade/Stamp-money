@@ -28,12 +28,24 @@ public class LevelManager : MonoBehaviour
 
     private Vector3 elementPosition;
 
+    private DifficultyManager difficultyManager;
+
     private void Awake()
     {
         instance = this;
 
-        if (GENERATE)        
+        difficultyManager = GetComponent<DifficultyManager>();
+
+        if (GENERATE)
+        {
             GenerateLevel();
+        }
+    }
+
+    private void Start()
+    {
+        SetDiamondPerLevelValue();
+        SetLevelDifficulty();
     }
 
     private void GenerateLevel()
@@ -80,6 +92,112 @@ public class LevelManager : MonoBehaviour
 
         GameObject o = Instantiate(possiblePool[index], Vector2.zero, Quaternion.identity, parent.transform);
         return o;
+    }
+
+    private void SetDiamondPerLevelValue()
+    {
+        int diamondValue = difficultyManager.currentDiamond;
+
+        List<RewardTowerElement> diamondTower = new List<RewardTowerElement> ();
+
+        for(int i = 0; i < rewardTowerParent.transform.childCount; i++)
+        {
+            for(int j = 0; j < rewardTowerParent.transform.GetChild(i).transform.childCount; j++)
+            {
+                RewardTowerElement t = rewardTowerParent.transform.GetChild(i).transform.GetChild(j).GetComponent<RewardTowerElement>();
+                if (t.rewardIsDiamond)
+                {
+                    diamondTower.Add(t);
+                }
+            }
+        }
+
+        List<CollectablesBehaviour> diamondCollectables = new List<CollectablesBehaviour>();
+
+        for (int i = 0; i < collectableParent.transform.childCount; i++)
+        {
+            for (int j = 0; j < collectableParent.transform.GetChild(i).transform.childCount; j++)
+            {
+                CollectablesBehaviour c = collectableParent.transform.GetChild(i).transform.GetChild(j).GetComponent<CollectablesBehaviour>();
+                if (c.isDiamond)
+                {
+                    diamondCollectables.Add(c);
+                }
+            }
+        }
+
+        diamondValue -= diamondCollectables.Count;
+
+        if (diamondTower.Count != 0 && diamondValue > 5)
+        {
+            int localDiamond = diamondValue / diamondTower.Count;
+
+            localDiamond = Mathf.Abs(localDiamond);
+
+            foreach (RewardTowerElement r in diamondTower)
+            {
+                r.rewardAmount = localDiamond += Random.Range(-localDiamond / 2, localDiamond * 2);
+
+                r.rewardAmount = Mathf.Abs(r.rewardAmount);
+
+                if (r.rewardAmount <= 2)
+                    r.rewardAmount = 5;
+            }
+        }
+
+        if(diamondTower.Count != 0 && diamondValue <= 5)
+        {
+            foreach (RewardTowerElement r in diamondTower)
+            {
+                r.rewardAmount = Random.Range(3, 7);
+            }
+        }
+    }
+
+    private void SetLevelDifficulty()
+    {
+        float levelDifficulty = difficultyManager.currentDifficulty;
+
+        List<RewardTowerElement> tower = new List<RewardTowerElement>();
+
+        for (int i = 0; i < rewardTowerParent.transform.childCount; i++)
+        {
+            for (int j = 0; j < rewardTowerParent.transform.GetChild(i).transform.childCount; j++)
+            {
+                RewardTowerElement t = rewardTowerParent.transform.GetChild(i).transform.GetChild(j).GetComponent<RewardTowerElement>();
+
+                tower.Add(t);
+            }
+        }
+
+        Debug.Log(tower.Count);
+
+        foreach (RewardTowerElement t in tower)
+        {
+            Debug.Log(t.name);
+        }
+        
+        if (tower.Count != 0 )
+        {
+            foreach (RewardTowerElement t in tower)
+            {
+                t.value = (int)(levelDifficulty + Random.Range(-levelDifficulty / 4, levelDifficulty * 4));
+
+                t.value = Mathf.Abs(t.value);
+
+                float randomizer = Random.Range(0.0f, 1.0f);
+
+
+                if (randomizer <= 0.075f)
+                    t.value *= 5;
+
+                else if (randomizer > 0.075f && randomizer <= 0.15f)
+                    t.value = (int)(t.value * 3f);
+
+                else if (randomizer > 0.15f && randomizer <= 0.2f)
+                    t.value = (int)(t.value * 1.5f);
+            }
+        }
     }
 
     public float EvaluateLevelLenght(int currentLevel)

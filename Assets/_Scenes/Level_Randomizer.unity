@@ -1769,6 +1769,16 @@ PrefabInstance:
       propertyPath: endGameObject
       value: 
       objectReference: {fileID: 832707480}
+    - target: {fileID: 5766648231184970519, guid: 837de735bd62fbd45afc7b610c27f0eb,
+        type: 3}
+      propertyPath: mediumElementDistance
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5766648231184970519, guid: 837de735bd62fbd45afc7b610c27f0eb,
+        type: 3}
+      propertyPath: elementiDistanceModifyer
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5766648231184970520, guid: 837de735bd62fbd45afc7b610c27f0eb,
         type: 3}
       propertyPath: m_RootOrder
@@ -1826,6 +1836,76 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 837de735bd62fbd45afc7b610c27f0eb, type: 3}
+--- !u!1 &5766648231171261681 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5766648231184970518, guid: 837de735bd62fbd45afc7b610c27f0eb,
+    type: 3}
+  m_PrefabInstance: {fileID: 5766648231171261680}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5766648231171261682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5766648231171261681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b91da46a1f61f0042b19cbc7effb1099, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstaclesdifficultyPerLevel:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 5
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 136
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 25
+      value: 200
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 136
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  diamondPerLevel:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 10
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 136
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 25
+      value: 50
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 136
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  diamondPerLevelrandomizerRange: 5
+  difficultyPerLevelrandomizerRange: 0
+  currentDiamond: 0
+  currentDifficulty: 0
 --- !u!1 &6010586822714046091 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2250228091084633149, guid: cab47d6e3cdacd747b1831da1c2989a2,
