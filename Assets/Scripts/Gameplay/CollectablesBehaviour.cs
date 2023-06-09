@@ -21,7 +21,7 @@ public class CollectablesBehaviour : MonoBehaviour
     private void Take()
     {
         if (isDiamond)
-            ShopManager.instance.IncreaseDiamond((int)rewardAmount);
+            ShopManager.instance.IncreaseDiamond((int)rewardAmount , transform.gameObject);
 
         if (isMoney)
             ShopManager.instance.IncreaseGold((int)rewardAmount, transform.gameObject);

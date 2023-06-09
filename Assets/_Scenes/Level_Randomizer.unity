@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.18704239, g: 0.4133858, b: 0.7343757, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1627,8 +1627,98 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5766648231171261682, guid: 837de735bd62fbd45afc7b610c27f0eb,
         type: 3}
+      propertyPath: obstaclesdifficultyPerLevel.m_Curve.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5766648231171261682, guid: 837de735bd62fbd45afc7b610c27f0eb,
+        type: 3}
       propertyPath: diamondPerLevel.m_Curve.Array.data[0].outWeight
       value: 0.07590106
+      objectReference: {fileID: 0}
+    - target: {fileID: 5766648231171261682, guid: 837de735bd62fbd45afc7b610c27f0eb,
+        type: 3}
+      propertyPath: obstaclesdifficultyPerLevel.m_Curve.Array.data[1].time
+      value: 6.6353045
+      objectReference: {fileID: 0}
+    - target: {fileID: 5766648231171261682, guid: 837de735bd62fbd45afc7b610c27f0eb,
+        type: 3}
+      propertyPath: obstaclesdifficultyPerLevel.m_Curve.Array.data[2].time
+      value: 17.716198
+      objectReference: {fileID: 0}
+    - target: {fileID: 5766648231171261682, guid: 837de735bd62fbd45afc7b610c27f0eb,
+        type: 3}
+      propertyPath: obstaclesdifficultyPerLevel.m_Curve.Array.data[3].time
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5766648231171261682, guid: 837de735bd62fbd45afc7b610c27f0eb,
+        type: 3}
+      propertyPath: obstaclesdifficultyPerLevel.m_Curve.Array.data[1].value
+      value: 16.58442
+      objectReference: {fileID: 0}
+    - target: {fileID: 5766648231171261682, guid: 837de735bd62fbd45afc7b610c27f0eb,
+        type: 3}
+      propertyPath: obstaclesdifficultyPerLevel.m_Curve.Array.data[2].value
+      value: 75.18051
+      objectReference: {fileID: 0}
+    - target: {fileID: 5766648231171261682, guid: 837de735bd62fbd45afc7b610c27f0eb,
+        type: 3}
+      propertyPath: obstaclesdifficultyPerLevel.m_Curve.Array.data[3].value
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 5766648231171261682, guid: 837de735bd62fbd45afc7b610c27f0eb,
+        type: 3}
+      propertyPath: obstaclesdifficultyPerLevel.m_Curve.Array.data[1].inSlope
+      value: 1.5288458
+      objectReference: {fileID: 0}
+    - target: {fileID: 5766648231171261682, guid: 837de735bd62fbd45afc7b610c27f0eb,
+        type: 3}
+      propertyPath: obstaclesdifficultyPerLevel.m_Curve.Array.data[2].inSlope
+      value: 6.163502
+      objectReference: {fileID: 0}
+    - target: {fileID: 5766648231171261682, guid: 837de735bd62fbd45afc7b610c27f0eb,
+        type: 3}
+      propertyPath: obstaclesdifficultyPerLevel.m_Curve.Array.data[1].inWeight
+      value: 0.13362595
+      objectReference: {fileID: 0}
+    - target: {fileID: 5766648231171261682, guid: 837de735bd62fbd45afc7b610c27f0eb,
+        type: 3}
+      propertyPath: obstaclesdifficultyPerLevel.m_Curve.Array.data[1].outSlope
+      value: 1.5288458
+      objectReference: {fileID: 0}
+    - target: {fileID: 5766648231171261682, guid: 837de735bd62fbd45afc7b610c27f0eb,
+        type: 3}
+      propertyPath: obstaclesdifficultyPerLevel.m_Curve.Array.data[2].outSlope
+      value: 6.163502
+      objectReference: {fileID: 0}
+    - target: {fileID: 5766648231171261682, guid: 837de735bd62fbd45afc7b610c27f0eb,
+        type: 3}
+      propertyPath: obstaclesdifficultyPerLevel.m_Curve.Array.data[3].inWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 5766648231171261682, guid: 837de735bd62fbd45afc7b610c27f0eb,
+        type: 3}
+      propertyPath: obstaclesdifficultyPerLevel.m_Curve.Array.data[1].outWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 5766648231171261682, guid: 837de735bd62fbd45afc7b610c27f0eb,
+        type: 3}
+      propertyPath: obstaclesdifficultyPerLevel.m_Curve.Array.data[2].outWeight
+      value: 0.15903482
+      objectReference: {fileID: 0}
+    - target: {fileID: 5766648231171261682, guid: 837de735bd62fbd45afc7b610c27f0eb,
+        type: 3}
+      propertyPath: obstaclesdifficultyPerLevel.m_Curve.Array.data[3].outWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 5766648231171261682, guid: 837de735bd62fbd45afc7b610c27f0eb,
+        type: 3}
+      propertyPath: obstaclesdifficultyPerLevel.m_Curve.Array.data[2].tangentMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5766648231171261682, guid: 837de735bd62fbd45afc7b610c27f0eb,
+        type: 3}
+      propertyPath: obstaclesdifficultyPerLevel.m_Curve.Array.data[3].tangentMode
+      value: 136
       objectReference: {fileID: 0}
     - target: {fileID: 5766648231184970518, guid: 837de735bd62fbd45afc7b610c27f0eb,
         type: 3}

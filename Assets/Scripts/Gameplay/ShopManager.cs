@@ -105,6 +105,15 @@ public class ShopManager : MonoBehaviour
         UiManager.instance.InstantiateDiamond(amount);
     }
 
+    public void IncreaseDiamond(int amount , GameObject pos)
+    {
+        currentDiamond += amount;
+
+        currentDiamondText.text = currentDiamond.ToString();
+
+        UiManager.instance.InstantiateDiamond(amount , pos);
+    }
+
     public void IncreaseEnergy(float amount , GameObject pos)
     {
         CharacterBehaviour.instance.currentEnergy += amount;

@@ -89,28 +89,28 @@ public class RewardTowerElement : MonoBehaviour
             value = 0;
             col.enabled = false;
 
+            Complete();
+
             valueText.text = value.ToString() + "$";
 
-
             rewardParent.transform.DOScale(0, 0.6f)
-                .SetEase(Ease.InBounce)                
-                .OnComplete(Complete);
+                .SetEase(Ease.InBounce)
+                .OnComplete(() => this.gameObject.SetActive(false));
         }
     }
 
     private void Complete()
     {
         if(rewardIsDiamond)        
-            ShopManager.instance.IncreaseDiamond((int)rewardAmount);
+            ShopManager.instance.IncreaseDiamond((int)rewardAmount , transform.gameObject);
 
         if(rewardIsCoin)
-            ShopManager.instance.IncreaseGold((int)rewardAmount , CharacterBehaviour.instance.gameObject);
+            ShopManager.instance.IncreaseGold((int)rewardAmount , transform.gameObject);
 
         if (rewardIsEnergy)
             ShopManager.instance.IncreaseEnergy(rewardAmount , transform.gameObject);
 
 
-        this.gameObject.SetActive(false);
     }
 
     private void GenerateElement()

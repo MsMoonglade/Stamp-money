@@ -115,7 +115,13 @@ public class UiManager : MonoBehaviour
         for(int i = 0; i < amount; i++)
         {
             Vector3 posToRef = localPosToRef.transform.position;
-            posToRef += new Vector3(Random.Range(-4.0f, 4.0f),0, Random.Range(-4.0f, 8.0f));
+            
+            if(localPosToRef == CharacterBehaviour.instance.gameObject)           
+                posToRef += new Vector3(Random.Range(-4.0f, 4.0f),0, Random.Range(-4.0f, 8.0f));
+            else
+                posToRef += new Vector3(Random.Range(-1.0f, 1.0f), 0, Random.Range(-1.0f, 1.0f));
+
+
 
             Vector3 pos =  Camera.main.WorldToScreenPoint(posToRef);
 
@@ -137,7 +143,7 @@ public class UiManager : MonoBehaviour
         for (int i = 0; i < amount; i++)
         {
             Vector3 posToRef = localPosition.transform.position;
-            posToRef += new Vector3(Random.Range(-4.0f, 4.0f), 0, Random.Range(-4.0f, 8.0f));
+            posToRef += new Vector3(Random.Range(-1.0f, 1.0f), 0, Random.Range(-1.0f, 1.0f));
 
             Vector3 pos = Camera.main.WorldToScreenPoint(posToRef);
 
@@ -174,6 +180,28 @@ public class UiManager : MonoBehaviour
         {
             Vector3 posToRef = CharacterBehaviour.instance.transform.position;
             posToRef += new Vector3(Random.Range(-4.0f, 4.0f), 0, Random.Range(-4.0f, 8.0f));
+
+            Vector3 pos = Camera.main.WorldToScreenPoint(posToRef);
+
+            GameObject coin = Instantiate(ui_Diamond_Prefs, pos, Quaternion.identity, uiTempParent.transform);
+            coin.transform.localScale = Vector3.zero;
+
+            coin.transform.DOScale(Vector3.one, 0.2f)
+                .SetEase(Ease.OutBack);
+
+            float animSpeed = Random.Range(ui_Diamond_AnimSpeed - 0.1f, ui_Diamond_AnimSpeed + 0.1f);
+            coin.transform.DOMove(ui_Diamond_Destination.transform.position, animSpeed)
+                .SetEase(Ease.InBack)
+                .OnComplete(() => Destroy(coin));
+        }
+    }
+
+    public void InstantiateDiamond(int amount, GameObject localPosition)
+    {
+        for (int i = 0; i < amount; i++)
+        {
+            Vector3 posToRef = localPosition.transform.position;
+            posToRef += new Vector3(Random.Range(-1.0f, 1.0f), 0, Random.Range(-1.0f, 1.0f));
 
             Vector3 pos = Camera.main.WorldToScreenPoint(posToRef);
 
