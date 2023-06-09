@@ -69,10 +69,15 @@ public class PassiveIncome : MonoBehaviour
 
     public void IncreaseGoldPerHour()
     {
-        if(passiveIncomeIndex < goldPerHour.Length)
+        if (ShopManager.instance.currentGold >= ShopCostHelper.instance.incomePerHourCost[passiveIncomeIndex])
         {
-            passiveIncomeIndex ++;
-            PlayerPrefs.SetInt("PassiveIncomeIndex", passiveIncomeIndex);
+            ShopManager.instance.SpendCoin(ShopCostHelper.instance.incomePerHourCost[passiveIncomeIndex]);
+
+            if (passiveIncomeIndex < goldPerHour.Length)
+            {
+                passiveIncomeIndex++;
+                PlayerPrefs.SetInt("PassiveIncomeIndex", passiveIncomeIndex);
+            }
         }
     }
 

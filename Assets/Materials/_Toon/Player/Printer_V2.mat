@@ -101,8 +101,8 @@ Material:
     - _Surface: 0
     - _ZWrite: 1
     m_Colors:
-    - _BaseColor: {r: 0.9490196, g: 0.62352943, b: 0.019607844, a: 1}
-    - _Color: {r: 0.9490196, g: 0.62352943, b: 0.019607844, a: 1}
+    - _BaseColor: {r: 0.9490196, g: 0.7861929, b: 0.01960786, a: 1}
+    - _Color: {r: 0.9490196, g: 0.7861929, b: 0.01960786, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _HighColor: {r: 1, g: 1, b: 1, a: 1}
     - _OutlineColor: {r: 1, g: 1, b: 1, a: 1}

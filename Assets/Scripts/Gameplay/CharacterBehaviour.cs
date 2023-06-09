@@ -167,7 +167,7 @@ public class CharacterBehaviour : MonoBehaviour
 
     private void Update()
     {
-        if (GameManager.instance.IsInGameStatus())
+        if (GameManager.instance.IsInGameStatus() && dieCoroutine == null)
         {
             if (moving)            
                 transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
@@ -300,8 +300,16 @@ public class CharacterBehaviour : MonoBehaviour
 
     private IEnumerator StartDieCoroutine()
     {
+        if (jumpCoroutine != null)
+        {
+            StopCoroutine(jumpCoroutine);
+            jumpCoroutine = null;
+        }
+
         handler.transform.parent = null;
         printerObject.transform.parent = null;
+
+        editObject.transform.DOScale(Vector3.zero, 0.25f);
 
         col.enabled = false;
 

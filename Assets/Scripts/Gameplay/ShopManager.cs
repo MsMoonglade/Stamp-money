@@ -105,7 +105,7 @@ public class ShopManager : MonoBehaviour
 
         int uitoInstantiate = (int)(amount / 0.25f);
 
-        UiManager.instance.InstantiateDiamond(uitoInstantiate);
+        UiManager.instance.InstantiateEnergy(uitoInstantiate);
     }
 
     public void DecreaseDiamond(int amount)
@@ -113,6 +113,16 @@ public class ShopManager : MonoBehaviour
         currentDiamond -= amount;
 
         currentDiamondText.text = currentDiamond.ToString();
+    }
+
+    public void SpendCoin(int amount)
+    {
+        currentGold -= amount;
+
+        if (currentGold <= 0)
+            currentGold = 0;
+
+        currentGoldText.text = currentGold.ToString();
     }
 
     public void TweenDiamondUi()

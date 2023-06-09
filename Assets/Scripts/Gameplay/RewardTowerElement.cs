@@ -163,11 +163,16 @@ public class RewardTowerElement : MonoBehaviour
     private void TweenTowerScale()
     {
         Sequence mySequence = DOTween.Sequence();
-        mySequence.Append(towerParent.transform.DOScale(1.055f, 0.03f));
+        mySequence.Append(transform.DOScale(1.1f, 0.03f));
+        mySequence.Append(transform.DOScale(1, 0.03f));
+
+        /*
+        Sequence mySequence = DOTween.Sequence();
+        mySequence.Append(towerParent.transform.DOScale(1.1f, 0.03f));
         mySequence.Append(towerParent.transform.DOScale(1, 0.03f));
+        */
 
-
-       // rewardParent.transform.DOLocalMoveY(0.1f, 0.15f).SetLoops(2 , LoopType.Yoyo);
-        rewardParent.transform.DOScale(1.1f, 0.15f).SetLoops(2, LoopType.Yoyo);
+        // rewardParent.transform.DOLocalMoveY(0.1f, 0.15f).SetLoops(2 , LoopType.Yoyo);
+        // rewardParent.transform.DOScale(1.1f, 0.15f).SetLoops(2, LoopType.Yoyo);
     }
 }

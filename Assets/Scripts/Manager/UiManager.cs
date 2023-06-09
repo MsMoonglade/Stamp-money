@@ -48,6 +48,8 @@ public class UiManager : MonoBehaviour
     private void Start()
     {
         energySlider.fillAmount = CharacterBehaviour.instance.currentEnergy / CharacterBehaviour.instance.maxEnergy;
+
+        retryUi.gameObject.transform.localScale = Vector3.zero;
     }
 
     private void Update()
@@ -97,6 +99,8 @@ public class UiManager : MonoBehaviour
         gameUi.SetActive(false);
         endGameUi.SetActive(false);
         retryUi.SetActive(true);
+
+        retryUi.transform.DOScale(Vector3.one, 0.5f);
     }
 
     public void DisableAllUi()

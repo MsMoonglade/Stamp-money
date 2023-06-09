@@ -42,46 +42,62 @@ public class UiFunctions : MonoBehaviour
 
     public void BuyMoney()
     {
-        InventoryManager.Instance.GenerateNewMoney();
-    } 
+        if (ShopManager.instance.currentGold >= ShopCostHelper.instance.moneyShopCost[0])
+        {
+            ShopManager.instance.SpendCoin(ShopCostHelper.instance.moneyShopCost[0]);
+
+            InventoryManager.Instance.GenerateNewMoney();
+        }
+    }
 
     public void IncreasePrinterSize()
     {
-        if (printerScaleIndex < 3)
+        if (ShopManager.instance.currentGold >= ShopCostHelper.instance.sizeIncreaseCost[printerScaleIndex])
         {
-            Vector3 newScale = Vector3.zero;
+            ShopManager.instance.SpendCoin(ShopCostHelper.instance.sizeIncreaseCost[printerScaleIndex]);
 
-            if (printerScaleIndex == 1)
+            if (printerScaleIndex < 3)
             {
-                newScale = printerScale += new Vector3(1.5f, 0, 0);
-                CharacterBehaviour.instance.ApplyPrinterScale(newScale, true);
+                Vector3 newScale = Vector3.zero;
 
-            }
-            else
-            {
-                newScale = printerScale += new Vector3(0, 0, 0.75f);
-                CharacterBehaviour.instance.ApplyPrinterScale(newScale, false);
-            }
+                if (printerScaleIndex == 1)
+                {
+                    newScale = printerScale += new Vector3(1.5f, 0, 0);
+                    CharacterBehaviour.instance.ApplyPrinterScale(newScale, true);
 
-            printerScaleIndex++;
-            PlayerPrefs.SetInt("PrinterScaleIndex", printerScaleIndex);
+                }
+                else
+                {
+                    newScale = printerScale += new Vector3(0, 0, 0.75f);
+                    CharacterBehaviour.instance.ApplyPrinterScale(newScale, false);
+                }
+
+                printerScaleIndex++;
+                PlayerPrefs.SetInt("PrinterScaleIndex", printerScaleIndex);
+            }
         }
     }
 
     public void IncreaseFireRate()
     {
-        if (jumpSpeedIndex < jumpSpeedAddPerLevel.Length)
+        if (ShopManager.instance.currentGold >= ShopCostHelper.instance.jumpSpeedCost[jumpSpeedIndex])
         {
-            float amount = jumpSpeedAddPerLevel[jumpSpeedIndex];
-            CharacterBehaviour.instance.IncreaseJumpSpeed(amount);
+            ShopManager.instance.SpendCoin(ShopCostHelper.instance.jumpSpeedCost[jumpSpeedIndex]);
 
-            jumpSpeedIndex++;
-            PlayerPrefs.SetInt("JumpSpeedIndex", jumpSpeedIndex);
+
+            if (jumpSpeedIndex < jumpSpeedAddPerLevel.Length)
+            {
+                float amount = jumpSpeedAddPerLevel[jumpSpeedIndex];
+                CharacterBehaviour.instance.IncreaseJumpSpeed(amount);
+
+                jumpSpeedIndex++;
+                PlayerPrefs.SetInt("JumpSpeedIndex", jumpSpeedIndex);
+            }
         }
     }
     
     public void IncreaseGoldPerHour()
-    {
-        PassiveIncome.instance.IncreaseGoldPerHour();
+    {        
+        PassiveIncome.instance.IncreaseGoldPerHour();        
     }
 }

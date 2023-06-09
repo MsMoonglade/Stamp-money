@@ -169,13 +169,6 @@ public class LevelManager : MonoBehaviour
                 tower.Add(t);
             }
         }
-
-        Debug.Log(tower.Count);
-
-        foreach (RewardTowerElement t in tower)
-        {
-            Debug.Log(t.name);
-        }
         
         if (tower.Count != 0 )
         {
@@ -188,13 +181,13 @@ public class LevelManager : MonoBehaviour
                 float randomizer = Random.Range(0.0f, 1.0f);
 
 
-                if (randomizer <= 0.075f)
+                if (randomizer <= 0.065f)
                     t.value *= 5;
 
-                else if (randomizer > 0.075f && randomizer <= 0.15f)
+                else if (randomizer > 0.065f && randomizer <= 0.125f)
                     t.value = (int)(t.value * 3f);
 
-                else if (randomizer > 0.15f && randomizer <= 0.2f)
+                else if (randomizer > 0.125f && randomizer <= 0.2f)
                     t.value = (int)(t.value * 1.5f);
             }
         }

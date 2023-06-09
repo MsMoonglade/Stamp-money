@@ -94,15 +94,10 @@ public class InputManager : MonoBehaviour
             CharacterBehaviour.instance.moving = true;
         }
 
-        if(Input.GetMouseButtonUp(0) && !ignoreFirstPressUp)
+        if(Input.GetMouseButtonUp(0))
         {
             movePlayer = false;
             CharacterBehaviour.instance.moving = false;
-        }
-
-        if (Input.GetMouseButtonUp(0) && ignoreFirstPressUp)
-        {
-            ignoreFirstPressUp = false;
         }
     }         
 
