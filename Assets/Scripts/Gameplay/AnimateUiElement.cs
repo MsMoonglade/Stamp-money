@@ -38,6 +38,9 @@ public class AnimateUiElement : MonoBehaviour
     public float editHideSpeed;
     private Tween[] editPanelButtonsTween;
 
+    [Header("Other to Hide")]
+    public GameObject energyslider;
+
     [Header("3D Object Inventort")]
     public GameObject inventoryObj;
     public float inventoryHideSpeed;
@@ -100,6 +103,8 @@ public class AnimateUiElement : MonoBehaviour
         //EDIT    
         editButton.transform.DOScale(0, editbuttonsHideSpeed);
 
+        energyslider.transform.DOScale(0, buttonsHideSpeed);
+
         ShowEdit();
     }
     public void HideAll()
@@ -140,6 +145,8 @@ public class AnimateUiElement : MonoBehaviour
 
         //EDIT    
         editButton.transform.DOScale(1, editbuttonsHideSpeed * 2);
+
+        energyslider.transform.DOScale(1, buttonsHideSpeed);
 
         HideEdit();
     }
@@ -185,7 +192,6 @@ public class AnimateUiElement : MonoBehaviour
         }
 
         inventoryObj.transform.DOScale(0, inventoryHideSpeed);
-
     }
 
     private void StartDisableEdit()

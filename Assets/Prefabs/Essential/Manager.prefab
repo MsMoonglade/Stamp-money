@@ -531,6 +531,7 @@ MonoBehaviour:
   - {fileID: 0}
   editAnimSpeed: 0.6
   editHideSpeed: 0.2
+  energyslider: {fileID: 0}
   inventoryObj: {fileID: 0}
   inventoryHideSpeed: 0.2
 --- !u!114 &1855258817

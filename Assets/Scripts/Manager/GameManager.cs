@@ -134,7 +134,7 @@ public class GameManager : MonoBehaviour
 
     public void ReloadLevel()
     {        
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene(1);
     }
 
     public void LoadLevel()

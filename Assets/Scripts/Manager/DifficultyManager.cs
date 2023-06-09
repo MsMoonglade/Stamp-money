@@ -12,7 +12,6 @@ public class DifficultyManager : MonoBehaviour
     public int diamondPerLevelrandomizerRange;
     public float difficultyPerLevelrandomizerRange;
 
-
     public int currentDiamond;
     public float currentDifficulty;
 
@@ -55,7 +54,7 @@ public class DifficultyManager : MonoBehaviour
         else
             fixedLevel = 25;
 
-        float value = (int)diamondPerLevel.Evaluate(fixedLevel);
+        float value = (int)obstaclesdifficultyPerLevel.Evaluate(fixedLevel);
         return value;
     }
 }
