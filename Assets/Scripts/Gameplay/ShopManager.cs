@@ -89,7 +89,13 @@ public class ShopManager : MonoBehaviour
             UiManager.instance.LostCoin(value);
         }
     }
-    
+
+    public void IncreaseGoldGM()
+    {
+        currentGold += 1000;
+        PlayerPrefs.SetInt("GoldCurrency", currentGold);
+    }
+
     public void IncreaseDiamond(int amount)
     {
         currentDiamond += amount;
@@ -99,13 +105,13 @@ public class ShopManager : MonoBehaviour
         UiManager.instance.InstantiateDiamond(amount);
     }
 
-    public void IncreaseEnergy(float amount)
+    public void IncreaseEnergy(float amount , GameObject pos)
     {
         CharacterBehaviour.instance.currentEnergy += amount;
 
         int uitoInstantiate = (int)(amount / 0.25f);
 
-        UiManager.instance.InstantiateEnergy(uitoInstantiate);
+        UiManager.instance.InstantiateEnergy(uitoInstantiate , pos);
     }
 
     public void DecreaseDiamond(int amount)

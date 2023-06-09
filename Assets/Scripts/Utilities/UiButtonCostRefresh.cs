@@ -15,27 +15,56 @@ public class UiButtonCostRefresh : MonoBehaviour
     public Color greenColor;
     public Color redColor;
 
+    List<UiButtonCostRefresh> allButtons = new List<UiButtonCostRefresh>();
+
+    private bool haveChecked;
+
     private void Start()
     {
         CheckValue();
+
+        var allB = FindObjectsOfType<UiButtonCostRefresh>();
+
+        for(int i = 0; i < allB.Length; i++)
+        {
+            allButtons.Add(allB[i]);
+        }
+
+        haveChecked = false;
     }
 
     public void CheckValue()
     {
-        int cost = ReturnCost();
-
-        if(ShopManager.instance.currentGold >= cost)
+        if (!haveChecked)
         {
-            costText.color = greenColor;
-        }
+            haveChecked = true;
+            Invoke("ResetCheck", 0.2f);
 
-        else
-        {
-            costText.color = redColor;
-        }
+            foreach (UiButtonCostRefresh button in allButtons)
+            {
+                button.CheckValue();
+            }
 
-        SetText(cost);
+            int cost = ReturnCost();
+
+            if (ShopManager.instance.currentGold >= cost)
+            {
+                costText.color = greenColor;
+            }
+
+            else
+            {
+                costText.color = redColor;
+            }
+
+            SetText(cost);
+        }
     }  
+
+    private void ResetCheck()
+    {
+        haveChecked = false;
+    }
 
     private void SetText(int cost)
     {

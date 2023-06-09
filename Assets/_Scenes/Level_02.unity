@@ -1179,6 +1179,11 @@ PrefabInstance:
       objectReference: {fileID: 653711763}
     - target: {fileID: 3628990616269221446, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85,
         type: 3}
+      propertyPath: ui_Energy_Destination
+      value: 
+      objectReference: {fileID: 3780146937960434992}
+    - target: {fileID: 3628990616269221446, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85,
+        type: 3}
       propertyPath: ui_Diamond_Destination
       value: 
       objectReference: {fileID: 98054286}
@@ -4094,6 +4099,12 @@ MonoBehaviour:
 --- !u!1 &3780146937960434991 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 105520712, guid: 58ae3eee8b69dfe489d4c57ebec70a8e,
+    type: 3}
+  m_PrefabInstance: {fileID: 3780146937960434988}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3780146937960434992 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1162881281, guid: 58ae3eee8b69dfe489d4c57ebec70a8e,
     type: 3}
   m_PrefabInstance: {fileID: 3780146937960434988}
   m_PrefabAsset: {fileID: 0}

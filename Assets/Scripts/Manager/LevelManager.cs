@@ -96,7 +96,9 @@ public class LevelManager : MonoBehaviour
 
     private void SetDiamondPerLevelValue()
     {
-        int diamondValue = difficultyManager.currentDiamond;
+        float diamondValue = difficultyManager.currentDiamond;
+        diamondValue *= Random.Range(1 , 1.5f);
+        diamondValue = (int)(diamondValue);
 
         List<RewardTowerElement> diamondTower = new List<RewardTowerElement> ();
 
@@ -130,7 +132,7 @@ public class LevelManager : MonoBehaviour
 
         if (diamondTower.Count != 0 && diamondValue > 5)
         {
-            int localDiamond = diamondValue / diamondTower.Count;
+            int localDiamond = (int)(diamondValue / diamondTower.Count);
 
             localDiamond = Mathf.Abs(localDiamond);
 
@@ -174,12 +176,11 @@ public class LevelManager : MonoBehaviour
         {
             foreach (RewardTowerElement t in tower)
             {
-                t.value = (int)(levelDifficulty + Random.Range(-levelDifficulty / 4, levelDifficulty * 4));
+                t.value = (int)(levelDifficulty + Random.Range(-levelDifficulty / 2, levelDifficulty / 1.5f));
 
                 t.value = Mathf.Abs(t.value);
 
                 float randomizer = Random.Range(0.0f, 1.0f);
-
 
                 if (randomizer <= 0.065f)
                     t.value *= 5;

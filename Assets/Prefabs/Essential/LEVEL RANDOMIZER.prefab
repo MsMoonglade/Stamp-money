@@ -228,16 +228,16 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 3
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 136
+      value: 7
+      inSlope: 1.0672466
+      outSlope: 1.0672466
+      tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.33333334
+      outWeight: 0.0730146
     - serializedVersion: 3
-      time: 18.292664
-      value: 40.49511
+      time: 17.577404
+      value: 51.455166
       inSlope: 6.163502
       outSlope: 6.163502
       tangentMode: 0
@@ -261,13 +261,13 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 15
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 136
+      value: 20
+      inSlope: 1.3220938
+      outSlope: 1.3220938
+      tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.33333334
+      outWeight: 0.055637594
     - serializedVersion: 3
       time: 25
       value: 60
@@ -281,7 +281,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   diamondPerLevelrandomizerRange: 5
-  difficultyPerLevelrandomizerRange: 0
+  difficultyPerLevelrandomizerRange: 5
   currentDiamond: 0
   currentDifficulty: 0
 --- !u!1 &5766648231321598273

@@ -62,8 +62,8 @@ public class CharacterBehaviour : MonoBehaviour
     public float maxEnergy = 2.5f;
     [HideInInspector]
     public float currentEnergy;
-    private float energyConsumption = 1.25f;
-    private float energyIncreaseValue = 0.4f;
+    private float energyConsumption = 1f;
+    private float energyIncreaseValue = 0.5f;
 
     //***************** EDIT  ***********************
     public GameObject editBG;

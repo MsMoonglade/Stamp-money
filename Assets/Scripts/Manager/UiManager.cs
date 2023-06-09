@@ -132,11 +132,11 @@ public class UiManager : MonoBehaviour
         }
     }
 
-    public void InstantiateEnergy(int amount)
+    public void InstantiateEnergy(int amount , GameObject localPosition)
     {
         for (int i = 0; i < amount; i++)
         {
-            Vector3 posToRef = CharacterBehaviour.instance.transform.position;
+            Vector3 posToRef = localPosition.transform.position;
             posToRef += new Vector3(Random.Range(-4.0f, 4.0f), 0, Random.Range(-4.0f, 8.0f));
 
             Vector3 pos = Camera.main.WorldToScreenPoint(posToRef);

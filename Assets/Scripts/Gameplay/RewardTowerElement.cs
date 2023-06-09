@@ -107,7 +107,7 @@ public class RewardTowerElement : MonoBehaviour
             ShopManager.instance.IncreaseGold((int)rewardAmount , CharacterBehaviour.instance.gameObject);
 
         if (rewardIsEnergy)
-            ShopManager.instance.IncreaseEnergy(rewardAmount);
+            ShopManager.instance.IncreaseEnergy(rewardAmount , transform.gameObject);
 
 
         this.gameObject.SetActive(false);

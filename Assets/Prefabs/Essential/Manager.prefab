@@ -495,9 +495,10 @@ MonoBehaviour:
     type: 3}
   ui_Diamond_Destination: {fileID: 0}
   ui_Diamond_AnimSpeed: 1
-  ui_Energy_Prefs: {fileID: 0}
+  ui_Energy_Prefs: {fileID: 1939456014905201686, guid: 3f434bfe6ed24f44f95b807d450faaf7,
+    type: 3}
   ui_Energy_Destination: {fileID: 0}
-  ui_Energy_AnimSpeed: 0
+  ui_Energy_AnimSpeed: 1
   uiTempParent: {fileID: 0}
 --- !u!114 &353571750
 MonoBehaviour:

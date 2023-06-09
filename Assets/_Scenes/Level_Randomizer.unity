@@ -152,7 +152,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &68439059
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -334,7 +334,7 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 300
-  field of view: 57
+  field of view: 55
   orthographic: 0
   orthographic size: 10
   m_Depth: -1
@@ -359,8 +359,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
-  m_LocalRotation: {x: 0.096088745, y: 0, z: 0, w: 0.9953728}
-  m_LocalPosition: {x: 0, y: 2.1951818, z: -10.120001}
+  m_LocalRotation: {x: 0.31739593, y: 0, z: 0, w: 0.9482931}
+  m_LocalPosition: {x: 0, y: 15.965182, z: -15.16518}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -624,6 +624,11 @@ PrefabInstance:
       propertyPath: ui_Coin_Destination
       value: 
       objectReference: {fileID: 653711763}
+    - target: {fileID: 3628990616269221446, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85,
+        type: 3}
+      propertyPath: ui_Energy_Destination
+      value: 
+      objectReference: {fileID: 1848003046}
     - target: {fileID: 3628990616269221446, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85,
         type: 3}
       propertyPath: ui_Diamond_Destination
@@ -945,6 +950,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80850f7e794731f40bcc4c77aff929fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1848003046 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1162881281, guid: 58ae3eee8b69dfe489d4c57ebec70a8e,
+    type: 3}
+  m_PrefabInstance: {fileID: 3780146937960434988}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1855258817 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1855258817, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85,
@@ -975,6 +986,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 3780146937960434988}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1988837522 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3406971285800949110, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85,
+    type: 3}
+  m_PrefabInstance: {fileID: 353571746}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a3aeaaba1534c24094d1594e366544f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2027898264
 GameObject:
   m_ObjectHideFlags: 0
@@ -1322,6 +1345,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1836870511}
+    - target: {fileID: 1246758631, guid: 58ae3eee8b69dfe489d4c57ebec70a8e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1988837522}
     - target: {fileID: 1759681007, guid: 58ae3eee8b69dfe489d4c57ebec70a8e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1494,11 +1521,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1836870510}
-    - target: {fileID: 7529683926721164601, guid: 58ae3eee8b69dfe489d4c57ebec70a8e,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7888377659112149493, guid: 58ae3eee8b69dfe489d4c57ebec70a8e,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -1590,23 +1612,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5766648231171261682, guid: 837de735bd62fbd45afc7b610c27f0eb,
         type: 3}
-      propertyPath: difficultyPerLevelrandomizerRange
-      value: 5
+      propertyPath: diamondPerLevel.m_Curve.Array.data[0].value
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 5766648231171261682, guid: 837de735bd62fbd45afc7b610c27f0eb,
         type: 3}
-      propertyPath: obstaclesdifficultyPerLevel.m_Curve.Array.data[1].time
-      value: 17.577404
+      propertyPath: diamondPerLevel.m_Curve.Array.data[0].inSlope
+      value: 0.2993978
       objectReference: {fileID: 0}
     - target: {fileID: 5766648231171261682, guid: 837de735bd62fbd45afc7b610c27f0eb,
         type: 3}
-      propertyPath: obstaclesdifficultyPerLevel.m_Curve.Array.data[0].value
-      value: 10
+      propertyPath: diamondPerLevel.m_Curve.Array.data[0].outSlope
+      value: 0.2993978
       objectReference: {fileID: 0}
     - target: {fileID: 5766648231171261682, guid: 837de735bd62fbd45afc7b610c27f0eb,
         type: 3}
-      propertyPath: obstaclesdifficultyPerLevel.m_Curve.Array.data[1].value
-      value: 51.455166
+      propertyPath: diamondPerLevel.m_Curve.Array.data[0].outWeight
+      value: 0.07590106
       objectReference: {fileID: 0}
     - target: {fileID: 5766648231184970518, guid: 837de735bd62fbd45afc7b610c27f0eb,
         type: 3}
