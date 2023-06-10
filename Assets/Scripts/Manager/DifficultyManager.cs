@@ -24,6 +24,15 @@ public class DifficultyManager : MonoBehaviour
 
         currentDifficulty = EvaluateLevelDifficulty(GameManager.instance.CurrentLevel);
         currentDifficulty += Random.Range(-difficultyPerLevelrandomizerRange, difficultyPerLevelrandomizerRange);
+
+        if(UiFunctions.instance.printerScaleIndex == 2)
+        {
+            currentDifficulty *= 1.35f;
+        }
+        if (UiFunctions.instance.printerScaleIndex == 3)
+        {
+            currentDifficulty *= 2f;
+        }
     }
 
     public int EvaluateLevelDiamond(int currentLevel)

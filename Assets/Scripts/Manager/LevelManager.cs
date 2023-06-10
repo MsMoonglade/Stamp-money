@@ -138,7 +138,7 @@ public class LevelManager : MonoBehaviour
 
             foreach (RewardTowerElement r in diamondTower)
             {
-                r.rewardAmount = localDiamond += Random.Range(-localDiamond / 2, localDiamond * 2);
+                r.rewardAmount = localDiamond += Random.Range(-localDiamond / 2, localDiamond );
 
                 r.rewardAmount = Mathf.Abs(r.rewardAmount);
 

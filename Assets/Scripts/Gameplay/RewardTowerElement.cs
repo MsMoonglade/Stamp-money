@@ -115,7 +115,7 @@ public class RewardTowerElement : MonoBehaviour
 
     private void GenerateElement()
     {
-
+        /*
         int valuePerElementMultiplyer = 1;
 
         int count = value / 200;
@@ -136,7 +136,10 @@ public class RewardTowerElement : MonoBehaviour
         {
             valuePerElement += originalValue;
         }
+        */
 
+        if (value >= 200)
+            valuePerElement *= 2;
 
         int necesaryElement = value / valuePerElement;
         Vector3 pos = Vector3.zero;
