@@ -128,7 +128,7 @@ public class LevelManager : MonoBehaviour
             }
         }
 
-        diamondValue -= diamondCollectables.Count;
+        diamondValue -= (int)(diamondCollectables.Count /2);
 
         if (diamondTower.Count != 0 && diamondValue > 5)
         {
@@ -138,7 +138,7 @@ public class LevelManager : MonoBehaviour
 
             foreach (RewardTowerElement r in diamondTower)
             {
-                r.rewardAmount = localDiamond += Random.Range(-localDiamond / 2, localDiamond );
+                r.rewardAmount = localDiamond + Random.Range(-localDiamond / 2, localDiamond /2 );
 
                 r.rewardAmount = Mathf.Abs(r.rewardAmount);
 

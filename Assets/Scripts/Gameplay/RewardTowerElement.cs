@@ -16,8 +16,8 @@ public class RewardTowerElement : MonoBehaviour
     public float rewardAmount;
 
     [Header("NOT EDIT")]
+    public bool fixedValue;
     public float rewardModelOffset;
-    public int valuePerElement;
 
     public float elementRotOffset;
     public float elementYOffset;
@@ -138,10 +138,23 @@ public class RewardTowerElement : MonoBehaviour
         }
         */
 
-        if (value >= 200)
-            valuePerElement *= 2;
+        int valuePerElement = 1;
 
-        int necesaryElement = value / valuePerElement;
+        if (value <= 30)
+            valuePerElement = 2;
+        else if (value > 30 && value <= 80)
+            valuePerElement = 5;
+
+        else if (value > 80 && value <= 150)
+            valuePerElement = 6;
+
+        else
+            valuePerElement = 10;
+
+        if (fixedValue)
+            valuePerElement = 5;
+
+        int necesaryElement = (int)(value / valuePerElement);
         Vector3 pos = Vector3.zero;
 
         for (int i = 0; i < necesaryElement; i++)
