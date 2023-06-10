@@ -236,8 +236,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0
-      value: 7
+      time: 0.037319183
+      value: 3.9833374
       inSlope: 1.0672466
       outSlope: 1.0672466
       tangentMode: 0
@@ -245,8 +245,17 @@ MonoBehaviour:
       inWeight: 0.33333334
       outWeight: 0.0730146
     - serializedVersion: 3
-      time: 7.5889907
-      value: 22.91679
+      time: 3
+      value: 6
+      inSlope: 0.78006023
+      outSlope: 0.78006023
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.14276852
+    - serializedVersion: 3
+      time: 13.255067
+      value: 18.753616
       inSlope: 3.7391324
       outSlope: 3.7391324
       tangentMode: 0
@@ -256,12 +265,12 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 17.716198
       value: 75.18051
-      inSlope: 6.163502
-      outSlope: 6.163502
+      inSlope: 8.293687
+      outSlope: 8.293687
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.15903482
+      outWeight: 0.11286317
     - serializedVersion: 3
       time: 25
       value: 200
@@ -280,12 +289,12 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0
       value: 17
-      inSlope: 0.2993978
-      outSlope: 0.2993978
+      inSlope: 1.6171998
+      outSlope: 1.6171998
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.07590106
+      outWeight: 0.033378746
     - serializedVersion: 3
       time: 25
       value: 60
@@ -299,7 +308,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   diamondPerLevelrandomizerRange: 5
-  difficultyPerLevelrandomizerRange: 5
+  difficultyPerLevelrandomizerRange: 4.5
   currentDiamond: 0
   currentDifficulty: 0
 --- !u!1 &5766648231321598273

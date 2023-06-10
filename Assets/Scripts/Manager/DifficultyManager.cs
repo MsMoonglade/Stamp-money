@@ -15,7 +15,7 @@ public class DifficultyManager : MonoBehaviour
     public int currentDiamond;
     public float currentDifficulty;
 
-    private void Awake()
+    private void Start()
     {
         instance = this;
 
@@ -53,7 +53,7 @@ public class DifficultyManager : MonoBehaviour
 
     public float EvaluateLevelDifficulty(int currentLevel)
     {
-        int fixedLevel = 0;
+        int fixedLevel = 10;
 
         if (currentLevel < 25)
         {
@@ -64,6 +64,7 @@ public class DifficultyManager : MonoBehaviour
             fixedLevel = 25;
 
         float value = (int)obstaclesdifficultyPerLevel.Evaluate(fixedLevel);
+
         return value;
     }
 }

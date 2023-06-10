@@ -176,7 +176,7 @@ public class LevelManager : MonoBehaviour
         {
             foreach (RewardTowerElement t in tower)
             {
-                t.value = (int)(levelDifficulty + Random.Range(-levelDifficulty / 2, levelDifficulty / 1.5f));
+                t.value = (int)(levelDifficulty + Random.Range(0, levelDifficulty / 1.5f));
 
                 t.value = Mathf.Abs(t.value);
 
@@ -190,6 +190,8 @@ public class LevelManager : MonoBehaviour
 
                 else if (randomizer > 0.125f && randomizer <= 0.2f)
                     t.value = (int)(t.value * 1.5f);
+
+                levelDifficulty *= 1.1f;
             }
         }
     }
