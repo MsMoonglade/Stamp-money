@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3554173065002316104}
   - component: {fileID: 3554173065002316111}
+  - component: {fileID: -8104407473288021206}
   m_Layer: 0
   m_Name: Reward_Tower_Triple_01
   m_TagString: Untagged
@@ -47,6 +48,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29b102d4da573064c89103e3203c5ade, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-8104407473288021206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3554173065002316110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 931a3b6be65620441a3fc5d9629b5edd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3554173063632528838
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -72,7 +85,7 @@ PrefabInstance:
     - target: {fileID: 1796853275972107604, guid: 5e6646f81b26a2e4bbda6fed7650bb05,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1796853275972107604, guid: 5e6646f81b26a2e4bbda6fed7650bb05,
         type: 3}
@@ -147,7 +160,7 @@ PrefabInstance:
     - target: {fileID: 1796853275972107604, guid: c7e0b63d878e492418a7ee9e0b44896f,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1796853275972107604, guid: c7e0b63d878e492418a7ee9e0b44896f,
         type: 3}
@@ -222,7 +235,7 @@ PrefabInstance:
     - target: {fileID: 1796853275972107604, guid: 0dd719f6e89b39f4face7e1cf14dfa93,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1796853275972107604, guid: 0dd719f6e89b39f4face7e1cf14dfa93,
         type: 3}

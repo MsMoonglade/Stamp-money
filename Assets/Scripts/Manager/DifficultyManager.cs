@@ -27,11 +27,11 @@ public class DifficultyManager : MonoBehaviour
 
         if(UiFunctions.instance.printerScaleIndex == 2)
         {
-            currentDifficulty *= 1.35f;
+            currentDifficulty *= 1.3f;
         }
         if (UiFunctions.instance.printerScaleIndex == 3)
         {
-            currentDifficulty *= 2f;
+            currentDifficulty *= 1.8f;
         }
     }
 

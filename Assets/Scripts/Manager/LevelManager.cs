@@ -13,6 +13,7 @@ public class LevelManager : MonoBehaviour
     public float startGameDistanceOffset;
     public float endGameDistanceOffset;
     public float mediumElementDistance;
+    public float minimunDistanceModifyer;
     public float elementiDistanceModifyer;
 
     public AnimationCurve levelLenght;
@@ -59,27 +60,33 @@ public class LevelManager : MonoBehaviour
         for (int i = 0; i < levelPieces; i++)
         {
             float randomizer = Random.Range(0.0f, 1.0f);
+            float elementOffset = 0; 
 
             if(randomizer >= 0 && randomizer <= 0.33f)
             {
                 GameObject element = GenerateRandomElement(possibleWall ,wallParent);
                 element.transform.position = elementPosition;
+                elementOffset = element.GetComponent<MapGeneratorElementUtilities>().ElementDistanceLenght();
             }
 
             else if (randomizer >= 0.34f && randomizer <= 0.66f)
             {
                 GameObject element = GenerateRandomElement(possibleRewardTower, rewardTowerParent);
                 element.transform.position = elementPosition;
+                elementOffset = element.GetComponent<MapGeneratorElementUtilities>().ElementDistanceLenght();
+
             }
 
             else if (randomizer >= 0.67f && randomizer <= 1f)
             {
                 GameObject element = GenerateRandomElement(possibleCollectable, collectableParent);
                 element.transform.position = elementPosition;
+                elementOffset = element.GetComponent<MapGeneratorElementUtilities>().ElementDistanceLenght();
             }
 
-            float randomZOffset = Random.Range(-elementiDistanceModifyer , elementiDistanceModifyer); 
-            elementPosition += new Vector3(0, 0, mediumElementDistance + randomZOffset);
+            float randomZOffset = Random.Range(minimunDistanceModifyer , elementiDistanceModifyer);
+            elementPosition += new Vector3(0, 0, elementOffset + randomZOffset);
+            //  elementPosition += new Vector3(0, 0, mediumElementDistance + randomZOffset);
         }
 
         elementPosition += new Vector3(0, 0, endGameDistanceOffset);
@@ -176,7 +183,7 @@ public class LevelManager : MonoBehaviour
         {
             foreach (RewardTowerElement t in tower)
             {
-                t.value = (int)(levelDifficulty + Random.Range(0, levelDifficulty / 1.5f));
+                t.value = (int)(levelDifficulty + Random.Range(0, levelDifficulty / 2f));
 
                 t.value = Mathf.Abs(t.value);
 

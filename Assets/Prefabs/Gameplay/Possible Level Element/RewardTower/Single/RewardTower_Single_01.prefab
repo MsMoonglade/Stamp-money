@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7690488646525017544}
+  - component: {fileID: 6775186576454821332}
   m_Layer: 0
   m_Name: RewardTower_Single_01
   m_TagString: Untagged
@@ -32,6 +33,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6775186576454821332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4969993486654323849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 931a3b6be65620441a3fc5d9629b5edd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2161734009268657121
 PrefabInstance:
   m_ObjectHideFlags: 0

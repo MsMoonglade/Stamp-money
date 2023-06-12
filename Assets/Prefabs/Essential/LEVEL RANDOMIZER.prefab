@@ -146,7 +146,8 @@ MonoBehaviour:
   startGameDistanceOffset: 20
   endGameDistanceOffset: 10
   mediumElementDistance: 16.5
-  elementiDistanceModifyer: 1.5
+  minimunDistanceModifyer: 14
+  elementiDistanceModifyer: 20
   levelLenght:
     serializedVersion: 2
     m_Curve:
@@ -220,6 +221,10 @@ MonoBehaviour:
   - {fileID: 4341398026627134140, guid: 8a4d0426a12f5f94c9f51abdd7319289, type: 3}
   - {fileID: 4204238269332991307, guid: 3220a9a9e91784c46b1497d5a6e3d3e0, type: 3}
   - {fileID: 4119869813749913617, guid: eda316c4222453d45969a26d9a151bb9, type: 3}
+  - {fileID: 2114810055655634894, guid: 9b309a92f53a10f47a92d348cc9126a2, type: 3}
+  - {fileID: 3479148257876970976, guid: f8148fb7743f18e41b928d0af95e786a, type: 3}
+  - {fileID: 4204238269332991307, guid: bd2499650ad362f449bbd5f6c74af8f0, type: 3}
+  - {fileID: 4119869813749913617, guid: 5f2ea59790aa976419962e966d34d49d, type: 3}
 --- !u!114 &5766648231171261682
 MonoBehaviour:
   m_ObjectHideFlags: 0
