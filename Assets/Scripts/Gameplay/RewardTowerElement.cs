@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Lofelt.NiceVibrations;
 
 public class RewardTowerElement : MonoBehaviour
 {
@@ -110,7 +111,13 @@ public class RewardTowerElement : MonoBehaviour
         if (rewardIsEnergy)
             ShopManager.instance.IncreaseEnergy(rewardAmount , transform.gameObject);
 
-
+        if (DeviceCapabilities.isVersionSupported)
+        {
+            if (DeviceCapabilities.meetsAdvancedRequirements)
+            {
+                HapticPatterns.PlayPreset(HapticPatterns.PresetType.MediumImpact);
+            }
+        }
     }
 
     private void GenerateElement()

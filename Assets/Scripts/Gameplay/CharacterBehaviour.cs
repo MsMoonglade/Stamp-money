@@ -7,7 +7,7 @@ using System.Linq;
 using Unity.Mathematics;
 using System.Text;
 using UnityEditor;
-using System.Runtime.CompilerServices;
+using Lofelt.NiceVibrations;
 
 public class CharacterBehaviour : MonoBehaviour
 {
@@ -211,7 +211,15 @@ public class CharacterBehaviour : MonoBehaviour
     }
 
     private void PrintDecal()
-    {     
+    {
+        if (DeviceCapabilities.isVersionSupported)
+        {
+            if (DeviceCapabilities.meetsAdvancedRequirements)
+            {
+                HapticPatterns.PlayPreset(HapticPatterns.PresetType.LightImpact);
+            }
+        }
+
         for (int i = 0; i < editObjectList.Count; i++)
         {
             editObjectList[i].Print();
