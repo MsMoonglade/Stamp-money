@@ -35,9 +35,9 @@ TagManager:
   - Collectables
   - Player_Collectables
   - Floor_2
-  - 
-  - 
-  - 
+  - EndGame_Block
+  - EndGame_Ender
+  - EndGame_Character
   - 
   - 
   - 

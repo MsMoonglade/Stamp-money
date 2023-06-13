@@ -7,13 +7,14 @@ using TMPro;
 using Unity.Mathematics;
 using UnityEditor;
 using UnityEngine;
-using static Unity.VisualScripting.Member;
+using UnityEngine.AI;
 
 public class EndGameBehaviour : MonoBehaviour
 {
     public static EndGameBehaviour instance;
 
-    public CinemachineVirtualCamera virtualCamera;
+    public CinemachineVirtualCamera coinCamera;
+    public CinemachineVirtualCamera playerCamera;
     public GameObject endGameDiamondPrefs;
     public GameObject endGameDiamondBasket;
     public GameObject endGameCameraTarget;
@@ -26,20 +27,24 @@ public class EndGameBehaviour : MonoBehaviour
     private int endGameBonusGold;
 
     private bool ended = false;
+    private NavMeshSurface navmeshSurface;
 
     private void Awake()
     {
         instance = this;
 
         endGamecoroutine = null;
-
-
+    
+        navmeshSurface = GetComponent<NavMeshSurface>();
+        navmeshSurface.BuildNavMesh();
     }
 
     public void StartEndGame()
     {
-        GameManager.instance.SetInMenu();
+        GameManager.instance.SetEndGame();
         UiManager.instance.DisableGameUI();
+     
+        EndGameCharacterBehaviour.instance.GetComponent<NavMeshAgent>().enabled = true;
 
         if (endGamecoroutine == null)
             endGamecoroutine = StartCoroutine(EndGameBehaviourCoroutine());
@@ -74,7 +79,7 @@ public class EndGameBehaviour : MonoBehaviour
 
         // yield return new WaitForEndOfFrame();
 
-        virtualCamera.Priority = 500;
+        coinCamera.Priority = 500;
 
         yield return new WaitForSeconds(0.5f);
 
@@ -96,9 +101,13 @@ public class EndGameBehaviour : MonoBehaviour
             yield return new WaitForSeconds(0.15f);
         }
 
-        yield return new WaitForSeconds(2.5f);
+        yield return new WaitForSeconds(1);
+
+        playerCamera.Priority = 501;
+
+        EndGameCharacterBehaviour.instance.canMove = true;  
     }
-    
+
 
     //endgameGambling
     /*

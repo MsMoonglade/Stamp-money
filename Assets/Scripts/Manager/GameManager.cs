@@ -151,6 +151,10 @@ public class GameManager : MonoBehaviour
     {
         gameStatus = GameStatus.InMenu;
     }
+    public void SetEndGame()
+    {
+        gameStatus = GameStatus.InEndGame;
+    }    
 
     public bool IsInGameStatus()
     {
@@ -159,7 +163,16 @@ public class GameManager : MonoBehaviour
 
         else
             return false;
-    }   
+    }
+
+    public bool IsInEndGameStatus()
+    {
+        if (gameStatus == GameStatus.InEndGame)
+            return true;
+
+        else
+            return false;
+    }
 
     public void OnApplicationQuit()
     {
@@ -195,5 +208,6 @@ public enum GameStatus
 {
     InGame,
     InMenu,
-    InRestart
+    InRestart,
+    InEndGame
 }

@@ -21,6 +21,9 @@ public class InputManager : MonoBehaviour
 
     bool started = false;
 
+    private Vector2 firstPressPos;
+    private Vector2 direction;
+
     private void Awake()
     {
         instance = this;
@@ -51,7 +54,46 @@ public class InputManager : MonoBehaviour
             }
         }
 
+        if (GameManager.instance.IsInEndGameStatus())
+        {
+            /*
+            JoistickMovement();
+            if (direction != Vector2.zero)
+            {
+                EndGameCharacterBehaviour.instance.Move(new Vector3(direction.x, 0, direction.y));
+            }
+            */
+
+            SwipeMovingEditor();
+        }
+
         // CharacterBehaviour.instance.transform.position = new Vector3(Mathf.Clamp(CharacterBehaviour.instance.transform.position.x, minXPos, maxXPos), CharacterBehaviour.instance.transform.position.y, CharacterBehaviour.instance.transform.position.z);
+    }
+
+    private void SwipeMovingEditor()
+    {
+        //start
+        if (Input.GetMouseButtonDown(0))
+        {
+            firstPressPos = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
+        }
+
+        //moving
+        if (Input.GetMouseButton(0))
+        {
+            direction = (new Vector2(Input.mousePosition.x, Input.mousePosition.y) - firstPressPos).normalized;
+            EndGameCharacterBehaviour.instance.Move(new Vector3(direction.x, 0, direction.y));
+        }
+
+        //ending
+        if (Input.GetMouseButtonUp(0))
+        {
+            firstPressPos = Vector2.zero;
+            direction = Vector3.zero;
+
+            EndGameCharacterBehaviour.instance.StopAnim();
+
+        }
     }
 
     public void FirstInput()
@@ -99,7 +141,40 @@ public class InputManager : MonoBehaviour
             movePlayer = false;
             CharacterBehaviour.instance.moving = false;
         }
-    }         
+    }    
+    
+    private void JoistickMovement()
+    {
+        if (Input.touches.Length > 0)
+        {
+            Touch t = Input.GetTouch(0);
+
+            //start
+            if (t.phase == TouchPhase.Began)
+            {
+                firstPressPos = new Vector2(t.position.x, t.position.y);
+
+              //  UiManager.instance.SetTouchDownImage(firstPressPos);
+            }
+
+            //moving
+            if (t.phase == TouchPhase.Moved)
+            {
+                direction = (new Vector2(t.position.x, t.position.y) - firstPressPos).normalized;
+                //UiManager.instance.MoveJoystickFront(new Vector2(t.position.x, t.position.y));
+            }
+
+            //ending
+            if (t.phase == TouchPhase.Ended || t.phase == TouchPhase.Canceled)
+            {
+                direction = Vector3.zero;
+                firstPressPos = Vector2.zero;
+
+            //    CharacterBehaviour.instance.StopMoveAnim();
+            //   UiManager.instance.DisableTouchDownImage();
+            }
+        }
+    }
 
     private IEnumerator IgnoreFirstUpDelay()
     {
