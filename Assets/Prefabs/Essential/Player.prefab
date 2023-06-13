@@ -4934,9 +4934,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   moveXLimit: 5
-  moveSpeed: 9
+  moveSpeed: 11
   jumpHeight: 1.25
-  jumpSpeed: 0.6
+  jumpSpeed: 0.38
   bulletActiveTime: 1
   moneyDecalScaleX: 1.5
   moneyDecalScaleY: 0.75

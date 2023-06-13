@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18704239, g: 0.4133858, b: 0.7343757, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1521,6 +1521,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1836870510}
+    - target: {fileID: 6161055710067417368, guid: 58ae3eee8b69dfe489d4c57ebec70a8e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7888377659112149493, guid: 58ae3eee8b69dfe489d4c57ebec70a8e,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -1610,6 +1615,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5766648231171261682, guid: 837de735bd62fbd45afc7b610c27f0eb,
+        type: 3}
+      propertyPath: diamondPerLevel.m_Curve.Array.data[0].value
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 5766648231184970518, guid: 837de735bd62fbd45afc7b610c27f0eb,
         type: 3}
       propertyPath: m_Name
@@ -1620,6 +1630,16 @@ PrefabInstance:
       propertyPath: endGameObject
       value: 
       objectReference: {fileID: 832707480}
+    - target: {fileID: 5766648231184970519, guid: 837de735bd62fbd45afc7b610c27f0eb,
+        type: 3}
+      propertyPath: minimunDistanceModifyer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 5766648231184970519, guid: 837de735bd62fbd45afc7b610c27f0eb,
+        type: 3}
+      propertyPath: elementiDistanceModifyer
+      value: 18.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5766648231184970520, guid: 837de735bd62fbd45afc7b610c27f0eb,
         type: 3}
       propertyPath: m_RootOrder
