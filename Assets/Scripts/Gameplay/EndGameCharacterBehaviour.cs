@@ -79,6 +79,18 @@ public class EndGameCharacterBehaviour : MonoBehaviour
 
         StartCoroutine(RemoveDiamondWithDelay(list, destination));
     }
+    public void RemoveDiamond(int amount)
+    {
+        List<GameObject> list = new List<GameObject>();       
+          
+        list.Add(diamondParent.transform.GetChild(diamondParent.transform.childCount - 1).gameObject);        
+
+        foreach (GameObject go in list)
+        {
+            go.transform.parent = null;
+            go.SetActive(false);
+        }
+    }
 
     private IEnumerator RemoveDiamondWithDelay(List<GameObject> list , GameObject dest)
     {
