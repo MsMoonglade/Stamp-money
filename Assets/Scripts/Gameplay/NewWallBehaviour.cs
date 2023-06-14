@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using TMPro;
+using Lofelt.NiceVibrations;
 
 public class NewWallBehaviour : MonoBehaviour
 {
@@ -78,6 +79,11 @@ public class NewWallBehaviour : MonoBehaviour
 
         if (col.transform.CompareTag("Player"))
         {
+            if (DeviceCapabilities.isVersionSupported)
+            {
+                HapticPatterns.PlayPreset(HapticPatterns.PresetType.MediumImpact);
+            }
+
             foreach (var c in nearWall)
             {
                 c.enabled = false;
@@ -201,6 +207,11 @@ public class NewWallBehaviour : MonoBehaviour
         foreach (MeshRenderer rend in sideElementMeshRenderer)
         {
             rend.material = positive_Side_Mat;
+        }
+
+        if (DeviceCapabilities.isVersionSupported)
+        {
+            HapticPatterns.PlayPreset(HapticPatterns.PresetType.HeavyImpact);
         }
 
         centerWallMeshRenderer.material = positive_Center_Mat;

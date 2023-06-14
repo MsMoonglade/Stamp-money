@@ -214,10 +214,7 @@ public class CharacterBehaviour : MonoBehaviour
     {
         if (DeviceCapabilities.isVersionSupported)
         {
-            if (DeviceCapabilities.meetsAdvancedRequirements)
-            {
-                HapticPatterns.PlayPreset(HapticPatterns.PresetType.LightImpact);
-            }
+            HapticPatterns.PlayPreset(HapticPatterns.PresetType.MediumImpact);         
         }
 
         for (int i = 0; i < editObjectList.Count; i++)

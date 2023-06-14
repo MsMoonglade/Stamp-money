@@ -9,6 +9,8 @@ public class Events
     public const string resetGame = "Reset";
     public const string die = "Die";
     public const string saveValue = "SaveValue";
+    public const string saveInvest = "SaveInvest";
+
 
     //interface
     public const string updateInterface = "UpdateInterface";

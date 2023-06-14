@@ -44,8 +44,12 @@ public class FloorButtonBehaviour : MonoBehaviour
             if (timerCoroutine != null)
             {
                 timer = 0;
-                StopCoroutine(timerCoroutine);
-                timerCoroutine = null;
+                
+                if (timerCoroutine != null)
+                {
+                    StopCoroutine(timerCoroutine);
+                    timerCoroutine = null;
+                }
 
                 activeImage.fillAmount = 0;
             }
@@ -56,16 +60,17 @@ public class FloorButtonBehaviour : MonoBehaviour
 
     private void TriggerAction()
     {
-        timer = 1;
-        
-        /*
-        StopCoroutine(timerCoroutine);
-        timerCoroutine = null;
-        */
 
-       // activeImage.fillAmount = 0;
+        if (timerCoroutine != null)
+        {
+            StopCoroutine(timerCoroutine);
+            timerCoroutine = null;
+        }
 
-      //  triggered = true;
+        timer = 0;
+        activeImage.fillAmount = 0;
+
+        triggered = true;
         actionToTrigger?.Invoke();
     }
 

@@ -113,10 +113,7 @@ public class RewardTowerElement : MonoBehaviour
 
         if (DeviceCapabilities.isVersionSupported)
         {
-            if (DeviceCapabilities.meetsAdvancedRequirements)
-            {
-                HapticPatterns.PlayPreset(HapticPatterns.PresetType.MediumImpact);
-            }
+            HapticPatterns.PlayPreset(HapticPatterns.PresetType.HeavyImpact);
         }
     }
 
