@@ -1595,7 +1595,12 @@ PrefabInstance:
     - target: {fileID: 5766648231171261682, guid: 837de735bd62fbd45afc7b610c27f0eb,
         type: 3}
       propertyPath: diamondPerLevel.m_Curve.Array.data[0].value
-      value: 25
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 5766648231171261682, guid: 837de735bd62fbd45afc7b610c27f0eb,
+        type: 3}
+      propertyPath: diamondPerLevel.m_Curve.Array.data[1].value
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 5766648231184970518, guid: 837de735bd62fbd45afc7b610c27f0eb,
         type: 3}

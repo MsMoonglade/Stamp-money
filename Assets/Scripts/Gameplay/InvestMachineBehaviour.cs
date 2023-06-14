@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -16,6 +17,8 @@ public class InvestMachineBehaviour : MonoBehaviour
     public GameObject inactiveObject;
     public TMP_Text costText;
     public TMP_Text levelText;
+    public ParticleSystem particle;
+    public GameObject atmObject;
 
     [Header ("Upgrade Variables")]
     public float nextLevelMultiplyer;
@@ -63,11 +66,37 @@ public class InvestMachineBehaviour : MonoBehaviour
         EventManager.TriggerEvent(Events.saveInvest);
     }
 
+    public bool CanUpdate()
+    {
+        if(EndGameCharacterBehaviour.instance.CurrentDiamond() >= (int)localCost)
+            return true;
+
+        else
+            return false;
+    }
+
     public void LevelUpMachine()
     {
+        EndGameCharacterBehaviour.instance.RemoveDiamond((int)localCost, costText.gameObject);
+
         machineLevel++;
 
-       SetupCost();
+        particle.Play();
+
+        atmObject.transform.DOLocalRotate(new Vector3(0, 360, 0), 0.2f, RotateMode.FastBeyond360)       
+            .SetRelative(true)       
+            .SetEase(Ease.Linear);
+
+        Sequence mySequence = DOTween.Sequence();
+        mySequence.Append(atmObject.transform.DOScale(new Vector3(0, 0, 0), 0.2f)
+            .SetEase(Ease.InBack));
+        
+        // mySequence.PrependInterval(1);
+      
+        mySequence.Append(atmObject.transform.DOScale(new Vector3(1, 1, 1), 0.2f)
+           .SetEase(Ease.OutBack));
+
+        SetupCost();
 
         levelText.text = "Lv " + machineLevel.ToString();
         costText.text = localCost.ToString();
@@ -95,7 +124,7 @@ public class InvestMachineBehaviour : MonoBehaviour
            
             for(int i = 0; i < rewardAmount; i++)
             {
-                Vector3 randomizedPos = rewardPos.transform.position + new Vector3(Random.Range(-2f, 2f), 0, Random.Range(-2f, 2f));
+                Vector3 randomizedPos = rewardPos.transform.position + new Vector3(Random.Range(-2f, 2f), 1, Random.Range(-2f, 2f));
 
                 Instantiate(reward, randomizedPos, Quaternion.identity, rewardParent.transform);
             }

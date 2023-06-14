@@ -7,6 +7,7 @@ using UnityEngine.Events;
 public class FloorButtonBehaviour : MonoBehaviour
 {
     [Header("Events")]
+    public InvestMachineBehaviour requisites;
     public UnityEvent actionToTrigger;
 
     [Header("PublicVariables")]
@@ -30,10 +31,25 @@ public class FloorButtonBehaviour : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.transform.CompareTag("Player") && !triggered)
+        if (requisites == null)
         {
-            if (timerCoroutine == null)
-                timerCoroutine = StartCoroutine(StartCounter());
+            if (other.transform.CompareTag("Player") && !triggered)
+            {
+                if (timerCoroutine == null)
+                    timerCoroutine = StartCoroutine(StartCounter());
+            }
+        }
+
+        else
+        {
+            if (requisites.CanUpdate())
+            {
+                if (other.transform.CompareTag("Player") && !triggered)
+                {
+                    if (timerCoroutine == null)
+                        timerCoroutine = StartCoroutine(StartCounter());
+                }
+            }
         }
     }
 

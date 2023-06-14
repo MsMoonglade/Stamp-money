@@ -1,3 +1,4 @@
+using DG.Tweening;
 using MoreMountains.Feedbacks;
 using System.Collections;
 using System.Collections.Generic;
@@ -60,5 +61,36 @@ public class EndGameCharacterBehaviour : MonoBehaviour
     public void StopAnim()
     {
         anim.SetBool("Run", false);
+    }
+
+    public int CurrentDiamond()
+    {
+        return diamondParent.transform.childCount - 1;
+    }
+
+    public void RemoveDiamond(int amount , GameObject destination)
+    {
+        List<GameObject> list = new List<GameObject>();
+       
+        for (int i = diamondParent.transform.childCount -1 ; i > diamondParent.transform.childCount -1 - amount; i--)
+        {
+            list.Add(diamondParent.transform.GetChild(i).gameObject);
+        }
+
+        StartCoroutine(RemoveDiamondWithDelay(list, destination));
+    }
+
+    private IEnumerator RemoveDiamondWithDelay(List<GameObject> list , GameObject dest)
+    {
+        foreach (GameObject go in list)
+        {
+            go.transform.parent = null;
+            go.transform.DOMove(dest.transform.position, 0.5f)
+                .OnComplete(() => go.SetActive(false));
+
+            yield return new WaitForSeconds(0.05f);
+        }
+
+        yield return new WaitForEndOfFrame();
     }
 }

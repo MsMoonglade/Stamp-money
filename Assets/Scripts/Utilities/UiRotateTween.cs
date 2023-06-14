@@ -13,18 +13,18 @@ public class UiRotateTween : MonoBehaviour
     {
         if (!up)
         {
-            transform.DOLocalRotate(new Vector3(0, 0, 360), rotationTime, RotateMode.FastBeyond360)
-                .SetRelative(true)
-                .SetEase(Ease.Linear)
-                .SetLoops(-1, LoopType.Yoyo);
+            transform.DOLocalRotate(new Vector3(0 , 0 , 360), rotationTime, RotateMode.FastBeyond360)           
+                .SetRelative(true)          
+                .SetEase(Ease.Linear)           
+                .SetLoops(-1, LoopType.Restart);
         }
 
         else
         {
-            transform.DOLocalRotate(new Vector3(0, 360 , 0), rotationTime, RotateMode.FastBeyond360)
-                .SetRelative(true)
-                .SetEase(Ease.Linear)
-                .SetLoops(-1, LoopType.Yoyo);
+            transform.DOLocalRotate(new Vector3(0 , 360 , 0), rotationTime, RotateMode.FastBeyond360)
+           .SetRelative(true)
+           .SetEase(Ease.Linear)
+           .SetLoops(-1, LoopType.Restart);
         }
     }
 }
