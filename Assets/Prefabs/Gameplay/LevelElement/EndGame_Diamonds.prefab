@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1848132199218707108}
   - component: {fileID: 9080646252549701131}
   - component: {fileID: 7603677587124385398}
-  m_Layer: 17
+  m_Layer: 0
   m_Name: EndGame_Diamonds
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -157,7 +157,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 788032d37c9b0c748914aaf6dd2d4958,
         type: 3}
       propertyPath: m_Layer
-      value: 17
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 788032d37c9b0c748914aaf6dd2d4958, type: 3}
