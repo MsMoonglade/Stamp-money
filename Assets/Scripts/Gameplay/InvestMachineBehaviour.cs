@@ -7,6 +7,7 @@ using UnityEngine;
 public class InvestMachineBehaviour : MonoBehaviour
 {
     public int unlockLevel;
+    public int unlockCost;
     public int index;
     public GameObject reward;
     public GameObject rewardPos;
@@ -58,12 +59,23 @@ public class InvestMachineBehaviour : MonoBehaviour
 
     public void UnlockMachine()
     {
+        EndGameCharacterBehaviour.instance.RemoveDiamond(unlockCost, transform.gameObject);
+
         machineLevel = 1;
 
         SetupCost();        
         SetupMachine();
 
         EventManager.TriggerEvent(Events.saveInvest);
+    }
+
+    public bool CanUnlock()
+    {
+        if (EndGameCharacterBehaviour.instance.CurrentDiamond() >= unlockCost)
+            return true;
+
+        else
+            return false;
     }
 
     public bool CanUpdate()

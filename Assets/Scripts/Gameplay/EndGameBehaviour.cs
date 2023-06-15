@@ -20,7 +20,7 @@ public class EndGameBehaviour : MonoBehaviour
     public GameObject endGameCameraTarget;
 
     public GameObject endGameCoinInstantiatePosRef;
-
+    public GameObject endGame_Table_CharacterPosition;
 
     private Coroutine endGamecoroutine;
 
@@ -39,6 +39,7 @@ public class EndGameBehaviour : MonoBehaviour
         navmeshSurface.BuildNavMesh();
     }
 
+    //Called in player
     public void StartEndGame()
     {
         GameManager.instance.SetEndGame();
@@ -105,67 +106,9 @@ public class EndGameBehaviour : MonoBehaviour
 
         playerCamera.Priority = 501;
 
-        EndGameCharacterBehaviour.instance.canMove = true;  
+        EndGameCharacterBehaviour.instance.canMove = true;
+
+        CharacterBehaviour.instance.transform.position = endGame_Table_CharacterPosition.transform.position;
+        CharacterBehaviour.instance.transform.rotation = endGame_Table_CharacterPosition.transform.rotation;
     }
-
-
-    //endgameGambling
-    /*
-    private IEnumerator EndGameBehaviourCoroutine()
-    {
-        endGamebonusGoldUi.transform.DOScale(Vector3.one, 0.5f);
-
-        yield return new WaitForEndOfFrame();
-
-        virtualCamera.Priority = 500;
-
-        yield return new WaitForSeconds(0.5f);
-
-        endGameDiamondSpawner.GetComponent<MoveEndGameSpawner>().StartMove();
-
-        int endGameDiamond = ShopManager.instance.currentDiamond;
-
-        for (int i = 0; i < endGameDiamond; i++)
-        {
-            ShopManager.instance.DecreaseDiamond(1);
-            ShopManager.instance.TweenDiamondUi();
-
-            GameObject diamond = Instantiate(endGameDiamondPrefs, endGameDiamondSpawner.transform.localPosition, quaternion.identity, endGameDiamondParent.transform);
-            diamond.transform.localPosition = endGameDiamondSpawner.transform.localPosition;
-
-            yield return new WaitForSeconds(0.15f);
-        }
-
-        yield return new WaitForSeconds(2.5f);
-
-        endGameObstaclesParent.transform.DOLocalMoveZ(20, 1.5f);
-
-        while (endGameDiamondParent.transform.childCount > 1)
-        {
-            yield return new WaitForSeconds(0.25f);
-        }
-
-        yield return new WaitForSeconds(1);
-
-        StartCoroutine(EndGameUiAnimation());      
-    }
-
-    private IEnumerator EndGameUiAnimation()
-    {
-        yield return null;
-
-        Vector2 anchorMin = new Vector2(0.5f, 0.5f);
-        Vector2 anchorMax = new Vector2(0.5f, 0.5f);
-
-        endGameUiBackground.transform.DOScale(Vector3.one, 1);
-
-        endGamebonusGoldUi.GetComponent<RectTransform>().DOAnchorMin(anchorMin, 1);
-        endGamebonusGoldUi.GetComponent<RectTransform>().DOAnchorMax(anchorMax, 1);
-        endGamebonusGoldUi.transform.DOLocalMove(Vector3.zero, 1);
-
-        endGamebonusGoldUi.transform.DOScale(new Vector3(1.1f, 1.1f, 1.1f), 1)
-            .SetEase(Ease.Linear)
-            .SetLoops(-1, LoopType.Yoyo);       
-    }
-    */
 }

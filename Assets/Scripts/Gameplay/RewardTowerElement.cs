@@ -111,10 +111,6 @@ public class RewardTowerElement : MonoBehaviour
         if (rewardIsEnergy)
             ShopManager.instance.IncreaseEnergy(rewardAmount , transform.gameObject);
 
-        if (DeviceCapabilities.isVersionSupported)
-        {
-            HapticPatterns.PlayPreset(HapticPatterns.PresetType.HeavyImpact);
-        }
     }
 
     private void GenerateElement()

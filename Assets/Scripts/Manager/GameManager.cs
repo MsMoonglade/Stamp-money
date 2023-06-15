@@ -191,6 +191,18 @@ public class GameManager : MonoBehaviour
         CharacterBehaviour.instance.ConfirmEdit();
     }
 
+    public void EnterEndGameEditView()
+    {
+        inEdit = true;
+       // CharacterBehaviour.instance.StartEdit();
+    }
+
+    public void ExitEndGameEditview()
+    {
+        inEdit = false;
+        //    CharacterBehaviour.instance.ConfirmEdit();
+    }
+
     public void DetectStartGameButton()
     {
         StartGame();

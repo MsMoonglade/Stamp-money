@@ -153,7 +153,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15e005fb2638e4cb1ba8dbd43efd710a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  requisites: {fileID: 0}
+  requisites: {fileID: 1166326607121901632}
+  updateReq: 0
   actionToTrigger:
     m_PersistentCalls:
       m_Calls:
@@ -532,6 +533,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unlockLevel: 1
+  unlockCost: 20
   index: 1
   reward: {fileID: 3020720706754412991, guid: 519cb623632245041978b8a4cf1eac11, type: 3}
   rewardPos: {fileID: 1166326607286295051}
@@ -2033,6 +2035,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   requisites: {fileID: 1166326607121901632}
+  updateReq: 1
   actionToTrigger:
     m_PersistentCalls:
       m_Calls:
@@ -2564,7 +2567,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 10
+  m_text: 20
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

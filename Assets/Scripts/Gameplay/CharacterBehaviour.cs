@@ -203,6 +203,7 @@ public class CharacterBehaviour : MonoBehaviour
         transform.DOMove(editPositionOffset, editAnimSpeed);
         transform.DORotate(editRotationOffset , editAnimSpeed);
     }
+
     public void ConfirmEdit()
     {
         transform.DOMove(startPos, editAnimSpeed);

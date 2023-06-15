@@ -18,14 +18,14 @@ public class EndGameCharacterBehaviour : MonoBehaviour
 
     public Animator anim;
 
-    [HideInInspector]
-    public bool canMove = false;
+    public bool canMove ;
 
     private NavMeshAgent agent;
     private void Awake()
     {
         instance = this;
 
+        canMove = false;
         agent = GetComponent<NavMeshAgent>();
     }
 
@@ -90,6 +90,16 @@ public class EndGameCharacterBehaviour : MonoBehaviour
             go.transform.parent = null;
             go.SetActive(false);
         }
+    }
+
+    public void SetEdit()
+    {
+        canMove = false;
+    }
+
+    public void ExitEdit()
+    {
+        canMove = true;
     }
 
     private IEnumerator RemoveDiamondWithDelay(List<GameObject> list , GameObject dest)

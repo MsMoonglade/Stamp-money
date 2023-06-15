@@ -49,7 +49,7 @@ public class AnimateUiElement : MonoBehaviour
     {
         instance = this;
 
-        StartDisableEdit();
+        //StartDisableEdit();
 
         //ANIMATE HAND
         mainMenuHand.transform.DOLocalMoveX(Mathf.Abs(mainMenuHand.transform.GetComponent<RectTransform>().localPosition.x), handMoveSpeed)
@@ -81,6 +81,10 @@ public class AnimateUiElement : MonoBehaviour
             .SetRelative(true)
             .SetEase(Ease.Linear)
             .SetLoops(-1, LoopType.Yoyo);
+
+        editPanelButtonsTween = new Tween[editMenuButtons.Length];
+
+        HideEdit();
     }
 
 
@@ -151,7 +155,7 @@ public class AnimateUiElement : MonoBehaviour
         HideEdit();
     }
 
-    private void ShowEdit()
+    public void ShowEdit()
     {
         //CONFIRM EDIT BUTTONS
         confirmSequence = DOTween.Sequence();
@@ -162,7 +166,6 @@ public class AnimateUiElement : MonoBehaviour
 
 
         //EDIT PANEL BUTTONS
-        editPanelButtonsTween = new Tween[editMenuButtons.Length];
 
         for (int i = 0; i < editMenuButtons.Length; i++)
         {
@@ -176,14 +179,15 @@ public class AnimateUiElement : MonoBehaviour
         inventoryObj.transform.DOScale(1, inventoryHideSpeed);
     }
 
-    private void HideEdit()
+    public void HideEdit()
     {
         confirmSequence.Pause();
         confirmeditButton.transform.DOScale(0, confirmEditbuttonsHideSpeed);
 
         for (int i = 0; i < editMenuButtons.Length; i++)
-        {           
-            editPanelButtonsTween[i].Kill();
+        {
+            if (editPanelButtonsTween[i] != null)            
+                editPanelButtonsTween[i].Kill();
         }
 
         for (int i = 0; i < editMenuButtons.Length; i++)

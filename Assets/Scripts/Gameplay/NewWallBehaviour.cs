@@ -209,11 +209,6 @@ public class NewWallBehaviour : MonoBehaviour
             rend.material = positive_Side_Mat;
         }
 
-        if (DeviceCapabilities.isVersionSupported)
-        {
-            HapticPatterns.PlayPreset(HapticPatterns.PresetType.HeavyImpact);
-        }
-
         centerWallMeshRenderer.material = positive_Center_Mat;
     }
 

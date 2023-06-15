@@ -8,6 +8,7 @@ public class FloorButtonBehaviour : MonoBehaviour
 {
     [Header("Events")]
     public InvestMachineBehaviour requisites;
+    public bool updateReq;
     public UnityEvent actionToTrigger;
 
     [Header("PublicVariables")]
@@ -42,12 +43,27 @@ public class FloorButtonBehaviour : MonoBehaviour
 
         else
         {
-            if (requisites.CanUpdate())
+            if (updateReq)
             {
-                if (other.transform.CompareTag("Player") && !triggered)
+                if (requisites.CanUpdate())
                 {
-                    if (timerCoroutine == null)
-                        timerCoroutine = StartCoroutine(StartCounter());
+                    if (other.transform.CompareTag("Player") && !triggered)
+                    {
+                        if (timerCoroutine == null)
+                            timerCoroutine = StartCoroutine(StartCounter());
+                    }
+                }
+            }
+
+            else
+            {
+                if (requisites.CanUnlock())
+                {
+                    if (other.transform.CompareTag("Player") && !triggered)
+                    {
+                        if (timerCoroutine == null)
+                            timerCoroutine = StartCoroutine(StartCounter());
+                    }
                 }
             }
         }
