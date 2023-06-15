@@ -21,8 +21,6 @@ public class UiButtonCostRefresh : MonoBehaviour
 
     private void Start()
     {
-        CheckValue();
-
         var allB = FindObjectsOfType<UiButtonCostRefresh>();
 
         for(int i = 0; i < allB.Length; i++)
@@ -30,7 +28,17 @@ public class UiButtonCostRefresh : MonoBehaviour
             allButtons.Add(allB[i]);
         }
 
+        foreach (UiButtonCostRefresh button in allButtons)
+        {
+            button.CheckValue();
+        }
+
         haveChecked = false;
+    }
+
+    private void OnEnable()
+    {
+        CheckValue();
     }
 
     public void CheckValue()
@@ -72,6 +80,7 @@ public class UiButtonCostRefresh : MonoBehaviour
         {
             case ButtonType.jumpSpeed:
                 {
+                    /*
                     int index = UiFunctions.instance.jumpSpeedIndex;
 
                     if (index >= 4)
@@ -81,7 +90,10 @@ public class UiButtonCostRefresh : MonoBehaviour
                     }
 
                     else
-                        costText.text = cost.ToString();
+                     costText.text = cost.ToString();
+                    */
+
+                    costText.text = cost.ToString();
 
                     float valuePerSec = 1 / CharacterBehaviour.instance.jumpSpeed;
 
@@ -92,6 +104,7 @@ public class UiButtonCostRefresh : MonoBehaviour
 
             case ButtonType.passiveIncome:
                 {
+                    /*
                     int index = PassiveIncome.instance.passiveIncomeIndex;
 
                     if (index >= 4)
@@ -102,15 +115,20 @@ public class UiButtonCostRefresh : MonoBehaviour
 
                     else
                         costText.text = cost.ToString();
+                    */
 
+                    costText.text = cost.ToString();
+
+                    /*
                     int localindex = index;
 
                     if(localindex >= 4)
                     {
                         localindex = 3;
                     }
+                    */
 
-                    int valuePerHour =  PassiveIncome.instance.goldPerHour[localindex];
+                    int valuePerHour =  PassiveIncome.instance.actualGoldPerHour;
 
                     valueText.text = valuePerHour.ToString() + "/h";
 
@@ -146,22 +164,12 @@ public class UiButtonCostRefresh : MonoBehaviour
         {
             case ButtonType.jumpSpeed:
                 {
-                    int index = UiFunctions.instance.jumpSpeedIndex;
-
-                    if (index < 4)
-                        return ShopCostHelper.instance.jumpSpeedCost[index];
-                    else
-                        return 0;
+                    return ShopCostHelper.instance.actualJumpSpeedCost;
                 }
 
-            case ButtonType.passiveIncome:
+            case ButtonType.passiveIncome:        
                 {
-                    int index = PassiveIncome.instance.passiveIncomeIndex;
-                   
-                    if (index < 4)
-                        return ShopCostHelper.instance.incomePerHourCost[index];
-                    else
-                        return 0;
+                    return ShopCostHelper.instance.actualIncomeCost;
                 }
 
             case ButtonType.increaseSize:
@@ -176,7 +184,6 @@ public class UiButtonCostRefresh : MonoBehaviour
 
             case ButtonType.buyMoney:
                 {
-
                     return ShopCostHelper.instance.moneyShopCost[0];
                 }
         }

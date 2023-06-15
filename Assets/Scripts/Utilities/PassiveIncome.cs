@@ -8,7 +8,9 @@ public class PassiveIncome : MonoBehaviour
 {
     public static PassiveIncome instance;
 
-    public int[] goldPerHour;
+    public int goldPerHourStartValue;
+
+    public int goldPerHourIncrementDelta;
     public GameObject passiveIncomeGo;
     public TMP_Text passiveIncomeText;
 
@@ -19,15 +21,14 @@ public class PassiveIncome : MonoBehaviour
 
     private int passiveAmmount;
 
+    public int actualGoldPerHour;
+
     private void Awake()
     {
         instance = this; 
 
         passiveAmmount = 0;
-    }
 
-    private void Start()
-    {
         if (PlayerPrefs.HasKey("PassiveIncomeIndex"))
             passiveIncomeIndex = PlayerPrefs.GetInt("PassiveIncomeIndex");
         else
@@ -35,7 +36,12 @@ public class PassiveIncome : MonoBehaviour
             passiveIncomeIndex = 0;
             PlayerPrefs.SetInt("PassiveIncomeIndex", passiveIncomeIndex);
         }
-        
+
+        CheckActualGold();
+    }
+
+    private void Start()
+    {
         if (PlayerPrefs.HasKey("OldHour"))
         {
             int passedHour = CheckOfflineTime();
@@ -45,9 +51,9 @@ public class PassiveIncome : MonoBehaviour
             if (index >= 4)
             {
                 index = 3;
-            }
+            }            
 
-            passiveAmmount = (goldPerHour[index] * passedHour);    
+            passiveAmmount = (actualGoldPerHour * passedHour);    
             passiveIncomeText.text = passiveAmmount.ToString();
         }
 
@@ -69,14 +75,28 @@ public class PassiveIncome : MonoBehaviour
 
     public void IncreaseGoldPerHour()
     {
-        if (ShopManager.instance.currentGold >= ShopCostHelper.instance.incomePerHourCost[passiveIncomeIndex])
+        if (ShopManager.instance.currentGold >= ShopCostHelper.instance.actualIncomeCost)
         {
-            ShopManager.instance.SpendCoin(ShopCostHelper.instance.incomePerHourCost[passiveIncomeIndex]);
+            ShopManager.instance.SpendCoin(ShopCostHelper.instance.actualIncomeCost);
 
-            if (passiveIncomeIndex < goldPerHour.Length)
+
+            passiveIncomeIndex++;
+            PlayerPrefs.SetInt("PassiveIncomeIndex", passiveIncomeIndex);
+
+            CheckActualGold();
+            ShopCostHelper.instance.UpdateCost();
+        }
+    }
+
+    void CheckActualGold()
+    {
+        actualGoldPerHour = goldPerHourStartValue;
+       
+        if (passiveIncomeIndex >= 1)
+        {
+            for (int i = 0; i < passiveIncomeIndex; i++)
             {
-                passiveIncomeIndex++;
-                PlayerPrefs.SetInt("PassiveIncomeIndex", passiveIncomeIndex);
+                actualGoldPerHour += goldPerHourIncrementDelta;
             }
         }
     }

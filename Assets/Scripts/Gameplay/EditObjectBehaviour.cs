@@ -15,6 +15,12 @@ public class EditObjectBehaviour : MonoBehaviour
         transform.localScale = Vector3.one;
     }
 
+    private void Update()
+    {
+        if (transform.localScale != Vector3.one)
+            transform.localScale = Vector3.one;
+    }
+
     public void Setup(int val)
     {        
         if(val == 0)

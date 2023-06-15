@@ -79,11 +79,6 @@ public class NewWallBehaviour : MonoBehaviour
 
         if (col.transform.CompareTag("Player"))
         {
-            if (DeviceCapabilities.isVersionSupported)
-            {
-                HapticPatterns.PlayPreset(HapticPatterns.PresetType.MediumImpact);
-            }
-
             foreach (var c in nearWall)
             {
                 c.enabled = false;
@@ -197,7 +192,6 @@ public class NewWallBehaviour : MonoBehaviour
             }
         }
     }
-
     private void SetToPositive()
     {
         isNegative = false;

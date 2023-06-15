@@ -135,7 +135,7 @@ public class LevelManager : MonoBehaviour
             }
         }
 
-        diamondValue -= (int)(diamondCollectables.Count /2);
+        diamondValue -= (int)(diamondCollectables.Count);
 
         if (diamondTower.Count != 0 && diamondValue > 5)
         {

@@ -429,6 +429,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 250182746, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
+      propertyPath: startIncomeCost
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 250182746, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
+      propertyPath: jumpSpeedCostDelta
+      value: 55
+      objectReference: {fileID: 0}
+    - target: {fileID: 250182746, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
+      propertyPath: startJumpSpeedCost
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 250182746, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
+      propertyPath: incomePerHourCostDelta
+      value: 55
+      objectReference: {fileID: 0}
     - target: {fileID: 353571750, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
       propertyPath: editButton
       value: 
@@ -477,6 +493,18 @@ PrefabInstance:
       propertyPath: passiveIncomeText
       value: 
       objectReference: {fileID: 93666703}
+    - target: {fileID: 1836870512, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
+      propertyPath: goldPerHourStartValue
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1836870512, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
+      propertyPath: goldPerHourIncrementDelta
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1855258817, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
+      propertyPath: jumpSpeedAddPerLevel
+      value: 0.005
+      objectReference: {fileID: 0}
     - target: {fileID: 3406971285800949110, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85,
         type: 3}
       propertyPath: goldImage
@@ -1631,16 +1659,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5766648231171261682, guid: 837de735bd62fbd45afc7b610c27f0eb,
-        type: 3}
-      propertyPath: diamondPerLevel.m_Curve.Array.data[0].value
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 5766648231171261682, guid: 837de735bd62fbd45afc7b610c27f0eb,
-        type: 3}
-      propertyPath: diamondPerLevel.m_Curve.Array.data[1].value
-      value: 200
-      objectReference: {fileID: 0}
     - target: {fileID: 5766648231184970518, guid: 837de735bd62fbd45afc7b610c27f0eb,
         type: 3}
       propertyPath: m_Name
@@ -1651,16 +1669,6 @@ PrefabInstance:
       propertyPath: endGameObject
       value: 
       objectReference: {fileID: 832707480}
-    - target: {fileID: 5766648231184970519, guid: 837de735bd62fbd45afc7b610c27f0eb,
-        type: 3}
-      propertyPath: minimunDistanceModifyer
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 5766648231184970519, guid: 837de735bd62fbd45afc7b610c27f0eb,
-        type: 3}
-      propertyPath: elementiDistanceModifyer
-      value: 18.5
-      objectReference: {fileID: 0}
     - target: {fileID: 5766648231184970520, guid: 837de735bd62fbd45afc7b610c27f0eb,
         type: 3}
       propertyPath: m_RootOrder

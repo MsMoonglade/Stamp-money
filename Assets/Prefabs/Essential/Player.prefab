@@ -4934,7 +4934,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   moveXLimit: 5
-  moveSpeed: 11
+  moveSpeed: 10
   jumpHeight: 1.25
   jumpSpeed: 0.38
   bulletActiveTime: 1
@@ -4957,6 +4957,7 @@ MonoBehaviour:
   gridElementValue: 
   gridElementPos: []
   editObjectList: []
+  shootElementParent: {fileID: 2250228091084633149}
 --- !u!54 &5499896078592063819
 Rigidbody:
   m_ObjectHideFlags: 0

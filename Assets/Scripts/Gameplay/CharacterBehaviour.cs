@@ -75,6 +75,8 @@ public class CharacterBehaviour : MonoBehaviour
     public List<Vector3> gridElementPos = new List<Vector3>();
     public List<EditObjectBehaviour> editObjectList = new List<EditObjectBehaviour> ();
 
+    public GameObject shootElementParent;
+
     private void Awake()
     {
         instance = this;

@@ -12,7 +12,6 @@ public class InventoryManager : MonoBehaviour
 
     public GameObject inventoryParent;
     public GameObject inventoryBgParent;
-    public GameObject playerParent;
     public LayerMask moneyLayerMask;
 
     public InventoryEditGrid grid;
@@ -50,6 +49,7 @@ public class InventoryManager : MonoBehaviour
             bg.transform.localPosition = o.transform.localPosition + new Vector3(0, -0.03f, 0);
             bg.transform.rotation = new Quaternion(0, 0, 0, 0);
         }
+
     }
 
     public Transform ReturnTransformParent(GameObject slot)
@@ -60,7 +60,7 @@ public class InventoryManager : MonoBehaviour
                 return inventoryParent.transform;
         }        
 
-        return playerParent.transform;
+        return CharacterBehaviour.instance.shootElementParent.transform;
     }
 
     public bool HaveFreeSlot()

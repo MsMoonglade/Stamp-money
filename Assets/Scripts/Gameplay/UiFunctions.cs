@@ -11,7 +11,7 @@ public class UiFunctions : MonoBehaviour
     public int printerScaleIndex;
 
     //JUMP SPEED
-    public float[] jumpSpeedAddPerLevel;
+    public  float jumpSpeedAddPerLevel;
     public int jumpSpeedIndex;
 
     private void Awake()
@@ -44,9 +44,12 @@ public class UiFunctions : MonoBehaviour
     {
         if (ShopManager.instance.currentGold >= ShopCostHelper.instance.moneyShopCost[0])
         {
-            ShopManager.instance.SpendCoin(ShopCostHelper.instance.moneyShopCost[0]);
+            if (InventoryManager.Instance.HaveFreeSlot())
+            {
+                ShopManager.instance.SpendCoin(ShopCostHelper.instance.moneyShopCost[0]);
 
-            InventoryManager.Instance.GenerateNewMoney();
+                InventoryManager.Instance.GenerateNewMoney();
+            }
         }
     }
 
@@ -80,19 +83,17 @@ public class UiFunctions : MonoBehaviour
 
     public void IncreaseFireRate()
     {
-        if (ShopManager.instance.currentGold >= ShopCostHelper.instance.jumpSpeedCost[jumpSpeedIndex])
+        if (ShopManager.instance.currentGold >= ShopCostHelper.instance.actualJumpSpeedCost)
         {
-            ShopManager.instance.SpendCoin(ShopCostHelper.instance.jumpSpeedCost[jumpSpeedIndex]);
+            ShopManager.instance.SpendCoin(ShopCostHelper.instance.actualJumpSpeedCost);
 
+            float amount = jumpSpeedAddPerLevel;
+            CharacterBehaviour.instance.IncreaseJumpSpeed(amount);
 
-            if (jumpSpeedIndex < jumpSpeedAddPerLevel.Length)
-            {
-                float amount = jumpSpeedAddPerLevel[jumpSpeedIndex];
-                CharacterBehaviour.instance.IncreaseJumpSpeed(amount);
+            jumpSpeedIndex++;
+            PlayerPrefs.SetInt("JumpSpeedIndex", jumpSpeedIndex);
 
-                jumpSpeedIndex++;
-                PlayerPrefs.SetInt("JumpSpeedIndex", jumpSpeedIndex);
-            }
+            ShopCostHelper.instance.UpdateCost();
         }
     }
     

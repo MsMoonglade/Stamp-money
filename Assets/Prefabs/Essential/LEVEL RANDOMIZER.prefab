@@ -146,8 +146,8 @@ MonoBehaviour:
   startGameDistanceOffset: 20
   endGameDistanceOffset: 10
   mediumElementDistance: 16.5
-  minimunDistanceModifyer: 14
-  elementiDistanceModifyer: 20
+  minimunDistanceModifyer: 12
+  elementiDistanceModifyer: 18.5
   levelLenght:
     serializedVersion: 2
     m_Curve:
@@ -293,7 +293,7 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 17
+      value: 30
       inSlope: 1.6171998
       outSlope: 1.6171998
       tangentMode: 0
@@ -302,7 +302,7 @@ MonoBehaviour:
       outWeight: 0.033378746
     - serializedVersion: 3
       time: 25
-      value: 60
+      value: 200
       inSlope: 0
       outSlope: 0
       tangentMode: 136

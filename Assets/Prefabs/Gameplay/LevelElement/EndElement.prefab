@@ -11344,6 +11344,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   requisites: {fileID: 0}
+  updateReq: 0
   actionToTrigger:
     m_PersistentCalls:
       m_Calls:
@@ -12223,6 +12224,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   requisites: {fileID: 0}
+  updateReq: 0
   actionToTrigger:
     m_PersistentCalls:
       m_Calls:
@@ -12791,6 +12793,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   requisites: {fileID: 0}
+  updateReq: 0
   actionToTrigger:
     m_PersistentCalls:
       m_Calls:
