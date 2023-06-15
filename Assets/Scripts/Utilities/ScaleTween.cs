@@ -7,9 +7,20 @@ public class ScaleTween : MonoBehaviour
 {
     public Vector3 endsScale;
     public float duration;
+
+    public bool loop;
+
     private void Awake()
     {
-        transform.DOScale(endsScale, duration)
-            .SetLoops(-1, LoopType.Yoyo);
+        if (loop)
+        {
+            transform.DOScale(endsScale, duration)
+                .SetLoops(-1, LoopType.Yoyo);
+        }
+
+        else
+        {
+            transform.DOScale(endsScale, duration);
+        }
     }
 }

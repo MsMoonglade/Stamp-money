@@ -79,6 +79,19 @@ public class EndGameCharacterBehaviour : MonoBehaviour
 
         StartCoroutine(RemoveDiamondWithDelay(list, destination));
     }
+
+    public GameObject TakeOneDiamond()
+    {
+        GameObject lastDiamond = null;
+
+        if (CurrentDiamond() >= 1)
+        {          
+            lastDiamond = diamondParent.transform.GetChild(diamondParent.transform.childCount - 1).gameObject;
+        }
+
+        return lastDiamond;
+    }
+
     public void RemoveDiamond(int amount)
     {
         List<GameObject> list = new List<GameObject>();       
