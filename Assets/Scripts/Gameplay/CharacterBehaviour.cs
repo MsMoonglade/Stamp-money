@@ -291,12 +291,12 @@ public class CharacterBehaviour : MonoBehaviour
 
         Invoke("RegenerateGridSlotAfterSizeChange", 0.55f);
 
-        SavePlayerValue();
     }
 
     private void RegenerateGridSlotAfterSizeChange()
     {
         characterGrid.RemakeSlot();
+       
         foreach (GameObject o in characterGrid.currentGridElement)
         {
             GameObject bg = Instantiate(editBG, o.transform.position + new Vector3(0, 0.05f, 0), o.transform.rotation, editBGParent.transform);
@@ -304,6 +304,8 @@ public class CharacterBehaviour : MonoBehaviour
             bg.transform.localScale = Vector3.zero;
             bg.transform.DOScale(Vector3.one, 0.2f);
         }
+
+        SavePlayerValue();
     }
 
     private IEnumerator StartDieCoroutine()

@@ -19,7 +19,8 @@ public class EndGameMultiplyStation : MonoBehaviour
     public GameObject activeObject;
     public GameObject inactiveObject;
 
-    private int objectLevel;
+    [HideInInspector]
+    public int objectLevel;
 
     private string saveKey;
     private float localCost;

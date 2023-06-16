@@ -25,9 +25,9 @@ public class CharacterEditGrid : MonoBehaviour
         int yQuantity = (int)(printerBaseSize.transform.localScale.z / character.moneyDecalScaleY);
 
         Vector3 startPoint = new Vector3(
-           printerBaseSize.transform.position.x - (printerBaseSize.transform.localScale.x / 2) + (character.moneyDecalScaleX / 2),
+           printerBaseSize.transform.localPosition.x - (printerBaseSize.transform.localScale.x / 2) + (character.moneyDecalScaleX / 2),
            -0.1f,
-           printerBaseSize.transform.position.z - (printerBaseSize.transform.localScale.z / 2) + (character.moneyDecalScaleY / 2));
+           printerBaseSize.transform.localPosition.z - (printerBaseSize.transform.localScale.z / 2) + (character.moneyDecalScaleY / 2));
 
         for (int i = 0; i < xQuantity; i++)
         {
@@ -58,9 +58,9 @@ public class CharacterEditGrid : MonoBehaviour
         int yQuantity = (int)(printerBaseSize.transform.localScale.z / character.moneyDecalScaleY);
 
         Vector3 startPoint = new Vector3(
-              printerBaseSize.transform.position.x - (printerBaseSize.transform.localScale.x / 2) + (character.moneyDecalScaleX / 2),
+              printerBaseSize.transform.localPosition.x - (printerBaseSize.transform.localScale.x / 2) + (character.moneyDecalScaleX / 2),
               -0.1f,
-              printerBaseSize.transform.position.z - (printerBaseSize.transform.localScale.z / 2) + (character.moneyDecalScaleY / 2));
+              printerBaseSize.transform.localPosition.z - (printerBaseSize.transform.localScale.z / 2) + (character.moneyDecalScaleY / 2));
 
         for (int i = 0; i < xQuantity; i++)
         {
