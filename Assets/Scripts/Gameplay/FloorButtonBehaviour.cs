@@ -7,7 +7,7 @@ using UnityEngine.Events;
 public class FloorButtonBehaviour : MonoBehaviour
 {
     [Header("Events")]
-    public InvestMachineBehaviour requisites;
+    public EndGameMultiplyStation requisites;
     public bool updateReq;
     public UnityEvent actionToTrigger;
 

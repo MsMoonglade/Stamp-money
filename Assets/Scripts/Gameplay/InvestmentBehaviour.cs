@@ -5,7 +5,9 @@ using DG.Tweening;
 
 public class InvestmentBehaviour : MonoBehaviour
 {
-    public float lenght;
+    public static InvestmentBehaviour instance;
+
+    public GameObject endPos;
     public float diamondSpeed;
     public GameObject diamondStartPos;
     public GameObject diamondParent;
@@ -21,6 +23,8 @@ public class InvestmentBehaviour : MonoBehaviour
 
     private void Awake()
     {
+        instance = this;
+
         takeDiamondCoroutine = null;
     }
 
@@ -29,14 +33,15 @@ public class InvestmentBehaviour : MonoBehaviour
        // diamond.transform.DOLocalMove(diamondStartPos.transform.localPosition , 1.5f);
        // diamond.transform.DOScale(Vector3.one, 0.15f);
 
-        float randomizeSpeed = diamondSpeed /*+ Random.Range(-0.1f, 1f)*/;
+        float moveTime = endPos.transform.position.z - diamond.transform.position.z;
+        float randomizeSpeed = moveTime / diamondSpeed; /*+ Random.Range(-0.1f, 1f)*/;
 
-        diamond.transform.DOLocalMoveZ(diamond.transform.localPosition.z + lenght , randomizeSpeed)
+        diamond.transform.DOLocalMoveZ(endPos.transform.localPosition.z , randomizeSpeed)
             .SetEase(Ease.Linear)
             .OnComplete(() => GenerateMoney(diamond));
     }
 
-    private void GenerateMoney(GameObject diamond)
+    public void GenerateMoney(GameObject diamond)
     {
         Instantiate(coinExplosionParticles, coinExplosionParticlesPos.transform.position, Quaternion.identity, coinExplosionParticlesPos.transform);
 

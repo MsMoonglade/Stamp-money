@@ -11,6 +11,7 @@ TagManager:
   - Ender
   - Bullet
   - FxTemporaire
+  - EndDiamond
   layers:
   - Default
   - TransparentFX
