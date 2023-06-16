@@ -29,7 +29,8 @@ public class InvestmentBehaviour : MonoBehaviour
        // diamond.transform.DOLocalMove(diamondStartPos.transform.localPosition , 1.5f);
        // diamond.transform.DOScale(Vector3.one, 0.15f);
 
-        float randomizeSpeed = diamondSpeed + Random.Range(-0.1f, 1f);
+        float randomizeSpeed = diamondSpeed /*+ Random.Range(-0.1f, 1f)*/;
+
         diamond.transform.DOLocalMoveZ(diamond.transform.localPosition.z + lenght , randomizeSpeed)
             .SetEase(Ease.Linear)
             .OnComplete(() => GenerateMoney(diamond));

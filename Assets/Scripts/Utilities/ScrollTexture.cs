@@ -14,6 +14,6 @@ public class ScrollTexture : MonoBehaviour
     void Update()
     {
         offset -= (Time.deltaTime * scrollSpeed) / 10.0f;
-        render.materials[0].SetTextureOffset("_BaseMap", new Vector2(0, offset));
+        render.materials[1].SetTextureOffset("_BaseMap", new Vector2(0, offset));
     }
 }
