@@ -66,40 +66,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3808513231027256455}
     m_Modifications:
-    - target: {fileID: -6597651562096959583, guid: cd231136fba8712438c67c4339603875,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: -6597651562096959583, guid: cd231136fba8712438c67c4339603875,
-        type: 3}
-      propertyPath: m_Size.z
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1155029200828703710, guid: cd231136fba8712438c67c4339603875,
-        type: 3}
-      propertyPath: endPos.y
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 3020720706754412990, guid: cd231136fba8712438c67c4339603875,
         type: 3}
       propertyPath: m_RootOrder
       value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3020720706754412990, guid: cd231136fba8712438c67c4339603875,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3020720706754412990, guid: cd231136fba8712438c67c4339603875,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3020720706754412990, guid: cd231136fba8712438c67c4339603875,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 3020720706754412990, guid: cd231136fba8712438c67c4339603875,
         type: 3}
@@ -109,7 +79,7 @@ PrefabInstance:
     - target: {fileID: 3020720706754412990, guid: cd231136fba8712438c67c4339603875,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 3020720706754412990, guid: cd231136fba8712438c67c4339603875,
         type: 3}
@@ -156,11 +126,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Collectables_Obj_Coin (4)
       objectReference: {fileID: 0}
-    - target: {fileID: 4440464629622461468, guid: cd231136fba8712438c67c4339603875,
-        type: 3}
-      propertyPath: up
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd231136fba8712438c67c4339603875, type: 3}
 --- !u!4 &3304118924194507113 stripped
@@ -176,40 +141,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3808513231027256455}
     m_Modifications:
-    - target: {fileID: -6597651562096959583, guid: cd231136fba8712438c67c4339603875,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: -6597651562096959583, guid: cd231136fba8712438c67c4339603875,
-        type: 3}
-      propertyPath: m_Size.z
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1155029200828703710, guid: cd231136fba8712438c67c4339603875,
-        type: 3}
-      propertyPath: endPos.y
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 3020720706754412990, guid: cd231136fba8712438c67c4339603875,
         type: 3}
       propertyPath: m_RootOrder
       value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 3020720706754412990, guid: cd231136fba8712438c67c4339603875,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3020720706754412990, guid: cd231136fba8712438c67c4339603875,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3020720706754412990, guid: cd231136fba8712438c67c4339603875,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 3020720706754412990, guid: cd231136fba8712438c67c4339603875,
         type: 3}
@@ -219,7 +154,7 @@ PrefabInstance:
     - target: {fileID: 3020720706754412990, guid: cd231136fba8712438c67c4339603875,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 3020720706754412990, guid: cd231136fba8712438c67c4339603875,
         type: 3}
@@ -266,11 +201,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Collectables_Obj_Coin (6)
       objectReference: {fileID: 0}
-    - target: {fileID: 4440464629622461468, guid: cd231136fba8712438c67c4339603875,
-        type: 3}
-      propertyPath: up
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd231136fba8712438c67c4339603875, type: 3}
 --- !u!4 &3288140193332130133 stripped
@@ -286,40 +216,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3808513231027256455}
     m_Modifications:
-    - target: {fileID: -6597651562096959583, guid: cd231136fba8712438c67c4339603875,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: -6597651562096959583, guid: cd231136fba8712438c67c4339603875,
-        type: 3}
-      propertyPath: m_Size.z
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1155029200828703710, guid: cd231136fba8712438c67c4339603875,
-        type: 3}
-      propertyPath: endPos.y
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 3020720706754412990, guid: cd231136fba8712438c67c4339603875,
         type: 3}
       propertyPath: m_RootOrder
       value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 3020720706754412990, guid: cd231136fba8712438c67c4339603875,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3020720706754412990, guid: cd231136fba8712438c67c4339603875,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3020720706754412990, guid: cd231136fba8712438c67c4339603875,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 3020720706754412990, guid: cd231136fba8712438c67c4339603875,
         type: 3}
@@ -329,7 +229,7 @@ PrefabInstance:
     - target: {fileID: 3020720706754412990, guid: cd231136fba8712438c67c4339603875,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 3020720706754412990, guid: cd231136fba8712438c67c4339603875,
         type: 3}
@@ -376,11 +276,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Collectables_Obj_Coin (11)
       objectReference: {fileID: 0}
-    - target: {fileID: 4440464629622461468, guid: cd231136fba8712438c67c4339603875,
-        type: 3}
-      propertyPath: up
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd231136fba8712438c67c4339603875, type: 3}
 --- !u!4 &3252479684168175763 stripped
@@ -396,40 +291,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3808513231027256455}
     m_Modifications:
-    - target: {fileID: -6597651562096959583, guid: cd231136fba8712438c67c4339603875,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: -6597651562096959583, guid: cd231136fba8712438c67c4339603875,
-        type: 3}
-      propertyPath: m_Size.z
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1155029200828703710, guid: cd231136fba8712438c67c4339603875,
-        type: 3}
-      propertyPath: endPos.y
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 3020720706754412990, guid: cd231136fba8712438c67c4339603875,
         type: 3}
       propertyPath: m_RootOrder
       value: 14
-      objectReference: {fileID: 0}
-    - target: {fileID: 3020720706754412990, guid: cd231136fba8712438c67c4339603875,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3020720706754412990, guid: cd231136fba8712438c67c4339603875,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3020720706754412990, guid: cd231136fba8712438c67c4339603875,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 3020720706754412990, guid: cd231136fba8712438c67c4339603875,
         type: 3}
@@ -439,7 +304,7 @@ PrefabInstance:
     - target: {fileID: 3020720706754412990, guid: cd231136fba8712438c67c4339603875,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 3020720706754412990, guid: cd231136fba8712438c67c4339603875,
         type: 3}
@@ -486,11 +351,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Collectables_Obj_Coin (14)
       objectReference: {fileID: 0}
-    - target: {fileID: 4440464629622461468, guid: cd231136fba8712438c67c4339603875,
-        type: 3}
-      propertyPath: up
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd231136fba8712438c67c4339603875, type: 3}
 --- !u!4 &2416916823139683208 stripped
@@ -506,40 +366,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3808513231027256455}
     m_Modifications:
-    - target: {fileID: -6597651562096959583, guid: cd231136fba8712438c67c4339603875,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: -6597651562096959583, guid: cd231136fba8712438c67c4339603875,
-        type: 3}
-      propertyPath: m_Size.z
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1155029200828703710, guid: cd231136fba8712438c67c4339603875,
-        type: 3}
-      propertyPath: endPos.y
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 3020720706754412990, guid: cd231136fba8712438c67c4339603875,
         type: 3}
       propertyPath: m_RootOrder
       value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3020720706754412990, guid: cd231136fba8712438c67c4339603875,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3020720706754412990, guid: cd231136fba8712438c67c4339603875,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3020720706754412990, guid: cd231136fba8712438c67c4339603875,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 3020720706754412990, guid: cd231136fba8712438c67c4339603875,
         type: 3}
@@ -549,7 +379,7 @@ PrefabInstance:
     - target: {fileID: 3020720706754412990, guid: cd231136fba8712438c67c4339603875,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 3020720706754412990, guid: cd231136fba8712438c67c4339603875,
         type: 3}
@@ -596,11 +426,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Collectables_Obj_Coin (3)
       objectReference: {fileID: 0}
-    - target: {fileID: 4440464629622461468, guid: cd231136fba8712438c67c4339603875,
-        type: 3}
-      propertyPath: up
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd231136fba8712438c67c4339603875, type: 3}
 --- !u!4 &2693618609405467037 stripped
@@ -616,40 +441,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3808513231027256455}
     m_Modifications:
-    - target: {fileID: -6597651562096959583, guid: cd231136fba8712438c67c4339603875,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: -6597651562096959583, guid: cd231136fba8712438c67c4339603875,
-        type: 3}
-      propertyPath: m_Size.z
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1155029200828703710, guid: cd231136fba8712438c67c4339603875,
-        type: 3}
-      propertyPath: endPos.y
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 3020720706754412990, guid: cd231136fba8712438c67c4339603875,
         type: 3}
       propertyPath: m_RootOrder
       value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 3020720706754412990, guid: cd231136fba8712438c67c4339603875,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3020720706754412990, guid: cd231136fba8712438c67c4339603875,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3020720706754412990, guid: cd231136fba8712438c67c4339603875,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 3020720706754412990, guid: cd231136fba8712438c67c4339603875,
         type: 3}
@@ -659,7 +454,7 @@ PrefabInstance:
     - target: {fileID: 3020720706754412990, guid: cd231136fba8712438c67c4339603875,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 3020720706754412990, guid: cd231136fba8712438c67c4339603875,
         type: 3}
@@ -706,11 +501,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Collectables_Obj_Coin (13)
       objectReference: {fileID: 0}
-    - target: {fileID: 4440464629622461468, guid: cd231136fba8712438c67c4339603875,
-        type: 3}
-      propertyPath: up
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd231136fba8712438c67c4339603875, type: 3}
 --- !u!4 &4196986767630360602 stripped
@@ -726,40 +516,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3808513231027256455}
     m_Modifications:
-    - target: {fileID: -6597651562096959583, guid: cd231136fba8712438c67c4339603875,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: -6597651562096959583, guid: cd231136fba8712438c67c4339603875,
-        type: 3}
-      propertyPath: m_Size.z
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1155029200828703710, guid: cd231136fba8712438c67c4339603875,
-        type: 3}
-      propertyPath: endPos.y
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 3020720706754412990, guid: cd231136fba8712438c67c4339603875,
         type: 3}
       propertyPath: m_RootOrder
       value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 3020720706754412990, guid: cd231136fba8712438c67c4339603875,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3020720706754412990, guid: cd231136fba8712438c67c4339603875,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3020720706754412990, guid: cd231136fba8712438c67c4339603875,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 3020720706754412990, guid: cd231136fba8712438c67c4339603875,
         type: 3}
@@ -769,7 +529,7 @@ PrefabInstance:
     - target: {fileID: 3020720706754412990, guid: cd231136fba8712438c67c4339603875,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 3020720706754412990, guid: cd231136fba8712438c67c4339603875,
         type: 3}
@@ -816,11 +576,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Collectables_Obj_Coin (9)
       objectReference: {fileID: 0}
-    - target: {fileID: 4440464629622461468, guid: cd231136fba8712438c67c4339603875,
-        type: 3}
-      propertyPath: up
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd231136fba8712438c67c4339603875, type: 3}
 --- !u!4 &1774074396365112895 stripped
@@ -836,40 +591,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3808513231027256455}
     m_Modifications:
-    - target: {fileID: -6597651562096959583, guid: cd231136fba8712438c67c4339603875,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: -6597651562096959583, guid: cd231136fba8712438c67c4339603875,
-        type: 3}
-      propertyPath: m_Size.z
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1155029200828703710, guid: cd231136fba8712438c67c4339603875,
-        type: 3}
-      propertyPath: endPos.y
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 3020720706754412990, guid: cd231136fba8712438c67c4339603875,
         type: 3}
       propertyPath: m_RootOrder
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3020720706754412990, guid: cd231136fba8712438c67c4339603875,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3020720706754412990, guid: cd231136fba8712438c67c4339603875,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3020720706754412990, guid: cd231136fba8712438c67c4339603875,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 3020720706754412990, guid: cd231136fba8712438c67c4339603875,
         type: 3}
@@ -879,7 +604,7 @@ PrefabInstance:
     - target: {fileID: 3020720706754412990, guid: cd231136fba8712438c67c4339603875,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 3020720706754412990, guid: cd231136fba8712438c67c4339603875,
         type: 3}
@@ -926,11 +651,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Collectables_Obj_Coin
       objectReference: {fileID: 0}
-    - target: {fileID: 4440464629622461468, guid: cd231136fba8712438c67c4339603875,
-        type: 3}
-      propertyPath: up
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd231136fba8712438c67c4339603875, type: 3}
 --- !u!4 &1991196258662063189 stripped
@@ -946,40 +666,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3808513231027256455}
     m_Modifications:
-    - target: {fileID: -6597651562096959583, guid: cd231136fba8712438c67c4339603875,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: -6597651562096959583, guid: cd231136fba8712438c67c4339603875,
-        type: 3}
-      propertyPath: m_Size.z
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1155029200828703710, guid: cd231136fba8712438c67c4339603875,
-        type: 3}
-      propertyPath: endPos.y
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 3020720706754412990, guid: cd231136fba8712438c67c4339603875,
         type: 3}
       propertyPath: m_RootOrder
       value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3020720706754412990, guid: cd231136fba8712438c67c4339603875,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3020720706754412990, guid: cd231136fba8712438c67c4339603875,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3020720706754412990, guid: cd231136fba8712438c67c4339603875,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 3020720706754412990, guid: cd231136fba8712438c67c4339603875,
         type: 3}
@@ -989,7 +679,7 @@ PrefabInstance:
     - target: {fileID: 3020720706754412990, guid: cd231136fba8712438c67c4339603875,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 3020720706754412990, guid: cd231136fba8712438c67c4339603875,
         type: 3}
@@ -1036,11 +726,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Collectables_Obj_Coin (5)
       objectReference: {fileID: 0}
-    - target: {fileID: 4440464629622461468, guid: cd231136fba8712438c67c4339603875,
-        type: 3}
-      propertyPath: up
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd231136fba8712438c67c4339603875, type: 3}
 --- !u!4 &1267488083156486864 stripped
@@ -1056,40 +741,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3808513231027256455}
     m_Modifications:
-    - target: {fileID: -6597651562096959583, guid: cd231136fba8712438c67c4339603875,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: -6597651562096959583, guid: cd231136fba8712438c67c4339603875,
-        type: 3}
-      propertyPath: m_Size.z
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1155029200828703710, guid: cd231136fba8712438c67c4339603875,
-        type: 3}
-      propertyPath: endPos.y
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 3020720706754412990, guid: cd231136fba8712438c67c4339603875,
         type: 3}
       propertyPath: m_RootOrder
       value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 3020720706754412990, guid: cd231136fba8712438c67c4339603875,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3020720706754412990, guid: cd231136fba8712438c67c4339603875,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3020720706754412990, guid: cd231136fba8712438c67c4339603875,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 3020720706754412990, guid: cd231136fba8712438c67c4339603875,
         type: 3}
@@ -1099,7 +754,7 @@ PrefabInstance:
     - target: {fileID: 3020720706754412990, guid: cd231136fba8712438c67c4339603875,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 3020720706754412990, guid: cd231136fba8712438c67c4339603875,
         type: 3}
@@ -1146,11 +801,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Collectables_Obj_Coin (7)
       objectReference: {fileID: 0}
-    - target: {fileID: 4440464629622461468, guid: cd231136fba8712438c67c4339603875,
-        type: 3}
-      propertyPath: up
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd231136fba8712438c67c4339603875, type: 3}
 --- !u!4 &7462346845647179708 stripped
@@ -1166,40 +816,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3808513231027256455}
     m_Modifications:
-    - target: {fileID: -6597651562096959583, guid: cd231136fba8712438c67c4339603875,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: -6597651562096959583, guid: cd231136fba8712438c67c4339603875,
-        type: 3}
-      propertyPath: m_Size.z
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1155029200828703710, guid: cd231136fba8712438c67c4339603875,
-        type: 3}
-      propertyPath: endPos.y
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 3020720706754412990, guid: cd231136fba8712438c67c4339603875,
         type: 3}
       propertyPath: m_RootOrder
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3020720706754412990, guid: cd231136fba8712438c67c4339603875,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3020720706754412990, guid: cd231136fba8712438c67c4339603875,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3020720706754412990, guid: cd231136fba8712438c67c4339603875,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 3020720706754412990, guid: cd231136fba8712438c67c4339603875,
         type: 3}
@@ -1209,7 +829,7 @@ PrefabInstance:
     - target: {fileID: 3020720706754412990, guid: cd231136fba8712438c67c4339603875,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 3020720706754412990, guid: cd231136fba8712438c67c4339603875,
         type: 3}
@@ -1256,11 +876,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Collectables_Obj_Coin (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 4440464629622461468, guid: cd231136fba8712438c67c4339603875,
-        type: 3}
-      propertyPath: up
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd231136fba8712438c67c4339603875, type: 3}
 --- !u!4 &7462557656980235092 stripped
@@ -1276,40 +891,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3808513231027256455}
     m_Modifications:
-    - target: {fileID: -6597651562096959583, guid: cd231136fba8712438c67c4339603875,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: -6597651562096959583, guid: cd231136fba8712438c67c4339603875,
-        type: 3}
-      propertyPath: m_Size.z
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1155029200828703710, guid: cd231136fba8712438c67c4339603875,
-        type: 3}
-      propertyPath: endPos.y
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 3020720706754412990, guid: cd231136fba8712438c67c4339603875,
         type: 3}
       propertyPath: m_RootOrder
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3020720706754412990, guid: cd231136fba8712438c67c4339603875,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3020720706754412990, guid: cd231136fba8712438c67c4339603875,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3020720706754412990, guid: cd231136fba8712438c67c4339603875,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 3020720706754412990, guid: cd231136fba8712438c67c4339603875,
         type: 3}
@@ -1319,7 +904,7 @@ PrefabInstance:
     - target: {fileID: 3020720706754412990, guid: cd231136fba8712438c67c4339603875,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 3020720706754412990, guid: cd231136fba8712438c67c4339603875,
         type: 3}
@@ -1366,11 +951,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Collectables_Obj_Coin (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 4440464629622461468, guid: cd231136fba8712438c67c4339603875,
-        type: 3}
-      propertyPath: up
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd231136fba8712438c67c4339603875, type: 3}
 --- !u!4 &8328502523314023748 stripped
@@ -1386,40 +966,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3808513231027256455}
     m_Modifications:
-    - target: {fileID: -6597651562096959583, guid: cd231136fba8712438c67c4339603875,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: -6597651562096959583, guid: cd231136fba8712438c67c4339603875,
-        type: 3}
-      propertyPath: m_Size.z
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1155029200828703710, guid: cd231136fba8712438c67c4339603875,
-        type: 3}
-      propertyPath: endPos.y
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 3020720706754412990, guid: cd231136fba8712438c67c4339603875,
         type: 3}
       propertyPath: m_RootOrder
       value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 3020720706754412990, guid: cd231136fba8712438c67c4339603875,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3020720706754412990, guid: cd231136fba8712438c67c4339603875,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3020720706754412990, guid: cd231136fba8712438c67c4339603875,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 3020720706754412990, guid: cd231136fba8712438c67c4339603875,
         type: 3}
@@ -1429,7 +979,7 @@ PrefabInstance:
     - target: {fileID: 3020720706754412990, guid: cd231136fba8712438c67c4339603875,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 3020720706754412990, guid: cd231136fba8712438c67c4339603875,
         type: 3}
@@ -1476,11 +1026,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Collectables_Obj_Coin (8)
       objectReference: {fileID: 0}
-    - target: {fileID: 4440464629622461468, guid: cd231136fba8712438c67c4339603875,
-        type: 3}
-      propertyPath: up
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd231136fba8712438c67c4339603875, type: 3}
 --- !u!4 &8304248060260606027 stripped
@@ -1496,40 +1041,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3808513231027256455}
     m_Modifications:
-    - target: {fileID: -6597651562096959583, guid: cd231136fba8712438c67c4339603875,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: -6597651562096959583, guid: cd231136fba8712438c67c4339603875,
-        type: 3}
-      propertyPath: m_Size.z
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1155029200828703710, guid: cd231136fba8712438c67c4339603875,
-        type: 3}
-      propertyPath: endPos.y
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 3020720706754412990, guid: cd231136fba8712438c67c4339603875,
         type: 3}
       propertyPath: m_RootOrder
       value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 3020720706754412990, guid: cd231136fba8712438c67c4339603875,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3020720706754412990, guid: cd231136fba8712438c67c4339603875,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3020720706754412990, guid: cd231136fba8712438c67c4339603875,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 3020720706754412990, guid: cd231136fba8712438c67c4339603875,
         type: 3}
@@ -1539,7 +1054,7 @@ PrefabInstance:
     - target: {fileID: 3020720706754412990, guid: cd231136fba8712438c67c4339603875,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 3020720706754412990, guid: cd231136fba8712438c67c4339603875,
         type: 3}
@@ -1586,11 +1101,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Collectables_Obj_Coin (10)
       objectReference: {fileID: 0}
-    - target: {fileID: 4440464629622461468, guid: cd231136fba8712438c67c4339603875,
-        type: 3}
-      propertyPath: up
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd231136fba8712438c67c4339603875, type: 3}
 --- !u!4 &8215309190676812193 stripped
@@ -1606,40 +1116,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3808513231027256455}
     m_Modifications:
-    - target: {fileID: -6597651562096959583, guid: cd231136fba8712438c67c4339603875,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: -6597651562096959583, guid: cd231136fba8712438c67c4339603875,
-        type: 3}
-      propertyPath: m_Size.z
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1155029200828703710, guid: cd231136fba8712438c67c4339603875,
-        type: 3}
-      propertyPath: endPos.y
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 3020720706754412990, guid: cd231136fba8712438c67c4339603875,
         type: 3}
       propertyPath: m_RootOrder
       value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 3020720706754412990, guid: cd231136fba8712438c67c4339603875,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3020720706754412990, guid: cd231136fba8712438c67c4339603875,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3020720706754412990, guid: cd231136fba8712438c67c4339603875,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 3020720706754412990, guid: cd231136fba8712438c67c4339603875,
         type: 3}
@@ -1649,7 +1129,7 @@ PrefabInstance:
     - target: {fileID: 3020720706754412990, guid: cd231136fba8712438c67c4339603875,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 3020720706754412990, guid: cd231136fba8712438c67c4339603875,
         type: 3}
@@ -1695,11 +1175,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Collectables_Obj_Coin (12)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4440464629622461468, guid: cd231136fba8712438c67c4339603875,
-        type: 3}
-      propertyPath: up
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd231136fba8712438c67c4339603875, type: 3}

@@ -81,8 +81,8 @@ public class RewardTowerElement : MonoBehaviour
         float actualY = (movedOffset * value)/ startValue;
         actualY -= movedOffset;
 
-        towerParent.transform.DOLocalMoveY(actualY + rewardYOffset, 0.15f);   
-        rewardParent.transform.DOLocalMoveY(actualY + rewardYOffset, 0.15f);
+        towerParent.transform.DOLocalMoveY(actualY + rewardYOffset *2, 0.3f);   
+        rewardParent.transform.DOLocalMoveY(actualY + rewardYOffset*2, 0.3f);
 
         if (value <= 0)
         {
@@ -145,7 +145,7 @@ public class RewardTowerElement : MonoBehaviour
 
         rewardParent.transform.localRotation *= Quaternion.Euler(0, (elementRotOffset * necesaryElement ), 0);
 
-        pos += new Vector3(0, rewardYOffset, 0);
+        pos += new Vector3(0, rewardYOffset , 0);
         pos += new Vector3(0, rewardModelOffset, 0);
 
         movedOffset += rewardYOffset;

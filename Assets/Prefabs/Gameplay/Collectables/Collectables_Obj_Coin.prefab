@@ -93,7 +93,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fa194e6eb0d4ef49969138dd57d812e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  endPos: {x: 0, y: 2, z: 0}
+  endPos: {x: 0, y: 2.5, z: 0}
   duration: 2
 --- !u!114 &4440464629622461468
 MonoBehaviour:
