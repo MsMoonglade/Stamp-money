@@ -94,7 +94,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   endPos: {x: 0, y: 2, z: 0}
-  duration: 1.25
+  duration: 2
 --- !u!114 &4440464629622461468
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -108,7 +108,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   up: 1
-  rotationTime: 1.25
+  rotationTime: 2
 --- !u!1001 &1643941134386052019
 PrefabInstance:
   m_ObjectHideFlags: 0

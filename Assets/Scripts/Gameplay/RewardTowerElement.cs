@@ -81,16 +81,17 @@ public class RewardTowerElement : MonoBehaviour
         float actualY = (movedOffset * value)/ startValue;
         actualY -= movedOffset;
 
-        towerParent.transform.DOLocalMoveY(actualY, 0.15f);   
-        rewardParent.transform.DOLocalMoveY(actualY, 0.15f);
+        towerParent.transform.DOLocalMoveY(actualY + rewardYOffset, 0.15f);   
+        rewardParent.transform.DOLocalMoveY(actualY + rewardYOffset, 0.15f);
 
         if (value <= 0)
         {
+            col.enabled = false;
+
             valueText.transform.parent.DOScale(Vector3.zero, 0.15f);
 
             completeParticle.Play();
             value = 0;
-            col.enabled = false;
 
             Complete();
 
@@ -166,15 +167,5 @@ public class RewardTowerElement : MonoBehaviour
         Sequence mySequence3 = DOTween.Sequence();
         mySequence3.Append(valueText.transform.DOScale(1.1f, 0.05f));
         mySequence3.Append(valueText.transform.DOScale(1f, 0.05f));
-
-
-        /*
-        Sequence mySequence = DOTween.Sequence();
-        mySequence.Append(towerParent.transform.DOScale(1.1f, 0.03f));
-        mySequence.Append(towerParent.transform.DOScale(1, 0.03f));
-        */
-
-        // rewardParent.transform.DOLocalMoveY(0.1f, 0.15f).SetLoops(2 , LoopType.Yoyo);
-        // rewardParent.transform.DOScale(1.1f, 0.15f).SetLoops(2, LoopType.Yoyo);
     }
 }
