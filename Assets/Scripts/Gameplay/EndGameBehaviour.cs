@@ -110,5 +110,6 @@ public class EndGameBehaviour : MonoBehaviour
 
         CharacterBehaviour.instance.transform.position = endGame_Table_CharacterPosition.transform.position;
         CharacterBehaviour.instance.transform.rotation = endGame_Table_CharacterPosition.transform.rotation;
+        CharacterBehaviour.instance.transform.localScale = endGame_Table_CharacterPosition.transform.parent.transform.localScale;
     }
 }

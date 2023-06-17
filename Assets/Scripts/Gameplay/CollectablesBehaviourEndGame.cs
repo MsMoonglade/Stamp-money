@@ -9,9 +9,12 @@ public class CollectablesBehaviourEndGame : MonoBehaviour
 
     private bool taken;
 
+    public int value;
+
     private void OnEnable()
     {
         taken = false;
+        value = 1;
     }
 
     private void Update()
@@ -28,7 +31,7 @@ public class CollectablesBehaviourEndGame : MonoBehaviour
 
     private void Take()
     {    
-        ShopManager.instance.IncreaseGold(1, transform.gameObject);
+        ShopManager.instance.IncreaseGold(value, transform.gameObject);
 
         transform.DOScale(Vector3.zero, 0.25f)
             .SetEase(Ease.InBack)

@@ -6,7 +6,7 @@ using DG.Tweening;
 
 public class EndGameMultiplyerActualCol : MonoBehaviour
 {
-    public GameObject model;
+    public GameObject animatingModel;
 
     private EndGameMultiplyStation parent;
     
@@ -31,15 +31,13 @@ public class EndGameMultiplyerActualCol : MonoBehaviour
             Vector3 pos;
 
             if (!animating)
-            {
+            {                    
                 Sequence ZscaleSequence = DOTween.Sequence();
-                ZscaleSequence.Append(model.transform.DOScaleZ( 2.5f , 0.25f)
-                    .SetEase(Ease.OutBounce));
-                ZscaleSequence.Append(model.transform.DOScaleZ( 1 , 0.25f)
-                   .SetEase(Ease.OutBounce));
+                ZscaleSequence.Append(animatingModel.transform.DOScale(1.25f, 0.1f));
+                ZscaleSequence.Append(animatingModel.transform.DOScale(1, 0.1f));                     
 
                 animating = true;
-                Invoke("ResetAnimating", 0.4f);
+                Invoke("ResetAnimating", 0.1f);
             }
 
             for (int i = 0; i < parent.objectLevel + 1; i++)

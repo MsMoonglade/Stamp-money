@@ -17,6 +17,8 @@ public class EndGameMultiplyStation : MonoBehaviour
     [Header("Local References")]
     public GameObject activeObject;
     public GameObject inactiveObject;
+    public GameObject unlockButton;
+    public GameObject lockedButon;
     public ParticleSystem levelUpParticle;
     public GameObject model;
     public GameObject updateButton;
@@ -43,16 +45,20 @@ public class EndGameMultiplyStation : MonoBehaviour
         saveKey = "Invest" + index.ToString();
     }
 
-    private void OnEnable()
-    {
-        EventManager.StartListening(Events.saveInvest, OnSaveInvest);
 
+    private void Start()
+    {
         if (PlayerPrefs.HasKey(saveKey))
             objectLevel = PlayerPrefs.GetInt(saveKey);
 
         SetupCost();
 
         SetupMachine();
+    }
+
+    private void OnEnable()
+    {
+        EventManager.StartListening(Events.saveInvest, OnSaveInvest); 
     }
 
     private void OnDisable()
@@ -122,12 +128,28 @@ public class EndGameMultiplyStation : MonoBehaviour
     {
         if (objectLevel != 0)
         {
+            activeObject.transform.localScale = Vector3.zero;
             activeObject.SetActive(true);
-            inactiveObject.SetActive(false);
+            activeObject.transform.DOScale(Vector3.one, 0.5f);
 
+            inactiveObject.SetActive(false);
             
             levelText.text = "Level " + objectLevel.ToString();
             outcomeText.text = (objectLevel + 1).ToString();
+        }
+        else
+        {
+            if(unlockLevel <= GameManager.instance.CurrentLevel)
+            {
+                unlockButton.gameObject.SetActive(true);
+                lockedButon.gameObject.SetActive(false);
+            }
+         
+            else 
+            {
+                lockedButon.gameObject.SetActive(true);
+                unlockButton.gameObject.SetActive(false);
+            }
         }
     }
 

@@ -12,8 +12,11 @@ public class InvestmentBehaviour : MonoBehaviour
     public GameObject diamondStartPos;
     public GameObject diamondParent;
     public GameObject coinRewardParent;
+    public int maxCoinModel;
 
     public GameObject rewardCoinPrefs;
+   
+    [HideInInspector]
     public int coinPerDiamond;
 
     public GameObject coinExplosionParticles;
@@ -47,11 +50,23 @@ public class InvestmentBehaviour : MonoBehaviour
 
         diamond.gameObject.SetActive(false);
 
-        for (int i = 0; i < coinPerDiamond; i++) 
+        if (coinRewardParent.transform.childCount < maxCoinModel)
         {
-            Vector3 randomizedPos = coinRewardParent.transform.position + new Vector3(Random.Range(-8f, 8f), 2f, Random.Range(-4f, 4f));
-            Instantiate(rewardCoinPrefs, randomizedPos, Quaternion.identity, coinRewardParent.transform);
-        } 
+            for (int i = 0; i < coinPerDiamond; i++)
+            {
+                Vector3 randomizedPos = coinRewardParent.transform.position + new Vector3(Random.Range(-8f, 8f), 2f, Random.Range(-4f, 4f));
+                Instantiate(rewardCoinPrefs, randomizedPos, Quaternion.identity, coinRewardParent.transform);
+            }
+        }
+        else
+        {
+            CollectablesBehaviourEndGame firstCoin = coinRewardParent.transform.GetChild(0).transform.GetComponent<CollectablesBehaviourEndGame>();
+
+            for (int i = 0; i < coinPerDiamond; i++)
+            {
+                firstCoin.value++;
+            }
+        }
     }
 
     public void StartTakeDiamond()

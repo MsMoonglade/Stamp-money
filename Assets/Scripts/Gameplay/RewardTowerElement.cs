@@ -81,18 +81,18 @@ public class RewardTowerElement : MonoBehaviour
         float actualY = (movedOffset * value)/ startValue;
         actualY -= movedOffset;
 
-        towerParent.transform.DOLocalMoveY(actualY, 0.1f);   
-        rewardParent.transform.DOLocalMoveY(actualY, 0.1f);
+        towerParent.transform.DOLocalMoveY(actualY, 0.15f);   
+        rewardParent.transform.DOLocalMoveY(actualY, 0.15f);
 
         if (value <= 0)
         {
+            valueText.transform.parent.DOScale(Vector3.zero, 0.15f);
+
             completeParticle.Play();
             value = 0;
             col.enabled = false;
 
             Complete();
-
-            valueText.text = value.ToString() + "$";
 
             rewardParent.transform.DOScale(0, 0.6f)
                 .SetEase(Ease.InBounce)
@@ -115,39 +115,14 @@ public class RewardTowerElement : MonoBehaviour
 
     private void GenerateElement()
     {
-        /*
-        int valuePerElementMultiplyer = 1;
-
-        int count = value / 200;
-
-        int originalValue = valuePerElement;
-
-
-        if (count > 0)
-        {
-            for(int i = 0; i < count; i++)
-            {
-                valuePerElementMultiplyer++;
-                valuePerElement = 0;
-            }
-        }
-
-        for(int i = 0; i < valuePerElementMultiplyer; i++)
-        {
-            valuePerElement += originalValue;
-        }
-        */
-
         int valuePerElement = 1;
 
         if (value <= 30)
             valuePerElement = 2;
         else if (value > 30 && value <= 80)
             valuePerElement = 5;
-
         else if (value > 80 && value <= 150)
             valuePerElement = 6;
-
         else
             valuePerElement = 10;
 
@@ -171,7 +146,9 @@ public class RewardTowerElement : MonoBehaviour
 
         pos += new Vector3(0, rewardYOffset, 0);
         pos += new Vector3(0, rewardModelOffset, 0);
+
         movedOffset += rewardYOffset;
+        movedOffset += rewardModelOffset;
 
         rewardParent.transform.GetChild(0).transform.localPosition = pos + new Vector3(0, 0.5f, 0);
         rewardParent.transform.GetChild(1).transform.localPosition = pos + new Vector3(0,-1, 0);
@@ -179,8 +156,17 @@ public class RewardTowerElement : MonoBehaviour
     private void TweenTowerScale()
     {
         Sequence mySequence = DOTween.Sequence();
-        mySequence.Append(transform.DOScale(1.1f, 0.03f));
-        mySequence.Append(transform.DOScale(1, 0.03f));
+        mySequence.Append(transform.DOScaleX(1.1f, 0.05f));
+        mySequence.Append(transform.DOScaleX(1, 0.05f));
+
+        Sequence mySequence2 = DOTween.Sequence();
+        mySequence2.Append(transform.DOScaleZ(1.1f, 0.05f));
+        mySequence2.Append(transform.DOScaleZ(1, 0.05f));
+      
+        Sequence mySequence3 = DOTween.Sequence();
+        mySequence3.Append(valueText.transform.DOScale(1.1f, 0.05f));
+        mySequence3.Append(valueText.transform.DOScale(1f, 0.05f));
+
 
         /*
         Sequence mySequence = DOTween.Sequence();

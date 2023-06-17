@@ -433,9 +433,9 @@ MonoBehaviour:
   rewardIsDiamond: 0
   rewardIsCoin: 1
   rewardAmount: 10
-  rewardModelOffset: 0.8
-  valuePerElement: 10
-  elementRotOffset: -6
+  fixedValue: 0
+  rewardModelOffset: 0.7
+  elementRotOffset: -4.5
   elementYOffset: 0.3
   rewardYOffset: 0.3
   towerParent: {fileID: 7503688205335563815}
