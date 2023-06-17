@@ -1,9 +1,8 @@
 using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Rendering.LookDev;
+using TMPro;
 using UnityEngine;
-using static UnityEngine.ParticleSystem;
 
 public class EndGameMultiplyStation : MonoBehaviour
 {
@@ -18,6 +17,15 @@ public class EndGameMultiplyStation : MonoBehaviour
     [Header("Local References")]
     public GameObject activeObject;
     public GameObject inactiveObject;
+    public ParticleSystem levelUpParticle;
+    public GameObject model;
+    public GameObject updateButton;
+    public GameObject maxButton;
+
+    [Header("Local UI")]
+    public TMP_Text levelText;
+    public TMP_Text outcomeText;
+    public TMP_Text levelUpCostText;
 
     [HideInInspector]
     public int objectLevel;
@@ -29,6 +37,8 @@ public class EndGameMultiplyStation : MonoBehaviour
     {
         activeObject.SetActive(false);
         inactiveObject.SetActive(true);
+
+        maxButton.SetActive(false);
 
         saveKey = "Invest" + index.ToString();
     }
@@ -73,7 +83,7 @@ public class EndGameMultiplyStation : MonoBehaviour
 
     public bool CanUpdate()
     {
-        if (ShopManager.instance.currentGold >= (int)localCost)
+        if (ShopManager.instance.currentGold >= (int)localCost && objectLevel < maxLevel)
             return true;
         else
             return false;
@@ -84,29 +94,26 @@ public class EndGameMultiplyStation : MonoBehaviour
         ShopManager.instance.SpendCoin((int)localCost);
 
         objectLevel++;
+        
+        levelUpParticle.Play();
 
-        /*
-         * particle.Play();
-
-        atmObject.transform.DOLocalRotate(new Vector3(0, 360, 0), 0.2f, RotateMode.FastBeyond360)
+        model.transform.DOLocalRotate(new Vector3(0, 360, 0), 0.2f, RotateMode.FastBeyond360)
             .SetRelative(true)
             .SetEase(Ease.Linear);
 
         Sequence mySequence = DOTween.Sequence();
-        mySequence.Append(atmObject.transform.DOScale(new Vector3(0, 0, 0), 0.2f)
+        mySequence.Append(model.transform.DOScale(new Vector3(0, 0, 0), 0.2f)
             .SetEase(Ease.InBack));
         
 
-        mySequence.Append(atmObject.transform.DOScale(new Vector3(1, 1, 1), 0.2f)
+        mySequence.Append(model.transform.DOScale(new Vector3(1, 1, 1), 0.2f)
            .SetEase(Ease.OutBack));
-        */
+        
 
         SetupCost();
 
-        /*
-        levelText.text = "Lv " + machineLevel.ToString();
-        costText.text = localCost.ToString();
-        */
+        levelText.text = "Level " + objectLevel.ToString();
+        outcomeText.text = (objectLevel + 1).ToString();
 
         EventManager.TriggerEvent(Events.saveInvest);
     }
@@ -118,11 +125,9 @@ public class EndGameMultiplyStation : MonoBehaviour
             activeObject.SetActive(true);
             inactiveObject.SetActive(false);
 
-            /*
-            levelText.text = "Lv " + machineLevel.ToString();
-            costText.text = localCost.ToString();
-        */
-          
+            
+            levelText.text = "Level " + objectLevel.ToString();
+            outcomeText.text = (objectLevel + 1).ToString();
         }
     }
 
@@ -139,6 +144,17 @@ public class EndGameMultiplyStation : MonoBehaviour
         }
 
         localCost = (int)localCost;
+
+        if (objectLevel < 4)
+        {
+            levelUpCostText.text = localCost.ToString();
+        }
+
+        else if (objectLevel >= 4)
+        {
+            updateButton.SetActive(false);
+            maxButton.SetActive(true);
+        }
     }
 
     private void OnSaveInvest(object sender)
