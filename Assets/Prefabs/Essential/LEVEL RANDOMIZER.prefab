@@ -147,7 +147,7 @@ MonoBehaviour:
   endGameDistanceOffset: 10
   mediumElementDistance: 16.5
   minimunDistanceModifyer: 12
-  elementiDistanceModifyer: 18.5
+  elementiDistanceModifyer: 16
   levelLenght:
     serializedVersion: 2
     m_Curve:

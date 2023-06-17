@@ -277,10 +277,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd46bb165d450db4d948e6275ffe4c7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpSpeedCost: 640000002c01000058020000dc050000
-  incomePerHourCost: 640000002c01000058020000dc050000
+  startJumpSpeedCost: 100
+  startIncomeCost: 100
+  jumpSpeedCostDelta: 55
+  incomePerHourCostDelta: 55
   moneyShopCost: c8000000
   sizeIncreaseCost: 00000000e803000088130000
+  actualJumpSpeedCost: 0
+  actualIncomeCost: 0
 --- !u!1 &3628990615436577064
 GameObject:
   m_ObjectHideFlags: 0
@@ -348,10 +352,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08ee09a7801a69c47b12740543e5178c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goldPerHour: 0a000000140000001e00000032000000
+  goldPerHourStartValue: 20
+  goldPerHourIncrementDelta: 10
   passiveIncomeGo: {fileID: 0}
   passiveIncomeText: {fileID: 0}
   passiveIncomeIndex: 0
+  actualGoldPerHour: 0
 --- !u!1 &3628990615736116010
 GameObject:
   m_ObjectHideFlags: 0
@@ -548,9 +554,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   printerScaleIndex: 0
-  jumpSpeedAddPerLevel:
-  - 0.05
-  - 0.05
-  - 0.1
-  - 0.1
+  jumpSpeedAddPerLevel: 0.005
   jumpSpeedIndex: 0

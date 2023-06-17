@@ -429,22 +429,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 250182746, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
-      propertyPath: startIncomeCost
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 250182746, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
-      propertyPath: jumpSpeedCostDelta
-      value: 55
-      objectReference: {fileID: 0}
-    - target: {fileID: 250182746, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
-      propertyPath: startJumpSpeedCost
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 250182746, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
-      propertyPath: incomePerHourCostDelta
-      value: 55
-      objectReference: {fileID: 0}
     - target: {fileID: 353571750, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
       propertyPath: editButton
       value: 
@@ -493,18 +477,6 @@ PrefabInstance:
       propertyPath: passiveIncomeText
       value: 
       objectReference: {fileID: 93666703}
-    - target: {fileID: 1836870512, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
-      propertyPath: goldPerHourStartValue
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 1836870512, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
-      propertyPath: goldPerHourIncrementDelta
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 1855258817, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
-      propertyPath: jumpSpeedAddPerLevel
-      value: 0.005
-      objectReference: {fileID: 0}
     - target: {fileID: 3406971285800949110, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85,
         type: 3}
       propertyPath: goldImage
@@ -1230,30 +1202,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1284574773, guid: a9e99dc0faa079b44b6f27fbe6ad15fd, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 15.10844
-      objectReference: {fileID: 0}
-    - target: {fileID: 1284574773, guid: a9e99dc0faa079b44b6f27fbe6ad15fd, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.9231914
-      objectReference: {fileID: 0}
-    - target: {fileID: 1284574773, guid: a9e99dc0faa079b44b6f27fbe6ad15fd, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.32515863
-      objectReference: {fileID: 0}
-    - target: {fileID: 1284574773, guid: a9e99dc0faa079b44b6f27fbe6ad15fd, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.19542292
-      objectReference: {fileID: 0}
-    - target: {fileID: 1284574773, guid: a9e99dc0faa079b44b6f27fbe6ad15fd, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.06163904
-      objectReference: {fileID: 0}
-    - target: {fileID: 1284574773, guid: a9e99dc0faa079b44b6f27fbe6ad15fd, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 24.246
-      objectReference: {fileID: 0}
     - target: {fileID: 1945569972503088846, guid: a9e99dc0faa079b44b6f27fbe6ad15fd,
         type: 3}
       propertyPath: m_Name
@@ -1394,11 +1342,6 @@ PrefabInstance:
       propertyPath: m_Follow
       value: 
       objectReference: {fileID: 2034039803}
-    - target: {fileID: 2766759495551799668, guid: 89beb41e6ff130a41801e74d7cc0abf2,
-        type: 3}
-      propertyPath: m_Priority
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2766759495737962874, guid: 89beb41e6ff130a41801e74d7cc0abf2,
         type: 3}
       propertyPath: m_Follow
@@ -1710,11 +1653,6 @@ PrefabInstance:
       propertyPath: endGameObject
       value: 
       objectReference: {fileID: 832707480}
-    - target: {fileID: 5766648231184970519, guid: 837de735bd62fbd45afc7b610c27f0eb,
-        type: 3}
-      propertyPath: elementiDistanceModifyer
-      value: 16
-      objectReference: {fileID: 0}
     - target: {fileID: 5766648231184970520, guid: 837de735bd62fbd45afc7b610c27f0eb,
         type: 3}
       propertyPath: m_RootOrder
