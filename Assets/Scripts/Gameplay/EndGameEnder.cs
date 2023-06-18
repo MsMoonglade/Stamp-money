@@ -17,5 +17,7 @@ public class EndGameEnder : MonoBehaviour
     private void DelayNewScene()
     {
         GameManager.instance.LoadLevel();
+
+        EventManager.TriggerEvent(Events.saveValue);
     }
 }

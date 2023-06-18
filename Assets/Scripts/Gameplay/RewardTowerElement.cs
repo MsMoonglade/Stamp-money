@@ -55,7 +55,7 @@ public class RewardTowerElement : MonoBehaviour
 
         valueText.text = value.ToString() + "$";
 
-       // transform.localPosition += new Vector3(0, 0.3f, 0);
+        transform.localPosition += new Vector3(0, 0.45f, 0);
     }
 
     private void OnTriggerEnter(Collider col)

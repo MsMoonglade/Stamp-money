@@ -61,11 +61,9 @@ public class EndGameMultiplyerActualCol : MonoBehaviour
             }
             */
 
-            //GIVE GOLD ON PASS
-            for (int i = 0; i < parent.objectLevel * 10; i++)
-            {
-                ShopManager.instance.IncreaseGold(1, animatingModel.transform.gameObject);
-            }
+            //GIVE GOLD ON PASS           
+            ShopManager.instance.IncreaseGold(parent.objectLevel * 5, animatingModel.transform.gameObject , true);
+            
 
             collided.Add(other.gameObject);
         }

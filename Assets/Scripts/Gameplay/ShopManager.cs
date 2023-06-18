@@ -89,6 +89,22 @@ public class ShopManager : MonoBehaviour
             UiManager.instance.LostCoin(value);
         }
     }
+    public void IncreaseGold(int amount, GameObject localPosToRef, bool endGameWall)
+    {
+        currentGold += amount;
+        currentGoldText.text = currentGold.ToString();
+
+        StartCoroutine(AnimEndGameWallCoin((int) (amount / 10) , localPosToRef));
+    }
+
+    private IEnumerator AnimEndGameWallCoin(int amount , GameObject pos)
+    {
+        for(int i = 0; i < amount; i++)
+        {
+            UiManager.instance.InstantiateCoin(1, pos);
+            yield return new WaitForSeconds(0.1f);
+        }
+    }
 
     public void IncreaseGoldGM()
     {
