@@ -46,6 +46,7 @@ public class LevelManager : MonoBehaviour
     private void Start()
     {
         SetDiamondPerLevelValue();
+        SetCoinPerLevelValue();
         SetLevelDifficulty();
     }
 
@@ -157,6 +158,68 @@ public class LevelManager : MonoBehaviour
         if(diamondTower.Count != 0 && diamondValue <= 5)
         {
             foreach (RewardTowerElement r in diamondTower)
+            {
+                r.rewardAmount = Random.Range(3, 7);
+            }
+        }
+    }
+
+    private void SetCoinPerLevelValue()
+    {
+        float coinValue = difficultyManager.currentGold;
+        coinValue *= Random.Range(1, 1.5f);
+        coinValue = (int)(coinValue);
+
+        List<RewardTowerElement> cointower = new List<RewardTowerElement>();
+
+        for (int i = 0; i < rewardTowerParent.transform.childCount; i++)
+        {
+            for (int j = 0; j < rewardTowerParent.transform.GetChild(i).transform.childCount; j++)
+            {
+                RewardTowerElement t = rewardTowerParent.transform.GetChild(i).transform.GetChild(j).GetComponent<RewardTowerElement>();
+                if (t.rewardIsCoin)
+                {
+                    cointower.Add(t);
+                }
+            }
+        }
+
+        List<CollectablesBehaviour> coinCollectables = new List<CollectablesBehaviour>();
+
+        for (int i = 0; i < collectableParent.transform.childCount; i++)
+        {
+            for (int j = 0; j < collectableParent.transform.GetChild(i).transform.childCount; j++)
+            {
+                CollectablesBehaviour c = collectableParent.transform.GetChild(i).transform.GetChild(j).GetComponent<CollectablesBehaviour>();
+                if (c.isDiamond)
+                {
+                    coinCollectables.Add(c);
+                }
+            }
+        }
+
+        coinValue -= (int)(coinCollectables.Count);
+
+        if (cointower.Count != 0 && coinValue > 5)
+        {
+            int localCoin = (int)(coinValue / cointower.Count);
+
+            localCoin = Mathf.Abs(localCoin);
+
+            foreach (RewardTowerElement r in cointower)
+            {
+                r.rewardAmount = localCoin + Random.Range(-localCoin / 2, localCoin / 2);
+
+                r.rewardAmount = Mathf.Abs(r.rewardAmount);
+
+                if (r.rewardAmount <= 2)
+                    r.rewardAmount = 5;
+            }
+        }
+
+        if (cointower.Count != 0 && coinValue <= 5)
+        {
+            foreach (RewardTowerElement r in cointower)
             {
                 r.rewardAmount = Random.Range(3, 7);
             }

@@ -12,7 +12,7 @@ public class CollectablesBehaviour : MonoBehaviour
 
     private void OnTriggerEnter(Collider col)
     {
-        if (col.transform.CompareTag("Player"))
+        if (col.transform.CompareTag("Player") || col.transform.CompareTag("Untagged"))
         {
             Take();
         }

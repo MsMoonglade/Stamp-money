@@ -10579,6 +10579,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1889674862277451408}
     m_Modifications:
+    - target: {fileID: 2395427143307689639, guid: 08d5ce95bf3751c469b657c21351e9a7,
+        type: 3}
+      propertyPath: maxCoinModel
+      value: 125
+      objectReference: {fileID: 0}
+    - target: {fileID: 2395427143307689639, guid: 08d5ce95bf3751c469b657c21351e9a7,
+        type: 3}
+      propertyPath: maxParticles
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 3227023086418222202, guid: 08d5ce95bf3751c469b657c21351e9a7,
         type: 3}
       propertyPath: unlockLevel

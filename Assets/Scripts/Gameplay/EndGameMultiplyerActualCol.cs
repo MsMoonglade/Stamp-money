@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using static UnityEngine.Rendering.DebugUI;
 
 public class EndGameMultiplyerActualCol : MonoBehaviour
 {
@@ -40,21 +41,30 @@ public class EndGameMultiplyerActualCol : MonoBehaviour
                 Invoke("ResetAnimating", 0.1f);
             }
 
+            //GIVE DIAMOND ON PASS
+            /*
             for (int i = 0; i < parent.objectLevel + 1; i++)
-            {
+            {                
                 pos = other.transform.position + new Vector3(Random.Range(-1f , 1f), 0 , 0);
                 GameObject o = Instantiate(other.transform.gameObject, pos, Quaternion.identity);
                 o.transform.parent = other.transform.parent;
                 o.transform.localPosition = other.transform.localPosition + new Vector3(Random.Range(-0.5f, 0.5f), Random.Range(-0.5f, 0.5f), Random.Range(-0.5f, 0.5f));
 
                 float moveTime = InvestmentBehaviour.instance.endPos.transform.position.z - o.transform.position.z;
-                float randomizeSpeed = moveTime / InvestmentBehaviour.instance.diamondSpeed; /*+ Random.Range(-0.1f, 1f)*/;
+                float randomizeSpeed = moveTime / InvestmentBehaviour.instance.diamondSpeed; /*+ Random.Range(-0.1f, 1f);
 
                 o.transform.DOLocalMoveZ(InvestmentBehaviour.instance.endPos.transform.localPosition.z, randomizeSpeed)
                     .SetEase(Ease.Linear)
                     .OnComplete(() => InvestmentBehaviour.instance.GenerateMoney(o));
 
-                collided.Add(o);
+                collided.Add(o);              
+            }
+            */
+
+            //GIVE GOLD ON PASS
+            for (int i = 0; i < parent.objectLevel * 10; i++)
+            {
+                ShopManager.instance.IncreaseGold(1, animatingModel.transform.gameObject);
             }
 
             collided.Add(other.gameObject);

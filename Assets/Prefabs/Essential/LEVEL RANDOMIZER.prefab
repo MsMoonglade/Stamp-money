@@ -312,9 +312,35 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  coinPerLevel:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 30
+      inSlope: 1.6171998
+      outSlope: 1.6171998
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.033378746
+    - serializedVersion: 3
+      time: 25
+      value: 200
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 136
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   diamondPerLevelrandomizerRange: 5
+  coinPerLevelrandomizerRange: 5
   difficultyPerLevelrandomizerRange: 4.5
   currentDiamond: 0
+  currentGold: 0
   currentDifficulty: 0
 --- !u!1 &5766648231321598273
 GameObject:

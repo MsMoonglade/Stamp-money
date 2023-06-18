@@ -20,6 +20,7 @@ public class EndGameDestroyerBehaviour : MonoBehaviour
     [Header("Local UI")]
     public TMP_Text outcomeText;
     public TMP_Text levelUpCostText;
+    public TMP_Text objectLevelText;
 
     [HideInInspector]
     public int objectLevel;
@@ -43,7 +44,7 @@ public class EndGameDestroyerBehaviour : MonoBehaviour
             PlayerPrefs.SetInt(saveKey, objectLevel);
         }
 
-        InvestmentBehaviour.instance.coinPerDiamond = objectLevel;
+        InvestmentBehaviour.instance.coinPerDiamond = objectLevel * 10;
 
         SetupCost();
         SetupMachine();
@@ -72,7 +73,7 @@ public class EndGameDestroyerBehaviour : MonoBehaviour
         ShopManager.instance.SpendCoin((int)localCost);
 
         objectLevel++;
-        InvestmentBehaviour.instance.coinPerDiamond = objectLevel;
+        InvestmentBehaviour.instance.coinPerDiamond = objectLevel * 10;
 
         levelUpParticle.Play();
 
@@ -88,7 +89,8 @@ public class EndGameDestroyerBehaviour : MonoBehaviour
 
         SetupCost();
 
-        outcomeText.text = (objectLevel).ToString();
+        outcomeText.text = (InvestmentBehaviour.instance.coinPerDiamond).ToString();
+        objectLevelText.text = "Level " + objectLevel.ToString();
 
         EventManager.TriggerEvent(Events.saveInvest);
     }
@@ -107,7 +109,8 @@ public class EndGameDestroyerBehaviour : MonoBehaviour
             unlockButton.gameObject.SetActive(false);
         }
 
-        outcomeText.text = (objectLevel).ToString();
+        outcomeText.text = (InvestmentBehaviour.instance.coinPerDiamond).ToString();
+        objectLevelText.text = "Level " + objectLevel.ToString();
     }
 
     private void SetupCost()

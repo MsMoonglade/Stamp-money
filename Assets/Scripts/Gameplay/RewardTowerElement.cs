@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using Lofelt.NiceVibrations;
+using static UnityEditor.PlayerSettings;
 
 public class RewardTowerElement : MonoBehaviour
 {
@@ -83,11 +84,12 @@ public class RewardTowerElement : MonoBehaviour
         float actualY = (movedOffset * value)/ startValue;
         actualY -= movedOffset;
 
-        towerParent.transform.DOLocalMoveY(actualY , 0.3f);   
-        rewardParent.transform.DOLocalMoveY(actualY , 0.3f);
+        towerParent.transform.DOLocalMoveY(actualY + 0.2f, 0.3f);   
+        rewardParent.transform.DOLocalMoveY(actualY + 0.2f, 0.3f);
 
         if (value <= 0)
         {
+            rewardParent.transform.GetChild(1).transform.gameObject.SetActive(false);
             col.enabled = false;
 
             valueText.transform.parent.DOScale(Vector3.zero, 0.15f);

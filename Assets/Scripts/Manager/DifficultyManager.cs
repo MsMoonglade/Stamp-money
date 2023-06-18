@@ -8,11 +8,15 @@ public class DifficultyManager : MonoBehaviour
 
     public AnimationCurve obstaclesdifficultyPerLevel;
     public AnimationCurve diamondPerLevel;
+    public AnimationCurve coinPerLevel;
+
 
     public int diamondPerLevelrandomizerRange;
+    public int coinPerLevelrandomizerRange;
     public float difficultyPerLevelrandomizerRange;
 
     public int currentDiamond;
+    public int currentGold;
     public float currentDifficulty;
 
     private void Start()
@@ -21,6 +25,9 @@ public class DifficultyManager : MonoBehaviour
 
         currentDiamond = EvaluateLevelDiamond(GameManager.instance.CurrentLevel);
         currentDiamond += Random.Range(-diamondPerLevelrandomizerRange, diamondPerLevelrandomizerRange);
+
+        currentGold = EvaluateLevelGold(GameManager.instance.CurrentLevel);
+        currentGold += Random.Range(-coinPerLevelrandomizerRange, coinPerLevelrandomizerRange);
 
         currentDifficulty = EvaluateLevelDifficulty(GameManager.instance.CurrentLevel);
         currentDifficulty += Random.Range(-difficultyPerLevelrandomizerRange, difficultyPerLevelrandomizerRange);
@@ -48,6 +55,22 @@ public class DifficultyManager : MonoBehaviour
             fixedLevel = 25;
 
         int value = (int)diamondPerLevel.Evaluate(fixedLevel);
+        return value;
+    }
+
+    public int EvaluateLevelGold(int currentLevel)
+    {
+        int fixedLevel = 0;
+
+        if (currentLevel < 25)
+        {
+            fixedLevel = currentLevel;
+        }
+
+        else
+            fixedLevel = 25;
+
+        int value = (int)coinPerLevel.Evaluate(fixedLevel);
         return value;
     }
 

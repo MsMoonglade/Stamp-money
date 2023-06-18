@@ -21,6 +21,7 @@ public class InvestmentBehaviour : MonoBehaviour
 
     public GameObject coinExplosionParticles;
     public GameObject coinExplosionParticlesPos;
+    public int maxParticles;
 
     private Coroutine takeDiamondCoroutine;
 
@@ -46,7 +47,8 @@ public class InvestmentBehaviour : MonoBehaviour
 
     public void GenerateMoney(GameObject diamond)
     {
-        Instantiate(coinExplosionParticles, coinExplosionParticlesPos.transform.position, Quaternion.identity, coinExplosionParticlesPos.transform);
+        if(coinExplosionParticlesPos.transform.childCount < maxParticles)       
+            Instantiate(coinExplosionParticles, coinExplosionParticlesPos.transform.position, Quaternion.identity, coinExplosionParticlesPos.transform);
 
         diamond.gameObject.SetActive(false);
 

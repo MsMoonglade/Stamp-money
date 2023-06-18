@@ -12,8 +12,6 @@ public class EndGameMultiplyStation : MonoBehaviour
     public int unlockCost;
     public int upgradeCostDelta;
 
-    public int maxLevel;
-
     [Header("Local References")]
     public GameObject activeObject;
     public GameObject inactiveObject;
@@ -22,7 +20,6 @@ public class EndGameMultiplyStation : MonoBehaviour
     public ParticleSystem levelUpParticle;
     public GameObject model;
     public GameObject updateButton;
-    public GameObject maxButton;
 
     [Header("Local UI")]
     public TMP_Text levelText;
@@ -39,8 +36,6 @@ public class EndGameMultiplyStation : MonoBehaviour
     {
         activeObject.SetActive(false);
         inactiveObject.SetActive(true);
-
-        maxButton.SetActive(false);
 
         saveKey = "Invest" + index.ToString();
     }
@@ -89,7 +84,7 @@ public class EndGameMultiplyStation : MonoBehaviour
 
     public bool CanUpdate()
     {
-        if (ShopManager.instance.currentGold >= (int)localCost && objectLevel < maxLevel)
+        if (ShopManager.instance.currentGold >= (int)localCost)
             return true;
         else
             return false;
@@ -119,7 +114,7 @@ public class EndGameMultiplyStation : MonoBehaviour
         SetupCost();
 
         levelText.text = "Level " + objectLevel.ToString();
-        outcomeText.text = (objectLevel + 1).ToString();
+        outcomeText.text = ((objectLevel) * 5).ToString();
 
         EventManager.TriggerEvent(Events.saveInvest);
     }
@@ -135,7 +130,7 @@ public class EndGameMultiplyStation : MonoBehaviour
             inactiveObject.SetActive(false);
             
             levelText.text = "Level " + objectLevel.ToString();
-            outcomeText.text = (objectLevel + 1).ToString();
+            outcomeText.text = ((objectLevel) * 5).ToString();
         }
         else
         {
@@ -165,18 +160,9 @@ public class EndGameMultiplyStation : MonoBehaviour
             }
         }
 
-        localCost = (int)localCost;
-
-        if (objectLevel < 4)
-        {
-            levelUpCostText.text = localCost.ToString();
-        }
-
-        else if (objectLevel >= 4)
-        {
-            updateButton.SetActive(false);
-            maxButton.SetActive(true);
-        }
+        localCost = (int)localCost; 
+       
+        levelUpCostText.text = localCost.ToString();      
     }
 
     private void OnSaveInvest(object sender)
