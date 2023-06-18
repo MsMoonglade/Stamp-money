@@ -34,6 +34,8 @@ public class UiButtonCostRefresh : MonoBehaviour
         }
 
         haveChecked = false;
+
+        Invoke("CheckValue", 0.2f);
     }
 
     private void OnEnable()

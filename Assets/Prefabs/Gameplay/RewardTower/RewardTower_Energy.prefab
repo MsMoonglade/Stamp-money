@@ -434,7 +434,7 @@ MonoBehaviour:
   rewardIsCoin: 0
   rewardAmount: 5
   fixedValue: 0
-  rewardModelOffset: 0.7
+  rewardModelOffset: 0
   elementRotOffset: -4.5
   elementYOffset: 0.3
   rewardYOffset: 0.3

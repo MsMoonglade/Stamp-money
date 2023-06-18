@@ -53,6 +53,8 @@ public class RewardTowerElement : MonoBehaviour
             .SetLoops(-1, LoopType.Restart);
 
         valueText.text = value.ToString() + "$";
+
+       // transform.localPosition += new Vector3(0, 0.3f, 0);
     }
 
     private void OnTriggerEnter(Collider col)
@@ -81,8 +83,8 @@ public class RewardTowerElement : MonoBehaviour
         float actualY = (movedOffset * value)/ startValue;
         actualY -= movedOffset;
 
-        towerParent.transform.DOLocalMoveY(actualY + rewardYOffset *2, 0.3f);   
-        rewardParent.transform.DOLocalMoveY(actualY + rewardYOffset*2, 0.3f);
+        towerParent.transform.DOLocalMoveY(actualY , 0.3f);   
+        rewardParent.transform.DOLocalMoveY(actualY , 0.3f);
 
         if (value <= 0)
         {
@@ -145,14 +147,16 @@ public class RewardTowerElement : MonoBehaviour
 
         rewardParent.transform.localRotation *= Quaternion.Euler(0, (elementRotOffset * necesaryElement ), 0);
 
+        /*
         pos += new Vector3(0, rewardYOffset , 0);
         pos += new Vector3(0, rewardModelOffset, 0);
+        */
 
         movedOffset += rewardYOffset;
         movedOffset += rewardModelOffset;
 
-        rewardParent.transform.GetChild(0).transform.localPosition = pos + new Vector3(0, 0.5f, 0);
-        rewardParent.transform.GetChild(1).transform.localPosition = pos + new Vector3(0,-1, 0);
+        rewardParent.transform.GetChild(0).transform.localPosition = pos + new Vector3(0 , 1.5f , 0);
+        rewardParent.transform.GetChild(1).transform.localPosition = pos ;      
     }
     private void TweenTowerScale()
     {

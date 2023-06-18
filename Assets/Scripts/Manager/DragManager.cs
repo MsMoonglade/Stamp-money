@@ -97,7 +97,8 @@ public class DragManager : MonoBehaviour
                 bool hit = Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo, Mathf.Infinity, inputDetectMask);
                 if (hit)
                 {
-                    objectDrag.position = new Vector3(hitInfo.point.x, hitInfo.point.y, hitInfo.point.z);
+                    objectDrag.position = new Vector3(hitInfo.point.x, hitInfo.point.y, hitInfo.point.z); 
+                    objectDrag.transform.rotation = hitInfo.transform.rotation;
                 }
             }
 

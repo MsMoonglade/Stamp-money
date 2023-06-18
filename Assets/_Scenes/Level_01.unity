@@ -1833,11 +1833,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: EndElement
       objectReference: {fileID: 0}
-    - target: {fileID: 7927861253886270782, guid: 744d45585067f754e9d85de4414539e6,
-        type: 3}
-      propertyPath: playerParent
-      value: 
-      objectReference: {fileID: 6010586822714046091}
     - target: {fileID: 8137171071536454276, guid: 744d45585067f754e9d85de4414539e6,
         type: 3}
       propertyPath: actionToTrigger.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -1853,11 +1848,6 @@ PrefabInstance:
       propertyPath: actionToTrigger.m_PersistentCalls.m_Calls.Array.data[4].m_Target
       value: 
       objectReference: {fileID: 3780146937960434990}
-    - target: {fileID: 8137171071536454276, guid: 744d45585067f754e9d85de4414539e6,
-        type: 3}
-      propertyPath: actionToTrigger.m_PersistentCalls.m_Calls.Array.data[4].m_MethodName
-      value: CheckValue
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 744d45585067f754e9d85de4414539e6, type: 3}
 --- !u!114 &832707480 stripped
@@ -3955,16 +3945,6 @@ PrefabInstance:
     - target: {fileID: 5499896078592063821, guid: cab47d6e3cdacd747b1831da1c2989a2,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5499896078592063822, guid: cab47d6e3cdacd747b1831da1c2989a2,
-        type: 3}
-      propertyPath: editPositionOffset.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5499896078592063822, guid: cab47d6e3cdacd747b1831da1c2989a2,
-        type: 3}
-      propertyPath: editRotationOffset.x
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

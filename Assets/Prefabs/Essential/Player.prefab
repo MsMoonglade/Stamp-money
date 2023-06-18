@@ -9822,8 +9822,8 @@ MonoBehaviour:
   bulletActiveTime: 1
   moneyDecalScaleX: 1.5
   moneyDecalScaleY: 0.75
-  editPositionOffset: {x: 0, y: 3.5, z: 0}
-  editRotationOffset: {x: 120, y: 0, z: 0}
+  editPositionOffset: {x: 0, y: 0, z: 0}
+  editRotationOffset: {x: 0, y: 0, z: 0}
   editAnimSpeed: 1
   powerUpParticle: {fileID: 8959127136259872919}
   powerDownParticle: {fileID: 5366343633735461419}
@@ -9992,7 +9992,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5499896080290896809
 Transform:
   m_ObjectHideFlags: 0
