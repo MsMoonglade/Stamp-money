@@ -14,6 +14,10 @@ public class UiFunctions : MonoBehaviour
     public  float jumpSpeedAddPerLevel;
     public int jumpSpeedIndex;
 
+    //MOVE SPEED
+    public float moveSpeedAddPerLevel;
+    public int moveSpeedIndex;
+
     private void Awake()
     {
         instance = this;
@@ -32,6 +36,14 @@ public class UiFunctions : MonoBehaviour
         {
             jumpSpeedIndex = 0;
             PlayerPrefs.SetInt("JumpSpeedIndex", jumpSpeedIndex);
+        }
+
+        if (PlayerPrefs.HasKey("MoveSpeedIndex"))
+            moveSpeedIndex = PlayerPrefs.GetInt("MoveSpeedIndex");
+        else
+        {
+            moveSpeedIndex = 0;
+            PlayerPrefs.SetInt("MoveSpeedIndex", moveSpeedIndex);
         }
     }
 
@@ -96,7 +108,23 @@ public class UiFunctions : MonoBehaviour
             ShopCostHelper.instance.UpdateCost();
         }
     }
-    
+
+    public void IncreaseMoveSpeed()
+    {
+        if (ShopManager.instance.currentGold >= ShopCostHelper.instance.actualMoveSpeedCost)
+        {
+            ShopManager.instance.SpendCoin(ShopCostHelper.instance.actualMoveSpeedCost);
+
+            float amount = moveSpeedAddPerLevel;
+            CharacterBehaviour.instance.IncreaseMoveSpeed(amount);
+
+            moveSpeedIndex++;
+            PlayerPrefs.SetInt("MoveSpeedIndex", moveSpeedIndex);
+
+            ShopCostHelper.instance.UpdateCost();
+        }
+    }
+
     public void IncreaseGoldPerHour()
     {        
         PassiveIncome.instance.IncreaseGoldPerHour();        

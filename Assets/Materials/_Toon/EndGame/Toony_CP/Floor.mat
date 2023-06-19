@@ -26,16 +26,26 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _OutlineWidth: 0.15
     - _RampSmoothing: 0.5
     - _RampThreshold: 0.5
     - _ReceiveShadowsOff: 1
+    - _RimStep: 0.65
+    - _RimStepSmooth: 0.4
+    - _ShadowStep: 0.5
+    - _ShadowStepSmooth: 0.04
+    - _SpecularStep: 0.6
+    - _SpecularStepSmooth: 0.05
     - _SubsurfaceDistortion: 0.79
     - _SubsurfacePower: 4.7
     - _SubsurfaceScale: 3.16
     - __dummy__: 0
     m_Colors:
     - _BaseColor: {r: 0.8490566, g: 0.5764937, b: 0.34042364, a: 1}
-    - _HColor: {r: 0.75, g: 0.75, b: 0.75, a: 1}
+    - _HColor: {r: 1, g: 1, b: 1, a: 1}
+    - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
+    - _RimColor: {r: 1, g: 1, b: 1, a: 1}
     - _SColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
+    - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
     - _SubsurfaceColor: {r: 1, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []

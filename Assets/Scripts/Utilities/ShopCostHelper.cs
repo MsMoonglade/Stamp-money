@@ -44,6 +44,15 @@ public class ShopCostHelper : MonoBehaviour
             }
         }
 
+        actualMoveSpeedCost = startMoveSpeedCost;
+
+        if (UiFunctions.instance.moveSpeedIndex >= 1)
+        {
+            for (int i = 0; i < UiFunctions.instance.moveSpeedIndex; i++)
+            {
+                actualMoveSpeedCost += moveSpeedCostDelta;
+            }
+        }
 
         actualIncomeCost = startIncomeCost;
 

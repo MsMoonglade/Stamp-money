@@ -114,6 +114,14 @@ public class CharacterBehaviour : MonoBehaviour
             PlayerPrefs.SetFloat("JumpSpeed", jumpSpeed);
         }
 
+        //MoveSpeed
+        if (PlayerPrefs.HasKey("MoveSpeed"))
+            moveSpeed = PlayerPrefs.GetFloat("MoveSpeed");
+        else
+        {
+            PlayerPrefs.SetFloat("MoveSpeed", moveSpeed);
+        }
+
         printerObject.transform.localScale = startScale;
         printerObjectScale = new Vector2(printerObject.transform.localScale.x, printerObject.transform.localScale.z);
 
@@ -413,6 +421,18 @@ public class CharacterBehaviour : MonoBehaviour
 
         notMovingJumpSpeed = jumpSpeed / 2;
         movingJumpSpeed = jumpSpeed;
+    }
+
+    public void IncreaseMoveSpeed(float increaseAmount)
+    {
+        powerUpParticle.Play();
+
+        moveSpeed += increaseAmount;
+
+        if (moveSpeed > 13f)
+            moveSpeed = 13f;
+
+        PlayerPrefs.SetFloat("MoveSpeed", moveSpeed);
     }
 
     public void SavePlayerValue()

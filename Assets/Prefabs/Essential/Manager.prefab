@@ -278,12 +278,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startJumpSpeedCost: 100
+  startMoveSpeedCost: 100
   startIncomeCost: 100
   jumpSpeedCostDelta: 55
+  moveSpeedCostDelta: 55
   incomePerHourCostDelta: 55
   moneyShopCost: c8000000
   sizeIncreaseCost: 00000000e803000088130000
   actualJumpSpeedCost: 0
+  actualMoveSpeedCost: 0
   actualIncomeCost: 0
 --- !u!1 &3628990615436577064
 GameObject:
@@ -524,6 +527,7 @@ MonoBehaviour:
   mainMenuButtons:
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
   buttonsAnimSpeed: 0.4
   buttonsHideSpeed: 0.2
   editButton: {fileID: 0}
@@ -556,3 +560,5 @@ MonoBehaviour:
   printerScaleIndex: 0
   jumpSpeedAddPerLevel: 0.005
   jumpSpeedIndex: 0
+  moveSpeedAddPerLevel: 0.1
+  moveSpeedIndex: 0

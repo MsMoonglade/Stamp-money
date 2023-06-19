@@ -2656,7 +2656,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   costText: {fileID: 1510404621}
   valueText: {fileID: 1213339882}
-  type: 1
+  type: 2
   greenColor: {r: 0.21960784, g: 0.99607843, b: 0.14117648, a: 1}
   redColor: {r: 1, g: 0.18431373, b: 0.09019608, a: 1}
 --- !u!1 &755022195
@@ -5848,7 +5848,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   costText: {fileID: 409160308}
   valueText: {fileID: 0}
-  type: 3
+  type: 4
   greenColor: {r: 0.21960784, g: 0.99607843, b: 0.14117648, a: 1}
   redColor: {r: 1, g: 0.18431373, b: 0.09019608, a: 1}
 --- !u!1 &1832542164
@@ -6698,7 +6698,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   costText: {fileID: 359908139935144319}
   valueText: {fileID: 0}
-  type: 2
+  type: 3
   greenColor: {r: 0.21960784, g: 0.99607843, b: 0.14117648, a: 1}
   redColor: {r: 1, g: 0.18431373, b: 0.09019608, a: 1}
 --- !u!1 &7333617303925700
@@ -10302,7 +10302,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UiFunctions, Assembly-CSharp
-        m_MethodName: IncreaseFireRate
+        m_MethodName: IncreaseMoveSpeed
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10353,7 +10353,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   costText: {fileID: 7789189717729401945}
   valueText: {fileID: 7810222086777274864}
-  type: 0
+  type: 1
   greenColor: {r: 0.21960784, g: 0.99607843, b: 0.14117648, a: 1}
   redColor: {r: 1, g: 0.18431373, b: 0.09019608, a: 1}
 --- !u!1 &4785956187562211955

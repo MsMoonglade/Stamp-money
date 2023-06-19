@@ -148,7 +148,7 @@ public class UiButtonCostRefresh : MonoBehaviour
 
             case ButtonType.moveSpeed:
                 {
-                    return ShopCostHelper.instance.actualJumpSpeedCost;
+                    return ShopCostHelper.instance.actualMoveSpeedCost;
                 }
 
             case ButtonType.passiveIncome:        
