@@ -62,11 +62,11 @@ public class InvestmentBehaviour : MonoBehaviour
         }
         else
         {
-            CollectablesBehaviourEndGame firstCoin = coinRewardParent.transform.GetChild(0).transform.GetComponent<CollectablesBehaviourEndGame>();
+            CollectablesBehaviourEndGame randomCoin = coinRewardParent.transform.GetChild(Random.Range(0 , coinRewardParent.transform.childCount)).transform.GetComponent<CollectablesBehaviourEndGame>();
 
             for (int i = 0; i < coinPerDiamond; i++)
             {
-                firstCoin.value++;
+                randomCoin.value++;
             }
         }
     }
@@ -99,16 +99,16 @@ public class InvestmentBehaviour : MonoBehaviour
                 d.transform.parent = diamondParent.transform;
 
                 Vector3 randomizedPos = diamondStartPos.transform.localPosition;
-                randomizedPos += new Vector3(Random.Range(-1f, 1f) , 0 , 0 );
+                randomizedPos += new Vector3(Random.Range(-1.5f, 1.5f) , 0 , 0 );
 
-                d.transform.DOLocalMove(randomizedPos , 1.5f)
+                d.transform.DOLocalMove(randomizedPos , 0.7f)
                     .OnComplete(() => TakeDiamond(d));
 
                 //  d.transform.DOScale(Vector3.zero, 0.15f)
                 //       .OnComplete(() => TakeDiamond(d));
             }
 
-            yield return new WaitForSeconds(0.15f);
+            yield return new WaitForSeconds(0.1f);
         }
     }
 }

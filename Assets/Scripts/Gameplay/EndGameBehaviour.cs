@@ -97,9 +97,9 @@ public class EndGameBehaviour : MonoBehaviour
 
             GameObject diamond = Instantiate(endGameDiamondPrefs, endPos, quaternion.identity, endGameDiamondBasket.transform);
             diamond.transform.localPosition = endPos;
-            endGameCameraTarget.transform.DOLocalMove(endPos, 0.15f);
+            endGameCameraTarget.transform.DOLocalMove(endPos, 0.075f);
 
-            yield return new WaitForSeconds(0.15f);
+            yield return new WaitForSeconds(0.075f);
         }
 
         yield return new WaitForSeconds(1);

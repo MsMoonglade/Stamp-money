@@ -10,19 +10,25 @@ public class CollectablesBehaviour : MonoBehaviour
 
     public int rewardAmount;
 
+    private bool collided = false;
+
     private void OnTriggerEnter(Collider col)
     {
         if (col.transform.CompareTag("Player") || col.transform.CompareTag("Untagged"))
         {
-            Take();
+            if (!collided)
+            {
+                collided = true;
+                Take();
+            }
         }
     }
       
     private void Take()
     {
-        if (isDiamond)
-            ShopManager.instance.IncreaseDiamond((int)rewardAmount , transform.gameObject);
-
+        if (isDiamond)       
+            ShopManager.instance.IncreaseDiamond((int)rewardAmount, transform.gameObject);
+        
         if (isMoney)
             ShopManager.instance.IncreaseGold((int)rewardAmount, transform.gameObject);
 

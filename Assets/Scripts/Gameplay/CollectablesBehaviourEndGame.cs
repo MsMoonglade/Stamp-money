@@ -31,7 +31,7 @@ public class CollectablesBehaviourEndGame : MonoBehaviour
 
     private void Take()
     {    
-        ShopManager.instance.IncreaseGold(value, transform.gameObject);
+        ShopManager.instance.IncreaseGold(value, transform.gameObject , true);
 
         transform.DOScale(Vector3.zero, 0.25f)
             .SetEase(Ease.InBack)

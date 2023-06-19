@@ -77,8 +77,9 @@ public class PassiveIncome : MonoBehaviour
     {
         if (ShopManager.instance.currentGold >= ShopCostHelper.instance.actualIncomeCost)
         {
-            ShopManager.instance.SpendCoin(ShopCostHelper.instance.actualIncomeCost);
+            CharacterBehaviour.instance.powerUpParticle.Play();
 
+            ShopManager.instance.SpendCoin(ShopCostHelper.instance.actualIncomeCost);
 
             passiveIncomeIndex++;
             PlayerPrefs.SetInt("PassiveIncomeIndex", passiveIncomeIndex);

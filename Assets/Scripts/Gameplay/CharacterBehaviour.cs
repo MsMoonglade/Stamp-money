@@ -402,6 +402,8 @@ public class CharacterBehaviour : MonoBehaviour
 
     public void IncreaseJumpSpeed(float increaseAmount)
     {
+        powerUpParticle.Play();
+
         jumpSpeed -= increaseAmount;
         
         if (jumpSpeed <= 0.15f)
