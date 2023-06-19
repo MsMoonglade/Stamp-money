@@ -81,20 +81,7 @@ public class UiButtonCostRefresh : MonoBehaviour
         switch (type)
         {
             case ButtonType.jumpSpeed:
-                {
-                    /*
-                    int index = UiFunctions.instance.jumpSpeedIndex;
-
-                    if (index >= 4)
-                    {
-                        costText.text = "MAX";
-                        transform.GetComponent<Button>().interactable = false;
-                    }
-
-                    else
-                     costText.text = cost.ToString();
-                    */
-
+                {                 
                     costText.text = cost.ToString();
 
                     float valuePerSec = 1 / CharacterBehaviour.instance.jumpSpeed;
@@ -104,31 +91,21 @@ public class UiButtonCostRefresh : MonoBehaviour
                     return;
                 }
 
-            case ButtonType.passiveIncome:
+            case ButtonType.moveSpeed:
                 {
-                    /*
-                    int index = PassiveIncome.instance.passiveIncomeIndex;
-
-                    if (index >= 4)
-                    {
-                        costText.text = "MAX";
-                        transform.GetComponent<Button>().interactable = false;
-                    }
-
-                    else
-                        costText.text = cost.ToString();
-                    */
-
                     costText.text = cost.ToString();
 
-                    /*
-                    int localindex = index;
+                    float valuePerSec =  CharacterBehaviour.instance.moveSpeed;
 
-                    if(localindex >= 4)
-                    {
-                        localindex = 3;
-                    }
-                    */
+                    valueText.text = String.Format("{0:0.0}", valuePerSec);
+
+                    return;
+                }
+
+            case ButtonType.passiveIncome:
+                {                   
+                    costText.text = cost.ToString();
+                   
 
                     int valuePerHour =  PassiveIncome.instance.actualGoldPerHour;
 
@@ -169,6 +146,11 @@ public class UiButtonCostRefresh : MonoBehaviour
                     return ShopCostHelper.instance.actualJumpSpeedCost;
                 }
 
+            case ButtonType.moveSpeed:
+                {
+                    return ShopCostHelper.instance.actualJumpSpeedCost;
+                }
+
             case ButtonType.passiveIncome:        
                 {
                     return ShopCostHelper.instance.actualIncomeCost;
@@ -196,7 +178,8 @@ public class UiButtonCostRefresh : MonoBehaviour
 
 public enum ButtonType
 {
-    jumpSpeed , 
+    jumpSpeed ,
+    moveSpeed ,
     passiveIncome,
     increaseSize,
     buyMoney
