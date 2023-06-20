@@ -132,9 +132,9 @@ public class ShopManager : MonoBehaviour
 
     public void IncreaseEnergy(float amount , GameObject pos)
     {
-        CharacterBehaviour.instance.currentEnergy += amount;
+        CharacterBehaviour.instance.IncreaseEnergy(amount);
 
-        int uitoInstantiate = (int)(amount / 0.25f);
+        int uitoInstantiate = (int)(amount * 10);
 
         UiManager.instance.InstantiateEnergy(uitoInstantiate , pos);
     }

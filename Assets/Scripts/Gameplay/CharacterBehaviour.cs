@@ -62,8 +62,8 @@ public class CharacterBehaviour : MonoBehaviour
     public float maxEnergy = 2.5f;
     [HideInInspector]
     public float currentEnergy;
-    private float energyConsumption = 1f;
-    private float energyIncreaseValue = 0.5f;
+    private float energyConsumption = 0.25f;
+    private float energyIncreaseValue = 0f;
 
     //***************** EDIT  ***********************
     public GameObject editBG;
@@ -76,6 +76,9 @@ public class CharacterBehaviour : MonoBehaviour
     public List<EditObjectBehaviour> editObjectList = new List<EditObjectBehaviour> ();
 
     public GameObject shootElementParent;
+
+    //Fever Move
+    public bool feverMode;
 
     private void Awake()
     {
@@ -127,7 +130,8 @@ public class CharacterBehaviour : MonoBehaviour
 
         LoadPlayerValue();
 
-        currentEnergy = maxEnergy / 2;
+        currentEnergy = 0;
+        feverMode = false;
     }
 
 
@@ -182,13 +186,16 @@ public class CharacterBehaviour : MonoBehaviour
             if (moving)            
                 transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
 
+            /*
             if (moving && jumpSpeed != movingJumpSpeed)
                 jumpSpeed = movingJumpSpeed;
             else if (!moving && jumpSpeed != notMovingJumpSpeed)
                 jumpSpeed = notMovingJumpSpeed;
+            */
 
             transform.position = new Vector3(Mathf.Clamp(CharacterBehaviour.instance.transform.position.x, -moveXLimit, moveXLimit), CharacterBehaviour.instance.transform.position.y, CharacterBehaviour.instance.transform.position.z);
 
+            /*
             if (moving)
             {
                 currentEnergy += energyIncreaseValue * Time.deltaTime; // Cap at some max value too
@@ -197,8 +204,38 @@ public class CharacterBehaviour : MonoBehaviour
             {
                 currentEnergy -= energyConsumption * Time.deltaTime; // Cap at some min value too
             }
-            
+            */
+
+            if (feverMode)
+            {
+                currentEnergy -= energyConsumption * Time.deltaTime; // Cap at some min value too
+                
+                if(currentEnergy <= 0)
+                {
+                    feverMode = false;
+
+                    currentEnergy = 0;
+
+                    if (jumpSpeed != movingJumpSpeed)
+                        jumpSpeed = movingJumpSpeed;
+                }
+            }
+
             currentEnergy = Mathf.Clamp(currentEnergy, 0, maxEnergy);
+        }
+    }
+
+    public void IncreaseEnergy(float amount)
+    {
+        currentEnergy += amount;
+
+        if (currentEnergy >= maxEnergy)
+        {
+            Debug.Log("Fever");
+            feverMode = true;
+           
+            if (jumpSpeed != notMovingJumpSpeed)
+                jumpSpeed = notMovingJumpSpeed;
         }
     }
 

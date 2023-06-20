@@ -56,6 +56,12 @@ public class RewardTowerElement : MonoBehaviour
         valueText.text = value.ToString() + "$";
 
         transform.localPosition += new Vector3(0, 0.45f, 0);
+
+        if (rewardIsEnergy)
+        {
+            rewardAmount += Random.Range(-0.3f, 1f);
+            rewardAmount = Mathf.Clamp(rewardAmount, 0.1f, 1f);
+        }
     }
 
     private void OnTriggerEnter(Collider col)

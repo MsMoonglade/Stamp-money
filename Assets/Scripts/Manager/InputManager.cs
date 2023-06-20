@@ -46,10 +46,7 @@ public class InputManager : MonoBehaviour
             }
 
             else
-            {
-                if (CharacterBehaviour.instance.moving)
-                    CharacterBehaviour.instance.moving = false;
-
+            {            
                 CharacterBehaviour.instance.Move(Vector3.zero);
             }
         }
@@ -92,7 +89,6 @@ public class InputManager : MonoBehaviour
             direction = Vector3.zero;
 
             EndGameCharacterBehaviour.instance.StopAnim();
-
         }
     }
 
@@ -139,7 +135,7 @@ public class InputManager : MonoBehaviour
         if(Input.GetMouseButtonUp(0))
         {
             movePlayer = false;
-            CharacterBehaviour.instance.moving = false;
+           // CharacterBehaviour.instance.moving = false;
         }
     }    
     

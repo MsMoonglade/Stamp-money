@@ -824,6 +824,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8137171071536454276, guid: 744d45585067f754e9d85de4414539e6,
         type: 3}
+      propertyPath: actionToTrigger.m_PersistentCalls.m_Calls.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8137171071536454276, guid: 744d45585067f754e9d85de4414539e6,
+        type: 3}
       propertyPath: actionToTrigger.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1836870510}
@@ -836,7 +841,32 @@ PrefabInstance:
         type: 3}
       propertyPath: actionToTrigger.m_PersistentCalls.m_Calls.Array.data[4].m_Target
       value: 
-      objectReference: {fileID: 1800712589}
+      objectReference: {fileID: 3780146937960434990}
+    - target: {fileID: 8137171071536454276, guid: 744d45585067f754e9d85de4414539e6,
+        type: 3}
+      propertyPath: actionToTrigger.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: EnterEndGameEditView
+      objectReference: {fileID: 0}
+    - target: {fileID: 8137171071536454276, guid: 744d45585067f754e9d85de4414539e6,
+        type: 3}
+      propertyPath: actionToTrigger.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: ShowEdit
+      objectReference: {fileID: 0}
+    - target: {fileID: 8137171071536454276, guid: 744d45585067f754e9d85de4414539e6,
+        type: 3}
+      propertyPath: actionToTrigger.m_PersistentCalls.m_Calls.Array.data[4].m_MethodName
+      value: CheckValue
+      objectReference: {fileID: 0}
+    - target: {fileID: 8137171071536454276, guid: 744d45585067f754e9d85de4414539e6,
+        type: 3}
+      propertyPath: actionToTrigger.m_PersistentCalls.m_Calls.Array.data[4].m_TargetAssemblyTypeName
+      value: UiButtonCostRefresh, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8137171071536454276, guid: 744d45585067f754e9d85de4414539e6,
+        type: 3}
+      propertyPath: actionToTrigger.m_PersistentCalls.m_Calls.Array.data[4].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 744d45585067f754e9d85de4414539e6, type: 3}
 --- !u!1 &832707480 stripped
@@ -942,18 +972,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 3780146937960434988}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1800712589 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6842301338570919195, guid: 58ae3eee8b69dfe489d4c57ebec70a8e,
-    type: 3}
-  m_PrefabInstance: {fileID: 3780146937960434988}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1800712587}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c04f6df53fce9134aa33a10a53f31db0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1836870510 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3628990615436577062, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85,
@@ -1582,6 +1600,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 3780146937960434988}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &3780146937960434990 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6842301338570919195, guid: 58ae3eee8b69dfe489d4c57ebec70a8e,
+    type: 3}
+  m_PrefabInstance: {fileID: 3780146937960434988}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1800712587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c04f6df53fce9134aa33a10a53f31db0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5499896080625025718
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1648,6 +1678,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5499896078592063822, guid: cab47d6e3cdacd747b1831da1c2989a2,
+        type: 3}
+      propertyPath: maxEnergy
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cab47d6e3cdacd747b1831da1c2989a2, type: 3}
