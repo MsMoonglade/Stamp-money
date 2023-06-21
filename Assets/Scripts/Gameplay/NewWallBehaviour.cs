@@ -35,6 +35,7 @@ public class NewWallBehaviour : MonoBehaviour
     private bool isNegative;
 
     private List<Collider> nearWall = new List<Collider>();
+    private List <Collider> collidedMoney = new List<Collider>();
 
     private bool colDelay;
 
@@ -50,8 +51,11 @@ public class NewWallBehaviour : MonoBehaviour
 
     private void OnTriggerEnter(Collider col)
     {
-        if (col.transform.CompareTag("Bullet"))
+        if (col.transform.CompareTag("Bullet") && !collidedMoney.Contains(col))
         {
+            collidedMoney.Add(col);
+            StartCoroutine(RemoveThisColFromColList(col));
+
             int val = col.transform.GetComponent<MoneyBulletBehaviour>().value;
 
             if (giveMoneyWall)
@@ -71,7 +75,8 @@ public class NewWallBehaviour : MonoBehaviour
                 StartCoroutine(ResetColDelay());
             }
 
-            col.transform.GetComponent<MoneyBulletBehaviour>().DisableByCollision();
+            col.transform.GetComponent<MoneyBulletBehaviour>().PlayColParticle();
+            // col.transform.GetComponent<MoneyBulletBehaviour>().DisableByCollision();
 
             CheckForPositive();
             UpdateUi();
@@ -108,6 +113,13 @@ public class NewWallBehaviour : MonoBehaviour
                     CharacterBehaviour.instance.powerDownParticle.Play();
             }
         }
+    }
+
+    private IEnumerator RemoveThisColFromColList(Collider colToRemvov)
+    {
+        yield return new WaitForSeconds(0.15f);
+
+        collidedMoney.Remove(colToRemvov);
     }
 
     public void DisableAnimation()

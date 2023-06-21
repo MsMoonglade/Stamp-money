@@ -46,6 +46,13 @@ public class MoneyBulletBehaviour : MonoBehaviour
         this.gameObject.SetActive(false);
     }
 
+    public void PlayColParticle()
+    {
+        GameObject p = PoolManager.instance.GetParticle(GameManager.instance.particleObj, transform.position);
+        p.GetComponent<ParticleSystemRenderer>().material = ColorUtilities.instance.GetIndexParticleMat(value);
+        p.SetActive(true);
+    }
+
     private IEnumerator DisableThisGameobject()
     {
         yield return new WaitForSeconds(CharacterBehaviour.instance.bulletActiveTime);

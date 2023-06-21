@@ -62,8 +62,9 @@ public class CharacterBehaviour : MonoBehaviour
     public float maxEnergy = 2.5f;
     [HideInInspector]
     public float currentEnergy;
+    public float targetEnergy;
     private float energyConsumption = 0.25f;
-    private float energyIncreaseValue = 0f;
+    private float energyIncreaseValue = 1.5f;
 
     //***************** EDIT  ***********************
     public GameObject editBG;
@@ -79,6 +80,7 @@ public class CharacterBehaviour : MonoBehaviour
 
     //Fever Move
     public bool feverMode;
+    private bool energySliderIsHide;
 
     private void Awake()
     {
@@ -131,6 +133,7 @@ public class CharacterBehaviour : MonoBehaviour
         LoadPlayerValue();
 
         currentEnergy = 0;
+        targetEnergy = 0;
         feverMode = false;
     }
 
@@ -142,7 +145,7 @@ public class CharacterBehaviour : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         col = GetComponent<Collider>();
 
-        notMovingJumpSpeed = jumpSpeed / 2;
+        notMovingJumpSpeed = jumpSpeed / 3;
         movingJumpSpeed = jumpSpeed;
         
         foreach(GameObject o in characterGrid.currentGridElement)
@@ -165,6 +168,9 @@ public class CharacterBehaviour : MonoBehaviour
             //BG
             GameObject bg = Instantiate(editBG, o.transform.position + new Vector3(0 , 0.05f , 0), o.transform.rotation, editBGParent.transform);
         }
+
+        UiManager.instance.HideEnergySlider();
+        energySliderIsHide = true;
     }
 
     private void OnEnable()
@@ -183,7 +189,7 @@ public class CharacterBehaviour : MonoBehaviour
     {
         if (GameManager.instance.IsInGameStatus() && dieCoroutine == null)
         {
-            if (moving)            
+            if (moving)
                 transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
 
             /*
@@ -206,18 +212,40 @@ public class CharacterBehaviour : MonoBehaviour
             }
             */
 
+            if (!feverMode)
+            {
+                if (currentEnergy < targetEnergy)
+                {
+                    currentEnergy += energyIncreaseValue * Time.deltaTime; // Cap at some max value too
+                }
+
+                if (currentEnergy >= maxEnergy)
+                {
+                    Debug.Log("Fever");
+                    feverMode = true;
+
+                    if (jumpSpeed != notMovingJumpSpeed)
+                        jumpSpeed = notMovingJumpSpeed;
+                }
+            }
+
             if (feverMode)
             {
                 currentEnergy -= energyConsumption * Time.deltaTime; // Cap at some min value too
-                
+                targetEnergy = currentEnergy;
+
                 if(currentEnergy <= 0)
                 {
-                    feverMode = false;
-
                     currentEnergy = 0;
+                    targetEnergy = 0;
 
                     if (jumpSpeed != movingJumpSpeed)
                         jumpSpeed = movingJumpSpeed;
+
+                    feverMode = false;
+
+                    UiManager.instance.HideEnergySlider();
+                    energySliderIsHide = true;
                 }
             }
 
@@ -227,15 +255,12 @@ public class CharacterBehaviour : MonoBehaviour
 
     public void IncreaseEnergy(float amount)
     {
-        currentEnergy += amount;
+        targetEnergy += amount;
 
-        if (currentEnergy >= maxEnergy)
+        if (energySliderIsHide)
         {
-            Debug.Log("Fever");
-            feverMode = true;
-           
-            if (jumpSpeed != notMovingJumpSpeed)
-                jumpSpeed = notMovingJumpSpeed;
+            UiManager.instance.ShowEnergyslider();
+            energySliderIsHide = false;
         }
     }
 
@@ -456,7 +481,7 @@ public class CharacterBehaviour : MonoBehaviour
 
         PlayerPrefs.SetFloat("JumpSpeed", jumpSpeed);
 
-        notMovingJumpSpeed = jumpSpeed / 2;
+        notMovingJumpSpeed = jumpSpeed / 3;
         movingJumpSpeed = jumpSpeed;
     }
 
@@ -466,8 +491,8 @@ public class CharacterBehaviour : MonoBehaviour
 
         moveSpeed += increaseAmount;
 
-        if (moveSpeed > 13f)
-            moveSpeed = 13f;
+        if (moveSpeed > 12f)
+            moveSpeed = 12f;
 
         PlayerPrefs.SetFloat("MoveSpeed", moveSpeed);
     }

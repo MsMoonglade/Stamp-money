@@ -432,7 +432,7 @@ MonoBehaviour:
   rewardIsEnergy: 1
   rewardIsDiamond: 0
   rewardIsCoin: 0
-  rewardAmount: 0.5
+  rewardAmount: 0.3
   fixedValue: 0
   rewardModelOffset: 0
   elementRotOffset: -4.5

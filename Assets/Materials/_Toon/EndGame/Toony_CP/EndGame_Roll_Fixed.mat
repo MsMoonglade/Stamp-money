@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: EndGame_Roll_Fixed
-  m_Shader: {fileID: 4800000, guid: c4b6be25f22a3d94c8154de6f737ff84, type: 3}
+  m_Shader: {fileID: 4800000, guid: 313fcf3aebc04cf4ab4f8c5f2850be7f, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
@@ -26,9 +26,16 @@ Material:
         m_Offset: {x: -0.015, y: 0}
     m_Ints: []
     m_Floats:
+    - _OutlineWidth: 0.15
     - _RampSmoothing: 0.5
     - _RampThreshold: 0.5
     - _ReceiveShadowsOff: 1
+    - _RimStep: 0.65
+    - _RimStepSmooth: 0.4
+    - _ShadowStep: 0.5
+    - _ShadowStepSmooth: 0.04
+    - _SpecularStep: 0.6
+    - _SpecularStepSmooth: 0.05
     - _SubsurfaceDistortion: 0.79
     - _SubsurfacePower: 4.7
     - _SubsurfaceScale: 3.16
@@ -36,6 +43,9 @@ Material:
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _HColor: {r: 0.75, g: 0.75, b: 0.75, a: 1}
+    - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
+    - _RimColor: {r: 1, g: 1, b: 1, a: 1}
     - _SColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
+    - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
     - _SubsurfaceColor: {r: 1, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []

@@ -34,12 +34,24 @@ public class UiManager : MonoBehaviour
     public GameObject ui_Energy_Destination;
     public float ui_Energy_AnimSpeed;
 
+    private Image[] energySliderImages;
 
     public GameObject uiTempParent;
 
     private void Awake()
     {
         instance = this;
+
+        energySliderImages = new Image[energySlider.transform.parent.transform.childCount];
+        for(int i = 0; i < energySlider.transform.parent.transform.childCount; i++)
+        {
+            energySliderImages[i] = energySlider.transform.parent.transform.GetChild(i).GetComponent<Image>();
+        }
+
+        foreach (Image image in energySliderImages)
+        {
+            image.DOFade(0, 0.05f);
+        }
 
         //     DisableAllUi();
         //     EnableMainMenuUi();
@@ -57,6 +69,22 @@ public class UiManager : MonoBehaviour
         if (GameManager.instance.IsInGameStatus())
         {
             energySlider.fillAmount = CharacterBehaviour.instance.currentEnergy / CharacterBehaviour.instance.maxEnergy;
+        }
+    }
+
+    public void ShowEnergyslider()
+    {
+        foreach (Image image in energySliderImages)
+        {
+            image.DOFade(1, 0.25f);
+        }
+    }
+
+    public void HideEnergySlider()
+    {
+        foreach (Image image in energySliderImages)
+        {
+            image.DOFade(0, 0.25f);
         }
     }
 
@@ -138,7 +166,7 @@ public class UiManager : MonoBehaviour
         }
     }
 
-    public void InstantiateEnergy(int amount , GameObject localPosition)
+    public void InstantiateEnergy(float energyToAdd , int amount , GameObject localPosition)
     {
         for (int i = 0; i < amount; i++)
         {
@@ -154,10 +182,18 @@ public class UiManager : MonoBehaviour
                 .SetEase(Ease.OutBack);
 
             float animSpeed = Random.Range(ui_Energy_AnimSpeed - 0.2f, ui_Energy_AnimSpeed + 0.2f);
+            float ePerElementAmount = energyToAdd / amount;
+
             energy.transform.DOMove(ui_Energy_Destination.transform.position, animSpeed)
                 .SetEase(Ease.InBack)
-                .OnComplete(() => Destroy(energy));
+                .OnComplete(() => EnergyAddCallback(ePerElementAmount , energy));
         }
+    }
+
+    private void EnergyAddCallback(float eAmount , GameObject o)
+    {
+        CharacterBehaviour.instance.IncreaseEnergy(eAmount);
+        Destroy(o);
     }
 
     public void LostCoin(int amount)

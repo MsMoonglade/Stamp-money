@@ -225,6 +225,9 @@ MonoBehaviour:
   - {fileID: 3479148257876970976, guid: f8148fb7743f18e41b928d0af95e786a, type: 3}
   - {fileID: 4204238269332991307, guid: bd2499650ad362f449bbd5f6c74af8f0, type: 3}
   - {fileID: 4119869813749913617, guid: 5f2ea59790aa976419962e966d34d49d, type: 3}
+  - {fileID: 3132083206741897417, guid: 595b455a93e34ab43b2bcb955cb434f9, type: 3}
+  - {fileID: 3132083206741897417, guid: 8fb00dc18d49edb40a8a463871a51bce, type: 3}
+  - {fileID: 3132083206741897417, guid: 1161ce6f18defba4db82c47cb8ac0318, type: 3}
 --- !u!114 &5766648231171261682
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -251,7 +254,7 @@ MonoBehaviour:
       outWeight: 0.0730146
     - serializedVersion: 3
       time: 3
-      value: 6
+      value: 4
       inSlope: 0.78006023
       outSlope: 0.78006023
       tangentMode: 0

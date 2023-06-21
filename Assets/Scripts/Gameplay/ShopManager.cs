@@ -2,6 +2,7 @@ using Cinemachine;
 using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -94,7 +95,9 @@ public class ShopManager : MonoBehaviour
         currentGold += amount;
         currentGoldText.text = currentGold.ToString();
 
-        StartCoroutine(AnimEndGameWallCoin((int) (amount / 10) , localPosToRef));
+        int fixedValue = Mathf.Clamp((int)(amount / 10), 5, 100);
+
+        StartCoroutine(AnimEndGameWallCoin(fixedValue, localPosToRef));
     }
 
     private IEnumerator AnimEndGameWallCoin(int amount , GameObject pos)
@@ -132,11 +135,16 @@ public class ShopManager : MonoBehaviour
 
     public void IncreaseEnergy(float amount , GameObject pos)
     {
-        CharacterBehaviour.instance.IncreaseEnergy(amount);
+        //CharacterBehaviour.instance.IncreaseEnergy(amount);
 
         int uitoInstantiate = (int)(amount * 10);
 
-        UiManager.instance.InstantiateEnergy(uitoInstantiate , pos);
+        UiManager.instance.InstantiateEnergy(amount , uitoInstantiate , pos);
+    }
+
+    public void IncreaseEnergySingle(float amount, GameObject pos)
+    {
+        UiManager.instance.InstantiateEnergy(amount, 1 , pos);
     }
 
     public void DecreaseDiamond(int amount)

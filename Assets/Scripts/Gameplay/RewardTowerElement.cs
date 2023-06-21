@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using Lofelt.NiceVibrations;
-using static UnityEditor.PlayerSettings;
 
 public class RewardTowerElement : MonoBehaviour
 {
@@ -59,7 +58,7 @@ public class RewardTowerElement : MonoBehaviour
 
         if (rewardIsEnergy)
         {
-            rewardAmount += Random.Range(-0.3f, 1f);
+            rewardAmount += Random.Range(-0.4f, 0.4f);
             rewardAmount = Mathf.Clamp(rewardAmount, 0.1f, 1f);
         }
     }

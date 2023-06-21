@@ -9816,7 +9816,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   moveXLimit: 5
-  moveSpeed: 10
+  moveSpeed: 9
   jumpHeight: 1.25
   jumpSpeed: 0.38
   bulletActiveTime: 1
@@ -9828,7 +9828,7 @@ MonoBehaviour:
   powerUpParticle: {fileID: 8959127136259872919}
   powerDownParticle: {fileID: 5366343633735461419}
   moving: 0
-  maxEnergy: 2.5
+  maxEnergy: 1
   currentEnergy: 0
   editBG: {fileID: 3205116958908302363, guid: 355bc499fac7baa499db19a08031d36c, type: 3}
   editObject: {fileID: 3205116958908302363, guid: d9d50e486daf6144594ff3eb813b9ea9,
@@ -9840,6 +9840,7 @@ MonoBehaviour:
   gridElementPos: []
   editObjectList: []
   shootElementParent: {fileID: 2250228091084633149}
+  feverMode: 0
 --- !u!54 &5499896078592063819
 Rigidbody:
   m_ObjectHideFlags: 0

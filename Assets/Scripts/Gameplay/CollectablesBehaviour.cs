@@ -7,8 +7,9 @@ public class CollectablesBehaviour : MonoBehaviour
 {
     public bool isMoney;
     public bool isDiamond;
+    public bool isEnergy;
 
-    public int rewardAmount;
+    public float rewardAmount;
 
     private bool collided = false;
 
@@ -31,6 +32,9 @@ public class CollectablesBehaviour : MonoBehaviour
         
         if (isMoney)
             ShopManager.instance.IncreaseGold((int)rewardAmount, transform.gameObject);
+
+        if (isEnergy)
+            ShopManager.instance.IncreaseEnergySingle(rewardAmount, transform.gameObject);
 
         transform.DOScale(Vector3.zero, 0.25f)
             .SetEase(Ease.InBack)
