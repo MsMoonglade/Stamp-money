@@ -104,6 +104,7 @@ public class RewardTowerElement : MonoBehaviour
 
             Complete();
 
+            towerParent.transform.DOScale(0, 0.6f);
             rewardParent.transform.DOScale(0, 0.6f)
                 .SetEase(Ease.InBounce)
                 .OnComplete(() => this.gameObject.SetActive(false));
@@ -120,7 +121,6 @@ public class RewardTowerElement : MonoBehaviour
 
         if (rewardIsEnergy)
             ShopManager.instance.IncreaseEnergy(rewardAmount , transform.gameObject);
-
     }
 
     private void GenerateElement()

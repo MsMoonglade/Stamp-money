@@ -4939,7 +4939,7 @@ PrefabInstance:
     - target: {fileID: 8972144098824181450, guid: 435213e42e108a14eabfeb610f2394e2,
         type: 3}
       propertyPath: unlockLevel
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 435213e42e108a14eabfeb610f2394e2, type: 3}

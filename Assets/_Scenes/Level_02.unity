@@ -1052,6 +1052,10 @@ PrefabInstance:
       propertyPath: mainMenuButtons.Array.data[1]
       value: 
       objectReference: {fileID: 751438641}
+    - target: {fileID: 353571750, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
+      propertyPath: mainMenuButtons.Array.data[2]
+      value: 
+      objectReference: {fileID: 3780146937960434993}
     - target: {fileID: 1836870512, guid: 6cda55d0b4d5049c2ab69bdecc4c9c85, type: 3}
       propertyPath: passiveIncomeGo
       value: 
@@ -1284,7 +1288,7 @@ PrefabInstance:
     - target: {fileID: 1796853275972107604, guid: c7e0b63d878e492418a7ee9e0b44896f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1796853275972107604, guid: c7e0b63d878e492418a7ee9e0b44896f,
         type: 3}
@@ -1514,7 +1518,7 @@ PrefabInstance:
     - target: {fileID: 1796853275972107604, guid: c7e0b63d878e492418a7ee9e0b44896f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1796853275972107604, guid: c7e0b63d878e492418a7ee9e0b44896f,
         type: 3}
@@ -3437,7 +3441,7 @@ PrefabInstance:
     - target: {fileID: 1796853275972107604, guid: c7e0b63d878e492418a7ee9e0b44896f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1796853275972107604, guid: c7e0b63d878e492418a7ee9e0b44896f,
         type: 3}
@@ -4138,6 +4142,12 @@ GameObject:
 --- !u!1 &3780146937960434992 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1162881281, guid: 58ae3eee8b69dfe489d4c57ebec70a8e,
+    type: 3}
+  m_PrefabInstance: {fileID: 3780146937960434988}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3780146937960434993 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4451329401138495563, guid: 58ae3eee8b69dfe489d4c57ebec70a8e,
     type: 3}
   m_PrefabInstance: {fileID: 3780146937960434988}
   m_PrefabAsset: {fileID: 0}
