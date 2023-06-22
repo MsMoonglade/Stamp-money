@@ -43,6 +43,12 @@ public class EditObjectBehaviour : MonoBehaviour
     public void IncreaseValue()
     {
         value++;
+
+        if (value == 4)
+            ShopCostHelper.instance.Money4Unlocked();
+        if (value == 8)
+            ShopCostHelper.instance.Money8Unlocked();
+
         SetMaterial(value);
     }
 

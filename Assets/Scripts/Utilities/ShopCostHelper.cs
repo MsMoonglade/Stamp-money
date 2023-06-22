@@ -11,20 +11,37 @@ public class ShopCostHelper : MonoBehaviour
     public int startMoveSpeedCost;
     public int startIncomeCost;
 
-
     public int jumpSpeedCostDelta;
     public int moveSpeedCostDelta;
     public int incomePerHourCostDelta;
-    public int[] moneyShopCost;
+    public int moneyShopCost;
     public int[] sizeIncreaseCost;
+
+    public int moneyBaseCost;
+    public int money4Cost;
+    public int money8Cost;
+    public UiButtonCostRefresh buttonToRefresh;
+
 
     public int actualJumpSpeedCost;
     public int actualMoveSpeedCost;
     public int actualIncomeCost;
 
+    private int moneyUnlockedIndex;
+
     private void Awake()
     {
         instance = this;
+
+        if (PlayerPrefs.HasKey("MoneyUnlockedIndex"))
+            moneyUnlockedIndex = PlayerPrefs.GetInt("MoneyUnlockedIndex");
+        else
+        {
+            moneyUnlockedIndex = 0;
+            PlayerPrefs.SetInt("MoneyUnlockedIndex", moneyUnlockedIndex);            
+        }
+
+        SetMoneyCost();
     }
 
     private void Start()
@@ -63,5 +80,47 @@ public class ShopCostHelper : MonoBehaviour
                 actualIncomeCost += incomePerHourCostDelta;
             }
         }
+    }
+
+    public void SetMoneyCost()
+    {
+        switch (moneyUnlockedIndex)
+        {
+            case 0:
+                moneyShopCost = moneyBaseCost;
+                break;
+            case 1:
+                moneyShopCost = money4Cost;
+                break;
+            case 2:
+                moneyShopCost = money8Cost;
+                break;
+        }
+    }
+
+    public void Money4Unlocked()
+    {
+        if (moneyUnlockedIndex == 0)
+        {
+            moneyUnlockedIndex = 1;
+            PlayerPrefs.SetInt("MoneyUnlockedIndex", moneyUnlockedIndex);
+
+            SetMoneyCost();
+        }
+
+        buttonToRefresh.CheckValue();
+    }
+
+    public void Money8Unlocked()
+    {
+        if (moneyUnlockedIndex == 0 || moneyUnlockedIndex == 1)
+        {
+            moneyUnlockedIndex = 2;
+            PlayerPrefs.SetInt("MoneyUnlockedIndex", moneyUnlockedIndex);
+
+            SetMoneyCost();
+        }
+
+        buttonToRefresh.CheckValue();
     }
 }

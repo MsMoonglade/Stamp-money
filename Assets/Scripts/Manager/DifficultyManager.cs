@@ -30,7 +30,7 @@ public class DifficultyManager : MonoBehaviour
         currentGold += Random.Range(-coinPerLevelrandomizerRange, coinPerLevelrandomizerRange);
 
         currentDifficulty = EvaluateLevelDifficulty(GameManager.instance.CurrentLevel);
-        currentDifficulty += Random.Range(-difficultyPerLevelrandomizerRange, difficultyPerLevelrandomizerRange);
+        currentDifficulty += Random.Range(0, difficultyPerLevelrandomizerRange);
 
         if(UiFunctions.instance.printerScaleIndex == 2)
         {

@@ -54,11 +54,11 @@ public class UiFunctions : MonoBehaviour
 
     public void BuyMoney()
     {
-        if (ShopManager.instance.currentGold >= ShopCostHelper.instance.moneyShopCost[0])
+        if (ShopManager.instance.currentGold >= ShopCostHelper.instance.moneyShopCost)
         {
             if (InventoryManager.Instance.HaveFreeSlot())
             {
-                ShopManager.instance.SpendCoin(ShopCostHelper.instance.moneyShopCost[0]);
+                ShopManager.instance.SpendCoin(ShopCostHelper.instance.moneyShopCost);
 
                 InventoryManager.Instance.GenerateNewMoney();
             }

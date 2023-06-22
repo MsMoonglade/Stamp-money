@@ -168,7 +168,8 @@ public class UiButtonCostRefresh : MonoBehaviour
 
             case ButtonType.buyMoney:
                 {
-                    return ShopCostHelper.instance.moneyShopCost[0];
+                    valueText.text = ShopCostHelper.instance.moneyShopCost.ToString();
+                    return ShopCostHelper.instance.moneyShopCost;
                 }
         }
 

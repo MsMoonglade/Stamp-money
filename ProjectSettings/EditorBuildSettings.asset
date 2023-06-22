@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/_Scenes/Level_02.unity
     guid: cf484bd7fc0058145af8b906b8f1a133
   - enabled: 1
+    path: Assets/_Scenes/Level_03.unity
+    guid: 29422471edce6d54aba702495eed07ec
+  - enabled: 1
     path: Assets/_Scenes/Level_Randomizer.unity
     guid: 492d06f1ee8f55f49828ca4ec20a5643
   m_configObjects: {}

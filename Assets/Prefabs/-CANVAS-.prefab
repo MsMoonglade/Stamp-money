@@ -4999,7 +4999,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1505493138
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5959,7 +5959,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   costText: {fileID: 409160308}
-  valueText: {fileID: 0}
+  valueText: {fileID: 409160308}
   type: 4
   greenColor: {r: 0.21960784, g: 0.99607843, b: 0.14117648, a: 1}
   redColor: {r: 1, g: 0.18431373, b: 0.09019608, a: 1}

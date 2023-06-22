@@ -283,8 +283,11 @@ MonoBehaviour:
   jumpSpeedCostDelta: 55
   moveSpeedCostDelta: 55
   incomePerHourCostDelta: 55
-  moneyShopCost: c8000000
+  moneyShopCost: 200
   sizeIncreaseCost: 00000000e803000088130000
+  moneyBaseCost: 200
+  money4Cost: 300
+  money8Cost: 500
   actualJumpSpeedCost: 0
   actualMoveSpeedCost: 0
   actualIncomeCost: 0

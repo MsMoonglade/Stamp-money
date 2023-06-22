@@ -235,8 +235,15 @@ public class CharacterBehaviour : MonoBehaviour
 
             if (feverMode)
             {
-                currentEnergy -= energyConsumption * Time.deltaTime; // Cap at some min value too
-                targetEnergy = currentEnergy;
+                targetEnergy -= energyConsumption * Time.deltaTime;
+
+                if(targetEnergy < 0)
+                    targetEnergy = 0;
+            }
+
+            if (feverMode)
+            {              
+                currentEnergy = targetEnergy;                
 
                 if(currentEnergy <= 0)
                 {
@@ -261,6 +268,9 @@ public class CharacterBehaviour : MonoBehaviour
     public void IncreaseEnergy(float amount)
     {
         targetEnergy += amount;
+
+        if (targetEnergy > 1)
+            targetEnergy = 1;
 
         if (energySliderIsHide)
         {
