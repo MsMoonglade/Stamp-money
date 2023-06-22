@@ -237,6 +237,8 @@ MonoBehaviour:
   - {fileID: 3132083206741897417, guid: 595b455a93e34ab43b2bcb955cb434f9, type: 3}
   - {fileID: 3132083206741897417, guid: 8fb00dc18d49edb40a8a463871a51bce, type: 3}
   - {fileID: 3132083206741897417, guid: 1161ce6f18defba4db82c47cb8ac0318, type: 3}
+  possibleMixed:
+  - {fileID: 4969993486654323849, guid: 9a13530f5103d0a4188b82ec2c753de7, type: 3}
 --- !u!114 &5766648231171261682
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -253,19 +255,19 @@ MonoBehaviour:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0.037319183
-      value: 3
-      inSlope: 1.0672466
-      outSlope: 1.0672466
+      time: 0
+      value: 2
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.0730146
     - serializedVersion: 3
       time: 3
-      value: 3
-      inSlope: 0.78006023
-      outSlope: 0.78006023
+      value: 2
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334

@@ -232,19 +232,9 @@ public class LevelManager : MonoBehaviour
     {
         float levelDifficulty = (float)difficultyManager.currentDifficulty;
 
-        List<RewardTowerElement> tower = new List<RewardTowerElement>();
-
-        for (int i = 0; i < rewardTowerParent.transform.childCount; i++)
-        {
-            for (int j = 0; j < rewardTowerParent.transform.GetChild(i).transform.childCount; j++)
-            {
-                RewardTowerElement t = rewardTowerParent.transform.GetChild(i).transform.GetChild(j).GetComponent<RewardTowerElement>();
-
-                tower.Add(t);
-            }
-        }
+        RewardTowerElement[] tower = GetComponentsInChildren<RewardTowerElement>();
         
-        if (tower.Count != 0 )
+        if (tower.Length != 0 )
         {
             foreach (RewardTowerElement t in tower)
             {
@@ -267,7 +257,7 @@ public class LevelManager : MonoBehaviour
                 levelDifficulty *= 1.05f;
             }
         }
-    }
+    } 
 
     public float EvaluateLevelLenght(int currentLevel)
     {
