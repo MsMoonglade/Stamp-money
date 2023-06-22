@@ -26,6 +26,7 @@ public class LevelManager : MonoBehaviour
     public GameObject[] possibleWall;
     public GameObject[] possibleRewardTower;
     public GameObject[] possibleCollectable;
+    public GameObject[] possibleMixed;
 
     private Vector3 elementPosition;
 
@@ -35,6 +36,11 @@ public class LevelManager : MonoBehaviour
     {
         instance = this;
 
+
+    }
+
+    private void Start()
+    {
         difficultyManager = GetComponent<DifficultyManager>();
 
         if (GENERATE)
@@ -45,10 +51,6 @@ public class LevelManager : MonoBehaviour
             SetCoinPerLevelValue();
             SetLevelDifficulty();
         }
-    }
-
-    private void Start()
-    {  
     }
 
     private void GenerateLevel()
@@ -64,14 +66,14 @@ public class LevelManager : MonoBehaviour
             float randomizer = Random.Range(0.0f, 1.0f);
             float elementOffset = 0; 
 
-            if(randomizer >= 0 && randomizer <= 0.33f)
+            if(randomizer >= 0 && randomizer <= 0.25f)
             {
                 GameObject element = GenerateRandomElement(possibleWall ,wallParent);
                 element.transform.position = elementPosition;
                 elementOffset = element.GetComponent<MapGeneratorElementUtilities>().ElementDistanceLenght();
             }
 
-            else if (randomizer >= 0.34f && randomizer <= 0.66f)
+            else if (randomizer >= 0.25f && randomizer <= 0.5f)
             {
                 GameObject element = GenerateRandomElement(possibleRewardTower, rewardTowerParent);
                 element.transform.position = elementPosition;
@@ -79,9 +81,16 @@ public class LevelManager : MonoBehaviour
 
             }
 
-            else if (randomizer >= 0.67f && randomizer <= 1f)
+            else if (randomizer >= 0.5f && randomizer <= 0.75f)
             {
                 GameObject element = GenerateRandomElement(possibleCollectable, collectableParent);
+                element.transform.position = elementPosition;
+                elementOffset = element.GetComponent<MapGeneratorElementUtilities>().ElementDistanceLenght();
+            }
+            //MIXED ELEMENT
+            else
+            {
+                GameObject element = GenerateMixedElement(possibleMixed , wallParent , collectableParent , rewardTowerParent);
                 element.transform.position = elementPosition;
                 elementOffset = element.GetComponent<MapGeneratorElementUtilities>().ElementDistanceLenght();
             }
@@ -102,6 +111,14 @@ public class LevelManager : MonoBehaviour
         GameObject o = Instantiate(possiblePool[index], Vector2.zero, Quaternion.identity, parent.transform);
         return o;
     }
+    private GameObject GenerateMixedElement(GameObject[] possiblePool, GameObject wallParent , GameObject collectablesParent , GameObject towerParent)
+    {
+        int index = Random.Range(0, possiblePool.Length);
+
+        GameObject o = Instantiate(possiblePool[index], Vector2.zero, Quaternion.identity, transform);
+
+        return o;
+    }
 
     private void SetDiamondPerLevelValue()
     {
@@ -109,43 +126,35 @@ public class LevelManager : MonoBehaviour
         diamondValue *= Random.Range(1 , 1.5f);
         diamondValue = (int)(diamondValue);
 
-        List<RewardTowerElement> diamondTower = new List<RewardTowerElement> ();
+        RewardTowerElement[] diamondTower = GetComponentsInChildren<RewardTowerElement>();
+        CollectablesBehaviour[] diamondCollectables = GetComponentsInChildren<CollectablesBehaviour>();
 
-        for(int i = 0; i < rewardTowerParent.transform.childCount; i++)
+        int diamondCount = 0;
+        
+        for(int i = 0; i < diamondCollectables.Length; i++)
         {
-            for(int j = 0; j < rewardTowerParent.transform.GetChild(i).transform.childCount; j++)
+            if (diamondCollectables[i].isDiamond)
+                diamondCount++;
+        }
+
+        List<RewardTowerElement> diamondtowerList = new List<RewardTowerElement>();
+        for(int i = 0; i < diamondTower.Length; i++)
+        {
+            if (diamondTower[i].rewardIsDiamond)
             {
-                RewardTowerElement t = rewardTowerParent.transform.GetChild(i).transform.GetChild(j).GetComponent<RewardTowerElement>();
-                if (t.rewardIsDiamond)
-                {
-                    diamondTower.Add(t);
-                }
+                diamondtowerList.Add(diamondTower[i]);
             }
         }
 
-        List<CollectablesBehaviour> diamondCollectables = new List<CollectablesBehaviour>();
+        diamondValue -= diamondCount;
 
-        for (int i = 0; i < collectableParent.transform.childCount; i++)
+        if (diamondtowerList.Count != 0 && diamondValue > 5)
         {
-            for (int j = 0; j < collectableParent.transform.GetChild(i).transform.childCount; j++)
-            {
-                CollectablesBehaviour c = collectableParent.transform.GetChild(i).transform.GetChild(j).GetComponent<CollectablesBehaviour>();
-                if (c.isDiamond)
-                {
-                    diamondCollectables.Add(c);
-                }
-            }
-        }
-
-        diamondValue -= (int)(diamondCollectables.Count);
-
-        if (diamondTower.Count != 0 && diamondValue > 5)
-        {
-            int localDiamond = (int)(diamondValue / diamondTower.Count);
+            int localDiamond = (int)(diamondValue / diamondTower.Length);
 
             localDiamond = Mathf.Abs(localDiamond);
 
-            foreach (RewardTowerElement r in diamondTower)
+            foreach (RewardTowerElement r in diamondtowerList)
             {
                 r.rewardAmount = localDiamond + Random.Range(-localDiamond / 2, localDiamond /2 );
 
@@ -156,13 +165,13 @@ public class LevelManager : MonoBehaviour
             }
         }
 
-        if(diamondTower.Count != 0 && diamondValue <= 5)
+        if(diamondtowerList.Count != 0 && diamondValue <= 5)
         {
-            foreach (RewardTowerElement r in diamondTower)
+            foreach (RewardTowerElement r in diamondtowerList)
             {
                 r.rewardAmount = Random.Range(3, 7);
             }
-        }
+        }        
     }
 
     private void SetCoinPerLevelValue()
@@ -171,43 +180,35 @@ public class LevelManager : MonoBehaviour
         coinValue *= Random.Range(1, 1.5f);
         coinValue = (int)(coinValue);
 
-        List<RewardTowerElement> cointower = new List<RewardTowerElement>();
+        RewardTowerElement[] cointower = GetComponentsInChildren<RewardTowerElement>();
+        CollectablesBehaviour[] coinCollectables = GetComponentsInChildren<CollectablesBehaviour>();
 
-        for (int i = 0; i < rewardTowerParent.transform.childCount; i++)
+        int coinCount = 0;
+
+        for(int i = 0; i < coinCollectables.Length; i++)
         {
-            for (int j = 0; j < rewardTowerParent.transform.GetChild(i).transform.childCount; j++)
+            if (coinCollectables[i].isMoney)
+                coinCount++;
+        }
+
+        List<RewardTowerElement> coinTowerList = new List<RewardTowerElement>();
+        for (int i = 0; i < cointower.Length; i++)
+        {
+            if (cointower[i].rewardIsCoin)
             {
-                RewardTowerElement t = rewardTowerParent.transform.GetChild(i).transform.GetChild(j).GetComponent<RewardTowerElement>();
-                if (t.rewardIsCoin)
-                {
-                    cointower.Add(t);
-                }
+                coinTowerList.Add(cointower[i]);
             }
         }
 
-        List<CollectablesBehaviour> coinCollectables = new List<CollectablesBehaviour>();
+        coinValue -= coinCount;
 
-        for (int i = 0; i < collectableParent.transform.childCount; i++)
+        if (coinTowerList.Count != 0 && coinValue > 5)
         {
-            for (int j = 0; j < collectableParent.transform.GetChild(i).transform.childCount; j++)
-            {
-                CollectablesBehaviour c = collectableParent.transform.GetChild(i).transform.GetChild(j).GetComponent<CollectablesBehaviour>();
-                if (c.isDiamond)
-                {
-                    coinCollectables.Add(c);
-                }
-            }
-        }
-
-        coinValue -= (int)(coinCollectables.Count);
-
-        if (cointower.Count != 0 && coinValue > 5)
-        {
-            int localCoin = (int)(coinValue / cointower.Count);
+            int localCoin = (int)(coinValue / coinTowerList.Count);
 
             localCoin = Mathf.Abs(localCoin);
 
-            foreach (RewardTowerElement r in cointower)
+            foreach (RewardTowerElement r in coinTowerList)
             {
                 r.rewardAmount = localCoin + Random.Range(-localCoin / 2, localCoin / 2);
 
@@ -218,7 +219,7 @@ public class LevelManager : MonoBehaviour
             }
         }
 
-        if (cointower.Count != 0 && coinValue <= 5)
+        if (coinTowerList.Count != 0 && coinValue <= 5)
         {
             foreach (RewardTowerElement r in cointower)
             {
@@ -229,7 +230,7 @@ public class LevelManager : MonoBehaviour
 
     private void SetLevelDifficulty()
     {
-        float levelDifficulty = difficultyManager.currentDifficulty;
+        float levelDifficulty = (float)difficultyManager.currentDifficulty;
 
         List<RewardTowerElement> tower = new List<RewardTowerElement>();
 
@@ -248,21 +249,19 @@ public class LevelManager : MonoBehaviour
             foreach (RewardTowerElement t in tower)
             {
                 t.value = (int)(levelDifficulty + Random.Range(0, levelDifficulty / 2f));
-
-                t.value = Mathf.Abs(t.value);
-
-                if(t.value < 2)
-                    t.value = 2;
+                
+                if (t.value < 2)
+                    t.value = 2;                
 
                 float randomizer = Random.Range(0.0f, 1.0f);
 
-                if (randomizer <= 0.065f)
+                if (randomizer <= 0.075f)
                     t.value *= 5;
 
-                else if (randomizer > 0.065f && randomizer <= 0.125f)
+                else if (randomizer > 0.075f && randomizer <= 0.135f)
                     t.value = (int)(t.value * 3f);
 
-                else if (randomizer > 0.125f && randomizer <= 0.2f)
+                else if (randomizer > 0.135f && randomizer <= 0.2f)
                     t.value = (int)(t.value * 1.5f);
 
                 levelDifficulty *= 1.05f;

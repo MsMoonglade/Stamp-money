@@ -146,14 +146,14 @@ MonoBehaviour:
   startGameDistanceOffset: 20
   endGameDistanceOffset: 10
   mediumElementDistance: 16.5
-  minimunDistanceModifyer: 12
-  elementiDistanceModifyer: 16
+  minimunDistanceModifyer: 13
+  elementiDistanceModifyer: 15
   levelLenght:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 1
-      value: 190
+      time: 0
+      value: 240
       inSlope: 2.081895
       outSlope: 2.081895
       tangentMode: 0
@@ -161,14 +161,23 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0.09859604
     - serializedVersion: 3
-      time: 10.107478
-      value: 254.5953
+      time: 8.821773
+      value: 280
       inSlope: 8.379677
       outSlope: 8.379677
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.054577827
+    - serializedVersion: 3
+      time: 15
+      value: 350
+      inSlope: 12.837289
+      outSlope: 12.837289
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.10533669
+      outWeight: 0.33333334
     - serializedVersion: 3
       time: 25
       value: 400
@@ -245,7 +254,7 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 3
       time: 0.037319183
-      value: 3.9833374
+      value: 3
       inSlope: 1.0672466
       outSlope: 1.0672466
       tangentMode: 0
@@ -254,13 +263,22 @@ MonoBehaviour:
       outWeight: 0.0730146
     - serializedVersion: 3
       time: 3
-      value: 4
+      value: 3
       inSlope: 0.78006023
       outSlope: 0.78006023
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.14276852
+    - serializedVersion: 3
+      time: 8
+      value: 8
+      inSlope: 1.1119599
+      outSlope: 1.1119599
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
     - serializedVersion: 3
       time: 13.255067
       value: 18.753616
@@ -296,16 +314,34 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 30
-      inSlope: 1.6171998
-      outSlope: 1.6171998
+      value: 19
+      inSlope: -0.021460133
+      outSlope: -0.021460133
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.033378746
+      outWeight: 0.3339765
+    - serializedVersion: 3
+      time: 3
+      value: 21
+      inSlope: 1.1417422
+      outSlope: 1.1417422
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.32617792
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 15
+      value: 50
+      inSlope: 5.484713
+      outSlope: 5.484713
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.07322916
+      outWeight: 0.33333334
     - serializedVersion: 3
       time: 25
-      value: 200
+      value: 100
       inSlope: 0
       outSlope: 0
       tangentMode: 136
@@ -328,6 +364,24 @@ MonoBehaviour:
       inWeight: 0.33333334
       outWeight: 0.033378746
     - serializedVersion: 3
+      time: 3
+      value: 40
+      inSlope: 4.3820357
+      outSlope: 4.3820357
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 10
+      value: 100
+      inSlope: 8.188781
+      outSlope: 8.188781
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
       time: 25
       value: 200
       inSlope: 0
@@ -341,7 +395,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   diamondPerLevelrandomizerRange: 5
   coinPerLevelrandomizerRange: 5
-  difficultyPerLevelrandomizerRange: 4.5
+  difficultyPerLevelrandomizerRange: 2.5
   currentDiamond: 0
   currentGold: 0
   currentDifficulty: 0
