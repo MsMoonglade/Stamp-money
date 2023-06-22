@@ -329,6 +329,7 @@ MonoBehaviour:
   levelText: {fileID: 7824583330124219346}
   outcomeText: {fileID: 5059832974015957555}
   levelUpCostText: {fileID: 1710394661320321634}
+  unlockLevelText: {fileID: 6926826492039830516}
   objectLevel: 0
 --- !u!1 &455294492281938585
 GameObject:

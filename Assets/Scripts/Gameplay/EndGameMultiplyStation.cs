@@ -25,6 +25,7 @@ public class EndGameMultiplyStation : MonoBehaviour
     public TMP_Text levelText;
     public TMP_Text outcomeText;
     public TMP_Text levelUpCostText;
+    public TMP_Text unlockLevelText;
 
     [HideInInspector]
     public int objectLevel;
@@ -53,7 +54,9 @@ public class EndGameMultiplyStation : MonoBehaviour
 
     private void OnEnable()
     {
-        EventManager.StartListening(Events.saveInvest, OnSaveInvest); 
+        EventManager.StartListening(Events.saveInvest, OnSaveInvest);
+
+        unlockLevelText.text = "Lv " + unlockLevel;
     }
 
     private void OnDisable()

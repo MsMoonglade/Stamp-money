@@ -58,7 +58,7 @@ public class RewardTowerElement : MonoBehaviour
 
         if (rewardIsEnergy)
         {
-            rewardAmount += Random.Range(-0.4f, 0.4f);
+            rewardAmount += Random.Range(-0f, 0.4f);
             rewardAmount = Mathf.Clamp(rewardAmount, 0.1f, 1f);
         }
     }

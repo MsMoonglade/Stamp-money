@@ -40,14 +40,15 @@ public class LevelManager : MonoBehaviour
         if (GENERATE)
         {
             GenerateLevel();
+
+            SetDiamondPerLevelValue();
+            SetCoinPerLevelValue();
+            SetLevelDifficulty();
         }
     }
 
     private void Start()
-    {
-        SetDiamondPerLevelValue();
-        SetCoinPerLevelValue();
-        SetLevelDifficulty();
+    {  
     }
 
     private void GenerateLevel()
@@ -250,6 +251,9 @@ public class LevelManager : MonoBehaviour
 
                 t.value = Mathf.Abs(t.value);
 
+                if(t.value < 2)
+                    t.value = 2;
+
                 float randomizer = Random.Range(0.0f, 1.0f);
 
                 if (randomizer <= 0.065f)
@@ -261,7 +265,7 @@ public class LevelManager : MonoBehaviour
                 else if (randomizer > 0.125f && randomizer <= 0.2f)
                     t.value = (int)(t.value * 1.5f);
 
-                levelDifficulty *= 1.1f;
+                levelDifficulty *= 1.05f;
             }
         }
     }

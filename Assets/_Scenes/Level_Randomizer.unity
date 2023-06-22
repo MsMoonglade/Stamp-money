@@ -1649,6 +1649,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5499896078592063822, guid: cab47d6e3cdacd747b1831da1c2989a2,
+        type: 3}
+      propertyPath: feverTrailRenderer.Array.size
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cab47d6e3cdacd747b1831da1c2989a2, type: 3}
 --- !u!1001 &5766648231171261680
@@ -1658,6 +1663,211 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5766648231171261682, guid: 837de735bd62fbd45afc7b610c27f0eb,
+        type: 3}
+      propertyPath: coinPerLevel.m_Curve.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5766648231171261682, guid: 837de735bd62fbd45afc7b610c27f0eb,
+        type: 3}
+      propertyPath: diamondPerLevel.m_Curve.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5766648231171261682, guid: 837de735bd62fbd45afc7b610c27f0eb,
+        type: 3}
+      propertyPath: coinPerLevel.m_Curve.Array.data[1].time
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5766648231171261682, guid: 837de735bd62fbd45afc7b610c27f0eb,
+        type: 3}
+      propertyPath: coinPerLevel.m_Curve.Array.data[2].time
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5766648231171261682, guid: 837de735bd62fbd45afc7b610c27f0eb,
+        type: 3}
+      propertyPath: coinPerLevel.m_Curve.Array.data[3].time
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5766648231171261682, guid: 837de735bd62fbd45afc7b610c27f0eb,
+        type: 3}
+      propertyPath: coinPerLevel.m_Curve.Array.data[1].value
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 5766648231171261682, guid: 837de735bd62fbd45afc7b610c27f0eb,
+        type: 3}
+      propertyPath: coinPerLevel.m_Curve.Array.data[2].value
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5766648231171261682, guid: 837de735bd62fbd45afc7b610c27f0eb,
+        type: 3}
+      propertyPath: coinPerLevel.m_Curve.Array.data[3].value
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 5766648231171261682, guid: 837de735bd62fbd45afc7b610c27f0eb,
+        type: 3}
+      propertyPath: coinPerLevel.m_Curve.Array.data[1].inSlope
+      value: 4.3820357
+      objectReference: {fileID: 0}
+    - target: {fileID: 5766648231171261682, guid: 837de735bd62fbd45afc7b610c27f0eb,
+        type: 3}
+      propertyPath: coinPerLevel.m_Curve.Array.data[2].inSlope
+      value: 8.188781
+      objectReference: {fileID: 0}
+    - target: {fileID: 5766648231171261682, guid: 837de735bd62fbd45afc7b610c27f0eb,
+        type: 3}
+      propertyPath: diamondPerLevel.m_Curve.Array.data[1].time
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5766648231171261682, guid: 837de735bd62fbd45afc7b610c27f0eb,
+        type: 3}
+      propertyPath: diamondPerLevel.m_Curve.Array.data[2].time
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5766648231171261682, guid: 837de735bd62fbd45afc7b610c27f0eb,
+        type: 3}
+      propertyPath: diamondPerLevel.m_Curve.Array.data[3].time
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5766648231171261682, guid: 837de735bd62fbd45afc7b610c27f0eb,
+        type: 3}
+      propertyPath: coinPerLevel.m_Curve.Array.data[1].outSlope
+      value: 4.3820357
+      objectReference: {fileID: 0}
+    - target: {fileID: 5766648231171261682, guid: 837de735bd62fbd45afc7b610c27f0eb,
+        type: 3}
+      propertyPath: coinPerLevel.m_Curve.Array.data[2].inWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 5766648231171261682, guid: 837de735bd62fbd45afc7b610c27f0eb,
+        type: 3}
+      propertyPath: coinPerLevel.m_Curve.Array.data[2].outSlope
+      value: 8.188781
+      objectReference: {fileID: 0}
+    - target: {fileID: 5766648231171261682, guid: 837de735bd62fbd45afc7b610c27f0eb,
+        type: 3}
+      propertyPath: coinPerLevel.m_Curve.Array.data[3].inWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 5766648231171261682, guid: 837de735bd62fbd45afc7b610c27f0eb,
+        type: 3}
+      propertyPath: diamondPerLevel.m_Curve.Array.data[0].value
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5766648231171261682, guid: 837de735bd62fbd45afc7b610c27f0eb,
+        type: 3}
+      propertyPath: diamondPerLevel.m_Curve.Array.data[1].value
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5766648231171261682, guid: 837de735bd62fbd45afc7b610c27f0eb,
+        type: 3}
+      propertyPath: diamondPerLevel.m_Curve.Array.data[2].value
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 5766648231171261682, guid: 837de735bd62fbd45afc7b610c27f0eb,
+        type: 3}
+      propertyPath: diamondPerLevel.m_Curve.Array.data[3].value
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5766648231171261682, guid: 837de735bd62fbd45afc7b610c27f0eb,
+        type: 3}
+      propertyPath: coinPerLevel.m_Curve.Array.data[2].outWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 5766648231171261682, guid: 837de735bd62fbd45afc7b610c27f0eb,
+        type: 3}
+      propertyPath: coinPerLevel.m_Curve.Array.data[3].outWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 5766648231171261682, guid: 837de735bd62fbd45afc7b610c27f0eb,
+        type: 3}
+      propertyPath: diamondPerLevel.m_Curve.Array.data[0].inSlope
+      value: -0.021460133
+      objectReference: {fileID: 0}
+    - target: {fileID: 5766648231171261682, guid: 837de735bd62fbd45afc7b610c27f0eb,
+        type: 3}
+      propertyPath: diamondPerLevel.m_Curve.Array.data[1].inSlope
+      value: 1.1417422
+      objectReference: {fileID: 0}
+    - target: {fileID: 5766648231171261682, guid: 837de735bd62fbd45afc7b610c27f0eb,
+        type: 3}
+      propertyPath: diamondPerLevel.m_Curve.Array.data[2].inSlope
+      value: 5.484713
+      objectReference: {fileID: 0}
+    - target: {fileID: 5766648231171261682, guid: 837de735bd62fbd45afc7b610c27f0eb,
+        type: 3}
+      propertyPath: coinPerLevel.m_Curve.Array.data[1].tangentMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5766648231171261682, guid: 837de735bd62fbd45afc7b610c27f0eb,
+        type: 3}
+      propertyPath: coinPerLevel.m_Curve.Array.data[2].tangentMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5766648231171261682, guid: 837de735bd62fbd45afc7b610c27f0eb,
+        type: 3}
+      propertyPath: coinPerLevel.m_Curve.Array.data[3].tangentMode
+      value: 136
+      objectReference: {fileID: 0}
+    - target: {fileID: 5766648231171261682, guid: 837de735bd62fbd45afc7b610c27f0eb,
+        type: 3}
+      propertyPath: diamondPerLevel.m_Curve.Array.data[0].outSlope
+      value: -0.021460133
+      objectReference: {fileID: 0}
+    - target: {fileID: 5766648231171261682, guid: 837de735bd62fbd45afc7b610c27f0eb,
+        type: 3}
+      propertyPath: diamondPerLevel.m_Curve.Array.data[1].inWeight
+      value: 0.32617792
+      objectReference: {fileID: 0}
+    - target: {fileID: 5766648231171261682, guid: 837de735bd62fbd45afc7b610c27f0eb,
+        type: 3}
+      propertyPath: diamondPerLevel.m_Curve.Array.data[1].outSlope
+      value: 1.1417422
+      objectReference: {fileID: 0}
+    - target: {fileID: 5766648231171261682, guid: 837de735bd62fbd45afc7b610c27f0eb,
+        type: 3}
+      propertyPath: diamondPerLevel.m_Curve.Array.data[2].inWeight
+      value: 0.07322916
+      objectReference: {fileID: 0}
+    - target: {fileID: 5766648231171261682, guid: 837de735bd62fbd45afc7b610c27f0eb,
+        type: 3}
+      propertyPath: diamondPerLevel.m_Curve.Array.data[2].outSlope
+      value: 5.484713
+      objectReference: {fileID: 0}
+    - target: {fileID: 5766648231171261682, guid: 837de735bd62fbd45afc7b610c27f0eb,
+        type: 3}
+      propertyPath: diamondPerLevel.m_Curve.Array.data[3].inWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 5766648231171261682, guid: 837de735bd62fbd45afc7b610c27f0eb,
+        type: 3}
+      propertyPath: diamondPerLevel.m_Curve.Array.data[0].outWeight
+      value: 0.3339765
+      objectReference: {fileID: 0}
+    - target: {fileID: 5766648231171261682, guid: 837de735bd62fbd45afc7b610c27f0eb,
+        type: 3}
+      propertyPath: diamondPerLevel.m_Curve.Array.data[2].outWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 5766648231171261682, guid: 837de735bd62fbd45afc7b610c27f0eb,
+        type: 3}
+      propertyPath: diamondPerLevel.m_Curve.Array.data[3].outWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 5766648231171261682, guid: 837de735bd62fbd45afc7b610c27f0eb,
+        type: 3}
+      propertyPath: diamondPerLevel.m_Curve.Array.data[1].tangentMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5766648231171261682, guid: 837de735bd62fbd45afc7b610c27f0eb,
+        type: 3}
+      propertyPath: diamondPerLevel.m_Curve.Array.data[2].tangentMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5766648231171261682, guid: 837de735bd62fbd45afc7b610c27f0eb,
+        type: 3}
+      propertyPath: diamondPerLevel.m_Curve.Array.data[3].tangentMode
+      value: 136
+      objectReference: {fileID: 0}
     - target: {fileID: 5766648231184970518, guid: 837de735bd62fbd45afc7b610c27f0eb,
         type: 3}
       propertyPath: m_Name

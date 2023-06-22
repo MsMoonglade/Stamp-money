@@ -15,7 +15,9 @@ public class CharacterBehaviour : MonoBehaviour
 
     public GameObject model;
     public GameObject handler;
-    public GameObject printerObject;   
+    public GameObject printerObject;
+    public TrailRenderer[] feverTrailRenderer;
+    public ParticleSystem feverParticle;
 
     public LayerMask moneyMachineButtonLayer;
 
@@ -134,7 +136,9 @@ public class CharacterBehaviour : MonoBehaviour
 
         currentEnergy = 0;
         targetEnergy = 0;
+       
         feverMode = false;
+        DisableFeverTrail();
     }
 
 
@@ -221,8 +225,8 @@ public class CharacterBehaviour : MonoBehaviour
 
                 if (currentEnergy >= maxEnergy)
                 {
-                    Debug.Log("Fever");
                     feverMode = true;
+                    EnableFeverTrail();
 
                     if (jumpSpeed != notMovingJumpSpeed)
                         jumpSpeed = notMovingJumpSpeed;
@@ -243,6 +247,7 @@ public class CharacterBehaviour : MonoBehaviour
                         jumpSpeed = movingJumpSpeed;
 
                     feverMode = false;
+                    DisableFeverTrail();
 
                     UiManager.instance.HideEnergySlider();
                     energySliderIsHide = true;
@@ -591,6 +596,24 @@ public class CharacterBehaviour : MonoBehaviour
 
             PlayerPrefs.SetString("SavedValue", string.Join("###", valueToSave));
             PlayerPrefs.SetString("SavedPos", posToSaveString);
+        }
+    }
+
+    private void EnableFeverTrail()
+    {
+        foreach(TrailRenderer trail in feverTrailRenderer)
+        {
+            trail.emitting = true;
+        }
+
+        feverParticle.Play();
+    }
+
+    private void DisableFeverTrail()
+    {
+        foreach (TrailRenderer trail in feverTrailRenderer)
+        {
+            trail.emitting = false;
         }
     }
 
