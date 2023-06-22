@@ -4218,6 +4218,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5499896078592063822, guid: cab47d6e3cdacd747b1831da1c2989a2,
+        type: 3}
+      propertyPath: feverTrailRenderer.Array.size
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cab47d6e3cdacd747b1831da1c2989a2, type: 3}
 --- !u!1 &6010586822714046091 stripped
