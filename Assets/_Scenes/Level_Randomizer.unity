@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.18716782, g: 0.41298255, b: 0.72582084, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1667,6 +1667,96 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5766648231171261682, guid: 837de735bd62fbd45afc7b610c27f0eb,
+        type: 3}
+      propertyPath: diamondPerLevel.m_Curve.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5766648231171261682, guid: 837de735bd62fbd45afc7b610c27f0eb,
+        type: 3}
+      propertyPath: diamondPerLevel.m_Curve.Array.data[2].time
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5766648231171261682, guid: 837de735bd62fbd45afc7b610c27f0eb,
+        type: 3}
+      propertyPath: diamondPerLevel.m_Curve.Array.data[3].time
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5766648231171261682, guid: 837de735bd62fbd45afc7b610c27f0eb,
+        type: 3}
+      propertyPath: diamondPerLevel.m_Curve.Array.data[4].time
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5766648231171261682, guid: 837de735bd62fbd45afc7b610c27f0eb,
+        type: 3}
+      propertyPath: diamondPerLevel.m_Curve.Array.data[2].value
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5766648231171261682, guid: 837de735bd62fbd45afc7b610c27f0eb,
+        type: 3}
+      propertyPath: diamondPerLevel.m_Curve.Array.data[3].value
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 5766648231171261682, guid: 837de735bd62fbd45afc7b610c27f0eb,
+        type: 3}
+      propertyPath: diamondPerLevel.m_Curve.Array.data[4].value
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5766648231171261682, guid: 837de735bd62fbd45afc7b610c27f0eb,
+        type: 3}
+      propertyPath: diamondPerLevel.m_Curve.Array.data[2].inSlope
+      value: 1.5417656
+      objectReference: {fileID: 0}
+    - target: {fileID: 5766648231171261682, guid: 837de735bd62fbd45afc7b610c27f0eb,
+        type: 3}
+      propertyPath: diamondPerLevel.m_Curve.Array.data[3].inSlope
+      value: 5.484713
+      objectReference: {fileID: 0}
+    - target: {fileID: 5766648231171261682, guid: 837de735bd62fbd45afc7b610c27f0eb,
+        type: 3}
+      propertyPath: diamondPerLevel.m_Curve.Array.data[2].inWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 5766648231171261682, guid: 837de735bd62fbd45afc7b610c27f0eb,
+        type: 3}
+      propertyPath: diamondPerLevel.m_Curve.Array.data[2].outSlope
+      value: 1.5417656
+      objectReference: {fileID: 0}
+    - target: {fileID: 5766648231171261682, guid: 837de735bd62fbd45afc7b610c27f0eb,
+        type: 3}
+      propertyPath: diamondPerLevel.m_Curve.Array.data[3].inWeight
+      value: 0.07322916
+      objectReference: {fileID: 0}
+    - target: {fileID: 5766648231171261682, guid: 837de735bd62fbd45afc7b610c27f0eb,
+        type: 3}
+      propertyPath: diamondPerLevel.m_Curve.Array.data[3].outSlope
+      value: 5.484713
+      objectReference: {fileID: 0}
+    - target: {fileID: 5766648231171261682, guid: 837de735bd62fbd45afc7b610c27f0eb,
+        type: 3}
+      propertyPath: diamondPerLevel.m_Curve.Array.data[4].inWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 5766648231171261682, guid: 837de735bd62fbd45afc7b610c27f0eb,
+        type: 3}
+      propertyPath: diamondPerLevel.m_Curve.Array.data[4].outWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 5766648231171261682, guid: 837de735bd62fbd45afc7b610c27f0eb,
+        type: 3}
+      propertyPath: diamondPerLevel.m_Curve.Array.data[3].tangentMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5766648231171261682, guid: 837de735bd62fbd45afc7b610c27f0eb,
+        type: 3}
+      propertyPath: diamondPerLevel.m_Curve.Array.data[4].tangentMode
+      value: 136
+      objectReference: {fileID: 0}
+    - target: {fileID: 5766648231171261682, guid: 837de735bd62fbd45afc7b610c27f0eb,
+        type: 3}
+      propertyPath: obstaclesdifficultyPerLevel.m_Curve.Array.data[2].value
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 5766648231184970518, guid: 837de735bd62fbd45afc7b610c27f0eb,
         type: 3}
       propertyPath: m_Name
@@ -1677,6 +1767,16 @@ PrefabInstance:
       propertyPath: endGameObject
       value: 
       objectReference: {fileID: 832707480}
+    - target: {fileID: 5766648231184970519, guid: 837de735bd62fbd45afc7b610c27f0eb,
+        type: 3}
+      propertyPath: minimunDistanceModifyer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 5766648231184970519, guid: 837de735bd62fbd45afc7b610c27f0eb,
+        type: 3}
+      propertyPath: elementiDistanceModifyer
+      value: 16
+      objectReference: {fileID: 0}
     - target: {fileID: 5766648231184970520, guid: 837de735bd62fbd45afc7b610c27f0eb,
         type: 3}
       propertyPath: m_RootOrder

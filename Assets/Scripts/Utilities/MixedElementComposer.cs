@@ -20,7 +20,7 @@ public class MixedElementComposer : MonoBehaviour
         GameObject wallO = Instantiate(possibleWallObj[Random.Range(0, possibleWallObj.Length)], Vector3.zero, Quaternion.identity, transform);
         GameObject towerO = Instantiate(possibleTowerObj[Random.Range(0, possibleTowerObj.Length)], Vector3.zero, Quaternion.identity, transform);
 
-        float index = Random.Range(0, 1);
+        float index = Random.Range(0f, 1f);
 
         if(index <= 0.5f)
         {

@@ -11,7 +11,9 @@ public class Initializer : MonoBehaviour
 {
     void Awake()
     {
-        DOTween.Init();
+        DOTween.Init();     
+        CheckPlayerPrefsNewBuild();
+        
         // Subscribe
         SupersonicWisdom.Api.AddOnReadyListener(OnSupersonicWisdomReady);
         // Then initialize
@@ -21,5 +23,16 @@ public class Initializer : MonoBehaviour
     void OnSupersonicWisdomReady()
     {
         SceneManager.LoadScene(1);
+    }
+
+    void CheckPlayerPrefsNewBuild()
+    {
+        if (PlayerPrefs.HasKey("Build_1.1.2"))
+            return;
+        else
+        {
+            PlayerPrefs.DeleteAll();
+            PlayerPrefs.SetInt("Build_1.1.2", 1);
+        }
     }
 }
